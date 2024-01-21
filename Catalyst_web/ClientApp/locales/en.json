@@ -1,0 +1,5 @@
+// en.json
+{
+  "welcome_message": "Welcome to my Nuxt app!",
+  "home_page": "Home Page"
+}

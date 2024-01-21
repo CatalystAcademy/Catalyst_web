@@ -27,6 +27,7 @@
 
   <ItemGroup>
     <Folder Include="ClientApp\locales\" />
+    <Folder Include="ClientApp\pages\Admin\" />
     <Folder Include="Infrastructure\Persistence\Migrations\" />
   </ItemGroup>
 
