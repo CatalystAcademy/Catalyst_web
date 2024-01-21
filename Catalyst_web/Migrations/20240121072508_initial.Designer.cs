@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Catalyst_web.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240117123030_initial")]
+    [Migration("20240121072508_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -36,13 +36,12 @@ namespace Catalyst_web.Migrations
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Description")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("EndtDate")
+                    b.Property<DateTime>("EndDate")
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<bool>("IsDeleted")
@@ -52,7 +51,6 @@ namespace Catalyst_web.Migrations
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("ModifiedBy")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<DateTime>("RegistrationDate")
@@ -73,6 +71,57 @@ namespace Catalyst_web.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Courses");
+                });
+
+            modelBuilder.Entity("Catalyst_web.Models.RegisterForCourse", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnOrder(0);
+
+                    b.Property<Guid>("CourseId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Message")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("Modified")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("bytea");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RegisterForCourses");
                 });
 #pragma warning restore 612, 618
         }

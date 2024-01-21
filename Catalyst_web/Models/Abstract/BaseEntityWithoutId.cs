@@ -14,6 +14,6 @@ namespace Catalyst_web.Models.Abstract
 
         [ConcurrencyCheck]
         [Timestamp]
-        public byte[] RowVersion { get; set; }
+        public byte[]? RowVersion { get; set; }
     }
 }
