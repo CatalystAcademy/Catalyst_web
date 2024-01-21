@@ -14,11 +14,6 @@
     <CallToActionFour />
     <Subscribe />
     <Footer />
-<!--    <ul v-if="courses">
-      <li v-for="course in courses" :key="course.Id">
-        <p>{{ course.title }}</p>
-      </li>
-    </ul>-->
   </div>
 </template>
 

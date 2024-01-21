@@ -56,6 +56,28 @@ namespace Catalyst_web.Controllers
             }
         }
 
+        // POST: Create a new course
+        [HttpPost("api/Courses/Create")]
+        public async Task<IActionResult> CreateCourse([FromBody] Course request)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var createCourse = new Course
+            {
+                Title = request.Title,
+                Description = request.Description,
+                StartDate = request.StartDate,
+                EndDate = request.EndDate,
+                ImageData = request.ImageData,
+            };
+            _dbContext.Courses.Add(createCourse);
+            await _dbContext.SaveChangesAsync();
+
+            return Ok();
+        }
+
         [HttpPost("api/Courses/Register")]
         public async Task<IActionResult> RegisterForCourse([FromBody] RegisterForCourse request)
         {

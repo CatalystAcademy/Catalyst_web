@@ -64,8 +64,16 @@ export default {
         component: 'Courses'
       },
       {
-        path: '/course-details/:id',
-        component: 'Course-details'
+        path: '/courseDetails/:id',
+        component: 'CourseDetailsPage'
+      },
+      {
+        path: '/admin/courseCreate',
+        component: 'CourseCreate'
+      },
+      {
+        path: '/admin/courseList',
+        component: 'CourseList'
       }
     ]
   },
