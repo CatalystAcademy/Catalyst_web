@@ -65,14 +65,19 @@ export default {
       },
       {
         path: '/courseDetails/:id',
-        component: 'CourseDetailsPage'
+        component: () => import('./pages/CourseDetailsPage.vue'),
       },
       {
         path: '/admin/courseCreate',
         component: 'CourseCreate'
       },
       {
+        path: '/admin/edit/:id',
+        component: 'Edit'
+      },
+      {
         path: '/admin/courseList',
+        name: 'adminCourseList',
         component: 'CourseList'
       }
     ]

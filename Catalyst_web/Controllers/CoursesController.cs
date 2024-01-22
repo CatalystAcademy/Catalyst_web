@@ -78,6 +78,55 @@ namespace Catalyst_web.Controllers
             return Ok();
         }
 
+        [HttpPut("api/Courses/Edit/{id}")]
+        public async Task<IActionResult> UpdateCourse(Guid id, [FromBody] Course editedCourse)
+        {
+            // 1. Validate ID and model existence
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState); // Return bad request if model validation fails
+            }
+                var existingCourse = await _dbContext.Courses.FindAsync(id); // Find existing course
+
+                if (existingCourse == null)
+                {
+                    return NotFound(); // Return not found if course doesn't exist
+                }
+
+                existingCourse.Title = editedCourse.Title;
+                existingCourse.Description = editedCourse.Description;
+                existingCourse.StartDate = editedCourse.StartDate;
+                existingCourse.EndDate = editedCourse.EndDate;
+                existingCourse.ImageData = editedCourse.ImageData;
+
+                _dbContext.Courses.Update(existingCourse);
+                await _dbContext.SaveChangesAsync();
+
+                return Ok(existingCourse);
+            }
+
+        [HttpDelete("api/Courses/{id}")]
+        public async Task<IActionResult> DeleteCourse(Guid id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var existingCourse = await _dbContext.Courses.FindAsync(id);
+
+            if (existingCourse == null)
+            {
+                return NotFound();
+            }
+
+            _dbContext.Courses.Remove(existingCourse);
+            await _dbContext.SaveChangesAsync();
+
+            return Ok(); // Return successful response
+        }
+
+
         [HttpPost("api/Courses/Register")]
         public async Task<IActionResult> RegisterForCourse([FromBody] RegisterForCourse request)
         {

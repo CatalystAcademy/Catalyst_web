@@ -23,8 +23,16 @@
     methods: {
       async create() {
         try {
-          await this.$axios.post('/api/Courses/Create', this.createData);
+          await this.$axios.post('/api/Courses/Create', this.createData)
           // Show success message
+            .then(function (response) {
+              if (response) {
+                window.location = "/admin/courseList"
+              }
+            })
+            .catch(function (error) {
+              
+            })
         } catch (error) {
           // Handle error and display message
         }
@@ -36,4 +44,5 @@
         this.$axios.defaults.httpsAgent = new https.Agent({ rejectUnauthorized: false });
       }
     },
-  }</script>
+  }
+</script>

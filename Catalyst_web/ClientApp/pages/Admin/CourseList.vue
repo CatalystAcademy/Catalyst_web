@@ -19,8 +19,8 @@
           <td>{{ course.startDate }}</td>
           <td>{{ course.endDate }}</td>
           <td>
-            <button class="btn btn-edit">Edit</button>
-            <button class="btn btn-delete">Delete</button>
+            <router-link :to="`/admin/edit/${course.id}`" class="btn btn-edit">Edit</router-link>
+            <button class="btn btn-delete" @click="deleteCourse(course.id)">Delete</button>
           </td>
         </tr>
       </tbody>
@@ -33,19 +33,38 @@
 
 <script>
   import https from 'https';
+
   export default {
     name: 'IndexPage',
-    async asyncData({ $axios }) { // Inject $axios directly gt
-      $axios.defaults.httpsAgent = new https.Agent({ rejectUnauthorized: false });
+    methods: {
+      deleteCourse(courseId) {
+        this.$axios.delete(`/api/Courses/${courseId}`)
+          .then(() => {
+            // Remove the deleted course from the list
+            this.courses = this.courses.filter(course => course.id !== courseId);
+            // Display success message (optional)
+          })
+          .catch(error => {
+            // Handle error and display message
+            console.error(error);
+          });
+      },
+    },
+
+    async asyncData({ $axios }) {
+      const axiosInstance = $axios.create({
+        httpsAgent: new https.Agent({ rejectUnauthorized: false }),
+      });
+
       try {
-        const response = await $axios.get('https://localhost:7226/api/Courses'); // Use relative path
+        const response = await axiosInstance.get('/api/Courses');
         return { courses: response.data };
       } catch (error) {
         console.error('Error fetching courses:', error);
         return { courses: [] }; // Graceful error handling
       }
     },
-  }
+  };
 </script>
 
 
