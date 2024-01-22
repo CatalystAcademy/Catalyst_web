@@ -14,6 +14,6 @@
 <script>
   import https from 'https';
   export default {
-    name: 'CreateCourse',
+    name: 'EditCourse',
   }
 </script>

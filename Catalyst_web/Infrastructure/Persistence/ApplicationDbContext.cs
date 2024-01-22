@@ -14,6 +14,7 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
     }
 
     public DbSet<Course> Courses { get; set; }
+    public DbSet<News> Newses { get; set; }
     public DbSet<RegisterForCourse> RegisterForCourses { get; set; }
 
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new())

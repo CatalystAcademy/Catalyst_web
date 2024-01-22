@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2 class="course-list-header">List of Courses</h2>
-    <router-link to="/admin/courseCreate" class="btn btn-create">Create Course</router-link>
+    <router-link to="/admin/Course/Create" class="btn btn-create">Create Course</router-link>
     <table class="course-table">
       <thead>
         <tr>
@@ -19,7 +19,7 @@
           <td>{{ course.startDate }}</td>
           <td>{{ course.endDate }}</td>
           <td>
-            <router-link :to="`/admin/edit/${course.id}`" class="btn btn-edit">Edit</router-link>
+            <router-link :to="`/admin/Course/edit/${course.id}`" class="btn btn-edit">Edit</router-link>
             <button class="btn btn-delete" @click="deleteCourse(course.id)">Delete</button>
           </td>
         </tr>

@@ -27,7 +27,7 @@
           // Show success message
             .then(function (response) {
               if (response) {
-                window.location = "/admin/courseList"
+                window.location = "/admin/Course/List"
               }
             })
             .catch(function (error) {

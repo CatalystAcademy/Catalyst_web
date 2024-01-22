@@ -68,17 +68,27 @@ export default {
         component: () => import('./pages/CourseDetailsPage.vue'),
       },
       {
-        path: '/admin/courseCreate',
-        component: 'CourseCreate'
+        path: '/admin/Course/Create',
+        component: 'Create'
       },
       {
-        path: '/admin/edit/:id',
+        path: '/admin/Course/edit/:id',
+        name: 'EditCourse',
         component: 'Edit'
       },
       {
-        path: '/admin/courseList',
-        name: 'adminCourseList',
-        component: 'CourseList'
+        path: '/admin/Course/List',
+        name: 'adminList',
+        component: 'List'
+      },
+      {
+        path: '/admin/News/List',
+        name: 'adminList',
+        component: 'List'
+      },
+      {
+        path: '/admin/News/Create',
+        component: 'Create'
       }
     ]
   },
