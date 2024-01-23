@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="course-list-header">List of Courses</h2>
+    <h2 class="course-list-header">List of Courses</h2> <router-link to="/admin/Index" class="btn btn-edit">Back to Index</router-link>
     <router-link to="/admin/Course/Create" class="btn btn-create">Create Course</router-link>
     <table class="course-table">
       <thead>

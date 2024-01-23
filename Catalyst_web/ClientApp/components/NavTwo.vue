@@ -21,52 +21,12 @@
                                           <ul class=" navigation-box">
                                               <li class="current">
                                                   <a href="/">Home</a>
-                                                  <ul class="sub-menu">
-                                                      <li><a href="/">Home 01</a></li>
-                                                      <li><a href="/index-2">Home 02</a></li>
-                                                      <li><a href="/index-3">Home 03</a></li>
-                                                      <li><a href="#">Header Versions</a>
-                                                          <ul class="sub-menu">
-                                                              <li><a href="/">Header 01</a></li>
-                                                              <li><a href="/index-2">Header 02</a></li>
-                                                              <li><a href="/index-3">Header 03</a></li>
-                                                          </ul><!-- /.sub-menu -->
-                                                      </li>
-                                                  </ul><!-- /.sub-menu -->
                                               </li>
                                               <li>
-                                                  <a href="#">Pages</a>
-                                                  <ul class="sub-menu">
-                                                      <li><nuxt-link to="/about">About Page</nuxt-link></li>
-                                                      <li><nuxt-link to="/gallery">Gallery</nuxt-link></li>
-                                                      <li><nuxt-link to="/pricing">Pricing Plans</nuxt-link></li>
-                                                      <li><nuxt-link to="/faq">FAQ'S</nuxt-link></li>
-                                                  </ul><!-- /.sub-menu -->
+                                                  <nuxt-link to="/admin/Course/List">Courses</nuxt-link>
                                               </li>
                                               <li>
-                                                  <nuxt-link to="/courses">Courses</nuxt-link>
-                                                  <ul class="sub-menu">
-                                                      <li><nuxt-link to="/courses">Courses</nuxt-link></li>
-                                                      <li><nuxt-link to="/course-details">Course Details</nuxt-link></li>
-                                                  </ul><!-- /.sub-menu -->
-                                              </li>
-                                              <li>
-                                                  <nuxt-link to="/teachers">Teachers</nuxt-link>
-                                                  <ul class="sub-menu">
-                                                      <li><nuxt-link to="/teachers">Teachers</nuxt-link></li>
-                                                      <li><nuxt-link to="/teacher-details">Teachers Details</nuxt-link></li>
-                                                      <li><nuxt-link to="/become-teacher">Become Teacher</nuxt-link></li>
-                                                  </ul><!-- /.sub-menu -->
-                                              </li>
-                                              <li>
-                                                  <nuxt-link to="/news">News</nuxt-link>
-                                                  <ul class="sub-menu">
-                                                      <li><nuxt-link to="/news">News Page</nuxt-link></li>
-                                                      <li><nuxt-link to="/news-details">News Details</nuxt-link></li>
-                                                  </ul><!-- /.sub-menu -->
-                                              </li>
-                                              <li>
-                                                  <nuxt-link to="/contact">Contact</nuxt-link>
+                                                  <nuxt-link to="/admin/News/List">News</nuxt-link>
                                               </li>
                                           </ul>
                                       </div><!-- /.navbar-collapse -->

@@ -68,6 +68,10 @@ export default {
         component: () => import('./pages/CourseDetailsPage.vue'),
       },
       {
+        path: '/admin/Index',
+        component: 'Index'
+      },
+      {
         path: '/admin/Course/Create',
         component: 'Create'
       },

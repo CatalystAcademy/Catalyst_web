@@ -46,5 +46,26 @@ namespace Catalyst_web.Controllers
             return Ok();
         }
 
+        [HttpDelete("api/News/{id}")]
+        public async Task<IActionResult> DeleteNews(Guid id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var existingNews = await _dbContext.Newses.FindAsync(id);
+
+            if (existingNews == null)
+            {
+                return NotFound();
+            }
+
+            _dbContext.Newses.Remove(existingNews);
+            await _dbContext.SaveChangesAsync();
+
+            return Ok(); // Return successful response
+        }
+
     }
 }
