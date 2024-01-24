@@ -2808,7 +2808,28 @@ a:visited {
   display: block;
   margin-bottom: 10px;
 }
+.become-teacher__form select {
+  border: none; /* Remove browser default border */
+  outline: none; /* Remove focus outline */
+  width: 100%; /* Match input width */
+  background-color: #f1f1f1; /* Match input background */
+  height: 77px; /* Match input height */
+  font-size: 16px; /* Match input font size */
+  color: #81868a; /* Match input color */
+  font-weight: 500; /* Match input font weight */
+  padding-left: 40px; /* Match input padding */
+  display: block; /* Match input display */
+  margin-bottom: 10px; /* Match input margin */
+  /* Additional styles for select dropdown */
+  appearance: none; /* Remove default arrow and styling */
+  background-position: right 15px top 50%; 
+  background-repeat: no-repeat;
+}
 .become-teacher__form input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #81868a;
+}
+.become-teacher__form select::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   color: #81868a;
 }
@@ -2816,11 +2837,23 @@ a:visited {
   /* Firefox 19+ */
   color: #81868a;
 }
+.become-teacher__form select::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #81868a;
+}
 .become-teacher__form input:-ms-input-placeholder {
   /* IE 10+ */
   color: #81868a;
 }
+.become-teacher__form select:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #81868a;
+}
 .become-teacher__form input:-moz-placeholder {
+  /* Firefox 18- */
+  color: #81868a;
+}
+.become-teacher__form select:-moz-placeholder {
   /* Firefox 18- */
   color: #81868a;
 }

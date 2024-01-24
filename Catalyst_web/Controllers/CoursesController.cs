@@ -4,6 +4,12 @@ using Catalyst_web.Models;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Net.Mail;
+using SendGrid;
+using SendGrid.Helpers.Mail;
+using System;
+using Npgsql;
+using Dapper;
 
 namespace Catalyst_web.Controllers
 {
@@ -14,11 +20,13 @@ namespace Catalyst_web.Controllers
     {
         private readonly ApplicationDbContext _dbContext;
         private readonly ILocService _locService;
+        private readonly IConfiguration _configuration;
 
-        public CoursesController(ApplicationDbContext dbContext, ILocService locService)
+        public CoursesController(ApplicationDbContext dbContext, ILocService locService, IConfiguration configuration)
         {
             _dbContext = dbContext;
             _locService = locService;
+            _configuration = configuration;
         }
 
         [HttpGet("api/Courses")]
@@ -64,16 +72,17 @@ namespace Catalyst_web.Controllers
             {
                 return BadRequest(ModelState);
             }
-            var createCourse = new Course
-            {
-                Title = request.Title,
-                Description = request.Description,
-                StartDate = request.StartDate,
-                EndDate = request.EndDate,
-                ImageData = request.ImageData,
-            };
-            _dbContext.Courses.Add(createCourse);
-            await _dbContext.SaveChangesAsync();
+
+                var createCourse = new Course
+                {
+                    Title = request.Title,
+                    Description = request.Description,
+                    StartDate = request.StartDate,
+                    EndDate = request.EndDate,
+                    ImageData = request.ImageData,
+                };
+                _dbContext.Courses.Add(createCourse);
+                await _dbContext.SaveChangesAsync();
 
             return Ok();
         }
@@ -128,11 +137,15 @@ namespace Catalyst_web.Controllers
 
 
         [HttpPost("api/Courses/Register")]
-        public async Task<IActionResult> RegisterForCourse([FromBody] RegisterForCourse request)
+        public async Task<IActionResult> RegisterForCourse(RegisterForCourse request, [FromForm] IFormFile file)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
+            }
+            if (file == null || file.Length == 0)
+            {
+                return BadRequest("File is empty.");
             }
 
             // 2. Validate eligibility (check if user already registered)
@@ -140,18 +153,88 @@ namespace Catalyst_web.Controllers
             {
                 return BadRequest("User is not eligible to register for this course.");
             }
+        using (var memoryStream = new MemoryStream())
+        {
+                var connectionString = _configuration.GetValue<string>("ConnectionStrings");
+                await file.CopyToAsync(memoryStream);
+                byte[] imageData = memoryStream.ToArray();
+                // Use Dapper to insert the image data into the database
+                using (var connection = new NpgsqlConnection(connectionString))
+                {
+                    connection.Open();
+                    connection.Execute("INSERT INTO RegisterForCourse (ImageData) VALUES (@ImageData)",
+                                        new { ImageData = memoryStream.ToArray() });
+                }
 
             // 3. Enroll user in the course (this might involve creating a registration record or updating a join table)
             var courseRegistration = new RegisterForCourse
             {
-                Id = request.Id, 
+                Id = request.Id,
                 CourseId = request.CourseId,
                 Email = request.Email,
                 Name = request.Name,
+                Message = request.Message,
                 PhoneNumber = request.PhoneNumber,
+                ImageData = imageData,
             };
             _dbContext.RegisterForCourses.Add(courseRegistration);
             await _dbContext.SaveChangesAsync();
+
+            const string emailContent = @"Hi {{UserName}},
+                                Congratulations on registering for the {{CourseName}} course! 
+                                We're excited to have you on board and eager to share the knowledge. Check out these resources to get started:
+                                * Course homepage: [Course Link]
+                                * Welcome video: [Video Link]
+                                * Q&A forum: [Forum Link]
+                                Don't hesitate to reach out if you have any questions. We're here to help you succeed!
+
+                                Best regards,
+                                The Catalyst Academy Team";
+
+            var username = courseRegistration.Name;
+            var courseName = courseRegistration.CourseId.ToString();
+
+            // Replace emailContent placeholders
+            var personalizedContent = emailContent.Replace("{{UserName}}", username)
+                                                 .Replace("{{CourseName}}", courseName);
+
+            var sendGridApiKey = _configuration.GetValue<string>("SendGrid:sendgrid_api_key");
+
+/*            var dynamicTemplateData = new Dictionary<string, string>()
+                {
+                    {"UserName", request.Name},
+                    {"CourseName", "Web Development 101"},
+                    {"CourseLink", "https://your-course-link.com"},
+                    {"VideoLink", "https://your-welcome-video.com"},
+                    {"ForumLink", "https://your-forum-link.com"},
+                    {"unsubscribe", "https://your-unsubscribe-link.com"},
+                    {"unsubscribe_preferences", "https://your-preferences-link.com"}
+                };*/
+            // var templateId = "d-a9963b3ed9ee452d805ef6ef8c2a09db"
+            // 4. Send registration confirmation email using SendGrid
+            try
+            {
+                var fromEmail = _configuration.GetValue<string>("SendGrid:FromEmail");
+
+                var email = new SendGridMessage()
+                {
+                    From = new EmailAddress(fromEmail),
+                    ReplyTo = new EmailAddress(request.Email),
+                    Subject = "Welcome to the course!",
+                    HtmlContent = personalizedContent
+                };
+
+                var client = new SendGridClient(sendGridApiKey); // Replace with your SendGrid API key
+                await client.SendEmailAsync(email);
+
+                // Email sent successfully
+            }
+            catch (Exception ex)
+            {
+                // Handle email sending error (log the error, potentially notify user)
+                return StatusCode(500, ex);
+            }
+        }
 
             return Ok();
         }

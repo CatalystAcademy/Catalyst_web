@@ -1,5 +1,6 @@
 ﻿using Catalyst_web.Models.Abstract;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Catalyst_web.Models
 {
@@ -13,5 +14,8 @@ namespace Catalyst_web.Models
         public required string Email { get; set; }
         public string? Message { get; set; }
         public required string PhoneNumber { get; set; }
+        public byte[]? ImageData { get; set; }
+
+        public string? ImageUrl { get; set; }
     }
 }
