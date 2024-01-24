@@ -8,6 +8,7 @@
             <p class="countdown-one__tag-line">get premium online courses for free!</p>
             <!-- /.countdown-one__tag-line -->
             <p class="countdown-one__text">
+              {{translations.WelcomeMessage}}
               Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin,
               lorem
               quis bibendum auci elit consequat is simply free text available in the psutis sem nibh id eis
@@ -63,6 +64,11 @@
         registrationData: { name: '', email: '', courseId: '', phoneNumber: '', message: '', imageData: null },
       };
     },
+    computed: {
+      translations() {
+        return this.$store.state.translations;
+      },
+    },
     async fetch() {
       try {
         const response = await this.$axios.get('/api/Courses');
@@ -100,7 +106,8 @@
         }
       },
     },
-    created() {
+    async created() {
+      await this.$store.dispatch('fetchTranslations');
       // Optional: Set up HTTPS agent for self-signed certificates (if needed)
       if (process.env.NODE_ENV === 'development') {
         this.$axios.defaults.httpsAgent = new https.Agent({ rejectUnauthorized: false });

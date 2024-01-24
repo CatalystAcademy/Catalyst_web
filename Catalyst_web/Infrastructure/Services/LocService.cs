@@ -26,4 +26,16 @@ public class LocService : ILocService
     {
         return SharedResource.ResourceManager.GetString(key, CultureInfo.GetCultureInfo(cultureName));
     }
+
+    public IDictionary<string, string> GetAllTranslations(string cultureName)
+    {
+        var translations = new Dictionary<string, string>();
+        foreach (var resource in _localizer.GetAllStrings(includeParentCultures: true))
+        {
+            translations[resource.Name] = resource.Value;
+        }
+
+        return translations;
+    }
 }
+

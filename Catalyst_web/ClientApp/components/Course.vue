@@ -33,7 +33,7 @@
                 <nuxt-link to="/course-details">$18</nuxt-link>
               </div><!-- /.course-one__meta -->
               <nuxt-link :to="`courseDetails/${course.id}`" class="course-one__link">
-                See Preview
+                {{ translations.String1 }}
               </nuxt-link>
             </div><!-- /.course-one__content -->
           </div><!-- /.course-one__single -->
@@ -65,16 +65,17 @@
         courses: [],
         loading: true,
         error: false,
-        welcomeMessage: '',
       };
+    },
+    computed: {
+      translations() {
+        return this.$store.state.translations;
+      },
     },
     async fetch() { // Use fetch for component-level data fetching
       try {
         const response = await this.$axios.get('/api/Courses');
         this.courses = response.data;
-
-        const welcomeMessageResponse = await this.$axios.get('/api/Courses/GetWelcomeMessage');
-        this.welcomeMessage = welcomeMessageResponse.data.message; // Extract message from response
 
         this.loading = false;
       } catch (error) {
@@ -83,7 +84,8 @@
         this.loading = false;
       }
     },
-    created() {
+    async created() {
+      await this.$store.dispatch('fetchTranslations');
       // Optional: Set up HTTPS agent for self-signed certificates (if needed)
       if (process.env.NODE_ENV === 'development') {
         this.$axios.defaults.httpsAgent = new https.Agent({ rejectUnauthorized: false });

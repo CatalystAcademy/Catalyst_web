@@ -6,4 +6,5 @@ public interface ILocService
 {
     LocalizedString Get(string key);     
     string? Get(string key, string cultureName );
+    IDictionary<string, string> GetAllTranslations(string cultureName);
 }

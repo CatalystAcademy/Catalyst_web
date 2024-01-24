@@ -118,9 +118,18 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/i18n'
   ],
-
+  i18n: {
+    locales: ['en-US', 'hy-AM'], // Add more locales as needed
+    defaultLocale: 'en-US',
+    vueI18n: {
+      fallbackLocale: 'en',
+      messages: {}, // Empty for now, as translations will be fetched dynamically
+    },
+  },
+  store: true,
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }

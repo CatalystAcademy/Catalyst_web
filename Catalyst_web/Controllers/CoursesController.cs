@@ -43,6 +43,12 @@ namespace Catalyst_web.Controllers
             return Ok(new { message = welcomeMessage });
 
         }
+        [HttpGet("api/Translations")]
+        public IActionResult GetTranslations(string languageCode)
+        {
+            var translations = _locService.GetAllTranslations(languageCode); 
+            return Ok(translations);
+        }
 
         [HttpGet("api/CourseDetails/{id}")]
         public async Task<IActionResult> GetCourseDetails(Guid id)
