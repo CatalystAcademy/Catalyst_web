@@ -1,7 +1,10 @@
 using Catalyst_web.Configuration.Extensions;
 using Catalyst_web.Infrastructure.Persistence;
+using Catalyst_web.Infrastructure.Services;
+using Catalyst_web.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
@@ -23,6 +26,9 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+// Add localization services
+builder.Services.AddLocalization();
+
 // Use CORS middleware
 app.UseCors("AllowSpecificOrigin");
 
@@ -33,6 +39,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+var locOptions = app.Services.GetService<IOptions<RequestLocalizationOptions>>();
+if (locOptions != null) app.UseRequestLocalization(locOptions.Value);
 
 app.UseHttpsRedirection();
 
