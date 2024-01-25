@@ -1,7 +1,6 @@
 <template>
   <div>
     <NavOne />
-    <LanguageSwitcher />
     <BannerOne />
     <AboutTwo />
     <CourseOne />
