@@ -117,8 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="String2" xml:space="preserve">
+  <data name="CatalystEmail" xml:space="preserve">
+    <value>info@catalystsacademy.com</value>
+  </data>
+  <data name="CatalystPhone" xml:space="preserve">
+    <value>+37441575714</value>
+  </data>
+  <data name="FBLink" xml:space="preserve">
     <value>second value</value>
+  </data>
+  <data name="HomePage" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="InstaLink" xml:space="preserve">
+    <value>new value</value>
   </data>
   <data name="WelcomeMessage" xml:space="preserve">
     <value>Welcome to Catalyst Academy in eng</value>

@@ -8,7 +8,6 @@
             <p class="countdown-one__tag-line">get premium online courses for free!</p>
             <!-- /.countdown-one__tag-line -->
             <p class="countdown-one__text">
-              {{translations.WelcomeMessage}}
               Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin,
               lorem
               quis bibendum auci elit consequat is simply free text available in the psutis sem nibh id eis
@@ -99,10 +98,23 @@
           });
           await this.$axios.post('/api/Courses/Register', this.formData, {
             headers: { 'Content-Type': 'multipart/form-data' },
-          });
-          // Show success message
+          }).then(response => {
+            console.log(response);
+            // Show success or error toast based on response
+            if (response.status === 200) {
+              this.$toasted.success('Registration successful!');
+              setTimeout(() => {
+                window.location = '/'; // Redirect after a delay
+              }, 3000);
+            } else {
+              this.$toasted.error('An unexpected error occurred. Please contact support.'); // Assuming a 'message' property in error response
+            }
+          })
+            .catch(error => {
+              // Handle generic errors
+              this.$toasted.error('An error occurred during registration. Please try again.');
+            });
         } catch (error) {
-          // Handle error and display message
         }
       },
     },

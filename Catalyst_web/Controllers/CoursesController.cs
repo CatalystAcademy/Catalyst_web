@@ -143,23 +143,18 @@ namespace Catalyst_web.Controllers
 
 
         [HttpPost("api/Courses/Register")]
-        public async Task<IActionResult> RegisterForCourse(RegisterForCourse request, [FromForm] IFormFile file)
+        public async Task<IActionResult> RegisterForCourse([FromForm] RegisterForCourse request)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            if (file == null || file.Length == 0)
-            {
-                return BadRequest("File is empty.");
-            }
-
             // 2. Validate eligibility (check if user already registered)
             if (!IsUserEligibleForCourse(request.Id, request.CourseId))
             {
                 return BadRequest("User is not eligible to register for this course.");
             }
-        using (var memoryStream = new MemoryStream())
+/*        using (var memoryStream = new MemoryStream())
         {
                 var connectionString = _configuration.GetValue<string>("ConnectionStrings");
                 await file.CopyToAsync(memoryStream);
@@ -170,7 +165,7 @@ namespace Catalyst_web.Controllers
                     connection.Open();
                     connection.Execute("INSERT INTO RegisterForCourse (ImageData) VALUES (@ImageData)",
                                         new { ImageData = memoryStream.ToArray() });
-                }
+                }*/
 
             // 3. Enroll user in the course (this might involve creating a registration record or updating a join table)
             var courseRegistration = new RegisterForCourse
@@ -181,7 +176,7 @@ namespace Catalyst_web.Controllers
                 Name = request.Name,
                 Message = request.Message,
                 PhoneNumber = request.PhoneNumber,
-                ImageData = imageData,
+                //ImageData = imageData,
             };
             _dbContext.RegisterForCourses.Add(courseRegistration);
             await _dbContext.SaveChangesAsync();
@@ -197,12 +192,11 @@ namespace Catalyst_web.Controllers
                                 Best regards,
                                 The Catalyst Academy Team";
 
-            var username = courseRegistration.Name;
-            var courseName = courseRegistration.CourseId.ToString();
+            var course = await _dbContext.Courses.FirstOrDefaultAsync(c => c.Id == request.CourseId);
 
             // Replace emailContent placeholders
-            var personalizedContent = emailContent.Replace("{{UserName}}", username)
-                                                 .Replace("{{CourseName}}", courseName);
+            var personalizedContent = emailContent.Replace("{{UserName}}", courseRegistration.Name)
+                                                 .Replace("{{CourseName}}", course?.Title);
 
             var sendGridApiKey = _configuration.GetValue<string>("SendGrid:sendgrid_api_key");
 
@@ -240,7 +234,6 @@ namespace Catalyst_web.Controllers
                 // Handle email sending error (log the error, potentially notify user)
                 return StatusCode(500, ex);
             }
-        }
 
             return Ok();
         }

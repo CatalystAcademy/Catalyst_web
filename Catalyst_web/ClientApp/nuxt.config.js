@@ -107,6 +107,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: '~/plugins/vue-toasted.js', mode: 'client' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -125,7 +126,7 @@ export default {
     locales: ['en-US', 'hy-AM'], // Add more locales as needed
     defaultLocale: 'en-US',
     vueI18n: {
-      fallbackLocale: 'en',
+      fallbackLocale: 'en-US',
       messages: {}, // Empty for now, as translations will be fetched dynamically
     },
   },

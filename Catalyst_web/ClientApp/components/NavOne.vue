@@ -3,8 +3,8 @@
       <div class="topbar-one">
           <div class="container">
               <div class="topbar-one__left">
-                <a href="#">info@catalystsacademy.com</a>
-                  <a href="#">+37441575714</a>
+                <a href="#">{{translations.CatalystEmail}}</a>
+                <a href="#">{{translations.CatalystPhone}}</a>
               </div><!-- /.topbar-one__left -->
               <div class="topbar-one__right">
                   <a href="#">Login</a>
@@ -35,7 +35,7 @@
               <div class="main-navigation">
                 <ul class=" navigation-box">
                   <li class="current">
-                    <nuxt-link to="/">Home</nuxt-link>
+                    <nuxt-link to="/">{{translations.HomePage}}</nuxt-link>
                   </li>
                   <li>
                     <nuxt-link to="/about">About</nuxt-link>
@@ -115,6 +115,11 @@
         selectedLanguage: 'English', // Set the default language here
       };
     },
+    computed: {
+      translations() {
+        return this.$store.state.translations;
+      },
+    },
         mounted() {
           if ($(".main-navigation .navigation-box").length) {
             var subMenu = $(".main-navigation .sub-menu");
@@ -148,7 +153,10 @@
         this.$i18n.setLocale(language);
       },
     },
-    }
+    async created() {
+      await this.$store.dispatch('fetchTranslations');
+    },
+}
 </script>
 
 <style scoped>
