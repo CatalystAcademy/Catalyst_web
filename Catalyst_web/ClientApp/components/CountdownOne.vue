@@ -29,16 +29,11 @@
             <form @submit.prevent="register" action="/assets/inc/sendemail.php" class="become-teacher__form-content contact-form-validated">
               <input v-model="registrationData.name" type="text" placeholder="Your Name" name="name">
               <input v-model="registrationData.email" type="text" placeholder="Email Address" name="email">
-              <label for="course-select">Select a course:</label>
-              <select class="custom-select" v-model="registrationData.courseId" title="Choose your preferred course">
-                <option placeholder="Choose a course..." disabled="" selected></option>
-                <option v-for="course in courses" :key="course.id" :value="course.id">
-                  {{ course.title }}
-                </option>
-              </select>
+
+              <vue-select v-model="selectedCourse" :options="courses" class="custom-dropdown" placeholder="Choose a course..." />
+
               <input v-model="registrationData.phoneNumber" type="text" placeholder="Phone Number" name="phone">
               <input v-model="registrationData.message" type="text" placeholder="Comment" name="message">
-              <input type="file" accept="image/*" @change="handleFileUpload">
               <button type="submit" class="thm-btn become-teacher__form-btn">Apply For It</button>
             </form><!-- /.become-teacher__form-content -->
             <div class="result text-center"></div><!-- /.result -->
@@ -50,17 +45,20 @@
 </template>
 
 <script>
-  import https from 'https';
-  import FormData from 'form-data';
+  import VueSelect from 'vue-select';
+  import https from 'https'; // Still needed for HTTPS agent
 
   export default {
     name: "CountdownOne",
+    components: {
+      VueSelect,
+    },
     data() {
       return {
+        selectedCourse: null,
         courses: [],
         error: false,
-        formData: null,
-        registrationData: { name: '', email: '', courseId: '', phoneNumber: '', message: '', imageData: null },
+        registrationData: { name: '', email: '', courseId: null, phoneNumber: '', message: '' },
       };
     },
     computed: {
@@ -71,45 +69,35 @@
     async fetch() {
       try {
         const response = await this.$axios.get('/api/Courses');
-        this.courses = response.data;
+        this.courses = response.data.map(course => ({ label: course.title, value: course.id }));
       } catch (error) {
         console.error('Error fetching courses or welcome message:', error);
         this.error = true;
       }
     },
     methods: {
-      handleFileUpload(event) {
-        if (!this.formData) {
-          this.formData = new FormData();
-        }
-        const file = event.target.files[0];
-        this.formData.append('ImageData', file);
-        this.registrationData.imageData = file;
-        // Validate file size and format if needed
-      },
       async register() {
         try {
-          if (!this.formData) {
-            // Handle the case where no file is selected
+          if (!this.selectedCourse) {
+            // Handle the case where no course is selected
             return;
           }
-          Object.entries(this.registrationData).forEach(([key, value]) => {
-            this.formData.append(key, value);
-          });
-          await this.$axios.post('/api/Courses/Register', this.formData, {
-            headers: { 'Content-Type': 'multipart/form-data' },
-          }).then(response => {
-            console.log(response);
-            // Show success or error toast based on response
-            if (response.status === 200) {
-              this.$toasted.success('Registration successful!');
-              setTimeout(() => {
-                window.location = '/'; // Redirect after a delay
-              }, 3000);
-            } else {
-              this.$toasted.error('An unexpected error occurred. Please contact support.'); // Assuming a 'message' property in error response
-            }
-          })
+          this.registrationData.courseId = this.selectedCourse.value;
+
+          // Send registration data without FormData
+          await this.$axios.post('/api/Courses/Register', this.registrationData)
+            .then(response => {
+              console.log(response);
+              // Show success or error toast based on response
+              if (response.status === 200) {
+                this.$toasted.success('Registration successful!');
+                setTimeout(() => {
+                  window.location = '/'; // Redirect after a delay
+                }, 3000);
+              } else {
+                this.$toasted.error('An unexpected error occurred. Please contact support.'); // Assuming a 'message' property in error response
+              }
+            })
             .catch(error => {
               // Handle generic errors
               this.$toasted.error('An error occurred during registration. Please try again.');
@@ -131,5 +119,27 @@
 
 
 
+
 <style scoped>
+  .custom-dropdown {
+    box-sizing: border-box !important;
+    font-family: inherit !important;
+    position: relative !important;
+  }
+
+  .vs--searchable .vs__dropdown-toggle {
+    cursor: text !important;
+  }
+
+  .vs__dropdown-toggle {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    background: var(--vs-search-input-bg);
+    border: var(--vs-border-width) var(--vs-border-style) var(--vs-border-color);
+    border-radius: 3px !important;
+    display: flex !important;
+    padding: 0 0 4px !important;
+    white-space: normal !important;
+  }
 </style>

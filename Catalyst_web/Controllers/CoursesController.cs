@@ -35,14 +35,6 @@ namespace Catalyst_web.Controllers
             return Ok(await _dbContext.Courses.ToListAsync());
         }
 
-        [HttpGet("api/Courses/GetWelcomeMessage")]
-        public IActionResult GetWelcomeMessage()
-        {
-            string welcomeMessage = _locService.Get("WelcomeMessage");
-
-            return Ok(new { message = welcomeMessage });
-
-        }
         [HttpGet("api/Translations")]
         public IActionResult GetTranslations(string languageCode)
         {
@@ -143,7 +135,7 @@ namespace Catalyst_web.Controllers
 
 
         [HttpPost("api/Courses/Register")]
-        public async Task<IActionResult> RegisterForCourse([FromForm] RegisterForCourse request)
+        public async Task<IActionResult> RegisterForCourse([FromBody] RegisterForCourse request)
         {
             if (!ModelState.IsValid)
             {

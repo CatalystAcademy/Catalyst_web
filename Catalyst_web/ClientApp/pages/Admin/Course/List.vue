@@ -16,8 +16,8 @@
         <tr v-for="course in courses" :key="course.id">
           <td>{{ course.title }}</td>
           <td>{{ course.description }}</td>
-          <td>{{ course.startDate }}</td>
-          <td>{{ course.endDate }}</td>
+          <td>{{ formatDate(course.startDate) }}</td>
+          <td>{{ formatDate(course.endDate) }}</td>
           <td>
             <router-link :to="`/admin/Course/edit/${course.id}`" class="btn btn-edit">Edit</router-link>
             <button class="btn btn-delete" @click="deleteCourse(course.id)">Delete</button>
@@ -37,6 +37,10 @@
   export default {
     name: 'IndexPage',
     methods: {
+      formatDate(date) {
+        // Use this.$moment to format the date
+        return this.$moment(date).format('MMMM D, YYYY');
+      },
       deleteCourse(courseId) {
         this.$axios.delete(`/api/Courses/${courseId}`)
           .then(() => {
