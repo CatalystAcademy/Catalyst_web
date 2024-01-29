@@ -113,6 +113,15 @@ export default {
         component: 'List'
       },
       {
+        path: '/admin/blogs/list',
+        component: 'list'
+      },
+
+      {
+        path: '/admin/blogs/create',
+        component: 'create'
+      },
+      {
         path: '/admin/News/List',
         component: 'List'
       },
@@ -134,6 +143,7 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '~/plugins/vue-toasted.js', mode: 'client' },
+    { src: '~/plugins/vue-modal-dialogs.js', mode: 'client' },
     '~/plugins/moment.js',
   ],
 

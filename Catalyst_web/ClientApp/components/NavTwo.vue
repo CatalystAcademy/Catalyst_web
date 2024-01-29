@@ -28,6 +28,9 @@
                                               <li>
                                                   <nuxt-link to="/admin/News/List">News</nuxt-link>
                                               </li>
+                                            <li>
+                                                  <nuxt-link to="/admin/blogs/list">Blogs</nuxt-link>
+                                              </li>
                                           </ul>
                                       </div><!-- /.navbar-collapse -->
               <div class="right-side-box">
