@@ -19,13 +19,11 @@ namespace Catalyst_web.Controllers
     public class CoursesController : ControllerBase
     {
         private readonly ApplicationDbContext _dbContext;
-        private readonly ILocService _locService;
         private readonly IConfiguration _configuration;
 
-        public CoursesController(ApplicationDbContext dbContext, ILocService locService, IConfiguration configuration)
+        public CoursesController(ApplicationDbContext dbContext, IConfiguration configuration)
         {
             _dbContext = dbContext;
-            _locService = locService;
             _configuration = configuration;
         }
 
@@ -33,13 +31,6 @@ namespace Catalyst_web.Controllers
         public async Task<IActionResult> GetAllCourses()
         {
             return Ok(await _dbContext.Courses.ToListAsync());
-        }
-
-        [HttpGet("api/Translations")]
-        public IActionResult GetTranslations(string languageCode)
-        {
-            var translations = _locService.GetAllTranslations(languageCode); 
-            return Ok(translations);
         }
 
         [HttpGet("api/CourseDetails/{id}")]
@@ -73,8 +64,10 @@ namespace Catalyst_web.Controllers
 
                 var createCourse = new Course
                 {
-                    Title = request.Title,
-                    Description = request.Description,
+                    TitleEng = request.TitleEng,
+                    TitleArm = request.TitleArm,
+                    DescriptionEng = request.DescriptionEng,
+                    DescriptionArm = request.DescriptionArm,
                     StartDate = request.StartDate,
                     EndDate = request.EndDate,
                     ImageData = request.ImageData,
@@ -100,11 +93,13 @@ namespace Catalyst_web.Controllers
                     return NotFound(); // Return not found if course doesn't exist
                 }
 
-                existingCourse.Title = editedCourse.Title;
-                existingCourse.Description = editedCourse.Description;
+                existingCourse.TitleEng = editedCourse.TitleEng;
+                existingCourse.TitleArm = editedCourse.TitleArm;
+                existingCourse.DescriptionEng = editedCourse.DescriptionEng;
+                existingCourse.DescriptionArm = editedCourse.DescriptionArm;
                 existingCourse.StartDate = editedCourse.StartDate;
                 existingCourse.EndDate = editedCourse.EndDate;
-                existingCourse.ImageData = editedCourse.ImageData;
+                // existingCourse.ImageData = editedCourse.ImageData;
 
                 _dbContext.Courses.Update(existingCourse);
                 await _dbContext.SaveChangesAsync();
@@ -165,9 +160,10 @@ namespace Catalyst_web.Controllers
                 Id = request.Id,
                 CourseId = request.CourseId,
                 Email = request.Email,
-                Name = request.Name,
+                FullName = request.FullName,
                 Message = request.Message,
                 PhoneNumber = request.PhoneNumber,
+                ParentPhoneNumber = request.ParentPhoneNumber,
                 //ImageData = imageData,
             };
             _dbContext.RegisterForCourses.Add(courseRegistration);
@@ -187,8 +183,8 @@ namespace Catalyst_web.Controllers
             var course = await _dbContext.Courses.FirstOrDefaultAsync(c => c.Id == request.CourseId);
 
             // Replace emailContent placeholders
-            var personalizedContent = emailContent.Replace("{{UserName}}", courseRegistration.Name)
-                                                 .Replace("{{CourseName}}", course?.Title);
+            var personalizedContent = emailContent.Replace("{{UserName}}", courseRegistration.FullName)
+                                                 .Replace("{{CourseName}}", course?.TitleEng);
 
             var sendGridApiKey = _configuration.GetValue<string>("SendGrid:sendgrid_api_key");
 

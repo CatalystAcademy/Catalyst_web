@@ -34,26 +34,53 @@
               <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="main-navigation">
                 <ul class=" navigation-box">
-                  <li class="current">
-                    <nuxt-link to="/">{{translations.HomePage}}</nuxt-link>
-                  </li>
+                  <!--                  <li class="current">
+                      <nuxt-link to="/">{{translations.HomePage}}</nuxt-link>
+                    </li>-->
                   <li>
                     <nuxt-link to="/about">About</nuxt-link>
-                  </li>
-                  <li>
-                    <nuxt-link to="/courses">Courses</nuxt-link>
-                  </li>
-                  <li>
-                    <nuxt-link to="/teachers">Teachers</nuxt-link>
                     <ul class="sub-menu">
-                      <li><nuxt-link to="/become-teacher">Become Teacher</nuxt-link></li>
-                    </ul><!-- /.sub-menu -->
+                      <li><nuxt-link to="/">Academy</nuxt-link></li>
+                      <li><nuxt-link to="/">Mission & Vision</nuxt-link></li>
+                      <li><nuxt-link to="/">Values</nuxt-link></li>
+                      <li><nuxt-link to="/">Leadership</nuxt-link></li>
+                      <li><nuxt-link to="/">Instractors</nuxt-link></li>
+                      <li><nuxt-link to="/">FAQ's</nuxt-link></li>
+                    </ul>
                   </li>
                   <li>
-                    <nuxt-link to="/news">News</nuxt-link>
+                    <nuxt-link to="/courses">Programs</nuxt-link>
+                    <ul class="sub-menu">
+                      <li><nuxt-link to="/">Curriculum</nuxt-link></li>
+                      <li><nuxt-link to="/courses">Courses</nuxt-link></li>
+                    </ul>
+                  </li>
+<!--                  <li>
+                    <nuxt-link to="/teachers">Instractors</nuxt-link>
+                    <ul class="sub-menu">
+                      <li><nuxt-link to="/become-teacher">Become Instractor</nuxt-link></li>
+                    </ul>
+                  </li>-->
+                  <li>
+                    <nuxt-link to="/">Alliance</nuxt-link>
                   </li>
                   <li>
-                    <nuxt-link to="/contact">Contact</nuxt-link>
+                    <nuxt-link to="/">News</nuxt-link>
+                    <ul class="sub-menu">
+                      <li><nuxt-link to="/news">News</nuxt-link></li>
+                      <li><nuxt-link to="/">Events</nuxt-link></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <nuxt-link to="/">Blogs</nuxt-link>
+                  </li>
+                  <li>
+                    <nuxt-link to="/contact">Apply</nuxt-link>
+                    <ul class="sub-menu">
+                      <li><nuxt-link to="/">Apply Now</nuxt-link></li>
+                      <li><nuxt-link to="/">On-site Visit</nuxt-link></li>
+                      <li><nuxt-link to="/">Contact Us</nuxt-link></li>
+                    </ul>
                   </li>
                   <li>
                     <!-- Language Dropdown -->
@@ -64,8 +91,8 @@
                               data-toggle="dropdown"
                               aria-haspopup="true"
                               aria-expanded="false">
-                      <i class="fas fa-globe language-icon"></i>
-                        {{selectedLanguage}}
+                        <i class="fas fa-globe language-icon"></i>
+                       
                         <i class="language-dropdown-button"></i>
                       </button>
                       <div class="dropdown-menu" aria-labelledby="languageDropdown">

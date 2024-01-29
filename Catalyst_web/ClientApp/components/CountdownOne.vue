@@ -27,12 +27,13 @@
               </h2><!-- /.become-teacher__form-title -->
             </div><!-- /.become-teacher__top -->
             <form @submit.prevent="register" action="/assets/inc/sendemail.php" class="become-teacher__form-content contact-form-validated">
-              <input v-model="registrationData.name" type="text" placeholder="Your Name" name="name">
+              <input v-model="registrationData.fullName" type="text" placeholder="Your full Name" name="fullName">
               <input v-model="registrationData.email" type="text" placeholder="Email Address" name="email">
 
               <vue-select v-model="selectedCourse" :options="courses" class="custom-dropdown" placeholder="Choose a course..." />
 
               <input v-model="registrationData.phoneNumber" type="text" placeholder="Phone Number" name="phone">
+              <input v-model="registrationData.parentPhoneNumber" type="text" placeholder="Parent Phone Number" name="parentPhoneNumber">
               <input v-model="registrationData.message" type="text" placeholder="Comment" name="message">
               <button type="submit" class="thm-btn become-teacher__form-btn">Apply For It</button>
             </form><!-- /.become-teacher__form-content -->
@@ -58,7 +59,7 @@
         selectedCourse: null,
         courses: [],
         error: false,
-        registrationData: { name: '', email: '', courseId: null, phoneNumber: '', message: '' },
+        registrationData: { fullName: '', email: '', courseId: null, phoneNumber: '', parentPhoneNumber: '', message: '' },
       };
     },
     computed: {
@@ -69,7 +70,7 @@
     async fetch() {
       try {
         const response = await this.$axios.get('/api/Courses');
-        this.courses = response.data.map(course => ({ label: course.title, value: course.id }));
+        this.courses = response.data.map(course => ({ label: course.titleEng, value: course.id }));
       } catch (error) {
         console.error('Error fetching courses or welcome message:', error);
         this.error = true;

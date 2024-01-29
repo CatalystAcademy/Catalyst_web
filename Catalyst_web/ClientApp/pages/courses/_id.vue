@@ -6,11 +6,12 @@
     <Footer />
   </div>
 </template>
+
 <script>
-  import PageHeader from "../components/PageHeader";
-  import NavOne from "../components/NavOne";
-  import Footer from "../components/Footer";
-  import CourseDetails from "../components/CourseDetails";
+  import PageHeader from "../../components/PageHeader";
+  import NavOne from "../../components/NavOne";
+  import Footer from "../../components/Footer";
+  import CourseDetails from "../../components/CourseDetails";
   export default {
     components: { CourseDetails, Footer, NavOne, PageHeader },
     async asyncData({ params }) {

@@ -64,8 +64,8 @@ export default {
         component: 'Courses'
       },
       {
-        path: '/courseDetails/:id',
-        component: () => import('./pages/CourseDetailsPage.vue'),
+        path: '/courses/:id',
+        // component: () => import('./pages/courses'),
       },
       {
         path: '/admin/Index',
@@ -77,17 +77,15 @@ export default {
       },
       {
         path: '/admin/Course/edit/:id',
-        name: 'EditCourse',
-        component: 'Edit'
+/*        name: 'EditCourse',
+        component: 'Edit'*/
       },
       {
         path: '/admin/Course/List',
-        name: 'adminList',
         component: 'List'
       },
       {
         path: '/admin/News/List',
-        name: 'adminList',
         component: 'List'
       },
       {

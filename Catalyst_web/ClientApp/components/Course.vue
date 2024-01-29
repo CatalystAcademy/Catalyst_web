@@ -32,8 +32,8 @@
                 <nuxt-link to="/course-details"><i class="far fa-folder-open"></i> 6 Lectures</nuxt-link>
                 <nuxt-link to="/course-details">$18</nuxt-link>
               </div><!-- /.course-one__meta -->
-              <nuxt-link :to="`courseDetails/${course.id}`" class="course-one__link">
-                {{ translations.String1 }}
+              <nuxt-link :to="`courses/${course.id}`" class="course-one__link">
+                new Preview
               </nuxt-link>
             </div><!-- /.course-one__content -->
           </div><!-- /.course-one__single -->

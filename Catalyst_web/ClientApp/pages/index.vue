@@ -4,10 +4,11 @@
     <BannerOne />
     <AboutTwo />
     <CourseOne />
+    <CourseTwo />
     <VideoTwo />
     <CountdownOne />
-    <CourseCategory />
-    <CallToActionThree />
+<!--    <CourseCategory />
+    <CallToActionThree />-->
     <Testimonial />
     <ClientsLogoTwo />
     <BlogCarousel />

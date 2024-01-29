@@ -5,15 +5,21 @@
     <table class="course-table">
       <thead>
         <tr>
-          <th>Title</th>
-          <th>Description</th>
+          <th>Title in Armenian</th>
+          <th>Title in English</th>
+          <th>Description in Armenian</th>
+          <th>Description in English</th>
+          <th>Created Date</th>
           <th>Actions</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="n in news" :key="n.id">
-          <td>{{ n.title }}</td>
-          <td>{{ n.description }}</td>
+          <td>{{ n.titleArm }}</td>
+          <td>{{ n.titleEng }}</td>
+          <td>{{ n.descriptionArm }}</td>
+          <td>{{ n.descriptionEng }}</td>
+          <td>{{ formatDate(n.created) }}</td>
           <td>
             <router-link :to="`/admin/News/edit/${n.id}`" class="btn btn-edit">Edit</router-link>
             <button class="btn btn-delete" @click="deleteNews(n.id)">Delete</button>
@@ -32,7 +38,11 @@
 
   export default {
     name: 'NewsList',
-     methods: {
+    methods: {
+      formatDate(date) {
+        // Use this.$moment to format the date
+        return this.$moment(date).format('MMMM D, YYYY');
+      },
      deleteNews(newsId) {
         this.$axios.delete(`/api/News/${newsId}`)
           .then(() => {

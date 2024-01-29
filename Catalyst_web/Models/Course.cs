@@ -7,8 +7,13 @@ namespace Catalyst_web.Models
     public class Course : BaseEntity
     {
         [Required]
-        public required string Title { get; set; }
-        public required string Description { get; set; }
+        public required string TitleEng { get; set; }
+        [Required]
+        public required string TitleArm { get; set; }
+        [Required]
+        public required string DescriptionEng { get; set; }
+        [Required]
+        public required string DescriptionArm { get; set; }
         public required DateTime StartDate { get; set; }
         public required DateTime EndDate { get; set; }
         public DateTime RegistrationDate { get; set; }

@@ -14,12 +14,10 @@ namespace Catalyst_web.Controllers
     public class NewsController : ControllerBase
     {
         private readonly ApplicationDbContext _dbContext;
-        private readonly ILocService _locService;
 
-        public NewsController(ApplicationDbContext dbContext, ILocService locService)
+        public NewsController(ApplicationDbContext dbContext)
         {
             _dbContext = dbContext;
-            _locService = locService;
         }
         [HttpGet("api/News")]
         public async Task<IActionResult> GetAllNews()
@@ -36,14 +34,62 @@ namespace Catalyst_web.Controllers
             }
             var createNews = new News
             {
-                Title = request.Title,
-                Description = request.Description,
+                TitleArm = request.TitleArm,
+                TitleEng = request.TitleEng,
+                DescriptionArm = request.DescriptionArm,
+                DescriptionEng = request.DescriptionEng,
                 ImageData = request.ImageData,
             };
             _dbContext.Newses.Add(createNews);
             await _dbContext.SaveChangesAsync();
 
             return Ok();
+        }
+
+        [HttpPut("api/News/Edit/{id}")]
+        public async Task<IActionResult> UpdateNews(Guid id, [FromBody] News editedNews)
+        {
+            // 1. Validate ID and model existence
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState); // Return bad request if model validation fails
+            }
+            var existingNews = await _dbContext.Newses.FindAsync(id);
+
+            if (existingNews == null)
+            {
+                return NotFound();
+            }
+
+            existingNews.TitleEng = editedNews.TitleEng;
+            existingNews.TitleArm = editedNews.TitleArm;
+            existingNews.DescriptionEng = editedNews.DescriptionEng;
+            existingNews.DescriptionArm = editedNews.DescriptionArm;
+
+            _dbContext.Newses.Update(existingNews);
+            await _dbContext.SaveChangesAsync();
+
+            return Ok(existingNews);
+        }
+
+        [HttpGet("api/NewsDetails/{id}")]
+        public async Task<IActionResult> GetNewsDetails(Guid id)
+        {
+            try
+            {
+                // Retrieve course data using the provided ID
+                var news = await _dbContext.Newses.FindAsync(id);
+                if (news == null)
+                {
+                    return NotFound();
+                }
+                return Ok(news); // Return course data in JSON format
+            }
+            catch (Exception ex)
+            {
+                // Handle errors gracefully
+                return StatusCode(500, "Error retrieving news details");
+            }
         }
 
         [HttpDelete("api/News/{id}")]

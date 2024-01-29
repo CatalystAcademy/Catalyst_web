@@ -2,7 +2,7 @@
   <section class="testimonials-one testimonials-one__home-three">
       <div class="container">
           <div class="block-title text-center">
-              <h2 class="block-title__title">What our students <br>
+              <h2 class="block-title__title">What our Catalysts <br>
                   have to say</h2><!-- /.block-title__title -->
           </div><!-- /.block-title -->
           <div class="testimonials-one__carousel owl-carousel owl-theme">

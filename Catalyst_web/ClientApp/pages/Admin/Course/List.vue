@@ -5,8 +5,10 @@
     <table class="course-table">
       <thead>
         <tr>
-          <th>Title</th>
-          <th>Description</th>
+          <th>Title in Armenian</th>
+          <th>Title in English</th>
+          <th>Description in Armenian</th>
+          <th>Description in English</th>
           <th>Start Date</th>
           <th>End Date</th>
           <th>Actions</th>
@@ -14,8 +16,10 @@
       </thead>
       <tbody>
         <tr v-for="course in courses" :key="course.id">
-          <td>{{ course.title }}</td>
-          <td>{{ course.description }}</td>
+          <td>{{ course.titleArm }}</td>
+          <td>{{ course.titleEng }}</td>
+          <td>{{ course.descriptionArm }}</td>
+          <td>{{ course.descriptionEng }}</td>
           <td>{{ formatDate(course.startDate) }}</td>
           <td>{{ formatDate(course.endDate) }}</td>
           <td>
