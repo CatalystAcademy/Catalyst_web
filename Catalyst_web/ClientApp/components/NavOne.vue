@@ -38,20 +38,20 @@
                       <nuxt-link to="/">{{translations.HomePage}}</nuxt-link>
                     </li>-->
                   <li>
-                    <nuxt-link to="/about">About</nuxt-link>
+                    <nuxt-link to="/">About</nuxt-link>
                     <ul class="sub-menu">
-                      <li><nuxt-link to="/">Academy</nuxt-link></li>
-                      <li><nuxt-link to="/">Mission & Vision</nuxt-link></li>
+                      <li><nuxt-link to="/about">Academy</nuxt-link></li>
+                      <li><nuxt-link to="/missionandvision">Mission & Vision</nuxt-link></li>
                       <li><nuxt-link to="/">Values</nuxt-link></li>
                       <li><nuxt-link to="/">Leadership</nuxt-link></li>
-                      <li><nuxt-link to="/">Instractors</nuxt-link></li>
-                      <li><nuxt-link to="/">FAQ's</nuxt-link></li>
+                      <li><nuxt-link to="/teachers">Instractors</nuxt-link></li>
+                      <li><nuxt-link to="/faq">FAQ's</nuxt-link></li>
                     </ul>
                   </li>
                   <li>
-                    <nuxt-link to="/courses">Programs</nuxt-link>
+                    <nuxt-link to="/">Programs</nuxt-link>
                     <ul class="sub-menu">
-                      <li><nuxt-link to="/">Curriculum</nuxt-link></li>
+                      <li><nuxt-link to="/curriculums">Curriculum</nuxt-link></li>
                       <li><nuxt-link to="/courses">Courses</nuxt-link></li>
                     </ul>
                   </li>
@@ -72,14 +72,14 @@
                     </ul>
                   </li>
                   <li>
-                    <nuxt-link to="/">Blogs</nuxt-link>
+                    <nuxt-link to="/blogs">Blogs</nuxt-link>
                   </li>
                   <li>
-                    <nuxt-link to="/contact">Apply</nuxt-link>
+                    <nuxt-link to="/">Apply</nuxt-link>
                     <ul class="sub-menu">
                       <li><nuxt-link to="/">Apply Now</nuxt-link></li>
                       <li><nuxt-link to="/">On-site Visit</nuxt-link></li>
-                      <li><nuxt-link to="/">Contact Us</nuxt-link></li>
+                      <li><nuxt-link to="/contact">Contact Us</nuxt-link></li>
                     </ul>
                   </li>
                   <li>

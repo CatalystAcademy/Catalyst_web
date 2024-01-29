@@ -59,7 +59,7 @@
   import https from 'https';
 
   export default {
-    name: 'Course',
+    name: 'Curriculum',
     data() {
       return {
         courses: [],
@@ -96,5 +96,4 @@
 
 
 <style scoped>
-
 </style>

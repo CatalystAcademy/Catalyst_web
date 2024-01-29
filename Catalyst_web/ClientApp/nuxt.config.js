@@ -57,11 +57,35 @@ export default {
       },
       {
         path: '/about',
-        component: 'About'
+        component: 'about'
+      },
+      {
+        path: '/missionandvision',
+        component: 'missionandvision'
       },
       {
         path: '/courses',
         component: 'Courses'
+      },
+      {
+        path: '/contact',
+        component: 'contact'
+      },
+      {
+        path: '/faq',
+        component: 'faq'
+      },
+      {
+        path: '/curriculums',
+        component: 'curriculums'
+      },
+      {
+        path: '/teachers',
+        component: 'teachers'
+      },
+      {
+        path: '/blogs',
+        component: 'blogs'
       },
       {
         path: '/courses/:id',
@@ -79,6 +103,10 @@ export default {
         path: '/admin/Course/edit/:id',
 /*        name: 'EditCourse',
         component: 'Edit'*/
+      },
+      {
+        path: '/news/:id',
+        // component: () => import('./pages/news'),
       },
       {
         path: '/admin/Course/List',
