@@ -1,0 +1,50 @@
+<template>
+  <div>
+    <form @submit.prevent="create" action="/assets/inc/sendemail.php" >
+      <input v-model="createData.titleArm" type="text" placeholder="Title in Armenian" name="titleArm">
+      <input v-model="createData.titleEng" type="text" placeholder="Title in English" name="titleEng">
+      <input v-model="createData.descriptionArm" type="text" placeholder="Description in Armenian" name="descriptionArm">
+      <input v-model="createData.descriptionEng" type="text" placeholder="Description in English" name="descriptionEng">
+      <input v-model="createData.startDate" type="date" name="startDate">
+      <input v-model="createData.endDate" type="date" name="endDate">
+      <button type="submit" class="thm-btn become-teacher__form-btn">Submit</button>
+    </form><!-- /.become-teacher__form-content -->
+  </div>
+
+</template>
+
+<script>
+  import https from 'https';
+  export default {
+    name: 'CreateCurriculum',
+    setup() {
+      return {
+        createData: { titleArm: '', titleEng: '', descriptionArm: '', descriptionEng: '', startDate: '', endDate: '' },
+      };
+    },
+    methods: {
+      async create() {
+        try {
+          await this.$axios.post('/api/Curriculums/Create', this.createData)
+          // Show success message
+            .then(function (response) {
+              if (response) {
+                window.location = "/admin/curriculum/list"
+              }
+            })
+            .catch(function (error) {
+              
+            })
+        } catch (error) {
+          // Handle error and display message
+        }
+      },
+    },
+    created() {
+      // Optional: Set up HTTPS agent for self-signed certificates (if needed)
+      if (process.env.NODE_ENV === 'development') {
+        this.$axios.defaults.httpsAgent = new https.Agent({ rejectUnauthorized: false });
+      }
+    },
+  }
+</script>

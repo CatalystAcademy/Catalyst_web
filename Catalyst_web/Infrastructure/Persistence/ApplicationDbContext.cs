@@ -14,10 +14,12 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
     }
 
     public DbSet<Course> Courses { get; set; }
+    public DbSet<Curriculum> Curriculums { get; set; }
     public DbSet<News> Newses { get; set; }
     public DbSet<Blog> Blogs { get; set; }
     public DbSet<BecomeTeacher> BecomeTeachers { get; set; }
     public DbSet<RegisterForCourse> RegisterForCourses { get; set; }
+    public DbSet<RegisterForCurriculum> RegisterForCurriculums { get; set; }
 
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new())
     {
