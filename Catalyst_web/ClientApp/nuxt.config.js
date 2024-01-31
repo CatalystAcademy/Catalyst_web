@@ -35,6 +35,7 @@ export default {
       { rel: "stylesheet", href: "/assets/css/responsive.css" }
     ],
     script: [
+      { src: "https://cdn.froala.com/js/froala_editor.pkgd.min.js" },
       { src: "/assets/js/jquery.min.js", body: true },
       { src: "/assets/js/bootstrap.bundle.min.js", body: true },
       { src: "/assets/js/waypoints.min.js", body: true },
@@ -65,7 +66,7 @@ export default {
       },
       {
         path: '/courses',
-        component: 'Courses'
+        component: 'courses'
       },
       {
         path: '/contact',
@@ -90,6 +91,9 @@ export default {
       {
         path: '/courses/:id',
         // component: () => import('./pages/courses'),
+      },
+      {
+        path: '/curriculums/:id',
       },
       {
         path: '/admin/Index',
@@ -144,6 +148,8 @@ export default {
   plugins: [
     { src: '~/plugins/vue-toasted.js', mode: 'client' },
     { src: '~/plugins/vue-modal-dialogs.js', mode: 'client' },
+    { src: '~/plugins/vue-datepicker', ssr: false },
+    { src: '~plugins/froala.js' },
     '~/plugins/moment.js',
   ],
 

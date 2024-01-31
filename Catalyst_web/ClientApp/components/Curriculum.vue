@@ -1,8 +1,8 @@
 <template>
   <section class="course-one course-page">
     <div class="container">
-      <div class="row" v-if="courses.length">
-        <div class="col-lg-4" v-for="course in courses" :key="course.id">
+      <div class="row" v-if="curriculums.length">
+        <div class="col-lg-4" v-for="curriculum in curriculums" :key="curriculum.id">
           <div class="course-one__single">
             <div class="course-one__image">
               <img src="/assets/images/course-1-1.jpg" alt="">
@@ -15,9 +15,9 @@
                 by <nuxt-link to="/teacher-details">Lou Guerrero</nuxt-link>
               </div><!-- /.course-one__admin -->
               <h2 class="course-one__title">
-                <nuxt-link :to="`courses/${course.id}`">
-                {{ language === 'en-US' ? course.titleEng : course.titleArm }}
-              </nuxt-link>
+                <nuxt-link :to="`curriculums/${curriculum.id}`">
+                  {{ curriculum.titleEng }}
+                </nuxt-link>
               </h2>
               <!-- /.course-one__title -->
               <div class="course-one__stars">
@@ -36,7 +36,7 @@
                 <nuxt-link to="/course-details"><i class="far fa-folder-open"></i> 6 Lectures</nuxt-link>
                 <nuxt-link to="/course-details">$18</nuxt-link>
               </div><!-- /.course-one__meta -->
-              <nuxt-link :to="`courses/${course.id}`" class="course-one__link">
+              <nuxt-link :to="`curriculums/${curriculum.id}`" class="course-one__link">
                 See Preview
               </nuxt-link>
             </div><!-- /.course-one__content -->
@@ -64,11 +64,10 @@
   import { mapState } from 'vuex';
 
   export default {
-    name: 'Course',
+    name: 'Curriculum',
     data() {
       return {
-        courses: [],
-        loading: true,
+        curriculums: [],
         error: false,
       };
     },
@@ -80,14 +79,12 @@
     },
     async fetch() { // Use fetch for component-level data fetching
       try {
-        const response = await this.$axios.get('/api/Courses');
-        this.courses = response.data;
+        const response = await this.$axios.get('/api/Curriculums');
+        this.curriculums = response.data;
 
-        this.loading = false;
       } catch (error) {
-        console.error('Error fetching courses:', error);
+        console.error('Error fetching curriculums:', error);
         this.error = true;
-        this.loading = false;
       }
     },
     async created() {
@@ -102,5 +99,4 @@
 
 
 <style scoped>
-
 </style>

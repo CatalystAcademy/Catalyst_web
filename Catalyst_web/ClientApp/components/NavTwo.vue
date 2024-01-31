@@ -24,6 +24,8 @@
                                               </li>
                                               <li>
                                                   <nuxt-link to="/admin/Course/List">Courses</nuxt-link>
+                                              </li>                                              <li>
+                                                  <nuxt-link to="/admin/curriculum/list">Curriculums</nuxt-link>
                                               </li>
                                               <li>
                                                   <nuxt-link to="/admin/News/List">News</nuxt-link>

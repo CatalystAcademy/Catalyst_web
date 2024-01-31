@@ -11,7 +11,7 @@
 
             <div class="course-details__top">
               <div class="course-details__top-left">
-                <h2 class="course-details__title">{{course.titleEng}}</h2>
+                <h2 class="course-details__title">{{curriculum.titleEng}}</h2>
                 <!-- /.course-details__title -->
                 <div class="course-one__stars">
                   <span class="course-one__stars-wrap">
@@ -429,14 +429,22 @@
           <div class="become-teacher__form">
             <div class="become-teacher__form-top">
               <h2 class="become-teacher__form-title">
-                Register for the course
+                Register for the Curriculum
               </h2><!-- /.become-teacher__form-title -->
             </div><!-- /.become-teacher__top -->
             <form @submit.prevent="register" action="/assets/inc/sendemail.php" class="become-teacher__form-content contact-form-validated">
               <input v-model="registrationData.fullName" type="text" placeholder="Your full Name" name="fullName">
               <input v-model="registrationData.email" type="text" placeholder="Email Address" name="email">
               <input v-model="registrationData.phoneNumber" type="text" placeholder="Phone Number" name="phone">
+              <client-only><date-picker placeholder="Your date of birth MM/DD/YYYY" format="MM/dd/yyyy" v-model="registrationData.DateOfBirth" /></client-only>
+<!--              <input type="date" v-model="registrationData.DateOfBirth" />
+-->
+              <input v-model="registrationData.Address" type="text" placeholder="Address" name="Address">
+              <input v-model="registrationData.EducationalInstitution" type="text" placeholder="EducationalInstitution" name="EducationalInstitution">
               <input v-model="registrationData.parentPhoneNumber" type="text" placeholder="Parent Phone Number" name="parentPhoneNumber">
+              <input v-model="registrationData.ParentEmail" type="text" placeholder="Parent Email" name="ParentEmail">
+              <input v-model="registrationData.ParentFullName" type="text" placeholder="Parent FullName" name="ParentFullName">
+              <input v-model="registrationData.ParentProfession" type="text" placeholder="Parent Profession" name="ParentProfession">
               <input v-model="registrationData.message" type="text" placeholder="Comment" name="message">
               <button type="submit" class="thm-btn become-teacher__form-btn">Apply For It</button>
             </form><!-- /.become-teacher__form-content -->
@@ -445,16 +453,18 @@
         </div>
       </div>
 
-        </div><!-- /.container -->
-</section>
+    </div><!-- /.container -->
+  </section>
 
 
 
 </template>
 
 <script>
+  import moment from 'moment';
+
   export default {
-    name: "CourseDetails",
+    name: "CurriculumDetails",
     methods: {
       scrollToTarget() {
         const targetElement = document.getElementById('register-section');
@@ -462,17 +472,23 @@
       },
       async register() {
         try {
-          this.registrationData.courseId = this.courseId;
+          console.log('Selected Date:', this.DateOfBirth);
+          this.registrationData.curriculumId = this.curriculumId;
+          const parsedDate = new Date(this.DateOfBirth);
+          this.registrationData.DateOfBirth = parsedDate.toISOString().slice(0, 10);
+          var correcr = new Date(this.DateOfBirth).toISOString();
+
           // Send registration data without FormData
-          await this.$axios.post('/api/Courses/Register', this.registrationData)
+          await this.$axios.post('/api/Curriculums/Register', this.registrationData)
             .then(response => {
               console.log(response);
+              console.log(correcr);
               // Show success or error toast based on response
               if (response.status === 200) {
                 this.$toasted.success('Registration successful!');
-                setTimeout(() => {
-                  window.location = `/courses/${this.courseId}`; // Redirect after a delay
-                }, 3000);
+/*                setTimeout(() => {
+                  window.location = `/curriculums/${this.curriculumId}`; // Redirect after a delay
+                }, 3000);*/
               } else {
                 this.$toasted.error('An unexpected error occurred. Please contact support.'); // Assuming a 'message' property in error response
               }
@@ -480,25 +496,26 @@
             .catch(error => {
               // Handle generic errors
               this.$toasted.error('An error occurred during registration. Please try again.');
+              console.log(parsedDate);
             });
         } catch (error) {
         }
       },
     },
     async fetch() {
-      //const courseId = this.$route.params.id; // Get course ID from route parameters
       try {
-        const response = await this.$axios.get(`/api/CourseDetails/${this.courseId}`); // Fetch data based on ID
-        this.course = response.data;
+        const response = await this.$axios.get(`/api/CurriculumDetails/${this.curriculumId}`); // Fetch data based on ID
+        this.curriculum = response.data;
       } catch (error) {
         // Handle errors
       }
     },
     data() {
       return {
-        course: {},
-        courseId: this.$route.params.id,
-        registrationData: { fullName: '', email: '', courseId: null, phoneNumber: '', parentPhoneNumber: '', message: '' },
+        DateOfBirth: null,
+        curriculum: {},
+        curriculumId: this.$route.params.id,
+        registrationData: { fullName: '', email: '', curriculumId: null, phoneNumber: '', DateOfBirth: '', parentPhoneNumber: '', address: '', educationalInstitution: '', parentEmail: '', parentFullName: '', parentProfession: '', message: '' },
       };
     },
   };

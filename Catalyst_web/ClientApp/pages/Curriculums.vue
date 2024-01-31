@@ -1,8 +1,8 @@
 <template>
   <div>
     <NavOne />
-    <PageHeader title="Courses" />
-    <Course />
+    <PageHeader title="Curriculums" />
+    <Curriculum />
     <Footer />
   </div>
 </template>
@@ -10,12 +10,12 @@
   import PageHeader from "../components/PageHeader";
   import NavOne from "../components/NavOne";
   import Footer from "../components/Footer";
-  import Course from "../components/Course";
+  import Curriculum from "../components/Curriculum";
   export default {
-    components: {Course, Footer, NavOne, PageHeader},
+    components: { Curriculum, Footer, NavOne, PageHeader},
     head(){
       return {
-        title: "CA | Courses"
+        title: "CA | Curriculums"
       }
     }
   }

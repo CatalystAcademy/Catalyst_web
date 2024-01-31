@@ -51,7 +51,7 @@
                   <li>
                     <nuxt-link to="/">Programs</nuxt-link>
                     <ul class="sub-menu">
-                      <li><nuxt-link to="/curriculums">Curriculum</nuxt-link></li>
+                      <li><nuxt-link to="/curriculums">Curriculums</nuxt-link></li>
                       <li><nuxt-link to="/courses">Courses</nuxt-link></li>
                     </ul>
                   </li>

@@ -145,6 +145,12 @@ namespace Catalyst_web.Controllers
                 Message = request.Message,
                 PhoneNumber = request.PhoneNumber,
                 ParentPhoneNumber = request.ParentPhoneNumber,
+                Address = request.Address,
+                EducationalInstitution = request.EducationalInstitution,
+                ParentEmail = request.ParentEmail,
+                ParentFullName = request.ParentFullName,
+                ParentProfession = request.ParentProfession,
+                DateOfBirth = request.DateOfBirth
             };
             _dbContext.RegisterForCurriculums.Add(curriculumRegistration);
             await _dbContext.SaveChangesAsync();
