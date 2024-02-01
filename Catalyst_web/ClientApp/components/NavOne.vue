@@ -23,6 +23,7 @@
                 <div class="header__social">
                   <a href="#"><i class="fab fa-facebook-square"></i></a>
                   <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-linkedin"></i></a>
                 </div><!-- /.header__social -->
                 <button class="menu-toggler" data-target=".main-navigation">
                   <span class="kipso-icon-menu"></span>
@@ -42,7 +43,7 @@
                     <ul class="sub-menu">
                       <li><nuxt-link to="/about">Academy</nuxt-link></li>
                       <li><nuxt-link to="/missionandvision">Mission & Vision</nuxt-link></li>
-                      <li><nuxt-link to="/">Values</nuxt-link></li>
+                      <li><nuxt-link to="/values">Values</nuxt-link></li>
                       <li><nuxt-link to="/">Leadership</nuxt-link></li>
                       <li><nuxt-link to="/teachers">Instractors</nuxt-link></li>
                       <li><nuxt-link to="/faq">FAQ's</nuxt-link></li>

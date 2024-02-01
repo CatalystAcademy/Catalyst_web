@@ -436,9 +436,18 @@
               <input v-model="registrationData.fullName" type="text" placeholder="Your full Name" name="fullName">
               <input v-model="registrationData.email" type="text" placeholder="Email Address" name="email">
               <input v-model="registrationData.phoneNumber" type="text" placeholder="Phone Number" name="phone">
-              <client-only><date-picker placeholder="Your date of birth MM/DD/YYYY" format="MM/dd/yyyy" v-model="registrationData.DateOfBirth" /></client-only>
-<!--              <input type="date" v-model="registrationData.DateOfBirth" />
+<!--              <client-only><date-picker placeholder="Your date of birth MM/DD/YYYY" format="MM/dd/yyyy" v-model="registrationData.DateOfBirth" /></client-only>
 -->
+              <b-form-datepicker id="example-i18n-picker"
+                                 v-model="registrationData.DateOfBirth"
+                                 :show-decade-nav="showDecadeNav"
+                                 :hide-header="hideHeader"
+                                 class="mb-2"
+                                 placeholder="Choose a date"
+                                 menu-class="w-80"
+                                 calendar-width="100%">
+              </b-form-datepicker>
+
               <input v-model="registrationData.Address" type="text" placeholder="Address" name="Address">
               <input v-model="registrationData.EducationalInstitution" type="text" placeholder="EducationalInstitution" name="EducationalInstitution">
               <input v-model="registrationData.parentPhoneNumber" type="text" placeholder="Parent Phone Number" name="parentPhoneNumber">
@@ -472,17 +481,14 @@
       },
       async register() {
         try {
-          console.log('Selected Date:', this.DateOfBirth);
           this.registrationData.curriculumId = this.curriculumId;
-          const parsedDate = new Date(this.DateOfBirth);
+/*          const parsedDate = new Date(this.DateOfBirth);
           this.registrationData.DateOfBirth = parsedDate.toISOString().slice(0, 10);
-          var correcr = new Date(this.DateOfBirth).toISOString();
+          var correcr = new Date(this.DateOfBirth).toISOString();*/
 
           // Send registration data without FormData
           await this.$axios.post('/api/Curriculums/Register', this.registrationData)
             .then(response => {
-              console.log(response);
-              console.log(correcr);
               // Show success or error toast based on response
               if (response.status === 200) {
                 this.$toasted.success('Registration successful!');
@@ -512,6 +518,9 @@
     },
     data() {
       return {
+        value: '',
+        showDecadeNav: true,
+        hideHeader: true,
         DateOfBirth: null,
         curriculum: {},
         curriculumId: this.$route.params.id,
@@ -526,5 +535,22 @@
     padding-left: 0px !important;
     margin-top: 15px !important;
     position: relative;
+  }
+  .form-control {
+    background-color: #f1f1f1 !important;
+    height: auto !important;
+  }
+  .b-calendar-grid-body .no-gutters .col {
+    max-width: 14% !important;
+  }
+  .col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 14% !important;
+  }
+  .no-gutters > .col, .no-gutters > [class*=col-] {
+    padding-right: 0;
+    padding-left: 0;
+    max-width: 14% !important;
   }
 </style>

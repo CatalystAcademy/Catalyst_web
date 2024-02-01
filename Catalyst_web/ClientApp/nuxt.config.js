@@ -109,7 +109,9 @@ export default {
       },
       {
         path: '/news/:id',
-        // component: () => import('./pages/news'),
+      },
+      {
+        path: '/blogs/:id',
       },
       {
         path: '/admin/Course/List',
@@ -148,6 +150,7 @@ export default {
     { src: '~/plugins/vue-toasted.js', mode: 'client' },
     { src: '~/plugins/vue-modal-dialogs.js', mode: 'client' },
     { src: '~/plugins/vue-datepicker', ssr: false },
+    { src: '~plugins/bootstrap-vue.js', ssr: false },
     '~/plugins/moment.js',
   ],
 

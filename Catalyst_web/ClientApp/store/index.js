@@ -4,6 +4,7 @@ import https from 'https';
 export const state = () => ({
   language: 'en-US',
   translations: {},
+  isRequestInfoModalOpen: false,
 });
 
 export const mutations = {
@@ -12,6 +13,9 @@ export const mutations = {
   },
   setTranslations(state, translations) {
     state.translations = translations;
+  },
+  setRequestInfoModalState(state, isOpen) {
+    state.isRequestInfoModalOpen = isOpen;
   },
 };
 
@@ -26,6 +30,13 @@ export const actions = {
     } catch (error) {
       console.error('Error fetching translations:', error);
     }
+  },
+  openRequestInfoModal({ commit }) {
+    commit('openRequestInfoModal');
+  },
+
+  closeRequestInfoModal({ commit }) {
+    commit('closeRequestInfoModal');
   },
 };
 

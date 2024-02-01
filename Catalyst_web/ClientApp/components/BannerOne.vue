@@ -13,7 +13,7 @@
                           <h3 class="banner-one__title banner-one__light-color">We Can <br>
                               Teach You</h3><!-- /.banner-one__title -->
                           <p class="banner-one__tag-line">are you ready to learn?</p><!-- /.banner-one__tag-line -->
-                          <a href="#" class="thm-btn banner-one__btn">Learn More</a>
+                          <nuxt-link to="/curriculums" class="thm-btn banner-one__btn">Learn More</nuxt-link>
                       </div><!-- /.col-xl-12 -->
                   </div><!-- /.row -->
               </div><!-- /.container -->
@@ -30,7 +30,7 @@
                           <h3 class="banner-one__title banner-one__light-color">We Can <br>
                               Teach You</h3><!-- /.banner-one__title -->
                           <p class="banner-one__tag-line">are you ready to learn?</p><!-- /.banner-one__tag-line -->
-                          <a href="#" class="thm-btn banner-one__btn">Learn More</a>
+                          <nuxt-link to="/curriculums" class="thm-btn banner-one__btn">Learn More</nuxt-link>
                       </div><!-- /.col-xl-12 -->
                   </div><!-- /.row -->
               </div><!-- /.container -->
@@ -46,8 +46,8 @@
               <!-- /.kipso-icon-knowledge -->
           </div><!-- /.banner-one__cta-icon -->
           <div class="banner-one__cta-title">
-              <h3 class="banner-one__cta-text"><a href="#">Read how we encourage our
-                      students to learn</a></h3><!-- /.banner-one__cta-text -->
+              <h3 class="banner-one__cta-text"><nuxt-link to="/values">Read how we encourage our
+                      students to learn</nuxt-link></h3><!-- /.banner-one__cta-text -->
           </div><!-- /.banner-one__cta-title -->
           <div class="banner-one__cta-link">
               <a href="#"><i class="kipso-icon-right-arrow"></i><!-- /.kipso-icon-right-arrow --></a>

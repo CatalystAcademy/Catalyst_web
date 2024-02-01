@@ -1,13 +1,45 @@
 <template>
   <div>
     <form @submit.prevent="submitForm" :action="`/api/Courses/Edit/${courseId}`">
-      <input v-model="createData.titleArm" type="text" placeholder="Title in Armenian" name="titleArm">
-      <input v-model="createData.titleEng" type="text" placeholder="Title in English" name="titleEng">
-      <input v-model="createData.descriptionArm" type="text" placeholder="Description in Armenian" name="descriptionArm">
-      <input v-model="createData.descriptionEng" type="text" placeholder="Description in English" name="descriptionEng">
-      <input v-model="createData.startDate" type="date" name="startDate">
-      <input v-model="createData.endDate" type="date" name="endDate">
-      <button type="submit" class="thm-btn become-teacher__form-btn">Submit</button>
+      <div class="form-group container">
+        <div class="row">
+          <div class="col">
+            <label for="titleArm">Title in Armenian</label>
+            <input v-model="createData.titleArm" type="text" id="titleArm" placeholder="Title in Armenian" name="titleArm">
+          </div>
+
+          <div class="col">
+            <label for="titleEng">Title in English</label>
+            <input v-model="createData.titleEng" type="text" id="titleEng" placeholder="Title in English" name="titleEng">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label for="descriptionArm">Description in Armenian</label>
+            <textarea rows="4" cols="50" v-model="createData.descriptionArm" id="descriptionArm" placeholder="Description in Armenian" name="descriptionArm"></textarea>
+          </div>
+
+          <div class="col">
+            <label for="descriptionEng">Description in English</label>
+            <textarea rows="4" cols="50" v-model="createData.descriptionEng" id="descriptionEng" placeholder="Description in English" name="descriptionEng"></textarea>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label for="startDate">Start Date</label>
+            <input v-model="createData.startDate" type="date" id="startDate" name="startDate">
+          </div>
+
+          <div class="col">
+            <label for="endDate">End Date</label>
+            <input v-model="createData.endDate" type="date" id="endDate" name="endDate">
+          </div>
+        </div>
+
+        <button type="submit" class="thm-btn become-teacher__form-btn">Submit</button>
+      </div>
     </form>
   </div>
 </template>

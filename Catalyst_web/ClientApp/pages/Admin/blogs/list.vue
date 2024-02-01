@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container mt-5">
     <h2 class="course-list-header">List of Blogs</h2> <router-link to="/admin/Index" class="btn btn-edit">Back to Index</router-link>
     <router-link to="/admin/blogs/create" class="btn btn-create">Create Blog</router-link>
     <table class="course-table">
@@ -16,8 +16,8 @@
         <tr v-for="blog in blogs" :key="blog.id">
           <td>{{ blog.titleArm }}</td>
           <td>{{ blog.titleEng }}</td>
-          <td>{{ blog.descriptionArm }}</td>
-          <td>{{ blog.descriptionEng }}</td>
+          <td>{{ blog.descriptionArm.slice(0, 100) }}</td>
+          <td>{{ blog.descriptionEng.slice(0, 100) }}</td>
           <td>
             <router-link :to="`/admin/blogs/edit/${blog.id}`" class="btn btn-edit">Edit</router-link>
             <button class="btn btn-delete" @click="deleteBlog(blog.id)">Delete</button>

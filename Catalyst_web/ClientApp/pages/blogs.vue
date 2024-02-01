@@ -3,7 +3,6 @@
     <NavOne />
     <PageHeader title="Blogs" />
     <BlogHome />
-    <BlogCarousel />
     <Footer />
   </div>
 </template>
@@ -11,9 +10,8 @@
   import NavOne from "../components/NavOne";
   import Footer from "../components/Footer";
   import BlogHome from "../components/BlogHome";
-  import BlogCarousel from "../components/BlogCarousel";
   export default {
-    components: { Footer, NavOne, PageHeader, BlogHome, BlogCarousel },
+    components: { Footer, NavOne, PageHeader, BlogHome },
     head(){
       return {
         title: "CA | Blogs"
