@@ -36,8 +36,8 @@
               </div><!-- /.contact-info-one__icon -->
               <h2 class="contact-info-one__title">Contact Info</h2><!-- /.contact-info-one__title -->
               <p class="contact-info-one__text">
-                needhelp@kipso.com <br>
-                444 888 0000 <br> &nbsp;
+                {{translations.CatalystEmail}} <br>
+                {{translations.CatalystPhone}} <br> &nbsp;
               </p><!-- /.contact-info-one__text -->
             </div><!-- /.contact-info-one__single -->
           </div><!-- /.col-lg-4 -->
@@ -50,16 +50,16 @@
           Get in touch <br>
           with us
         </h2><!-- /.contact-one__title -->
-        <form action="/assets/inc/sendemail.php" class="contact-one__form contact-form-validated" novalidate="novalidate">
+        <form @submit.prevent="contact" action="/assets/inc/sendemail.php" class="contact-one__form contact-form-validated" novalidate="novalidate">
           <div class="row low-gutters">
             <div class="col-lg-6">
-              <input type="text" name="name" placeholder="Your Name">
+              <input v-model="registrationData.fullName" type="text" name="fullName" placeholder="Your Name">
             </div><!-- /.col-lg-6 -->
             <div class="col-lg-6">
-              <input type="text" placeholder="Email Address" name="email">
+              <input v-model="registrationData.email"  type="text" placeholder="Email Address" name="email">
             </div><!-- /.col-lg-6 -->
             <div class="col-lg-12">
-              <textarea placeholder="Write Message" name="message"></textarea>
+              <textarea v-model="registrationData.message" placeholder="Write Message" name="message"></textarea>
               <div class="text-center">
                 <button type="submit" class="contact-one__btn thm-btn">Submit Comment</button>
               </div><!-- /.text-center -->
@@ -75,9 +75,48 @@
 </template>
 
 <script>
-    export default {
-        name: "Contact"
-    }
+  import https from 'https';
+
+  export default {
+    name: 'Contact',
+    methods: {
+      async contact() {
+        try {
+          await this.$axios.post('/api/Contact/Submit', this.registrationData)
+            .then(response => {
+              console.log(response);
+              // Show success or error toast based on response
+              if (response.status === 200) {
+                this.$toasted.success('Registration successful!');
+                setTimeout(() => {
+                  window.location = '/contact'; 
+                }, 3000);
+              } else {
+                this.$toasted.error('An unexpected error occurred. Please contact support.'); // Assuming a 'message' property in error response
+              }
+            })
+            .catch(error => {
+              // Handle generic errors
+              this.$toasted.error('An error occurred during registration. Please try again.');
+            });
+        } catch (error) {
+        }
+    },
+    },
+    async created() {
+      await this.$store.dispatch('fetchTranslations');
+    },
+    computed: {
+      translations() {
+        return this.$store.state.translations;
+      },
+    },
+    data() {
+      return {
+        registrationData: { fullName: '', email: '', message: '' },
+      };
+    },
+  };
 </script>
 
 <style scoped>

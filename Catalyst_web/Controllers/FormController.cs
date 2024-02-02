@@ -3,8 +3,6 @@ using Catalyst_web.Models;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using SendGrid.Helpers.Mail;
-using SendGrid;
 
 namespace Catalyst_web.Controllers
 {
@@ -31,6 +29,21 @@ namespace Catalyst_web.Controllers
 
             // Send a response back to the client
             return Ok(new { success = true, message = "Form submitted successfully" });
+        }  
+        [HttpPost("api/Contact/Submit")]
+        public async Task<IActionResult> ContactForm([FromBody] Contact request)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var contact = new Contact { Email = request.Email,  FullName = request.FullName, Message = request.Message };
+
+            _dbContext.Contacts.Add(contact);
+            await _dbContext.SaveChangesAsync();
+
+            // Send a response back to the client
+            return Ok();
         }
 
         [HttpPost("api/BecomeTeacher/Register")]
