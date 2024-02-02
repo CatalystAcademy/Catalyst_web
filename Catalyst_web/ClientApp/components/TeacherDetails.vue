@@ -59,15 +59,14 @@
                               <img src="/assets/images/team-d-1.jpg" alt="">
                           </div><!-- /.team-one__image -->
                           <div class="team-one__content">
-                              <h2 class="team-one__name"><a href="team-details.html">Adelaide Hunter</a></h2>
+                              <h2 class="team-one__name"><a href="team-details.html">{{teacher.fullNameEng}}</a></h2>
                               <!-- /.team-one__name -->
                               <p class="team-one__designation">Teacher</p><!-- /.team-one__designation -->
 
                           </div><!-- /.team-one__content -->
                           <div class="team-one__social">
-                              <a href="#"><i class="fab fa-twitter"></i></a>
                               <a href="#"><i class="fab fa-facebook-square"></i></a>
-                              <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                              <a href="#"><i class="fab fa-linkedin"></i></a>
                               <a href="#"><i class="fab fa-instagram"></i></a>
                           </div><!-- /.team-one__social -->
                       </div><!-- /.team-one__single -->
@@ -197,7 +196,21 @@
 
 <script>
     export default {
-        name: "TeacherDetails"
+    name: "TeacherDetails",
+    async fetch() {
+      const teacherId = this.$route.params.id; // Get news ID from route parameters
+      try {
+        const response = await this.$axios.get(`/api/TeacherDetails/${teacherId}`);
+        this.teacher = response.data;
+      } catch (error) {
+        // Handle errors
+      }
+    },
+    data() {
+      return {
+        teacher: {},
+      };
+    },
     }
 </script>
 

@@ -5,6 +5,7 @@ namespace Catalyst_web.Models
 {
     public class BecomeTeacher : BaseEntity
     {
+        [Required]
         public required Guid CourseId { get; set; }
         [Required]
         public required string FullName { get; set; }

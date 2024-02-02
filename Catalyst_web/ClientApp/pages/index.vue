@@ -6,9 +6,9 @@
     <CourseOne />
     <CourseTwo />
     <VideoTwo />
-    <CountdownOne />
-<!--    <CourseCategory />
-    <CallToActionThree />-->
+    <!--    <CountdownOne />
+      <CourseCategory />
+      <CallToActionThree />-->
     <Testimonial />
     <ClientsLogoTwo />
     <BlogCarousel />
