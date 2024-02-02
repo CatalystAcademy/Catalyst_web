@@ -1,40 +1,36 @@
 <template>
-  <b-modal v-model="isModalOpen" title="Request Info" @hidden="closeModal">
-    <!-- Form inside the modal -->
-   <!-- <form @submit.prevent="submitRequest" class="custom-form">
-      <label for="phoneNumber">Phone Number:</label>
-      <input v-model="phoneNumber" type="text" id="phoneNumber" required class="custom-input">
-
-      <label for="email">Email:</label>
-      <input v-model="email" type="email" id="email" required class="custom-input">
-
-      <button type="submit" class="custom-button">Submit Request</button>
-    </form>-->
-
-    <form ref="form" @submit.stop.prevent="handleSubmit">
-      <b-form-group label="phone Number"
-                    label-for="phoneNumber-input"
-                    invalid-feedback="phone Number is required">
-        <b-form-input id="name-input"
-                      v-model="phoneNumber"
-                      required>
-        </b-form-input>
-      </b-form-group>
+  <client-only>
+    <b-modal v-model="isModalOpen" title="Request Info" @hidden="closeModal">
+      <form @submit.prevent="submitRequest" action="/assets/inc/sendemail.php">
+        <b-form-group label="Phone Number"
+                      label-for="phoneNumber-input"
+                      invalid-feedback="Phone Number is required">
+          <b-form-input id="phoneNumber-input"
+                        v-model="createData.phoneNumber"
+                        required>
+          </b-form-input>
+        </b-form-group>
         <b-form-group label="Email"
-                    label-for="email-input"
-                    invalid-feedback="Email is required"
-                    >
-        <b-form-input id="email-input"
-                      v-model="email"                      
-                      required>
-        </b-form-input>
-      </b-form-group>
-    </form>
-  </b-modal>
+                      label-for="email-input"
+                      invalid-feedback="Email is required">
+          <b-form-input id="email-input"
+                        v-model="createData.email"
+                        required>
+          </b-form-input>
+        </b-form-group>
+      </form>
+    </b-modal>
+  </client-only>
 </template>
 
-<script >
+<script>
+  import https from 'https';
   export default {
+    setup() {
+      return {
+        createData: { phoneNumber: '', email: '' },
+      };
+    },
     computed: {
       isModalOpen: {
         get() {
@@ -46,23 +42,32 @@
         },
       },
     },
-    data() {
-      return {
-        phoneNumber: '',
-        email: '',
-      };
-    },
     methods: {
-      submitRequest() {
-        // Make an HTTP request to send phone number and email
-        // Close the modal after successful submission
-        this.$store.dispatch('closeRequestInfoModal');
+      async submitRequest() {
+        try {
+          await this.$axios.post('/api/Form/Submit', this.createData).then(function (response) {
+            if (response) {
+              console.log(response);
+            }
+          })
+            .catch(function (error) {
+            })
+          this.$store.dispatch('closeRequestInfoModal');
+        } catch (error) {
+          console.error('Error submitting form:', error);
+        }
       },
       closeModal() {
         // Ensure the form is cleared when the modal is closed
         this.phoneNumber = '';
         this.email = '';
       },
+    },
+    created() {
+      // Optional: Set up HTTPS agent for self-signed certificates (if needed)
+      if (process.env.NODE_ENV === 'development') {
+        this.$axios.defaults.httpsAgent = new https.Agent({ rejectUnauthorized: false });
+      }
     },
   };
 </script>

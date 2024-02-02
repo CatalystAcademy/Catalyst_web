@@ -20,6 +20,7 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
     public DbSet<BecomeTeacher> BecomeTeachers { get; set; }
     public DbSet<RegisterForCourse> RegisterForCourses { get; set; }
     public DbSet<RegisterForCurriculum> RegisterForCurriculums { get; set; }
+    public DbSet<FormData> FormDatas { get; set; }
 
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new())
     {

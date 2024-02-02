@@ -12,5 +12,6 @@ public interface IApplicationDbContext
     DbSet<BecomeTeacher> BecomeTeachers { get; set; }
     DbSet<RegisterForCourse> RegisterForCourses { get; set; }
     DbSet<RegisterForCurriculum> RegisterForCurriculums { get; set; }
+    DbSet<FormData> FormDatas { get; set; }
     Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 }

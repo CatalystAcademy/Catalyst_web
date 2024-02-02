@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <h2 class="course-list-header">List of Courses</h2> <router-link to="/admin/Index" class="btn btn-edit">Back to Index</router-link>
     <router-link to="/admin/Course/Create" class="btn btn-create">Create Course</router-link>
     <table class="course-table">
@@ -18,8 +18,8 @@
         <tr v-for="course in courses" :key="course.id">
           <td>{{ course.titleArm }}</td>
           <td>{{ course.titleEng }}</td>
-          <td>{{ course.descriptionArm }}</td>
-          <td>{{ course.descriptionEng }}</td>
+          <td>{{ course.descriptionArm.slice(0, 100) }}</td>
+          <td>{{ course.descriptionEng.slice(0, 100) }}</td>
           <td>{{ formatDate(course.startDate) }}</td>
           <td>{{ formatDate(course.endDate) }}</td>
           <td>
