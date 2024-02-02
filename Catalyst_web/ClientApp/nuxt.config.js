@@ -95,6 +95,9 @@ export default {
         path: '/curriculums/:id',
       },
       {
+        path: '/teachers/:id',
+      },
+      {
         path: '/admin/Index',
         component: 'Index'
       },

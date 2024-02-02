@@ -99,17 +99,13 @@ namespace Catalyst_web.Controllers
             {
                 return BadRequest(ModelState);
             }
-
             var existingNews = await _dbContext.Newses.FindAsync(id);
-
             if (existingNews == null)
             {
                 return NotFound();
             }
-
             _dbContext.Newses.Remove(existingNews);
             await _dbContext.SaveChangesAsync();
-
             return Ok(); // Return successful response
         }
 

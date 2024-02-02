@@ -93,3 +93,36 @@
     },
   };
 </script>
+
+<style scoped>
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .col {
+    flex: 0 0 48%; /* Adjust the width as needed */
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  input,
+  textarea,
+  select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 5px;
+  }
+</style>

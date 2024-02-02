@@ -15,9 +15,8 @@
                           <!-- /.team-one__text -->
                       </div><!-- /.team-one__content -->
                       <div class="team-one__social">
-                          <a href="#"><i class="fab fa-twitter"></i></a>
                           <a href="#"><i class="fab fa-facebook-square"></i></a>
-                          <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                          <a href="#"><i class="fab fa-linkedin"></i></a>
                           <a href="#"><i class="fab fa-instagram"></i></a>
                       </div><!-- /.team-one__social -->
                   </div><!-- /.team-one__single -->
@@ -155,9 +154,8 @@
                           <!-- /.team-one__text -->
                       </div><!-- /.team-one__content -->
                       <div class="team-one__social">
-                          <a href="#"><i class="fab fa-twitter"></i></a>
                           <a href="#"><i class="fab fa-facebook-square"></i></a>
-                          <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                          <a href="#"><i class="fab fa-linkedin"></i></a>
                           <a href="#"><i class="fab fa-instagram"></i></a>
                       </div><!-- /.team-one__social -->
                   </div><!-- /.team-one__single -->
