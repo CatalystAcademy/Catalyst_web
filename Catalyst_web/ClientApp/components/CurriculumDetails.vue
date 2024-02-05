@@ -425,7 +425,7 @@
       </div><!-- /.row -->
 
       <div class="row" id="register-section">
-        <div class="col-lg-12">
+        <div class="col-lg-12 col-md-6">
           <div class="become-teacher__form">
             <div class="become-teacher__form-top">
               <h2 class="become-teacher__form-title">
@@ -433,30 +433,33 @@
               </h2><!-- /.become-teacher__form-title -->
             </div><!-- /.become-teacher__top -->
             <form @submit.prevent="register" action="/assets/inc/sendemail.php" class="become-teacher__form-content contact-form-validated">
-              <input v-model="registrationData.fullName" type="text" placeholder="Your full Name" name="fullName">
-              <input v-model="registrationData.email" type="text" placeholder="Email Address" name="email">
-              <input v-model="registrationData.phoneNumber" type="text" placeholder="Phone Number" name="phone">
+              <input v-model="registrationData.fullName" type="text" placeholder="Your full Name" name="fullName" required>
+              <input v-model="registrationData.email" type="email" placeholder="Email Address" name="email" required>
+              <input v-model="registrationData.phoneNumber" type="text" placeholder="Phone Number" name="phone" required>
 <!--              <client-only><date-picker placeholder="Your date of birth MM/DD/YYYY" format="MM/dd/yyyy" v-model="registrationData.DateOfBirth" /></client-only>
 -->
+            <client-only>
               <b-form-datepicker id="example-i18n-picker"
                                  v-model="registrationData.DateOfBirth"
                                  :show-decade-nav="showDecadeNav"
                                  :hide-header="hideHeader"
-                                 class="mb-2"
-                                 placeholder="Choose a date"
+                                 class="mb-2 d-flex align-items-baseline"
+                                 placeholder="Your Date of birth"
                                  menu-class="w-80"
-                                 calendar-width="100%">
+                                 calendar-width="100%"
+                                 required>
               </b-form-datepicker>
+            </client-only>
 
-              <input v-model="registrationData.Address" type="text" placeholder="Address" name="Address">
-              <input v-model="registrationData.EducationalInstitution" type="text" placeholder="EducationalInstitution" name="EducationalInstitution">
-              <input v-model="registrationData.parentPhoneNumber" type="text" placeholder="Parent Phone Number" name="parentPhoneNumber">
-              <input v-model="registrationData.ParentEmail" type="text" placeholder="Parent Email" name="ParentEmail">
-              <input v-model="registrationData.ParentFullName" type="text" placeholder="Parent FullName" name="ParentFullName">
-              <input v-model="registrationData.ParentProfession" type="text" placeholder="Parent Profession" name="ParentProfession">
-              <input v-model="registrationData.message" type="text" placeholder="Comment" name="message">
-              <button type="submit" class="thm-btn become-teacher__form-btn">Apply For It</button>
-            </form><!-- /.become-teacher__form-content -->
+    <input v-model="registrationData.Address" type="text" placeholder="Address" name="Address" required>
+    <input v-model="registrationData.EducationalInstitution" type="text" placeholder="EducationalInstitution" name="EducationalInstitution" required>
+    <input v-model="registrationData.parentPhoneNumber" type="text" placeholder="Parent Phone Number" name="parentPhoneNumber" required>
+    <input v-model="registrationData.ParentEmail" type="text" placeholder="Parent Email" name="ParentEmail" required>
+    <input v-model="registrationData.ParentFullName" type="text" placeholder="Parent FullName" name="ParentFullName" required>
+    <input v-model="registrationData.ParentProfession" type="text" placeholder="Parent Profession" name="ParentProfession" required>
+    <input v-model="registrationData.message" type="text" placeholder="Comment" name="message" required>
+    <button type="submit" class="thm-btn become-teacher__form-btn">Apply For It</button>
+</form><!-- /.become-teacher__form-content -->
             <div class="result text-center"></div><!-- /.result -->
           </div><!-- /.become-teacher__form -->
         </div>
@@ -482,9 +485,6 @@
       async register() {
         try {
           this.registrationData.curriculumId = this.curriculumId;
-/*          const parsedDate = new Date(this.DateOfBirth);
-          this.registrationData.DateOfBirth = parsedDate.toISOString().slice(0, 10);
-          var correcr = new Date(this.DateOfBirth).toISOString();*/
 
           // Send registration data without FormData
           await this.$axios.post('/api/Curriculums/Register', this.registrationData)
@@ -492,9 +492,9 @@
               // Show success or error toast based on response
               if (response.status === 200) {
                 this.$toasted.success('Registration successful!');
-/*                setTimeout(() => {
+                setTimeout(() => {
                   window.location = `/curriculums/${this.curriculumId}`; // Redirect after a delay
-                }, 3000);*/
+                }, 3000);
               } else {
                 this.$toasted.error('An unexpected error occurred. Please contact support.'); // Assuming a 'message' property in error response
               }
