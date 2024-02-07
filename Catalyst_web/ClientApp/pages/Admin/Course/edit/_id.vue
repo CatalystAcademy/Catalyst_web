@@ -16,6 +16,18 @@
 
         <div class="row">
           <div class="col">
+            <label for="instractorArm">Instractor Full Name in Armenian</label>
+            <input v-model="createData.instractorArm" type="text" placeholder="Instractor Full Name in Armenian" name="instractorArm">
+          </div>
+
+          <div class="col">
+            <label for="instractorEng">Title in English</label>
+            <input v-model="createData.instractorEng" type="text" placeholder="Instractor Full Name in English" name="instractorEng">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
             <label for="descriptionArm">Description in Armenian</label>
             <textarea rows="4" cols="50" v-model="createData.descriptionArm" type="text" placeholder="Description in Armenian" name="descriptionArm"> </textarea>
           </div>
@@ -70,7 +82,7 @@
         showDecadeNav: true,
         hideHeader: true,
         courseId: null,
-        createData: { titleArm: '', titleEng: '', descriptionArm: '', descriptionEng: '', startDate: '', endDate: '' },
+        createData: { titleArm: '', titleEng: '', instractorEng: '', instractorArm: '', descriptionArm: '', descriptionEng: '', startDate: '', endDate: '' },
       };
     },
     async created() {

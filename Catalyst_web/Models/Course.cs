@@ -9,6 +9,10 @@ namespace Catalyst_web.Models
         [Required]
         public required string TitleEng { get; set; }
         [Required]
+        public required string InstractorEng { get; set; }
+        [Required]
+        public required string InstractorArm { get; set; }
+        [Required]
         public required string TitleArm { get; set; }
         [Required]
         public required string DescriptionEng { get; set; }

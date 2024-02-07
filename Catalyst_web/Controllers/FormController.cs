@@ -30,6 +30,7 @@ namespace Catalyst_web.Controllers
             // Send a response back to the client
             return Ok(new { success = true, message = "Form submitted successfully" });
         }  
+        
         [HttpPost("api/Contact/Submit")]
         public async Task<IActionResult> ContactForm([FromBody] Contact request)
         {
@@ -40,6 +41,27 @@ namespace Catalyst_web.Controllers
             var contact = new Contact { Email = request.Email,  FullName = request.FullName, Message = request.Message };
 
             _dbContext.Contacts.Add(contact);
+            await _dbContext.SaveChangesAsync();
+
+            // Send a response back to the client
+            return Ok();
+        }
+
+        [HttpPost("api/Visit/Submit")]
+        public async Task<IActionResult> VisitForm([FromBody] Visit request)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var visit = new Visit { 
+                Email = request.Email,  
+                Name = request.Name, 
+                PhoneNumber = request.PhoneNumber ,
+                AppointmentDate = request.AppointmentDate,
+            };
+
+            _dbContext.Visits.Add(visit);
             await _dbContext.SaveChangesAsync();
 
             // Send a response back to the client

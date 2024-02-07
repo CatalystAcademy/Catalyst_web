@@ -7,6 +7,8 @@
         <tr>
           <th>Title in Armenian</th>
           <th>Title in English</th>
+          <th>Instractor Name in English</th>
+          <th>Instractor Name in English</th>
           <th>Description in Armenian</th>
           <th>Description in English</th>
           <th>Start Date</th>
@@ -18,6 +20,8 @@
         <tr v-for="course in courses" :key="course.id">
           <td>{{ course.titleArm }}</td>
           <td>{{ course.titleEng }}</td>
+          <td>{{ course.instractorEng }}</td>
+          <td>{{ course.instractorArm }}</td>
           <td>{{ course.descriptionArm.slice(0, 100) }}</td>
           <td>{{ course.descriptionEng.slice(0, 100) }}</td>
           <td>{{ formatDate(course.startDate) }}</td>

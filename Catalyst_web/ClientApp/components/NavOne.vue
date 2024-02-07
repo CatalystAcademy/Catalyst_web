@@ -79,7 +79,7 @@
                     <nuxt-link to="/">Apply</nuxt-link>
                     <ul class="sub-menu">
                       <li><nuxt-link to="/">Apply Now</nuxt-link></li>
-                      <li><nuxt-link to="/">On-site Visit</nuxt-link></li>
+                      <li><nuxt-link to="/onSiteVisit">On-site Visit</nuxt-link></li>
                       <li><nuxt-link to="/contact">Contact Us</nuxt-link></li>
                     </ul>
                   </li>

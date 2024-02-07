@@ -30,8 +30,6 @@
               <input v-model="registrationData.fullName" type="text" placeholder="Your full Name" name="fullName">
               <input v-model="registrationData.email" type="text" placeholder="Email Address" name="email">
 
-              <vue-select v-model="selectedCourse" :options="courses" class="custom-dropdown" placeholder="Choose a course..." />
-
               <input v-model="registrationData.phoneNumber" type="text" placeholder="Phone Number" name="phone">
               <input v-model="registrationData.parentPhoneNumber" type="text" placeholder="Parent Phone Number" name="parentPhoneNumber">
               <input v-model="registrationData.message" type="text" placeholder="Comment" name="message">
@@ -51,15 +49,12 @@
 
   export default {
     name: "CountdownOne",
-    components: {
-      VueSelect,
-    },
     data() {
       return {
         selectedCourse: null,
         courses: [],
         error: false,
-        registrationData: { fullName: '', email: '', courseId: null, phoneNumber: '', parentPhoneNumber: '', message: '' },
+        registrationData: { fullName: '', email: '', phoneNumber: '', parentPhoneNumber: '', message: '' },
       };
     },
     computed: {
@@ -122,25 +117,5 @@
 
 
 <style scoped>
-  .custom-dropdown {
-    box-sizing: border-box !important;
-    font-family: inherit !important;
-    position: relative !important;
-  }
 
-  .vs--searchable .vs__dropdown-toggle {
-    cursor: text !important;
-  }
-
-  .vs__dropdown-toggle {
-    -webkit-appearance: none !important;
-    -moz-appearance: none !important;
-    appearance: none !important;
-    background: var(--vs-search-input-bg);
-    border: var(--vs-border-width) var(--vs-border-style) var(--vs-border-color);
-    border-radius: 3px !important;
-    display: flex !important;
-    padding: 0 0 4px !important;
-    white-space: normal !important;
-  }
 </style>

@@ -17,6 +17,7 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
     public DbSet<Curriculum> Curriculums { get; set; }
     public DbSet<News> Newses { get; set; }
     public DbSet<Blog> Blogs { get; set; }
+    public DbSet<Visit> Visits { get; set; }
     public DbSet<Teacher> Teachers { get; set; }
     public DbSet<BecomeTeacher> BecomeTeachers { get; set; }
     public DbSet<RegisterForCourse> RegisterForCourses { get; set; }

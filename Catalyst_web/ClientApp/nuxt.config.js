@@ -154,7 +154,7 @@ export default {
     { src: '~/plugins/vue-modal-dialogs.js', mode: 'client' },
     { src: '~/plugins/vue-datepicker', ssr: false },
     { src: '~plugins/bootstrap-vue.js', ssr: false },
-    { src: '~/plugins/vuelidate.js', mode: 'both' },
+    { src: '~/plugins/vuelidate.js', mode: 'all' },
     '~/plugins/moment.js',
   ],
 

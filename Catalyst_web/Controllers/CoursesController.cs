@@ -53,7 +53,13 @@ namespace Catalyst_web.Controllers
             }
         }
 
-        // POST: Create a new course
+        [HttpGet("api/Courses/Latest")]
+        public async Task<IActionResult> GetLatestCourses()
+        {
+            var courses = await _dbContext.Courses.OrderByDescending(c => c.Created).Take(2).ToListAsync();
+            return Ok(courses);
+        }
+
         [HttpPost("api/Courses/Create")]
         public async Task<IActionResult> CreateCourse([FromBody] Course request)
         {
@@ -66,6 +72,8 @@ namespace Catalyst_web.Controllers
                 {
                     TitleEng = request.TitleEng,
                     TitleArm = request.TitleArm,
+                    InstractorArm = request.InstractorArm,
+                    InstractorEng = request.InstractorEng,
                     DescriptionEng = request.DescriptionEng,
                     DescriptionArm = request.DescriptionArm,
                     StartDate = request.StartDate,
@@ -99,7 +107,8 @@ namespace Catalyst_web.Controllers
                 existingCourse.DescriptionArm = editedCourse.DescriptionArm;
                 existingCourse.StartDate = editedCourse.StartDate;
                 existingCourse.EndDate = editedCourse.EndDate;
-                // existingCourse.ImageData = editedCourse.ImageData;
+                existingCourse.InstractorArm = editedCourse.InstractorArm;
+                existingCourse.InstractorEng = editedCourse.InstractorEng;
 
                 _dbContext.Courses.Update(existingCourse);
                 await _dbContext.SaveChangesAsync();

@@ -22,7 +22,10 @@
           </div><!-- /.team-one__single -->
         </div><!-- /.col-lg-3 -->
       </div><!-- /.row -->
-      <div class="row">
+
+      <CallToActionFive/>
+
+      <div class="row custom-margin" id="teacher-register-section">
         <div class="col-lg-6">
           <div class="become-teacher__content">
             <h2 class="become-teacher__title">Teaching benefits</h2><!-- /.become-teacher__title -->
@@ -56,11 +59,11 @@
             <form @submit.prevent="register" action="/assets/inc/sendemail.php" class="become-teacher__form-content contact-form-validated">
               <input v-model="registrationData.fullName" type="text" placeholder="Your full Name" name="fullName">
               <input v-model="registrationData.email" type="text" placeholder="Email Address" name="email">
-              <b-form-select v-model="selectedCourse" :options="courseOptions" class="mb-3">
-                <b-form-select-option :value="null" disabled>-- Please select an option --</b-form-select-option>
-
-              </b-form-select>
-
+              <client-only>
+                <b-form-select v-model="selectedCourse" :options="courseOptions" class="mb-3">
+                  <b-form-select-option :value="null" disabled>-- Please select an option --</b-form-select-option>
+                </b-form-select>
+              </client-only>
           <input v-model="registrationData.phoneNumber" type="text" placeholder="Phone Number" name="phone">
           <input v-model="registrationData.message" type="text" placeholder="Comment" name="message">
           <button type="submit" class="thm-btn become-teacher__form-btn">Apply For It</button>
@@ -78,7 +81,7 @@
   import https from 'https';
 
   export default {
-    name: 'Teachers',
+    name: 'Instractors',
     data() {
       return {
         teachers: [],
@@ -150,5 +153,7 @@
 </script>
 
 <style scoped>
-
+  .custom-margin {
+      margin-top: 30px
+  }
 </style>
