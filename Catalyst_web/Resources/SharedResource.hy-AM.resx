@@ -117,6 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AboutAcademyOne" xml:space="preserve">
+    <value>With small group sizes, individualized attention, and a personalized approach to learning, Catalyst Academy students receive the support they need to achieve their goals.</value>
+  </data>
+  <data name="AboutAcademyThree" xml:space="preserve">
+    <value>Through its innovative approach to business and personal development, Catalyst Academy is shaping the future catalysts of our society.</value>
+  </data>
+  <data name="AboutAcademyTwo" xml:space="preserve">
+    <value>Catalyst Academy's programs are led by experienced and qualified professionals who are committed to helping students reach their full potential.</value>
+  </data>
+  <data name="BeChampionOfChange" xml:space="preserve">
+    <value>Be a Champion of Chnage</value>
+  </data>
+  <data name="CAMainDescription" xml:space="preserve">
+    <value>Catalyst Academy is a personal development and business academy that provides a range of programs and services designed to help teenagers develop the skills, knowledge, and confidence they need to succeed in both their personal and professional lives.</value>
+  </data>
+  <data name="CatalystAcademyText" xml:space="preserve">
+    <value>Catalyst Academy</value>
+  </data>
   <data name="CatalystEmail" xml:space="preserve">
     <value>info@catalystsacademy.com</value>
   </data>
@@ -131,6 +149,54 @@
   </data>
   <data name="InstaLink" xml:space="preserve">
     <value>new value</value>
+  </data>
+  <data name="MissionOne" xml:space="preserve">
+    <value>We believe that every student has the power to create positive change in the world, and we are committed to providing them with the knowledge, skills,  resources, and confidence they need to succeed in the fast-paced business world.</value>
+  </data>
+  <data name="MissionTwo" xml:space="preserve">
+    <value>We believe that by providing an engaging and supportive environment, we help students unleash their full potential and prepare them for success in the global marketplace.</value>
+  </data>
+  <data name="OurMission" xml:space="preserve">
+    <value>Our Mission</value>
+  </data>
+  <data name="OurValues" xml:space="preserve">
+    <value>Our Values</value>
+  </data>
+  <data name="OurVision" xml:space="preserve">
+    <value>Our Vision</value>
+  </data>
+  <data name="StartLearningNowBtn" xml:space="preserve">
+    <value>Start Learning Now</value>
+  </data>
+  <data name="ValuesFive" xml:space="preserve">
+    <value>Career-Focused Education: We are dedicated to preparing students for successful careers in many industries, offering internship opportunities, job placement assistance, and professional development resources.</value>
+  </data>
+  <data name="ValuesFour" xml:space="preserve">
+    <value>Supportive Community: Our program fosters a supportive community of like-minded peers who share a passion for entrepreneurship and business.</value>
+  </data>
+  <data name="ValuesMainText" xml:space="preserve">
+    <value>At Catalyst Academy, students will gain:</value>
+  </data>
+  <data name="ValuesOne" xml:space="preserve">
+    <value>Practical Experience: Our program provides hands-on experience with real-world business concepts and practices.</value>
+  </data>
+  <data name="ValuesSeven" xml:space="preserve">
+    <value>Student-Led Projects: Catalyst Academy encourages students to take the lead on their projects, empowering them to develop leadership skills, build confidence, and take ownership of their learning.</value>
+  </data>
+  <data name="ValuesSix" xml:space="preserve">
+    <value>Certification Program: Catalyst Academy offers a certification program that allows students to earn credentials in various business-related fields, giving them a competitive edge when applying for jobs or pursuing entrepreneurship opportunities.</value>
+  </data>
+  <data name="ValuesThree" xml:space="preserve">
+    <value>Networking Opportunities: Students have the opportunity to connect with a network of successful entrepreneurs and business leaders.</value>
+  </data>
+  <data name="ValuesTwo" xml:space="preserve">
+    <value>Personalized Attention: Students receive individualized attention and mentorship from experienced business professionals.</value>
+  </data>
+  <data name="VisionOne" xml:space="preserve">
+    <value>Through our commitment to excellence, collaboration, and continuous learning, we are building a new generation of leaders who will shape the future of business and society.</value>
+  </data>
+  <data name="VisionTwo" xml:space="preserve">
+    <value>We envision a future where young people are empowered to become creators, problem-solvers, and game-changers who can create their own opportunities and shape the world around them.</value>
   </data>
   <data name="WelcomeMessage" xml:space="preserve">
     <value>Welcome to Catalyst Academy in armenian</value>

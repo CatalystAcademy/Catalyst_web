@@ -88,6 +88,14 @@ export default {
         component: 'blogs'
       },
       {
+        path: '/values',
+        component: 'Values'
+      },
+      {
+        path: '/leadership',
+        component: 'leadership'
+      },
+      {
         path: '/courses/:id',
         // component: () => import('./pages/courses'),
       },

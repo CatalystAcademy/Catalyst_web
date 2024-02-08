@@ -3,8 +3,9 @@
       <img src="/assets/images/circle-stripe.png" class="about-one__circle" alt="">
       <div class="container text-center">
           <div class="block-title text-center">
-              <h2 class="block-title__title">Let’s do study with <br>
-                  expert teachers</h2><!-- /.block-title__title -->
+            <h2 class="block-title__title">
+              {{translations.BeChampionOfChange}}
+            </h2><!-- /.block-title__title -->
           </div><!-- /.block-title -->
           <div class="about-one__img">
               <div class="row">
@@ -27,19 +28,36 @@
                   <p class="about-one__review-text">students loved us</p><!-- /.about-one__review-text -->
               </div><!-- /.about-one__review -->
           </div><!-- /.about-one__img -->
-          <p class="about-one__text">There are many variations of passages of lorem ipsum available, but the majority have
+          <p class="about-one__text">
+            {{translations.CAMainDescription
+              }}
+
               <br>
-              suffered alteration in some form, by injected humour words which don't look even slightly <br> believable.
-              Lorem
-              Ipsn gravida nibh vel velit auctor aliquetn auci elit cons.</p><!-- /.about-one__text -->
-          <a href="#" class="thm-btn about-one__btn">Start Learning Now</a><!-- /.thm-btn -->
-      </div><!-- /.container -->
+              <br>
+              {{translations.AboutAcademyOne}}
+              <br>
+              <br>
+              {{translations.AboutAcademyTwo}}
+              <br>
+              <br>
+              {{translations.AboutAcademyThree}}
+              </p><!-- /.about-one__text -->
+              <a href="#" class="thm-btn about-one__btn">Start Learning Now</a><!-- /.thm-btn -->
+</div><!-- /.container -->
   </section>
 </template>
 
 <script>
     export default {
-        name: "AboutOne"
+    name: "AboutOne",
+    computed: {
+      translations() {
+        return this.$store.state.translations;
+      },
+    },
+    async created() {
+      await this.$store.dispatch('fetchTranslations');
+    }
     }
 </script>
 

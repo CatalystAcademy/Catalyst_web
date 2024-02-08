@@ -10,6 +10,8 @@ using SendGrid.Helpers.Mail;
 using System;
 using Npgsql;
 using Dapper;
+using Catalyst_web.Dto;
+using System.Globalization;
 
 namespace Catalyst_web.Controllers
 {
@@ -30,7 +32,31 @@ namespace Catalyst_web.Controllers
         [HttpGet("api/Courses")]
         public async Task<IActionResult> GetAllCourses()
         {
-            return Ok(await _dbContext.Courses.ToListAsync());
+            var courses = await _dbContext.Courses.ToListAsync();
+            var courseList = new List<CourseDto>();
+            var isEnglish = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "en";
+            foreach (var course in courses)
+            {
+                courseList.Add(isEnglish ? new CourseDto
+                {
+                    Description = course.DescriptionEng,
+                    Instractor = course.InstractorEng,
+                    EndDate = course.EndDate.ToShortDateString(),
+                    StartDate = course.StartDate.ToShortDateString(),
+                    Title = course.TitleEng,
+                    RegistrationDate = course.RegistrationDate.ToShortDateString(),
+
+                } : new CourseDto
+                {
+                    Title = course.TitleArm,
+                    Description = course.DescriptionArm,
+                    Instractor = course.InstractorArm,
+                    EndDate = course.EndDate.ToShortDateString(),
+                    StartDate = course.StartDate.ToShortDateString(),
+                    RegistrationDate = course.RegistrationDate.ToShortDateString(),
+                });
+            }
+            return Ok(courseList);
         }
 
         [HttpGet("api/CourseDetails/{id}")]

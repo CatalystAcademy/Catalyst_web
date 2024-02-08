@@ -3,13 +3,13 @@
     <NavOne />
     <PageHeader title="Catalyst Academy" />
     <AboutOne />
-    <TeamOne />
-    <VideoOne />
+<!--    <TeamOne />
+    <VideoOne />-->
    <!-- <ClientsLogoOne />-->
     <div class="border-bottom"></div>
    <!-- <Testimonial />-->
-    <CallToActionOne />
-    <Footer />
+<!--    <CallToActionOne />
+-->    <Footer />
   </div>
 
 </template>

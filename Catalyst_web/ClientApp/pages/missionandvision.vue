@@ -2,13 +2,13 @@
   <div>
     <NavOne />
     <PageHeader title="Mission & Vision" />
-    <AboutTwo />
-    <VideoOne />
+    <MissionandVision />
+<!--    <VideoOne />-->
     <!-- <ClientsLogoOne />-->
     <div class="border-bottom"></div>
     <!-- <Testimonial />-->
-    <CallToActionOne />
-    <Footer />
+<!--    <CallToActionOne />
+-->    <Footer />
   </div>
 
 </template>

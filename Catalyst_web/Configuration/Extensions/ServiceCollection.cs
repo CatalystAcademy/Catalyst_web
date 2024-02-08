@@ -45,10 +45,10 @@ public static class ServiceCollection
         services.AddTransient<ILocService, LocService>();
         
         // Configure MediatR
-        services.AddMediatR(serviceConfiguration =>
+/*        services.AddMediatR(serviceConfiguration =>
         {
             serviceConfiguration.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
-        });
+        });*/
         
         return services;
     }

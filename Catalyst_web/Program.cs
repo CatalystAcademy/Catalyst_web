@@ -2,9 +2,11 @@ using Catalyst_web.Configuration.Extensions;
 using Catalyst_web.Infrastructure.Persistence;
 using Catalyst_web.Infrastructure.Services;
 using Catalyst_web.Interfaces;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
@@ -24,10 +26,31 @@ builder.Services.AddCors(options =>
                            .AllowAnyHeader());
 });
 
-var app = builder.Build();
 
-// Add localization services
-builder.Services.AddLocalization();
+
+/*builder.Services.AddLocalization(opts => opts.ResourcesPath = "Resources");
+builder.Services.Configure<RequestLocalizationOptions>(options =>
+{
+    var supportedCultures = new List<CultureInfo>
+            {
+                new("en-US"),
+                new("hy-AM")
+            };
+    supportedCultures[1].NumberFormat.NumberDecimalSeparator = ".";
+    supportedCultures[1].DateTimeFormat.DateSeparator = "yyyy-MM-dd";
+    options.DefaultRequestCulture = new RequestCulture("en-US");
+    options.SupportedCultures = supportedCultures;
+    options.SupportedUICultures = supportedCultures;
+    options.RequestCultureProviders = new List<IRequestCultureProvider>
+            {
+                new CookieRequestCultureProvider()
+            };
+});
+builder.Services.AddTransient<ILocService, LocService>();*/
+
+builder.Services.RegisterServices(configuration);
+
+var app = builder.Build();
 
 // Use CORS middleware
 app.UseCors("AllowSpecificOrigin");

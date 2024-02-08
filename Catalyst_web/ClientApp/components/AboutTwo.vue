@@ -50,10 +50,6 @@
       </div><!-- /.row -->
     </div><!-- /.container -->
 
-<!--    <video controls>
-      <source :src="videoUrl" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>-->
 
   </section>
 </template>
@@ -61,29 +57,6 @@
 <script>
     export default {
     name: "AboutTwo",
-    data() {
-      return {
-        videoUrl: ''
-      };
-    },
-    mounted() {
-      // Call your API to fetch the video data
-      this.fetchVideoData();
-    },
-    methods: {
-      async fetchVideoData() {
-        try {
-          const response = await this.$axios.get('/api/video/7ac5539a-2a72-49b4-a7a8-bcaa63f5c727');
-          // Assuming your API returns the video data as a Blob
-          const blob = new Blob([response.data], { type: 'video/mp4' });
-          this.videoUrl = 'https://localhost:7226/api/video/7ac5539a-2a72-49b4-a7a8-bcaa63f5c727';
-          console.log(this.videoUrl);
-          console.log(blob);
-        } catch (error) {
-          console.error('Error fetching video data:', error);
-        }
-      }
-    }
     }
 </script>
 

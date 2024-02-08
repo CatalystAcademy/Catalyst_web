@@ -44,7 +44,7 @@
                       <li><nuxt-link to="/about">Academy</nuxt-link></li>
                       <li><nuxt-link to="/missionandvision">Mission & Vision</nuxt-link></li>
                       <li><nuxt-link to="/values">Values</nuxt-link></li>
-                      <li><nuxt-link to="/">Leadership</nuxt-link></li>
+                      <li><nuxt-link to="/leadership">Leadership</nuxt-link></li>
                       <li><nuxt-link to="/teachers">Instractors</nuxt-link></li>
                       <li><nuxt-link to="/faq">FAQ's</nuxt-link></li>
                     </ul>
@@ -177,6 +177,8 @@
     methods: {
       switchLanguage(language) {
         this.selectedLanguage = language === 'en-US' ? 'English' : 'Armenian';
+        const currentUrl = $nuxt.$route.path;
+        this.$axios.get(`/api/SetLanguage?culture=${language}&returnUrl=${currentUrl}`);
         this.$store.commit('setLanguage', language);
         this.$i18n.setLocale(language);
       },

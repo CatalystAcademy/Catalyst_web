@@ -2,17 +2,19 @@
   <div>
     <NavOne />
     <PageHeader title="CA Values" />
-    <AboutTwo />
-    <VideoOne />
-    <!-- <ClientsLogoOne />-->
+    <Values />
     <div class="border-bottom"></div>
-    <!-- <Testimonial />-->
-    <CallToActionOne />
     <Footer />
   </div>
 
 </template>
 
-<script>export default {
-    name: 'Values'
-  }</script>
+<script>
+  export default {
+    head() {
+      return {
+        title: "CA | Values"
+      }
+    }
+  }
+  </script>
