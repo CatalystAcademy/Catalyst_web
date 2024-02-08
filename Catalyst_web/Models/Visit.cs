@@ -14,5 +14,6 @@ namespace Catalyst_web.Models
         public required string PhoneNumber { get; set; }
         [Required]
         public required DateTimeOffset AppointmentDate { get; set; }
+        public required TimeOnly AppointmentTime { get; set; }
     }
 }

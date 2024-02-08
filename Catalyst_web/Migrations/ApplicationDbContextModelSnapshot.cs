@@ -589,6 +589,60 @@ namespace Catalyst_web.Migrations
                     b.ToTable("Teachers");
                 });
 
+            modelBuilder.Entity("Catalyst_web.Models.Video", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnOrder(0);
+
+                    b.Property<string>("ContentType")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("text");
+
+                    b.Property<byte[]>("Data")
+                        .HasColumnType("bytea");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("text");
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime>("Modified")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("text");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("bytea");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTimeOffset?>("UploadedDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Url")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Videos");
+                });
+
             modelBuilder.Entity("Catalyst_web.Models.Visit", b =>
                 {
                     b.Property<Guid>("Id")
@@ -598,6 +652,9 @@ namespace Catalyst_web.Migrations
 
                     b.Property<DateTimeOffset>("AppointmentDate")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<TimeOnly>("AppointmentTime")
+                        .HasColumnType("time without time zone");
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp without time zone");

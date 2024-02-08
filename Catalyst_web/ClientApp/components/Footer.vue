@@ -3,9 +3,9 @@
       <footer class="site-footer">
                   <div class="site-footer__upper">
                       <div class="container">
-                          <div class="row" v-if="latestCourses.length">
+                          <div class="row">
                               <div class="col-xl-3 col-lg-6 col-sm-12">
-                                  <div class="footer-widget footer-widget__contact">
+                                  <div class="footer-widget footer-widget__contact" v-if="latestCourses.length">
                                       <h2 class="footer-widget__title">Our Latest Courses</h2><!-- /.footer-widget__title -->
                                       <ul class="list-unstyled footer-widget__course-list" v-for="course in latestCourses" :key="course.id">
                                           <li class="mb-4">

@@ -29,6 +29,13 @@
               <input v-model="registrationData.phoneNumber" type="text" placeholder="Phone Number" name="phone" required>
 
               <client-only>
+                <b-form-timepicker v-model="registrationData.appointmentTime"
+                                   class="mb-2 h-auto d-flex align-items-baseline justify-content-end custom-timepicker"
+                                   menu-class="custom-menu-class"
+                                   dropup>
+
+                </b-form-timepicker>
+
                 <b-form-datepicker id="example-i18n-picker"
                                    v-model="registrationData.appointmentDate"
                                    :show-decade-nav="showDecadeNav"
@@ -41,8 +48,6 @@
                                    :min="minDate">
                 </b-form-datepicker>
 
-                <b-form-timepicker v-model="registrationData.appointmentTime"
-                                   class="mb-2 h-auto d-flex align-items-baseline"></b-form-timepicker>
 
               </client-only>
 
@@ -87,7 +92,7 @@
     async submitForm() {
 
       await this.$axios.post('/api/Visit/Submit', this.registrationData)
-      console.log('Form submitted with data:', this.formData);
+      console.log('Form submitted with data:');
       // Reset form after submission
     },
   },

@@ -6,25 +6,25 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Catalyst_web.Migrations
 {
     /// <inheritdoc />
-    public partial class updatedPropsToCurrculum : Migration
+    public partial class updatedVisitModel : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<DateTime>(
-                name: "DateOfBirth",
-                table: "RegisterForCurriculums",
-                type: "timestamp without time zone",
+            migrationBuilder.AddColumn<TimeOnly>(
+                name: "AppointmentTime",
+                table: "Visits",
+                type: "time without time zone",
                 nullable: false,
-                defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
+                defaultValue: new TimeOnly(0, 0, 0));
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "DateOfBirth",
-                table: "RegisterForCurriculums");
+                name: "AppointmentTime",
+                table: "Visits");
         }
     }
 }
