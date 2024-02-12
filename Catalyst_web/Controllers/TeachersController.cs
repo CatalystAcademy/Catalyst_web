@@ -1,4 +1,5 @@
-﻿using Catalyst_web.Infrastructure.Persistence;
+﻿using Azure.Core;
+using Catalyst_web.Infrastructure.Persistence;
 using Catalyst_web.Models;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
@@ -18,7 +19,7 @@ namespace Catalyst_web.Controllers
         [HttpGet("api/Teachers")]
         public async Task<IActionResult> GetAllTeachers()
         {
-            return Ok(await _dbContext.Teachers.ToListAsync());
+            return Ok(await _dbContext.Teachers.Where(x => x.IsFromLeadership == false).ToListAsync());
         }
         [HttpPost("api/Teachers/Create")]
         public async Task<IActionResult> CreateTeacher([FromBody] Teacher request)
@@ -35,7 +36,8 @@ namespace Catalyst_web.Controllers
                 DescriptionEng = request.DescriptionEng,
                 Email = request.Email,
                 ProfessionArm = request.ProfessionArm,
-                ProfessionEng = request.ProfessionEng
+                ProfessionEng = request.ProfessionEng,
+                IsFromLeadership = request.IsFromLeadership
             };
             _dbContext.Teachers.Add(createTeacher);
             await _dbContext.SaveChangesAsync();
@@ -65,6 +67,7 @@ namespace Catalyst_web.Controllers
             existingTeacher.ProfessionArm = editedTeacher.ProfessionArm;
             existingTeacher.ProfessionEng = editedTeacher.ProfessionEng;
             existingTeacher.Email = editedTeacher.Email;
+            existingTeacher.IsFromLeadership = editedTeacher.IsFromLeadership;
 
             _dbContext.Teachers.Update(existingTeacher);
             await _dbContext.SaveChangesAsync();
@@ -104,6 +107,15 @@ namespace Catalyst_web.Controllers
             _dbContext.Teachers.Remove(existingTeacher);
             await _dbContext.SaveChangesAsync();
             return Ok(); 
+        }
+
+        [HttpGet("api/Leaders")]
+        public async Task<IActionResult> GetAllLeaders()
+        {
+            var leaders = await _dbContext.Teachers.Where(x => x.IsFromLeadership == true).ToListAsync();
+
+            return Ok(leaders);
+            
         }
     }
 }

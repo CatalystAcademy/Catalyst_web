@@ -2,7 +2,7 @@
   <div>
     <NavOne />
     <PageHeader title="CA Leadership" />
-    <Leadership />
+    <TeamOne />
     <div class="border-bottom"></div>
     <Footer />
   </div>

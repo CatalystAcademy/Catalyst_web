@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2 class="course-list-header">List of Teachers</h2> <router-link to="/admin/Index" class="btn btn-edit">Back to Index</router-link>
-    <router-link to="/admin/teachers/create" class="btn btn-create">Add teachers</router-link>
+    <router-link to="/admin/teacher/create" class="btn btn-create">Add teacher</router-link>
     <table class="course-table">
       <thead>
         <tr>

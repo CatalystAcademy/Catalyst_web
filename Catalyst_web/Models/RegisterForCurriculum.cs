@@ -5,7 +5,7 @@ namespace Catalyst_web.Models
 {
     public class RegisterForCurriculum : BaseEntity
     {
-        public required Guid CurriculumId { get; set; }
+        public Guid? CurriculumId { get; set; }
         [Required]
         public required string FullName { get; set; }
         [Required] 

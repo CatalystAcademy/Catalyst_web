@@ -1650,6 +1650,24 @@ a:visited {
 .contact-info-one [class*=col-lg-]:nth-child(3) .contact-info-one__icon::before {
   border-color: #7c4bc0;
 }
+.contact-info-one [class*=col-lg-]:nth-child(4) .contact-info-one__icon {
+  background-color: #9f172f;
+}
+  .contact-info-one [class*=col-lg-]:nth-child(4) .contact-info-one__icon::before {
+    border-color: #9f172f;
+  }
+.contact-info-one [class*=col-lg-]:nth-child(5) .contact-info-one__icon {
+  background-color: #db8e08;
+}
+  .contact-info-one [class*=col-lg-]:nth-child(5) .contact-info-one__icon::before {
+    border-color: #db8e08;
+  }
+.contact-info-one [class*=col-lg-]:nth-child(6) .contact-info-one__icon {
+  background-color: #2da397;
+}
+  .contact-info-one [class*=col-lg-]:nth-child(6) .contact-info-one__icon::before {
+    border-color: #2da397;
+  }
 
 .contact-info-one__single {
   border-style: solid;

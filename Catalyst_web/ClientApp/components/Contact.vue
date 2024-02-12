@@ -8,11 +8,10 @@
               <div class="contact-info-one__icon">
                 <i class="kipso-icon-manager"></i><!-- /.kipso-icon-manager -->
               </div><!-- /.contact-info-one__icon -->
-              <h2 class="contact-info-one__title">About Us </h2><!-- /.contact-info-one__title -->
+              <h2 class="contact-info-one__title">{{translations.OfficeHoursText}} </h2><!-- /.contact-info-one__title -->
               <p class="contact-info-one__text">
-                Lorem ipsum is simply free text <br> available in the market to
-                use <br>
-                deliver satisfaction.
+                {{translations.Workingdayshours}} <br>
+                {{translations.ClosedDay}}
               </p><!-- /.contact-info-one__text -->
             </div><!-- /.contact-info-one__single -->
           </div><!-- /.col-lg-4 -->
@@ -22,10 +21,9 @@
                 <i class="kipso-icon-placeholder"></i>
                 <!-- /.kipso-icon-manager -->
               </div><!-- /.contact-info-one__icon -->
-              <h2 class="contact-info-one__title">Our Address</h2><!-- /.contact-info-one__title -->
+              <h2 class="contact-info-one__title">{{translations.OurAddressText}}</h2><!-- /.contact-info-one__title -->
               <p class="contact-info-one__text">
-                855 Road Broklyn Street, <br>
-                600 New York, United States of <br> America
+                {{translations.CAAddress}} <br> {{translations.Country}}
               </p><!-- /.contact-info-one__text -->
             </div><!-- /.contact-info-one__single -->
           </div><!-- /.col-lg-4 -->
@@ -34,34 +32,83 @@
               <div class="contact-info-one__icon">
                 <i class="kipso-icon-contact"></i><!-- /.kipso-icon-manager -->
               </div><!-- /.contact-info-one__icon -->
-              <h2 class="contact-info-one__title">Contact Info</h2><!-- /.contact-info-one__title -->
+              <h2 class="contact-info-one__title">{{translations.ContactInfoText}}</h2><!-- /.contact-info-one__title -->
               <p class="contact-info-one__text">
                 {{translations.CatalystEmail}} <br>
-                {{translations.CatalystPhone}} <br> &nbsp;
+                {{translations.CatalystPhone}}
+              </p><!-- /.contact-info-one__text -->
+            </div><!-- /.contact-info-one__single -->
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4 mt-5">
+            <div class="contact-info-one__single wow fadeInUp animated" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-name: fadeInUp;">
+              <div class="contact-info-one__icon">
+                <i class="kipso-icon-bottom-arrow"></i>
+                <!-- /.kipso-icon-manager -->
+              </div><!-- /.contact-info-one__icon -->
+              <h2 class="contact-info-one__title">{{translations.GetTouch}}</h2><!-- /.contact-info-one__title -->
+              <p class="contact-info-one__text">
+                {{translations.GetTouchMainText}}
+                <br />
+                <nuxt-link to="#getInTouch">{{translations.FillFormText}}</nuxt-link> 
+              </p><!-- /.contact-info-one__text -->
+            </div><!-- /.contact-info-one__single -->
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4 mt-5">
+            <div class="contact-info-one__single wow fadeInUp animated" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-name: fadeInDown;">
+              <div class="contact-info-one__icon">
+                <i class="kipso-icon-right-arrow"></i>
+                <!-- /.kipso-icon-manager -->
+              </div><!-- /.contact-info-one__icon -->
+              <h2 class="contact-info-one__title">{{translations.VisitUs}}</h2><!-- /.contact-info-one__title -->
+              <p class="contact-info-one__text">
+                {{translations.VisitUsText}}
+                <nuxt-link to="/onSiteVisit">{{translations.HereText}}</nuxt-link>
+              </p><!-- /.contact-info-one__text -->
+            </div><!-- /.contact-info-one__single -->
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4 mt-5">
+            <div class="contact-info-one__single wow fadeInUp animated" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-name: fadeInUp;">
+              <div class="contact-info-one__icon">
+                <i class="kipso-icon-strategy"></i>
+                <!-- /.kipso-icon-manager -->
+              </div><!-- /.contact-info-one__icon -->
+              <h2 class="contact-info-one__title">
+                {{translations.FollowUsText}}</h2><!-- /.contact-info-one__title -->
+              <p class="contact-info-one__text">
+                {{translations.FollowUsDesc}}
+                <div class="header__social-custom">
+                  <a href="#"><i class="fab fa-facebook-square"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div><!-- /.header__social -->
               </p><!-- /.contact-info-one__text -->
             </div><!-- /.contact-info-one__single -->
           </div><!-- /.col-lg-4 -->
         </div><!-- /.row -->
       </div><!-- /.container -->
     </section>
-    <section class="contact-one">
+    <section class="contact-one" id="getInTouch">
       <div class="container">
         <h2 class="contact-one__title text-center">
-          Get in touch <br>
-          with us
-        </h2><!-- /.contact-one__title -->
+          {{translations.GetTouch
+                }} <br>
+                {{translations.WithUs}}
+              </h2><!-- /.contact-one__title -->
+        <p class="about-one__text mt-5 mb-5">
+          {{translations.ContactUsText}}
+        </p><!-- /.about-one__text -->
         <form @submit.prevent="contact" action="/assets/inc/sendemail.php" class="contact-one__form contact-form-validated" novalidate="novalidate">
           <div class="row low-gutters">
             <div class="col-lg-6">
-              <input v-model="registrationData.fullName" type="text" name="fullName" placeholder="Your Name">
+              <input v-model="registrationData.fullName" type="text" name="fullName" :placeholder="translations.FullName">
             </div><!-- /.col-lg-6 -->
             <div class="col-lg-6">
-              <input v-model="registrationData.email"  type="text" placeholder="Email Address" name="email">
+              <input v-model="registrationData.email" type="text" :placeholder="translations.EmailAddress" name="email">
             </div><!-- /.col-lg-6 -->
             <div class="col-lg-12">
-              <textarea v-model="registrationData.message" placeholder="Write Message" name="message"></textarea>
+              <textarea v-model="registrationData.message" :placeholder="translations.Message" name="message"></textarea>
               <div class="text-center">
-                <button type="submit" class="contact-one__btn thm-btn">Submit Comment</button>
+                <button type="submit" class="contact-one__btn thm-btn">{{translations.SendMessage}}</button>
               </div><!-- /.text-center -->
             </div><!-- /.col-lg-12 -->
           </div><!-- /.row -->
@@ -87,17 +134,17 @@
               console.log(response);
               // Show success or error toast based on response
               if (response.status === 200) {
-                this.$toasted.success('Registration successful!');
+                this.$toasted.success(this.translations.FormSuccessfullSubmisionForm);
                 setTimeout(() => {
                   window.location = '/contact'; 
                 }, 3000);
               } else {
-                this.$toasted.error('An unexpected error occurred. Please contact support.'); // Assuming a 'message' property in error response
+                this.$toasted.error(this.translations.registrationErrorMessage); // Assuming a 'message' property in error response
               }
             })
             .catch(error => {
               // Handle generic errors
-              this.$toasted.error('An error occurred during registration. Please try again.');
+              this.$toasted.error(this.translations.registrationErrorMessage);
             });
         } catch (error) {
         }
@@ -120,5 +167,31 @@
 </script>
 
 <style scoped>
+  .header__social-custom {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+/*    margin-left: 90px;
+*/    margin-top: 7px;
+      margin-bottom: 0px;
+  }
+
+    .header__social-custom a {
+      color: #81868a;
+      font-size: 18px;
+      -webkit-transition: all .4s ease;
+      transition: all .4s ease;
+    }
+
+      .header__social-custom a:hover {
+        color: #f16101;
+      }
+
+      .header__social-custom a + a {
+        margin-left: 30px;
+      }
 
 </style>

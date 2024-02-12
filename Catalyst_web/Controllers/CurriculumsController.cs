@@ -131,7 +131,7 @@ namespace Catalyst_web.Controllers
                 return BadRequest(ModelState);
             }
             // 2. Validate eligibility (check if user already registered)
-            if (!IsUserEligibleForCurriculum(request.Id, request.CurriculumId))
+            if (!IsUserEligibleForCurriculum(request.Id, request?.CurriculumId))
             {
                 return BadRequest("User is not eligible to register for this curriculum.");
             }
@@ -200,7 +200,7 @@ namespace Catalyst_web.Controllers
             return Ok();
         }
 
-        private bool IsUserEligibleForCurriculum(Guid userId, Guid curriculumId)
+        private bool IsUserEligibleForCurriculum(Guid userId, Guid? curriculumId)
         {
             // Check if user is already registered for the curriculum
             var existingRegistration = _dbContext.RegisterForCurriculums

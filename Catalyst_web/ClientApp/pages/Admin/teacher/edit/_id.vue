@@ -39,9 +39,14 @@
         </div>
 
         <div class="row">
-          <div class="col-12">
+          <div class="col">
             <label for="email">Email</label>
             <input v-model="createData.email" type="email" name="email">
+          </div>
+
+          <div class="col">
+            <label for="IsFromLeadership">Leadership</label>
+            <input v-model="createData.isFromLeadership" type="checkbox" id="IsFromLeadership" name="IsFromLeadership" checked>
           </div>
         </div>
 
@@ -59,7 +64,7 @@
     data() {
       return {
         teacherId: null,
-        createData: { fullNameArm: '', fullNameEng: '', email: '', descriptionEng: '', descriptionArm: '', professionArm: '', professionEng: '' },
+        createData: { isFromLeadership: false, fullNameArm: '', fullNameEng: '', email: '', descriptionEng: '', descriptionArm: '', professionArm: '', professionEng: '' },
       };
     },
     async created() {
@@ -79,7 +84,6 @@
         try {
           const response = await this.$axios.get(`/api/TeacherDetails/${this.teacherId}`);
           this.createData = { ...response.data };
-          console.log(this.createData);
         } catch (error) {
           console.error('Error fetching Teacher details:', error);
         }
@@ -87,7 +91,6 @@
       async submitForm() {
         try {
           const response = await this.$axios.put(`/api/Teacher/Edit/${this.teacherId}`, this.createData);
-          console.log("response", response);
           if (response) {
             this.$toasted.success('Edit successful!');
             // Redirect after a successful edit

@@ -29,8 +29,7 @@
               </div><!-- /.about-one__review -->
           </div><!-- /.about-one__img -->
           <p class="about-one__text">
-            {{translations.CAMainDescription
-              }}
+            {{translations.CAMainDescription}}
 
               <br>
               <br>

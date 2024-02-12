@@ -39,9 +39,14 @@
         </div>
 
         <div class="row">
-          <div class="col-12">
+          <div class="col">
             <label for="Email">Email</label>
             <input v-model="createData.Email" type="email" id="Email" name="Email">
+          </div>
+
+          <div class="col">
+            <label for="IsFromLeadership">Leadership</label>
+            <input v-model="createData.IsFromLeadership" type="checkbox" id="IsFromLeadership" name="IsFromLeadership">
           </div>
         </div>
 
@@ -57,7 +62,7 @@
     name: 'CreateTeacher',
     setup() {
       return {
-        createData: { FullNameArm: '', FullNameEng: '', Email: '', DescriptionEng: '', DescriptionArm: '', ProfessionArm: '', ProfessionEng: '' },
+        createData: { IsFromLeadership: false, FullNameArm: '', FullNameEng: '', Email: '', DescriptionEng: '', DescriptionArm: '', ProfessionArm: '', ProfessionEng: '' },
       };
     },
     methods: {
