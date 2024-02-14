@@ -16,7 +16,7 @@
               </div><!-- /.course-one__admin -->
               <h2 class="course-one__title">
                 <nuxt-link :to="`courses/${course.id}`">
-                {{ language === 'en-US' ? course.titleEng : course.titleArm }}
+                {{course.title }}
               </nuxt-link>
               </h2>
               <!-- /.course-one__title -->

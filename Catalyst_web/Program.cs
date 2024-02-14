@@ -1,3 +1,4 @@
+using Catalyst_web.Configuration;
 using Catalyst_web.Configuration.Extensions;
 using Catalyst_web.Infrastructure.Persistence;
 using Catalyst_web.Infrastructure.Services;
@@ -27,27 +28,6 @@ builder.Services.AddCors(options =>
 });
 
 
-
-/*builder.Services.AddLocalization(opts => opts.ResourcesPath = "Resources");
-builder.Services.Configure<RequestLocalizationOptions>(options =>
-{
-    var supportedCultures = new List<CultureInfo>
-            {
-                new("en-US"),
-                new("hy-AM")
-            };
-    supportedCultures[1].NumberFormat.NumberDecimalSeparator = ".";
-    supportedCultures[1].DateTimeFormat.DateSeparator = "yyyy-MM-dd";
-    options.DefaultRequestCulture = new RequestCulture("en-US");
-    options.SupportedCultures = supportedCultures;
-    options.SupportedUICultures = supportedCultures;
-    options.RequestCultureProviders = new List<IRequestCultureProvider>
-            {
-                new CookieRequestCultureProvider()
-            };
-});
-builder.Services.AddTransient<ILocService, LocService>();*/
-
 builder.Services.RegisterServices(configuration);
 
 var app = builder.Build();
@@ -65,6 +45,7 @@ if (app.Environment.IsDevelopment())
 
 var locOptions = app.Services.GetService<IOptions<RequestLocalizationOptions>>();
 if (locOptions != null) app.UseRequestLocalization(locOptions.Value);
+app.UseCultureMiddleware();
 
 app.UseHttpsRedirection();
 

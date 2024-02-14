@@ -39,6 +39,7 @@ namespace Catalyst_web.Controllers
             {
                 courseList.Add(isEnglish ? new CourseDto
                 {
+                    Id = course.Id,
                     Description = course.DescriptionEng,
                     Instractor = course.InstractorEng,
                     EndDate = course.EndDate.ToShortDateString(),
@@ -48,6 +49,7 @@ namespace Catalyst_web.Controllers
 
                 } : new CourseDto
                 {
+                    Id = course.Id,
                     Title = course.TitleArm,
                     Description = course.DescriptionArm,
                     Instractor = course.InstractorArm,
