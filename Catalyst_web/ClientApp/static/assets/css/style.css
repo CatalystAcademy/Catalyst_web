@@ -1868,6 +1868,48 @@ a:visited {
 .faq-one [class*=col-lg-]:nth-child(6) .faq-one__icon span:before {
   border-color: #33a9bb;
 }
+.faq-one [class*=col-lg-]:nth-child(7) .faq-one__icon span {
+  background-color: #9f172f;
+}
+.faq-one [class*=col-lg-]:nth-child(7) .faq-one__icon span:before {
+  border-color: #9f172f;
+}
+.faq-one [class*=col-lg-]:nth-child(8) .faq-one__icon span {
+  background-color: #db8e08;
+}
+.faq-one [class*=col-lg-]:nth-child(8) .faq-one__icon span:before {
+  border-color: #db8e08;
+}
+.faq-one [class*=col-lg-]:nth-child(9) .faq-one__icon span {
+  background-color: #8A5905;
+}
+.faq-one [class*=col-lg-]:nth-child(9) .faq-one__icon span:before {
+  border-color: #8A5905;
+}
+.faq-one [class*=col-lg-]:nth-child(10) .faq-one__icon span {
+  background-color: #d23f3f;
+}
+.faq-one [class*=col-lg-]:nth-child(10) .faq-one__icon span:before {
+  border-color: #d23f3f;
+}
+.faq-one [class*=col-lg-]:nth-child(11) .faq-one__icon span {
+  background-color: #E48B8B;
+}
+.faq-one [class*=col-lg-]:nth-child(11) .faq-one__icon span:before {
+  border-color: #E48B8B;
+}
+.faq-one [class*=col-lg-]:nth-child(12) .faq-one__icon span {
+  background-color: #D98C08;
+}
+.faq-one [class*=col-lg-]:nth-child(12) .faq-one__icon span:before {
+  border-color: #D98C08;
+}
+.faq-one [class*=col-lg-]:nth-child(13) .faq-one__icon span {
+  background-color: #48AEEA;
+}
+.faq-one [class*=col-lg-]:nth-child(13) .faq-one__icon span:before {
+  border-color: #48AEEA;
+}
 
 .faq-one__single {
   display: -webkit-box;

@@ -33,7 +33,7 @@
         <div class="col-lg-6">
           <div class="mission-one__single wow fadeInDown animated" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-name: fadeInDown;">
             <div class="contact-info-one__icon">
-              <i class="kipso-icon-manager"></i><!-- /.kipso-icon-manager -->
+              <i class="fas fa-seedling"></i><!-- /.kipso-icon-manager -->
             </div><!-- /.contact-info-one__icon -->
             <h2 class="contact-info-one__title">{{translations.OurVision}} </h2><!-- /.contact-info-one__title -->
             <p class="contact-info-one__text m-2">
@@ -48,7 +48,7 @@
         <div class="col-lg-6 ">
           <div class="mission-one__single wow fadeInDown animated" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-name: fadeInUp;">
             <div class="contact-info-one__icon">
-              <i class="kipso-icon-professor"></i><!-- /.kipso-icon-manager -->
+              <i class="fas fa-book-open"></i><!-- /.kipso-icon-manager -->
             </div><!-- /.contact-info-one__icon -->
             <h2 class="contact-info-one__title">{{translations.OurMission}} </h2><!-- /.contact-info-one__title -->
             <p class="contact-info-one__text m-2">
@@ -61,7 +61,7 @@
         </div><!-- /.col-lg-4 -->
       </div>
 
-      <nuxt-link to="/apply" class="thm-btn about-one__btn">{{translations.StartLearningNowBtn}}</nuxt-link><!-- /.thm-btn -->
+      <nuxt-link to="/apply" target="_blank" class="thm-btn about-one__btn">{{translations.StartLearningNowBtn}}</nuxt-link><!-- /.thm-btn -->
     </div><!-- /.container -->
   </section>
 </template>

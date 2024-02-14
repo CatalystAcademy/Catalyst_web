@@ -13,7 +13,7 @@
         <div class="col-lg-6">
           <div class="faq-one__single">
             <div class="faq-one__icon">
-              <span><i class="kipso-icon-training"></i></span>
+              <span><i class="fas fa-toolbox"></i></span>
             </div><!-- /.faq-one__icon -->
             <div class="faq-one__content">
               <h2 class="faq-one__title">{{translations.ValuesOneLabel}}</h2><!-- /.faq-one__title -->
@@ -78,7 +78,7 @@
         <div class="col-lg-6" style="padding-bottom: 0px; border-bottom: 0px none;">
           <div class="faq-one__single">
             <div class="faq-one__icon">
-              <span><i class="kipso-icon-professor"></i></span>
+              <span><i class="fas fa-certificate"></i></span>
             </div><!-- /.faq-one__icon -->
             <div class="faq-one__content">
               <h2 class="faq-one__title">{{translations.ValuesSixLabel}}</h2><!-- /.faq-one__title -->
@@ -91,7 +91,7 @@
         <div class="col-lg-6" style="padding-bottom: 0px; border-bottom: 0px none;">
           <div class="faq-one__single">
             <div class="faq-one__icon">
-              <span><i class="kipso-icon-knowledge"></i></span>
+              <span><i class="fas fa-chalkboard-teacher"></i></span>
             </div><!-- /.faq-one__icon -->
             <div class="faq-one__content">
               <h2 class="faq-one__title">{{translations.ValuesSevenLabel}}</h2><!-- /.faq-one__title -->

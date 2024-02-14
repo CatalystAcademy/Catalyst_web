@@ -129,8 +129,23 @@
   <data name="Address" xml:space="preserve">
     <value>Address</value>
   </data>
+  <data name="AllianceEightLabel" xml:space="preserve">
+    <value>Career Opportunities</value>
+  </data>
+  <data name="AllianceEightTextOne" xml:space="preserve">
+    <value>It acts as a bridge between catalysts, alumni, and potential employers, helping catalysts explore career opportunities in the business and entrepreneurship sectors.</value>
+  </data>
+  <data name="AllianceFiveLabel" xml:space="preserve">
+    <value>Impactful Projects and Initiatives</value>
+  </data>
+  <data name="AllianceFiveTextOne" xml:space="preserve">
+    <value>Members collaborate on projects and initiatives that have a positive impact on the community and beyond.</value>
+  </data>
+  <data name="AllianceFiveTextTwo" xml:space="preserve">
+    <value>The Alliance encourages members to take on socially responsible ventures and projects with sustainable outcomes.</value>
+  </data>
   <data name="AllianceFourLabel" xml:space="preserve">
-    <value>Networking Opportunities:</value>
+    <value>Networking Opportunities</value>
   </data>
   <data name="AllianceFourTextOne" xml:space="preserve">
     <value>Members of the Catalyst Alliance have access to a vast network of alumni and industry contacts.</value>
@@ -138,8 +153,17 @@
   <data name="AllianceFourTextTwo" xml:space="preserve">
     <value>Networking events, workshops, and conferences are organized to facilitate connections and opportunities.</value>
   </data>
+  <data name="AllianceNineLabel" xml:space="preserve">
+    <value>Celebration of Success</value>
+  </data>
+  <data name="AllianceNineTextOne" xml:space="preserve">
+    <value>The Catalyst Alliance celebrates the achievements and milestones of its members.</value>
+  </data>
+  <data name="AllianceNineTextTwo" xml:space="preserve">
+    <value>Recognizing and appreciating each other's successes fosters a sense of camaraderie and motivation.</value>
+  </data>
   <data name="AllianceOneLabel" xml:space="preserve">
-    <value>Inclusive Community:</value>
+    <value>Inclusive Community</value>
   </data>
   <data name="AllianceOneTextOne" xml:space="preserve">
     <value>The Catalyst Alliance is open to all catalysts, alumni, and stakeholders of Catalyst Academy.</value>
@@ -147,8 +171,32 @@
   <data name="AllianceOneTextTwo" xml:space="preserve">
     <value>It creates an inclusive environment that values diversity and encourages participation from individuals with various backgrounds and experiences.</value>
   </data>
+  <data name="AllianceSevenLabel" xml:space="preserve">
+    <value>Community Events and Activities</value>
+  </data>
+  <data name="AllianceSevenTextOne" xml:space="preserve">
+    <value>The Catalyst Alliance organizes various events, such as panel discussions, pitch competitions, and hackathons, to engage members and stimulate creativity and innovation.</value>
+  </data>
+  <data name="AllianceSixLabel" xml:space="preserve">
+    <value>Thought Leadership and Knowledge Sharing</value>
+  </data>
+  <data name="AllianceSixTextOne" xml:space="preserve">
+    <value>The Alliance encourages thought leadership among its members.</value>
+  </data>
+  <data name="AllianceSixTextTwo" xml:space="preserve">
+    <value>Members are encouraged to share their expertise through workshops, guest lectures, and articles, enriching the community with valuable knowledge.</value>
+  </data>
+  <data name="AllianceTenLabel" xml:space="preserve">
+    <value>Ethical and Responsible Practices</value>
+  </data>
+  <data name="AllianceTenTextOne" xml:space="preserve">
+    <value>The Alliance upholds high ethical standards and promotes responsible business practices.</value>
+  </data>
+  <data name="AllianceTenTextTwo" xml:space="preserve">
+    <value>Members are committed to making a positive impact on society and the environment.</value>
+  </data>
   <data name="AllianceThreeLabel" xml:space="preserve">
-    <value>Collaborative Platform:</value>
+    <value>Collaborative Platform</value>
   </data>
   <data name="AllianceThreeTextOne" xml:space="preserve">
     <value>It provides a platform for members to collaborate on projects, exchange ideas, and work together on entrepreneurial ventures.</value>
@@ -157,7 +205,7 @@
     <value>Catalyst Alliance fosters a culture of teamwork, where members support each other's initiatives and help overcome challenges.</value>
   </data>
   <data name="AllianceTwoLabel" xml:space="preserve">
-    <value>Shared Purpose:</value>
+    <value>Shared Purpose</value>
   </data>
   <data name="AllianceTwoTextOne" xml:space="preserve">
     <value>Members of the Catalyst Alliance are driven by a common purpose or mission.</value>
@@ -189,6 +237,12 @@
   <data name="CAAllianceText" xml:space="preserve">
     <value>is a community-driven initiative that brings together catalysts, alumni, mentors, and industry professionals who are passionate about entrepreneurship, business, and innovation. It serves as a central hub for collaboration, networking, and knowledge sharing within the academy. The main characteristics of the Catalyst Alliance are as follows:</value>
   </data>
+  <data name="CAHierarchy" xml:space="preserve">
+    <value>Catalyst Alliance Hierarchy</value>
+  </data>
+  <data name="CAHierarchyText" xml:space="preserve">
+    <value>At Catalyst Alliance, we believe in recognizing and empowering individuals who demonstrate exceptional leadership, dedication, and vision. Our hierarchy is divided into six levels, each representing a unique stage of growth and responsibility within our organization.</value>
+  </data>
   <data name="CAMainDescription" xml:space="preserve">
     <value>Catalyst Academy is a personal development and business academy that provides a range of programs and services designed to help teenagers develop the skills, knowledge, and confidence they need to succeed in both their personal and professional lives.</value>
   </data>
@@ -200,6 +254,18 @@
   </data>
   <data name="CatalystPhone" xml:space="preserve">
     <value>+37441575714</value>
+  </data>
+  <data name="Catalysts" xml:space="preserve">
+    <value>Catalysts (C)</value>
+  </data>
+  <data name="CatalystsTextOne" xml:space="preserve">
+    <value>The Catalyst level is where every member of our academy begins their journey.</value>
+  </data>
+  <data name="CatalystsTextThree" xml:space="preserve">
+    <value>At this entry-level position, you join a diverse and dynamic group of individuals united by a shared passion for innovation, collaboration, and positive change.</value>
+  </data>
+  <data name="CatalystsTextTwo" xml:space="preserve">
+    <value>As a Catalyst, you are an essential part of our community, contributing your skills, passion, and ideas to advance our mission and goals.</value>
   </data>
   <data name="ClosedDay" xml:space="preserve">
     <value>Sunday: Closed</value>
@@ -231,8 +297,104 @@
   <data name="EmailAddress" xml:space="preserve">
     <value>Email Address</value>
   </data>
+  <data name="FaqAEight" xml:space="preserve">
+    <value>Catalyst Academy encourages parental involvement through seminar events and workshops designed specifically for parents. These events cover a range of topics, including parenting skills, academic support strategies, and opportunities for parent-teacher collaboration.</value>
+  </data>
+  <data name="FaqAEleven" xml:space="preserve">
+    <value>Yes, Catalyst Academy offers flexible scheduling options for many of our programs to accommodate students' diverse needs and commitments. Whether you're looking for part-time, full-time, evening, or weekend classes, we strive to provide scheduling options that work for you.</value>
+  </data>
+  <data name="FaqAFifeteen" xml:space="preserve">
+    <value>Catalyst Academy is committed to fostering the holistic development of students, including the formation of their value systems. Our programs incorporate ethical and moral principles, social responsibility, and character education into the curriculum to help students develop strong values, integrity, and a sense of social consciousness. We provide opportunities for reflection, dialogue, and community engagement to support students' personal growth and ethical development.</value>
+  </data>
+  <data name="FaqAFive" xml:space="preserve">
+    <value>To apply to Catalyst Academy, please visit our website and complete the online application form. You can also contact our admissions office for assistance with the application process.</value>
+  </data>
+  <data name="FaqAFour" xml:space="preserve">
+    <value>Catalyst Academy is located in Yerevan, Armenia, at 24/2 Azatutyan Avenue. Our academy is situated in a vibrant and accessible area, providing students with a welcoming and conducive environment for learning and growth.</value>
+  </data>
+  <data name="FaqAFourteen" xml:space="preserve">
+    <value>Yes, Catalyst Academy offers programs that provide real-world experience and foster innovation across various fields. Our experiential learning opportunities include internships, research projects, industry partnerships, and innovation labs where students can apply their knowledge and skills to solve real-world problems, collaborate with industry professionals, and develop innovative solutions.</value>
+  </data>
+  <data name="FaqAOne" xml:space="preserve">
+    <value>Catalyst Academy is a personal development and business academy that provides a range of programs and services designed to help teenagers develop the skills, knowledge, and confidence they need to succeed in both their personal and professional lives.</value>
+  </data>
+  <data name="FaqASeven" xml:space="preserve">
+    <value>Yes, Catalyst Academy provides comprehensive career services to help students explore career options, develop job search strategies, and connect with employers. Our career services include resume writing assistance, mock interviews, job fairs, networking events, and alumni mentorship programs.</value>
+  </data>
+  <data name="FaqASix" xml:space="preserve">
+    <value>Yes, Catalyst Academy offers a variety of extracurricular activities where students can pursue their interests, develop leadership skills, and connect with peers who share similar passions. From academic clubs to sports teams to community service projects, there's something for everyone to get involved in.</value>
+  </data>
+  <data name="FaqATen" xml:space="preserve">
+    <value>The duration of programs at Catalyst Academy varies depending on the specific program and course of study. Our programs are designed to accommodate different learning paths and schedules, ranging from short-term courses to full-year programs.</value>
+  </data>
+  <data name="FaqAThirteen" xml:space="preserve">
+    <value>Catalyst Academy provides comprehensive programs and resources to support students interested in pursuing a business career. Our offerings include business and entrepreneurship courses, networking events, mentorship programs, internships, and career development workshops. We equip students with the knowledge, skills, and experiences they need to succeed in the dynamic world of business and entrepreneurship.</value>
+  </data>
+  <data name="FaqAThree" xml:space="preserve">
+    <value>Catalyst Academy primarily serves teenagers aged 8-18, offering programs and courses tailored to the unique needs and interests of students in this age range. From middle school to high school, Catalyst Academy provides a supportive and enriching educational environment where students can thrive academically, socially, and personally.</value>
+  </data>
+  <data name="FaqATwelve" xml:space="preserve">
+    <value>Catalyst Academy offers a variety of programs focused on personal development, including workshops, seminars, and courses designed to enhance essential skills such as communication, time management, leadership, resilience, and emotional intelligence. These programs are tailored to help individuals grow personally and professionally, fostering self-awareness, confidence, and a sense of purpose.</value>
+  </data>
+  <data name="FaqATwo" xml:space="preserve">
+    <value>A catalyst is someone who inspires or instigates change, innovation, and progress in a particular field or area.</value>
+  </data>
+  <data name="FaqQEight" xml:space="preserve">
+    <value>How can parents get involved with Catalyst Academy?</value>
+  </data>
+  <data name="FaqQEleven" xml:space="preserve">
+    <value>Are there flexible scheduling options available for programs?</value>
+  </data>
+  <data name="FaqQFifeteen" xml:space="preserve">
+    <value>How does Catalyst Academy support the formation of students' value systems?</value>
+  </data>
+  <data name="FaqQFive" xml:space="preserve">
+    <value>How do I apply to Catalyst Academy?</value>
+  </data>
+  <data name="FaqQFour" xml:space="preserve">
+    <value>Where is Catalyst Academy located?</value>
+  </data>
+  <data name="FaqQFourteen" xml:space="preserve">
+    <value>Does Catalyst Academy offer programs that provide real-world experience and foster innovation?</value>
+  </data>
+  <data name="FaqQOne" xml:space="preserve">
+    <value>What is Catalyst Academy?</value>
+  </data>
+  <data name="FaqQSeven" xml:space="preserve">
+    <value>Does Catalyst Academy offer career services for students and alumni?</value>
+  </data>
+  <data name="FaqQSix" xml:space="preserve">
+    <value>Are there opportunities for student involvement and extracurricular activities?</value>
+  </data>
+  <data name="FaqQTen" xml:space="preserve">
+    <value>How long do programs at Catalyst Academy typically last?</value>
+  </data>
+  <data name="FaqQThirteen" xml:space="preserve">
+    <value>How does Catalyst Academy support students interested in pursuing a business career?</value>
+  </data>
+  <data name="FaqQThree" xml:space="preserve">
+    <value>What age groups does Catalyst Academy serve?</value>
+  </data>
+  <data name="FaqQTwelve" xml:space="preserve">
+    <value>What types of programs does Catalyst Academy offer for personal development?</value>
+  </data>
+  <data name="FaqQTwo" xml:space="preserve">
+    <value>Who is a Catalyst?</value>
+  </data>
   <data name="FBLink" xml:space="preserve">
     <value>second value</value>
+  </data>
+  <data name="FellowCatalysts" xml:space="preserve">
+    <value>Fellow Catalysts (FC)</value>
+  </data>
+  <data name="FellowCatalystsTextOne" xml:space="preserve">
+    <value>Exceptional Catalysts who choose to stay connected with the academy after graduating.</value>
+  </data>
+  <data name="FellowCatalystsTextThree" xml:space="preserve">
+    <value>They are invited to participate in exclusive programs, workshops, and networking events with industry professionals.</value>
+  </data>
+  <data name="FellowCatalystsTextTwo" xml:space="preserve">
+    <value>Fellow Catalysts act as ambassadors and advisors to current catalysts, promoting a strong alumni network.</value>
   </data>
   <data name="FillFormText" xml:space="preserve">
     <value>Fill out the form</value>
