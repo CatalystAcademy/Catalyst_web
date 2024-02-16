@@ -39,7 +39,6 @@
                       <nuxt-link to="/">{{translations.HomePage}}</nuxt-link>
                     </li>-->
                   <li>
-                    <nuxt-link to="/">{{translations.HomePage}}</nuxt-link>
                     <nuxt-link to="/">About</nuxt-link>
                     <ul class="sub-menu">
                       <li><nuxt-link to="/about">Academy</nuxt-link></li>

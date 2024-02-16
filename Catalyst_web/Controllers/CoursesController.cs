@@ -18,16 +18,10 @@ namespace Catalyst_web.Controllers
     [EnableCors("AllowSpecificOrigin")]
     // [Route("api/[controller]")]
     [ApiController]
-    public class CoursesController : ControllerBase
+    public class CoursesController(ApplicationDbContext dbContext, IConfiguration configuration) : ControllerBase
     {
-        private readonly ApplicationDbContext _dbContext;
-        private readonly IConfiguration _configuration;
-
-        public CoursesController(ApplicationDbContext dbContext, IConfiguration configuration)
-        {
-            _dbContext = dbContext;
-            _configuration = configuration;
-        }
+        private readonly ApplicationDbContext _dbContext = dbContext;
+        private readonly IConfiguration _configuration = configuration;
 
         [HttpGet("api/Courses")]
         public async Task<IActionResult> GetAllCourses()

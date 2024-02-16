@@ -5,7 +5,7 @@
         <div class="col-xl-6">
           <div class="about-two__content">
             <div class="block-title text-left">
-              <h2 class="block-title__title">Welcome to Catalyst Academy</h2><!-- /.block-title__title -->
+              <h2 class="block-title__title">{{translations.WelcomeMessage}}</h2><!-- /.block-title__title -->
             </div><!-- /.block-title -->
             <p class="about-two__text">Catalyst Academy is a personal development and business academy that provides a range of programs and services designed to help teenagers develop the skills, knowledge, and confidence they need to succeed in both their personal and professional lives.</p><!-- /.about-two__text -->
             <div class="about-two__single-wrap">
@@ -57,6 +57,14 @@
 <script>
     export default {
     name: "AboutTwo",
+    computed: {
+      translations() {
+        return this.$store.state.translations;
+      },
+    },
+    async created() {
+      await this.$store.dispatch('fetchTranslations');
+    }
     }
 </script>
 
