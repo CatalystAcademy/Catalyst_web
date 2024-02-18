@@ -11,6 +11,7 @@
           <th>Description in English</th>
           <th>Profession in Armenian</th>
           <th>Profession in English</th>
+          <th>Leadership</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -22,6 +23,7 @@
           <td>{{ teacher.professionEng }}</td>
           <td>{{ teacher.descriptionArm }}</td>
           <td>{{ teacher.descriptionEng }}</td>
+          <td>{{ teacher.IsFromLeadership }}</td>
           <td>
             <router-link :to="`/admin/teacher/edit/${teacher.id}`" class="btn btn-edit">Edit</router-link>
             <button class="btn btn-delete" @click="deleteTeacher(teacher.id)">Delete</button>
@@ -61,7 +63,7 @@
       });
 
       try {
-        const response = await axiosInstance.get('/api/Teachers');
+        const response = await axiosInstance.get('/api/AllInstructors');
         return { teachers: response.data };
       } catch (error) {
         console.error('Error fetching teachers:', error);

@@ -21,6 +21,11 @@ namespace Catalyst_web.Controllers
         {
             return Ok(await _dbContext.Teachers.Where(x => x.IsFromLeadership == false).ToListAsync());
         }
+        [HttpGet("api/AllInstructors")]
+        public async Task<IActionResult> GetAllInstructors()
+        {
+            return Ok(await _dbContext.Teachers.ToListAsync());
+        }
         [HttpPost("api/Teachers/Create")]
         public async Task<IActionResult> CreateTeacher([FromBody] Teacher request)
         {
