@@ -1,7 +1,7 @@
 export default {
   layout: 'default',
   axios: {
-    baseURL: 'https://localhost:7226',
+    baseURL: 'http://localhost:5000',
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head

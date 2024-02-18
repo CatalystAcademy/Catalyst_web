@@ -41,16 +41,15 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseHttpsRedirection();
 }
 
 var locOptions = app.Services.GetService<IOptions<RequestLocalizationOptions>>();
 if (locOptions != null) app.UseRequestLocalization(locOptions.Value);
+
+app.UseForwardedHeaders();
 app.UseCultureMiddleware();
-
-app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
 
 using (var scope = app.Services.CreateScope())
