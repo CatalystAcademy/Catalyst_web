@@ -38,7 +38,7 @@ namespace Catalyst_web.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Catalyst_Academy.Server.Resources.SharedResource.hy-AM", typeof(SharedResource_hy_AM).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Catalyst_web.Resources.SharedResource.hy-AM", typeof(SharedResource_hy_AM).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

@@ -14,7 +14,8 @@
                             <a data-toggle="tooltip" data-placement="top" title="" href="#" data-original-title="No Comments"><i class="fa fa-comments"></i></a>
                             <a data-toggle="tooltip" data-placement="top" title="" href="#" data-original-title="Posted By Admin"><i class="fa fa-user"></i></a>
                         </div><!-- /.blog-one__meta -->
-                        <h2 class="blog-one__title">Are you ready to become a best student
+                        <h2 class="blog-one__title">
+                          {{news.titleEng}}
 
                         </h2><!-- /.blog-one__title -->
                         <p class="blog-one__text">Aelltes port lacus quis enim var sed efficitur turpis gilla sed sit
@@ -197,9 +198,23 @@
 </template>
 
 <script>
-    export default {
-        name: "NewsDetails"
-    }
+  export default {
+    name: "NewsDetails",
+    async fetch() {
+      const newsId = this.$route.params.id; // Get news ID from route parameters
+      try {
+        const response = await this.$axios.get(`/api/NewsDetails/${newsId}`); 
+        this.news = response.data;
+      } catch (error) {
+        // Handle errors
+      }
+    },
+    data() {
+      return {
+        news: {},
+      };
+    },
+  };
 </script>
 
 <style scoped>

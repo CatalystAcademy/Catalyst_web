@@ -22,7 +22,19 @@ public static class ServiceCollection
         });
         AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
         services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
-        
+
+        services.Configure<CookiePolicyOptions>(options =>
+        {
+            // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+            options.CheckConsentNeeded = context => true;
+            options.MinimumSameSitePolicy = SameSiteMode.Unspecified;
+/*            options.OnAppendCookie = cookieContext =>
+                CookieSameSiteChecker.CheckSameSite(cookieContext.Context, cookieContext.CookieOptions);
+            options.OnDeleteCookie = cookieContext =>
+                CookieSameSiteChecker.CheckSameSite(cookieContext.Context, cookieContext.CookieOptions);*/
+        });
+
+
         // Configure localization
         services.AddLocalization(opts => opts.ResourcesPath = "Resources");
         services.Configure<RequestLocalizationOptions>(options =>
@@ -45,10 +57,10 @@ public static class ServiceCollection
         services.AddTransient<ILocService, LocService>();
         
         // Configure MediatR
-        services.AddMediatR(serviceConfiguration =>
+/*        services.AddMediatR(serviceConfiguration =>
         {
             serviceConfiguration.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
-        });
+        });*/
         
         return services;
     }

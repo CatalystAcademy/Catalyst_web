@@ -4,36 +4,55 @@ using Catalyst_web.Models;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Net.Mail;
+using SendGrid;
+using SendGrid.Helpers.Mail;
+using System;
+using Npgsql;
+using Dapper;
+using Catalyst_web.Dto;
+using System.Globalization;
 
 namespace Catalyst_web.Controllers
 {
     [EnableCors("AllowSpecificOrigin")]
     // [Route("api/[controller]")]
     [ApiController]
-    public class CoursesController : ControllerBase
+    public class CoursesController(ApplicationDbContext dbContext, IConfiguration configuration) : ControllerBase
     {
-        private readonly ApplicationDbContext _dbContext;
-        private readonly ILocService _locService;
-
-        public CoursesController(ApplicationDbContext dbContext, ILocService locService)
-        {
-            _dbContext = dbContext;
-            _locService = locService;
-        }
+        private readonly ApplicationDbContext _dbContext = dbContext;
+        private readonly IConfiguration _configuration = configuration;
 
         [HttpGet("api/Courses")]
         public async Task<IActionResult> GetAllCourses()
         {
-            return Ok(await _dbContext.Courses.ToListAsync());
-        }
+            var courses = await _dbContext.Courses.ToListAsync();
+            var courseList = new List<CourseDto>();
+            var isEnglish = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "en";
+            foreach (var course in courses)
+            {
+                courseList.Add(isEnglish ? new CourseDto
+                {
+                    Id = course.Id,
+                    Description = course.DescriptionEng,
+                    Instractor = course.InstractorEng,
+                    EndDate = course.EndDate.ToShortDateString(),
+                    StartDate = course.StartDate.ToShortDateString(),
+                    Title = course.TitleEng,
+                    RegistrationDate = course.RegistrationDate.ToShortDateString(),
 
-        [HttpGet("api/Courses/GetWelcomeMessage")]
-        public IActionResult GetWelcomeMessage()
-        {
-            string welcomeMessage = _locService.Get("WelcomeMessage");
-
-            return Ok(new { message = welcomeMessage });
-
+                } : new CourseDto
+                {
+                    Id = course.Id,
+                    Title = course.TitleArm,
+                    Description = course.DescriptionArm,
+                    Instractor = course.InstractorArm,
+                    EndDate = course.EndDate.ToShortDateString(),
+                    StartDate = course.StartDate.ToShortDateString(),
+                    RegistrationDate = course.RegistrationDate.ToShortDateString(),
+                });
+            }
+            return Ok(courseList);
         }
 
         [HttpGet("api/CourseDetails/{id}")]
@@ -56,7 +75,13 @@ namespace Catalyst_web.Controllers
             }
         }
 
-        // POST: Create a new course
+        [HttpGet("api/Courses/Latest")]
+        public async Task<IActionResult> GetLatestCourses()
+        {
+            var courses = await _dbContext.Courses.OrderByDescending(c => c.Created).Take(2).ToListAsync();
+            return Ok(courses);
+        }
+
         [HttpPost("api/Courses/Create")]
         public async Task<IActionResult> CreateCourse([FromBody] Course request)
         {
@@ -64,16 +89,21 @@ namespace Catalyst_web.Controllers
             {
                 return BadRequest(ModelState);
             }
-            var createCourse = new Course
-            {
-                Title = request.Title,
-                Description = request.Description,
-                StartDate = request.StartDate,
-                EndDate = request.EndDate,
-                ImageData = request.ImageData,
-            };
-            _dbContext.Courses.Add(createCourse);
-            await _dbContext.SaveChangesAsync();
+
+                var createCourse = new Course
+                {
+                    TitleEng = request.TitleEng,
+                    TitleArm = request.TitleArm,
+                    InstractorArm = request.InstractorArm,
+                    InstractorEng = request.InstractorEng,
+                    DescriptionEng = request.DescriptionEng,
+                    DescriptionArm = request.DescriptionArm,
+                    StartDate = request.StartDate,
+                    EndDate = request.EndDate,
+                    ImageData = request.ImageData,
+                };
+                _dbContext.Courses.Add(createCourse);
+                await _dbContext.SaveChangesAsync();
 
             return Ok();
         }
@@ -93,11 +123,14 @@ namespace Catalyst_web.Controllers
                     return NotFound(); // Return not found if course doesn't exist
                 }
 
-                existingCourse.Title = editedCourse.Title;
-                existingCourse.Description = editedCourse.Description;
+                existingCourse.TitleEng = editedCourse.TitleEng;
+                existingCourse.TitleArm = editedCourse.TitleArm;
+                existingCourse.DescriptionEng = editedCourse.DescriptionEng;
+                existingCourse.DescriptionArm = editedCourse.DescriptionArm;
                 existingCourse.StartDate = editedCourse.StartDate;
                 existingCourse.EndDate = editedCourse.EndDate;
-                existingCourse.ImageData = editedCourse.ImageData;
+                existingCourse.InstractorArm = editedCourse.InstractorArm;
+                existingCourse.InstractorEng = editedCourse.InstractorEng;
 
                 _dbContext.Courses.Update(existingCourse);
                 await _dbContext.SaveChangesAsync();
@@ -134,24 +167,92 @@ namespace Catalyst_web.Controllers
             {
                 return BadRequest(ModelState);
             }
-
             // 2. Validate eligibility (check if user already registered)
             if (!IsUserEligibleForCourse(request.Id, request.CourseId))
             {
                 return BadRequest("User is not eligible to register for this course.");
             }
+/*        using (var memoryStream = new MemoryStream())
+        {
+                var connectionString = _configuration.GetValue<string>("ConnectionStrings");
+                await file.CopyToAsync(memoryStream);
+                byte[] imageData = memoryStream.ToArray();
+                // Use Dapper to insert the image data into the database
+                using (var connection = new NpgsqlConnection(connectionString))
+                {
+                    connection.Open();
+                    connection.Execute("INSERT INTO RegisterForCourse (ImageData) VALUES (@ImageData)",
+                                        new { ImageData = memoryStream.ToArray() });
+                }*/
 
             // 3. Enroll user in the course (this might involve creating a registration record or updating a join table)
             var courseRegistration = new RegisterForCourse
             {
-                Id = request.Id, 
+                Id = request.Id,
                 CourseId = request.CourseId,
                 Email = request.Email,
-                Name = request.Name,
+                FullName = request.FullName,
+                Message = request.Message,
                 PhoneNumber = request.PhoneNumber,
+                ParentPhoneNumber = request.ParentPhoneNumber,
+                //ImageData = imageData,
             };
             _dbContext.RegisterForCourses.Add(courseRegistration);
             await _dbContext.SaveChangesAsync();
+
+            const string emailContent = @"Hi {{UserName}},
+                                Congratulations on registering for the {{CourseName}} course! 
+                                We're excited to have you on board and eager to share the knowledge. Check out these resources to get started:
+                                * Course homepage: [Course Link]
+                                * Welcome video: [Video Link]
+                                * Q&A forum: [Forum Link]
+                                Don't hesitate to reach out if you have any questions. We're here to help you succeed!
+
+                                Best regards,
+                                The Catalyst Academy Team";
+
+            var course = await _dbContext.Courses.FirstOrDefaultAsync(c => c.Id == request.CourseId);
+
+            // Replace emailContent placeholders
+            var personalizedContent = emailContent.Replace("{{UserName}}", courseRegistration.FullName)
+                                                 .Replace("{{CourseName}}", course?.TitleEng);
+
+            var sendGridApiKey = _configuration.GetValue<string>("SendGrid:sendgrid_api_key");
+
+/*            var dynamicTemplateData = new Dictionary<string, string>()
+                {
+                    {"UserName", request.Name},
+                    {"CourseName", "Web Development 101"},
+                    {"CourseLink", "https://your-course-link.com"},
+                    {"VideoLink", "https://your-welcome-video.com"},
+                    {"ForumLink", "https://your-forum-link.com"},
+                    {"unsubscribe", "https://your-unsubscribe-link.com"},
+                    {"unsubscribe_preferences", "https://your-preferences-link.com"}
+                };*/
+            // var templateId = "d-a9963b3ed9ee452d805ef6ef8c2a09db"
+            // 4. Send registration confirmation email using SendGrid
+            try
+            {
+                var fromEmail = _configuration.GetValue<string>("SendGrid:FromEmail");
+
+                var email = new SendGridMessage()
+                {
+                    From = new EmailAddress(fromEmail),
+                    ReplyTo = new EmailAddress(request.Email),
+                    Subject = "Welcome to the course!",
+                    HtmlContent = personalizedContent
+                };
+
+                var client = new SendGridClient(sendGridApiKey); // Replace with your SendGrid API key
+                await client.SendEmailAsync(email);
+
+                // Email sent successfully
+            }
+            catch (Exception ex)
+            {
+                // Handle email sending error (log the error, potentially notify user)
+                return StatusCode(500, ex);
+            }
 
             return Ok();
         }

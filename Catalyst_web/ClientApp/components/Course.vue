@@ -14,7 +14,11 @@
                 <img src="/assets/images/team-1-1.jpg" alt="">
                 by <nuxt-link to="/teacher-details">Lou Guerrero</nuxt-link>
               </div><!-- /.course-one__admin -->
-              <h2 class="course-one__title"><nuxt-link to="/course-details">{{course.title}}</nuxt-link></h2>
+              <h2 class="course-one__title">
+                <nuxt-link :to="`courses/${course.id}`">
+                {{course.title }}
+              </nuxt-link>
+              </h2>
               <!-- /.course-one__title -->
               <div class="course-one__stars">
                 <span class="course-one__stars-wrap">
@@ -32,7 +36,7 @@
                 <nuxt-link to="/course-details"><i class="far fa-folder-open"></i> 6 Lectures</nuxt-link>
                 <nuxt-link to="/course-details">$18</nuxt-link>
               </div><!-- /.course-one__meta -->
-              <nuxt-link :to="`courseDetails/${course.id}`" class="course-one__link">
+              <nuxt-link :to="`courses/${course.id}`" class="course-one__link">
                 See Preview
               </nuxt-link>
             </div><!-- /.course-one__content -->
@@ -57,6 +61,7 @@
 
 <script>
   import https from 'https';
+  import { mapState } from 'vuex';
 
   export default {
     name: 'Course',
@@ -65,25 +70,28 @@
         courses: [],
         loading: true,
         error: false,
-        welcomeMessage: '',
       };
+    },
+    computed: {
+      ...mapState(['language']),
+      translations() {
+        return this.$store.state.translations;
+      },
     },
     async fetch() { // Use fetch for component-level data fetching
       try {
         const response = await this.$axios.get('/api/Courses');
         this.courses = response.data;
 
-        const welcomeMessageResponse = await this.$axios.get('/api/Courses/GetWelcomeMessage');
-        this.welcomeMessage = welcomeMessageResponse.data.message; // Extract message from response
-
         this.loading = false;
       } catch (error) {
-        console.error('Error fetching courses or welcome message:', error);
+        console.error('Error fetching courses:', error);
         this.error = true;
         this.loading = false;
       }
     },
-    created() {
+    async created() {
+      await this.$store.dispatch('fetchTranslations');
       // Optional: Set up HTTPS agent for self-signed certificates (if needed)
       if (process.env.NODE_ENV === 'development') {
         this.$axios.defaults.httpsAgent = new https.Agent({ rejectUnauthorized: false });
@@ -92,29 +100,6 @@
   };
 </script>
 
-
-
-
-<!--<script>
-  import https from 'https';
-  export default {
-    name: 'Course',
-    async asyncData({ $axios }) {
-      $axios.defaults.httpsAgent = new https.Agent({ rejectUnauthorized: false });
-      try {
-        const welcomeMessageResponse = await $axios.get('https://localhost:7226/api/Courses/GetWelcomeMessage');
-        return {
-          welcomeMessage: welcomeMessageResponse.data.message
-        };
-        console.log(welcomeMessage);
-        console.log(welcomeMessageResponse.data.message);
-      } catch (error) {
-        console.error('Error fetching welcome message:', error);
-        return { message: '' }; // Handle errors gracefully
-      }
-    },
-  };
-</script>-->
 
 <style scoped>
 

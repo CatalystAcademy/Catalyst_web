@@ -13,7 +13,7 @@
                   <h2 class="cta-five__title">Start growing with <br>
                       the community</h2><!-- /.cta-five__title -->
                   <p class="cta-five__text">Duis aute irure dolor in reprehenderit in velit esse</p><!-- /.cta-five__text -->
-                  <a href="#" class="thm-btn cta-five__btn">Learn More</a><!-- /.thm-btn cta-five__btn -->
+                  <a href="#teacher-register-section" class="thm-btn cta-five__btn">Learn More</a><!-- /.thm-btn cta-five__btn -->
               </div><!-- /.container text-center -->
           </section>
 </template>

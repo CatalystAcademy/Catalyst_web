@@ -15,7 +15,7 @@
     components: {Footer, NavOne, PageHeader, News},
     head(){
       return {
-        title: "Kipso | News"
+        title: "CA | News"
       }
     }
   }

@@ -1,11 +1,12 @@
 <template>
-  <div>
+  <div class="container">
     <h2 class="course-list-header">List of Courses</h2> <router-link to="/admin/Index" class="btn btn-edit">Back to Index</router-link>
     <router-link to="/admin/Course/Create" class="btn btn-create">Create Course</router-link>
     <table class="course-table">
       <thead>
         <tr>
-          <th>Title</th>
+          <th>Title </th>
+          <th>Instructor </th>
           <th>Description</th>
           <th>Start Date</th>
           <th>End Date</th>
@@ -15,9 +16,10 @@
       <tbody>
         <tr v-for="course in courses" :key="course.id">
           <td>{{ course.title }}</td>
+          <td>{{ course.instractor }}</td>
           <td>{{ course.description }}</td>
-          <td>{{ course.startDate }}</td>
-          <td>{{ course.endDate }}</td>
+          <td>{{ formatDate(course.startDate) }}</td>
+          <td>{{ formatDate(course.endDate) }}</td>
           <td>
             <router-link :to="`/admin/Course/edit/${course.id}`" class="btn btn-edit">Edit</router-link>
             <button class="btn btn-delete" @click="deleteCourse(course.id)">Delete</button>
@@ -37,6 +39,10 @@
   export default {
     name: 'IndexPage',
     methods: {
+      formatDate(date) {
+        // Use this.$moment to format the date
+        return this.$moment(date).format('MMMM D, YYYY');
+      },
       deleteCourse(courseId) {
         this.$axios.delete(`/api/Courses/${courseId}`)
           .then(() => {

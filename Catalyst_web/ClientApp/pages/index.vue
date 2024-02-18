@@ -4,10 +4,12 @@
     <BannerOne />
     <AboutTwo />
     <CourseOne />
+<!--    <CourseTwo />
+-->
     <VideoTwo />
-    <CountdownOne />
-    <CourseCategory />
-    <CallToActionThree />
+    <!--    <CountdownOne />
+      <CourseCategory />
+      <CallToActionThree />-->
     <Testimonial />
     <ClientsLogoTwo />
     <BlogCarousel />
@@ -18,21 +20,22 @@
 </template>
 
 
-
-
 <script>
-  import https from 'https';
   export default {
     name: 'IndexPage',
-    async asyncData({ $axios }) { // Inject $axios directly gt
-      $axios.defaults.httpsAgent = new https.Agent({ rejectUnauthorized: false });
-      try {
-        const response = await $axios.get('https://localhost:7226/api/Courses'); // Use relative path
-        return { courses: response.data };
-      } catch (error) {
-        console.error('Error fetching courses:', error);
-        return { courses: [] }; // Graceful error handling
-      }
+    mounted() {
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://embed.tawk.to/657937ed07843602b8018a48/1hhgo4u1r';
+      script.charset = 'UTF-8';
+      script.setAttribute('crossorigin', '*');
+      document.head.appendChild(script);
+
+/*      this.$nextTick(() => {
+        // Access Tawk_API here, if needed
+        console.log(Tawk_API); // Example usage
+      });*/
     },
   }
 </script>
+

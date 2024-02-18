@@ -5,16 +5,12 @@
                       <div class="container">
                           <div class="row">
                               <div class="col-xl-3 col-lg-6 col-sm-12">
-                                  <div class="footer-widget footer-widget__contact">
-                                      <h2 class="footer-widget__title">Courses</h2><!-- /.footer-widget__title -->
-                                      <ul class="list-unstyled footer-widget__course-list">
-                                          <li>
-                                              <h2><a href="course-details.html">Introduction Web Design</a></h2>
-                                              <p>Mike Hardson</p>
-                                          </li>
-                                          <li>
-                                              <h2><a href="course-details.html"> Learning MBA Management </a></h2>
-                                              <p>Jessica Brown</p>
+                                  <div class="footer-widget footer-widget__contact" v-if="latestCourses.length">
+                                      <h2 class="footer-widget__title">Our Latest Courses</h2><!-- /.footer-widget__title -->
+                                      <ul class="list-unstyled footer-widget__course-list" v-for="course in latestCourses" :key="course.id">
+                                          <li class="mb-4">
+                                              <h2><nuxt-link :to="`courses/${course.id}`">{{course.titleEng}}</nuxt-link></h2>
+                                              <p>{{course.instractorEng}}</p>
                                           </li>
                                       </ul><!-- /.footer-widget__course-list -->
                                   </div><!-- /.footer-widget -->
@@ -24,15 +20,13 @@
                                       <h2 class="footer-widget__title">Explore</h2><!-- /.footer-widget__title -->
                                       <div class="footer-widget__link-wrap">
                                           <ul class="list-unstyled footer-widget__link-list">
-                                              <li><a href="#">About</a></li>
-                                              <li><a href="#">Overview</a></li>
-                                              <li><a href="#">Teachers</a></li>
+                                              <li><a href="/about">About</a></li>
+                                              <li><a href="/teachers">Teachers</a></li>
                                               <li><a href="#">Join Us</a></li>
-                                              <li><a href="#">Our News</a></li>
+                                              <li><a href="/news">Our News</a></li>
                                           </ul><!-- /.footer-widget__link-list -->
                                           <ul class="list-unstyled footer-widget__link-list">
-                                              <li><a href="#">Help </a></li>
-                                              <li><a href="#">Contact</a></li>
+                                              <li><a href="/contact">Contact</a></li>
                                               <li><a href="#">Register Now</a></li>
                                           </ul><!-- /.footer-widget__link-list -->
                                       </div><!-- /.footer-widget__link-wrap -->
@@ -57,8 +51,11 @@
                                       <p class="footer-widget__text">Lorem ipsum dolor sit ametcon, sectetur adipiscing elit.
                                           Phasellus vehic sagittis euismod.</p><!-- /.footer-widget__text -->
                                       <div class="footer-widget__btn-block">
-                                          <a href="#" class="thm-btn">Contact</a><!-- /.thm-btn -->
-                                          <a href="#" class="thm-btn">Purchase</a><!-- /.thm-btn -->
+                                        <!--<a href="#" class="thm-btn">Contact</a>--><!-- /.thm-btn -->
+
+                                        <button @click="openModal" class="thm-btn">Request Info</button>
+                                        <RequestInfoModal />
+                                        <!-- /.thm-btn -->
                                       </div><!-- /.footer-widget__btn-block -->
                                   </div><!-- /.footer-widget -->
                               </div><!-- /.col-lg-3 -->
@@ -67,12 +64,11 @@
                   </div><!-- /.site-footer__upper -->
                   <div class="site-footer__bottom">
                       <div class="container">
-                          <p class="site-footer__copy">&copy; Copyright 2020 by <a href="#">Layerdrops.com</a></p>
+                          <p class="site-footer__copy">&copy; Copyright 2024 by <a href="#">Catalyst Academy</a></p>
                           <div class="site-footer__social">
                               <a href="#" data-target="html" class="scroll-to-target site-footer__scroll-top"><i class="kipso-icon-top-arrow"></i></a>
-                              <a href="#"><i class="fab fa-twitter"></i></a>
                               <a href="#"><i class="fab fa-facebook-square"></i></a>
-                              <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                              <a href="#"><i class="fab fa-linkedin"></i></a>
                               <a href="#"><i class="fab fa-instagram"></i></a>
                           </div><!-- /.site-footer__social -->
                           <!-- /.site-footer__copy -->
@@ -95,11 +91,45 @@
 </template>
 
 <script>
+  import RequestInfoModal from '~/components/RequestInfoModal.vue';
+  import https from 'https';
+
     export default {
-        name: "Footer"
+    name: "Footer",
+    components: {
+      RequestInfoModal,
+    },
+    methods: {
+      openModal() {
+        this.$store.commit('setRequestInfoModalState', true);
+      },
+      closeModal() {
+        this.$store.commit('setRequestInfoModalState', false);
+      },
+    },
+    data() {
+      return {
+        latestCourses: [],
+      }
+    },
+    async fetch() { // Use fetch for component-level data fetching
+      try {
+        const response = await this.$axios.get('/api/Courses/Latest');
+        this.latestCourses = response.data;
+
+      } catch (error) {
+        console.error('Error fetching teachers or welcome message:', error);
+        this.error = true;
+      }
+    },
+    async created() {
+      if (process.env.NODE_ENV === 'development') {
+        this.$axios.defaults.httpsAgent = new https.Agent({ rejectUnauthorized: false });
+      }
+    },
     }
 </script>
 
 <style scoped>
-
+  
 </style>

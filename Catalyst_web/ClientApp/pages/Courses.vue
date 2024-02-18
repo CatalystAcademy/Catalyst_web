@@ -15,7 +15,7 @@
     components: {Course, Footer, NavOne, PageHeader},
     head(){
       return {
-        title: "Kipso | Course"
+        title: "CA | Courses"
       }
     }
   }

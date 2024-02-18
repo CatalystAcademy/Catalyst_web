@@ -57,15 +57,53 @@ export default {
       },
       {
         path: '/about',
-        component: 'About'
+        component: 'about'
+      },
+      {
+        path: '/missionandvision',
+        component: 'missionandvision'
       },
       {
         path: '/courses',
-        component: 'Courses'
+        component: 'courses'
       },
       {
-        path: '/courseDetails/:id',
-        component: () => import('./pages/CourseDetailsPage.vue'),
+        path: '/contact',
+        component: 'contact'
+      },
+      {
+        path: '/faq',
+        component: 'faq'
+      },
+      {
+        path: '/curriculums',
+        component: 'curriculums'
+      },
+      {
+        path: '/teachers',
+        component: 'teachers'
+      },
+      {
+        path: '/blogs',
+        component: 'blogs'
+      },
+      {
+        path: '/values',
+        component: 'Values'
+      },
+      {
+        path: '/leadership',
+        component: 'leadership'
+      },
+      {
+        path: '/courses/:id',
+        // component: () => import('./pages/courses'),
+      },
+      {
+        path: '/curriculums/:id',
+      },
+      {
+        path: '/teachers/:id',
       },
       {
         path: '/admin/Index',
@@ -77,17 +115,30 @@ export default {
       },
       {
         path: '/admin/Course/edit/:id',
-        name: 'EditCourse',
-        component: 'Edit'
+/*        name: 'EditCourse',
+        component: 'Edit'*/
+      },
+      {
+        path: '/news/:id',
+      },
+      {
+        path: '/blogs/:id',
       },
       {
         path: '/admin/Course/List',
-        name: 'adminList',
         component: 'List'
       },
       {
+        path: '/admin/blogs/list',
+        component: 'list'
+      },
+
+      {
+        path: '/admin/blogs/create',
+        component: 'create'
+      },
+      {
         path: '/admin/News/List',
-        name: 'adminList',
         component: 'List'
       },
       {
@@ -107,6 +158,12 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: '~/plugins/vue-toasted.js', mode: 'client' },
+    { src: '~/plugins/vue-modal-dialogs.js', mode: 'client' },
+    { src: '~/plugins/vue-datepicker', ssr: false },
+    { src: '~plugins/bootstrap-vue.js', ssr: false },
+    { src: '~/plugins/vuelidate.js', mode: 'all' },
+    '~/plugins/moment.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -118,9 +175,19 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/i18n',
+    'moment'
   ],
-
+  i18n: {
+    locales: ['en-US', 'hy-AM'], // Add more locales as needed
+    defaultLocale: 'en-US',
+    vueI18n: {
+      fallbackLocale: 'en-US',
+      messages: {}, // Empty for now, as translations will be fetched dynamically
+    },
+  },
+  store: true,
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }

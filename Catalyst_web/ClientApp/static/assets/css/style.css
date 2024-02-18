@@ -1650,6 +1650,24 @@ a:visited {
 .contact-info-one [class*=col-lg-]:nth-child(3) .contact-info-one__icon::before {
   border-color: #7c4bc0;
 }
+.contact-info-one [class*=col-lg-]:nth-child(4) .contact-info-one__icon {
+  background-color: #9f172f;
+}
+  .contact-info-one [class*=col-lg-]:nth-child(4) .contact-info-one__icon::before {
+    border-color: #9f172f;
+  }
+.contact-info-one [class*=col-lg-]:nth-child(5) .contact-info-one__icon {
+  background-color: #db8e08;
+}
+  .contact-info-one [class*=col-lg-]:nth-child(5) .contact-info-one__icon::before {
+    border-color: #db8e08;
+  }
+.contact-info-one [class*=col-lg-]:nth-child(6) .contact-info-one__icon {
+  background-color: #2da397;
+}
+  .contact-info-one [class*=col-lg-]:nth-child(6) .contact-info-one__icon::before {
+    border-color: #2da397;
+  }
 
 .contact-info-one__single {
   border-style: solid;
@@ -1849,6 +1867,48 @@ a:visited {
 }
 .faq-one [class*=col-lg-]:nth-child(6) .faq-one__icon span:before {
   border-color: #33a9bb;
+}
+.faq-one [class*=col-lg-]:nth-child(7) .faq-one__icon span {
+  background-color: #9f172f;
+}
+.faq-one [class*=col-lg-]:nth-child(7) .faq-one__icon span:before {
+  border-color: #9f172f;
+}
+.faq-one [class*=col-lg-]:nth-child(8) .faq-one__icon span {
+  background-color: #db8e08;
+}
+.faq-one [class*=col-lg-]:nth-child(8) .faq-one__icon span:before {
+  border-color: #db8e08;
+}
+.faq-one [class*=col-lg-]:nth-child(9) .faq-one__icon span {
+  background-color: #8A5905;
+}
+.faq-one [class*=col-lg-]:nth-child(9) .faq-one__icon span:before {
+  border-color: #8A5905;
+}
+.faq-one [class*=col-lg-]:nth-child(10) .faq-one__icon span {
+  background-color: #d23f3f;
+}
+.faq-one [class*=col-lg-]:nth-child(10) .faq-one__icon span:before {
+  border-color: #d23f3f;
+}
+.faq-one [class*=col-lg-]:nth-child(11) .faq-one__icon span {
+  background-color: #E48B8B;
+}
+.faq-one [class*=col-lg-]:nth-child(11) .faq-one__icon span:before {
+  border-color: #E48B8B;
+}
+.faq-one [class*=col-lg-]:nth-child(12) .faq-one__icon span {
+  background-color: #D98C08;
+}
+.faq-one [class*=col-lg-]:nth-child(12) .faq-one__icon span:before {
+  border-color: #D98C08;
+}
+.faq-one [class*=col-lg-]:nth-child(13) .faq-one__icon span {
+  background-color: #48AEEA;
+}
+.faq-one [class*=col-lg-]:nth-child(13) .faq-one__icon span:before {
+  border-color: #48AEEA;
 }
 
 .faq-one__single {
@@ -2808,7 +2868,28 @@ a:visited {
   display: block;
   margin-bottom: 10px;
 }
+.become-teacher__form select {
+  border: none; /* Remove browser default border */
+  outline: none; /* Remove focus outline */
+  width: 100%; /* Match input width */
+  background-color: #f1f1f1; /* Match input background */
+  height: 77px; /* Match input height */
+  font-size: 16px; /* Match input font size */
+  color: #81868a; /* Match input color */
+  font-weight: 500; /* Match input font weight */
+  padding-left: 40px; /* Match input padding */
+  display: block; /* Match input display */
+  margin-bottom: 10px; /* Match input margin */
+  /* Additional styles for select dropdown */
+  appearance: none; /* Remove default arrow and styling */
+  background-position: right 15px top 50%; 
+  background-repeat: no-repeat;
+}
 .become-teacher__form input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #81868a;
+}
+.become-teacher__form select::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   color: #81868a;
 }
@@ -2816,11 +2897,23 @@ a:visited {
   /* Firefox 19+ */
   color: #81868a;
 }
+.become-teacher__form select::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #81868a;
+}
 .become-teacher__form input:-ms-input-placeholder {
   /* IE 10+ */
   color: #81868a;
 }
+.become-teacher__form select:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #81868a;
+}
 .become-teacher__form input:-moz-placeholder {
+  /* Firefox 18- */
+  color: #81868a;
+}
+.become-teacher__form select:-moz-placeholder {
   /* Firefox 18- */
   color: #81868a;
 }

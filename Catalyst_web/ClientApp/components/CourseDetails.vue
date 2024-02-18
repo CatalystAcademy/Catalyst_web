@@ -11,7 +11,7 @@
 
             <div class="course-details__top">
               <div class="course-details__top-left">
-                <h2 class="course-details__title">{{course.title}}</h2>
+                <h2 class="course-details__title">{{course.titleEng}}</h2>
                 <!-- /.course-details__title -->
                 <div class="course-one__stars">
                   <span class="course-one__stars-wrap">
@@ -326,7 +326,7 @@
           <div class="course-details__price">
             <p class="course-details__price-text">Course price </p><!-- /.course-details__price-text -->
             <p class="course-details__price-amount">$18.00</p><!-- /.course-details__price-amount -->
-            <a href="#" class="thm-btn course-details__price-btn">Buy This Course</a><!-- /.thm-btn -->
+            <a href="#register-section" @click.prevent="scrollToTarget" class="thm-btn course-details__price-btn">Buy This Course</a><!-- /.thm-btn -->
           </div><!-- /.course-details__price -->
 
           <div class="course-details__meta">
@@ -423,20 +423,72 @@
           </div><!-- /.course-details__list -->
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
-    </div><!-- /.container -->
-  </section>
+
+      <div class="row" id="register-section">
+        <div class="col-lg-12">
+          <div class="become-teacher__form">
+            <div class="become-teacher__form-top">
+              <h2 class="become-teacher__form-title">
+                Register for the course
+              </h2><!-- /.become-teacher__form-title -->
+            </div><!-- /.become-teacher__top -->
+            <form @submit.prevent="register" action="/assets/inc/sendemail.php" class="become-teacher__form-content contact-form-validated">
+              <input v-model="registrationData.fullName" type="text" placeholder="Your full Name" name="fullName">
+              <input v-model="registrationData.email" type="text" placeholder="Email Address" name="email">
+              <input v-model="registrationData.phoneNumber" type="text" placeholder="Phone Number" name="phone">
+              <input v-model="registrationData.parentPhoneNumber" type="text" placeholder="Parent Phone Number" name="parentPhoneNumber">
+              <input v-model="registrationData.message" type="text" placeholder="Comment" name="message">
+              <button type="submit" class="thm-btn become-teacher__form-btn">Apply For It</button>
+            </form><!-- /.become-teacher__form-content -->
+            <div class="result text-center"></div><!-- /.result -->
+          </div><!-- /.become-teacher__form -->
+        </div>
+      </div>
+
+        </div><!-- /.container -->
+</section>
+
+
+
 </template>
 
 <script>
   export default {
     name: "CourseDetails",
+    methods: {
+      scrollToTarget() {
+        const targetElement = document.getElementById('register-section');
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      },
+      async register() {
+        try {
+          this.registrationData.courseId = this.courseId;
+          // Send registration data without FormData
+          await this.$axios.post('/api/Courses/Register', this.registrationData)
+            .then(response => {
+              // Show success or error toast based on response
+              if (response.status === 200) {
+                this.$toasted.success('Registration successful!');
+                setTimeout(() => {
+                  window.location = `/courses/${this.courseId}`; // Redirect after a delay
+                }, 3000);
+              } else {
+                this.$toasted.error('An unexpected error occurred. Please contact support.'); // Assuming a 'message' property in error response
+              }
+            })
+            .catch(error => {
+              // Handle generic errors
+              this.$toasted.error('An error occurred during registration. Please try again.');
+            });
+        } catch (error) {
+        }
+      },
+    },
     async fetch() {
-      const courseId = this.$route.params.id; // Get course ID from route parameters
-      console.log(this.$route.params.id);
+      //const courseId = this.$route.params.id; // Get course ID from route parameters
       try {
-        const response = await this.$axios.get(`/api/CourseDetails/${courseId}`); // Fetch data based on ID
+        const response = await this.$axios.get(`/api/CourseDetails/${this.courseId}`); // Fetch data based on ID
         this.course = response.data;
-        console.log(response);
       } catch (error) {
         // Handle errors
       }
@@ -444,10 +496,17 @@
     data() {
       return {
         course: {},
+        courseId: this.$route.params.id,
+        registrationData: { fullName: '', email: '', courseId: null, phoneNumber: '', parentPhoneNumber: '', message: '' },
       };
     },
   };
 </script>
 
 <style scoped>
+  .become-teacher__form {
+    padding-left: 0px !important;
+    margin-top: 15px !important;
+    position: relative;
+  }
 </style>

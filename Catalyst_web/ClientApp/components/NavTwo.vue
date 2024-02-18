@@ -25,19 +25,23 @@
                                               <li>
                                                   <nuxt-link to="/admin/Course/List">Courses</nuxt-link>
                                               </li>
+                                            <li>
+                                                  <nuxt-link to="/admin/curriculum/list">Curriculums</nuxt-link>
+                                              </li>
+                                            <li>
+                                                  <nuxt-link to="/admin/teacher/list">Teachers</nuxt-link>
+                                              </li>
                                               <li>
                                                   <nuxt-link to="/admin/News/List">News</nuxt-link>
                                               </li>
+                                            <li>
+                                                  <nuxt-link to="/admin/blogs/list">Blogs</nuxt-link>
+                                              </li>
+                                            <li>
+                                              <nuxt-link to="/admin/testimonial/list">Testimonials</nuxt-link>
+                                              </li>
                                           </ul>
                                       </div><!-- /.navbar-collapse -->
-              <div class="right-side-box">
-                  <div class="header__social">
-                      <a href="#"><i class="fab fa-twitter"></i></a>
-                      <a href="#"><i class="fab fa-facebook-square"></i></a>
-                      <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                      <a href="#"><i class="fab fa-instagram"></i></a>
-                  </div><!-- /.header__social -->
-              </div><!-- /.right-side-box -->
           </div>
           <!-- /.container -->
       </nav>

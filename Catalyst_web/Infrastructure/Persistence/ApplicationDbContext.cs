@@ -14,8 +14,18 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
     }
 
     public DbSet<Course> Courses { get; set; }
+    public DbSet<Curriculum> Curriculums { get; set; }
     public DbSet<News> Newses { get; set; }
+    public DbSet<Blog> Blogs { get; set; }
+    public DbSet<Video> Videos { get; set; }
+    public DbSet<Visit> Visits { get; set; }
+    public DbSet<Teacher> Teachers { get; set; }
+    public DbSet<BecomeTeacher> BecomeTeachers { get; set; }
     public DbSet<RegisterForCourse> RegisterForCourses { get; set; }
+    public DbSet<RegisterForCurriculum> RegisterForCurriculums { get; set; }
+    public DbSet<FormData> FormDatas { get; set; }
+    public DbSet<Contact> Contacts { get; set; }
+    public DbSet<Testimonial> Testimonials { get; set; }
 
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new())
     {

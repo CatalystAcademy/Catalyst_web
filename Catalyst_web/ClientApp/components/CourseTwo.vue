@@ -3,7 +3,7 @@
       <section class="course-one__top-title home-two">
           <div class="container">
               <div class="block-title">
-                  <h2 class="block-title__title">Explore our <br>
+                  <h2 class="block-title__title">Discover our <br>
                       popular courses</h2><!-- /.block-title__title -->
               </div><!-- /.block-title -->
           </div><!-- /.container -->
