@@ -37,6 +37,8 @@ namespace Catalyst_web.Controllers
                 TitleEng = request.TitleEng,
                 DescriptionArm = request.DescriptionArm,
                 DescriptionEng = request.DescriptionEng,
+                AuthorArm = request.AuthorArm,
+                AuthorEng = request.AuthorEng,
             };
             _dbContext.Blogs.Add(createBlog);
             await _dbContext.SaveChangesAsync();
@@ -63,6 +65,8 @@ namespace Catalyst_web.Controllers
             existingBlog.TitleArm = editedBlog.TitleArm;
             existingBlog.DescriptionEng = editedBlog.DescriptionEng;
             existingBlog.DescriptionArm = editedBlog.DescriptionArm;
+            existingBlog.AuthorArm = editedBlog.AuthorArm;
+            existingBlog.AuthorEng = editedBlog.AuthorEng;
 
             _dbContext.Blogs.Update(existingBlog);
             await _dbContext.SaveChangesAsync();

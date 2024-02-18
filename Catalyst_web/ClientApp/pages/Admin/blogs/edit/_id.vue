@@ -16,6 +16,18 @@
 
         <div class="row">
           <div class="col">
+            <label for="authorArm">Author in Armenian</label>
+            <input v-model="createData.authorArm" type="text" placeholder="Author in Armenian" name="authorArm">
+          </div>
+
+          <div class="col">
+            <label for="authorEng">Author in English</label>
+            <input v-model="createData.authorEng" type="text" placeholder="Author in English" name="authorEng">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
             <label for="descriptionArm">Description in Armenian</label>
             <textarea rows="4" cols="50" v-model="createData.descriptionArm" type="text" placeholder="Description in Armenian" name="descriptionArm"> </textarea>
           </div>
@@ -39,7 +51,7 @@
     data() {
       return {
         blogId: null,
-        createData: { titleArm: '', titleEng: '', descriptionArm: '', descriptionEng: '' },
+        createData: { titleArm: '', titleEng: '', descriptionArm: '', descriptionEng: '', authorArm: '', authorEng: '' },
       };
     },
     async created() {

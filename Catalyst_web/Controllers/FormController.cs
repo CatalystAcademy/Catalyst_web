@@ -28,7 +28,7 @@ namespace Catalyst_web.Controllers
             {
                 return BadRequest(ModelState);
             }
-            var formData = new FormData { Email = request.Email, PhoneNumber = request.PhoneNumber };
+            var formData = new FormData { Email = request.Email, PhoneNumber = request?.PhoneNumber };
 
             _dbContext.FormDatas.Add(formData);
             await _dbContext.SaveChangesAsync();

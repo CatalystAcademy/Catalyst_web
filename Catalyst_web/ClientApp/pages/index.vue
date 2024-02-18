@@ -4,7 +4,8 @@
     <BannerOne />
     <AboutTwo />
     <CourseOne />
-    <CourseTwo />
+<!--    <CourseTwo />
+-->
     <VideoTwo />
     <!--    <CountdownOne />
       <CourseCategory />

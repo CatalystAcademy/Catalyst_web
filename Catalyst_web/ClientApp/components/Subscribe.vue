@@ -13,8 +13,8 @@
                 </div><!-- /.col-lg-6 -->
                 <div class="col-lg-6 d-flex">
                     <div class="my-auto">
-                        <form action="#" class="mailchimp-one__form mc-form">
-                            <input type="text" id="mc-email" placeholder="Enter your email ">
+                        <form @submit.prevent="submitForm" class="mailchimp-one__form mc-form">
+                            <input v-model="createData.email" type="text" id="mc-email" placeholder="Enter your email " name="email">
                             <button type="submit" class="thm-btn">Subscribe</button>
                         </form><!-- /.mailchimp-one__form -->
                         <div class="mc-form__response"></div><!-- /.mc-form__response -->
@@ -26,8 +26,44 @@
 </template>
 
 <script>
+  import https from 'https';
+
     export default {
-        name: "Subscribe"
+    name: "Subscribe",
+    setup() {
+      return {
+        createData: { email: '' },
+      };
+    },
+    methods: {
+      async submitForm() {
+        try {
+          await this.$axios.post('/api/Form/Submit', this.createData)
+            // Show success message
+            .then(response => {
+              if (response.status === 200) {
+                this.$toasted.success('Successfully!');
+                setTimeout(() => {
+                  window.location = "/"
+                }, 3000);
+              } else {
+                this.$toasted.error('An unexpected error occurred. Please contact support.'); // Assuming a 'message' property in error response
+              }
+            })
+            .catch(error => {
+              this.$toasted.error('An error occurred during registration. Please try again.');
+            })
+        } catch (error) {
+          // Handle error and display message
+        }
+      },
+    },
+    created() {
+      // Optional: Set up HTTPS agent for self-signed certificates (if needed)
+      if (process.env.NODE_ENV === 'development') {
+        this.$axios.defaults.httpsAgent = new https.Agent({ rejectUnauthorized: false });
+      }
+    },
     }
 </script>
 

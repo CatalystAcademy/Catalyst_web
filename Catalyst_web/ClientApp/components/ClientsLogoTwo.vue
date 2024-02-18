@@ -6,35 +6,35 @@
           </div><!-- /.block-title -->
           <div class="brand-one__carousel owl-carousel owl-theme">
               <div class="item">
-                  <img src="/assets/images/brand-1-1.png" alt="">
+                  <img src="/assets/images/custom/aua.png" alt="">
               </div><!-- /.item -->
               <div class="item">
-                  <img src="/assets/images/brand-1-1.png" alt="">
+                  <img src="/assets/images/custom/clubcapital.png" alt="">
               </div><!-- /.item -->
               <div class="item">
-                  <img src="/assets/images/brand-1-1.png" alt="">
+                  <img src="/assets/images/custom/Eiu_logo.jpg" alt="">
               </div><!-- /.item -->
               <div class="item">
-                  <img src="/assets/images/brand-1-1.png" alt="">
+                  <img src="/assets/images/custom/orion.png" alt="">
               </div><!-- /.item -->
-              <div class="item">
-                  <img src="/assets/images/brand-1-1.png" alt="">
-              </div><!-- /.item -->
-              <div class="item">
-                  <img src="/assets/images/brand-1-1.png" alt="">
-              </div><!-- /.item -->
-              <div class="item">
-                  <img src="/assets/images/brand-1-1.png" alt="">
-              </div><!-- /.item -->
-              <div class="item">
-                  <img src="/assets/images/brand-1-1.png" alt="">
-              </div><!-- /.item -->
-              <div class="item">
-                  <img src="/assets/images/brand-1-1.png" alt="">
-              </div><!-- /.item -->
-              <div class="item">
-                  <img src="/assets/images/brand-1-1.png" alt="">
-              </div><!-- /.item -->
+              <!--<div class="item">
+                  <img src="/assets/images/custom/brand-1-1.png" alt="">
+              </div>--><!-- /.item -->
+              <!--<div class="item">
+                  <img src="/assets/images/custom/brand-1-1.png" alt="">
+              </div>--><!-- /.item -->
+              <!--<div class="item">
+                  <img src="/assets/images/custom/brand-1-1.png" alt="">
+              </div>--><!-- /.item -->
+              <!--<div class="item">
+                  <img src="/assets/images/custom/brand-1-1.png" alt="">
+              </div>--><!-- /.item -->
+              <!--<div class="item">
+                  <img src="/assets/images/custom/brand-1-1.png" alt="">
+              </div>--><!-- /.item -->
+              <!--<div class="item">
+                  <img src="/assets/images/custom/brand-1-1.png" alt="">
+              </div>--><!-- /.item -->
           </div><!-- /.brand-one__carousel owl-carousel owl-theme -->
       </div><!-- /.container -->
   </section>

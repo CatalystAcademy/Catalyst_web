@@ -466,7 +466,6 @@
           // Send registration data without FormData
           await this.$axios.post('/api/Courses/Register', this.registrationData)
             .then(response => {
-              console.log(response);
               // Show success or error toast based on response
               if (response.status === 200) {
                 this.$toasted.success('Registration successful!');

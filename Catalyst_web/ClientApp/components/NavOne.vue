@@ -6,10 +6,11 @@
                 <a href="#">{{translations.CatalystEmail}}</a>
                 <a href="#">{{translations.CatalystPhone}}</a>
               </div><!-- /.topbar-one__left -->
-              <div class="topbar-one__right">
+<!--              <div class="topbar-one__right">
                   <a href="#">Login</a>
                   <a href="#">Register</a>
-              </div><!-- /.topbar-one__right -->
+              </div>-->
+  <!-- /.topbar-one__right -->
           </div><!-- /.container -->
       </div><!-- /.topbar-one -->
 <header class="site-header site-header__header-one ">
@@ -53,8 +54,8 @@
                     <nuxt-link to="/">Programs</nuxt-link>
                     <ul class="sub-menu">
                       <li><nuxt-link to="/curriculums">Curriculums</nuxt-link></li>
-                      <li><nuxt-link to="/courses">Courses</nuxt-link></li>
-                    </ul>
+<!--                      <li><nuxt-link to="/courses">Courses</nuxt-link></li>
+-->                    </ul>
                   </li>
 <!--                  <li>
                     <nuxt-link to="/teachers">Instractors</nuxt-link>
@@ -69,8 +70,8 @@
                     <nuxt-link to="/">News</nuxt-link>
                     <ul class="sub-menu">
                       <li><nuxt-link to="/news">News</nuxt-link></li>
-                      <li><nuxt-link to="/">Events</nuxt-link></li>
-                    </ul>
+<!--                      <li><nuxt-link to="/">Events</nuxt-link></li>
+-->                    </ul>
                   </li>
                   <li>
                     <nuxt-link to="/blogs">Blogs</nuxt-link>
@@ -83,9 +84,9 @@
                       <li><nuxt-link to="/contact">Contact Us</nuxt-link></li>
                     </ul>
                   </li>
-                  <li>
+                  <!--<li>-->
                     <!-- Language Dropdown -->
-                    <div class="dropdown">
+                    <!--<div class="dropdown">
                       <button class="btn dropdown-toggle language-dropdown-button"
                               type="button"
                               id="languageDropdown"
@@ -102,19 +103,20 @@
                         </button>
                         <button @click="switchLanguage('hy-AM')" class="dropdown-item">
                           Armenian
-                        </button>
+                        </button>-->
                         <!-- Add more language buttons and flags as needed -->
-                      </div>
+                      <!--</div>
                     </div>
-                  </li>
+                  </li>-->
                 </ul>
               </div><!-- /.navbar-collapse -->
-              <div class="right-side-box">
+              <!--<div class="right-side-box">
                 <a class="header__search-btn search-popup__toggler" href="#">
-                  <i class="kipso-icon-magnifying-glass"></i>
+                  <i class="kipso-icon-magnifying-glass"></i>-->
                   <!-- /.kipso-icon-magnifying-glass -->
-                </a>
-              </div><!-- /.right-side-box -->
+                <!--</a>
+              </div>-->
+  <!-- /.right-side-box -->
             </div>
                 <!-- /.container -->
 </nav>
