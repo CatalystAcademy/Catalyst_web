@@ -21,23 +21,20 @@ builder.Services.RegisterServices(configuration);
 // Add CORS services
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAllOrigins",
-        builder =>
-        {
-            builder.AllowAnyOrigin()
-                   .AllowAnyMethod()
-                   .AllowAnyHeader();
-        });
+    options.AddPolicy("AllowSpecificOrigin",
+        builder => builder.WithOrigins("http://localhost:3000")
+                           .AllowAnyMethod()
+                           .AllowAnyHeader());
 });
 
 
 builder.Services.RegisterServices(configuration);
 
-
 var app = builder.Build();
 
 // Use CORS middleware
-app.UseCors("AllowAllOrigins");
+app.UseCors("AllowSpecificOrigin");
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
