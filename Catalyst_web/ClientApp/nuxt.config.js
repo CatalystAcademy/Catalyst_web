@@ -3,10 +3,9 @@ export default {
   axios: {
     baseURL: 'http://localhost:5000',
   },
-
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'ClientApp',
+    title: 'Catalyst Academy',
     htmlAttrs: {
       lang: 'en'
     },
@@ -17,9 +16,9 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/assets/images/favicons/favicon-32x32.png' },
-      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/assets/images/favicons/favicon-16x16.png' },
+      { rel: 'icon', type: 'image/x-icon', href: '/assets/images/custom/ca_logo_notext.png' },
+      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/assets/images/custom/ca_logo_notext.png' },
+      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/assets/images/custom/ca_logo_notext.png' },
 
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Poppins:300,400,500,500i,600,700,800%7CSatisfy&display=swap" },
 
@@ -161,7 +160,7 @@ export default {
     { src: '~/plugins/vue-toasted.js', mode: 'client' },
     { src: '~/plugins/vue-modal-dialogs.js', mode: 'client' },
     { src: '~/plugins/vue-datepicker', ssr: false },
-    { src: '~plugins/bootstrap-vue.js', ssr: false },
+    { src: '~/plugins/bootstrap-vue.js', ssr: false },
     { src: '~/plugins/vuelidate.js', mode: 'all' },
     '~/plugins/moment.js',
   ],

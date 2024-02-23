@@ -2174,7 +2174,7 @@ a:visited {
 .cta-four {
   padding-top: 120px;
   padding-bottom: 472px;
-  background-image: url(../images/teacher-1-1.jpg);
+  background-image: url(../images/custom/another_class.jpg);
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: cover;
@@ -4330,7 +4330,7 @@ a:visited {
   background-size: cover;
   background-attachment: fixed;
   position: relative;
-  background-image: url(../images/inner-bg-1-1.jpg);
+  background-image: url(../images/custom/in_class.JPG);
 }
 .inner-banner::before {
   content: '';
@@ -5856,7 +5856,7 @@ a:visited {
 .video-two {
   position: relative;
   padding: 120px 0;
-  background-image: url(../images/video-bg-1-1.jpg);
+  background-image: url(../images/custom/children_with_ca.jpg);
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;

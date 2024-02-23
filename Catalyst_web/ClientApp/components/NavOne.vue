@@ -67,7 +67,7 @@
                     <nuxt-link to="/alliance">Alliance</nuxt-link>
                   </li>
                   <li>
-                    <nuxt-link to="/">News</nuxt-link>
+                    <nuxt-link to="/news">News</nuxt-link>
                     <ul class="sub-menu">
                       <li><nuxt-link to="/news">News</nuxt-link></li>
 <!--                      <li><nuxt-link to="/">Events</nuxt-link></li>
@@ -79,7 +79,7 @@
                   <li>
                     <nuxt-link to="/">Apply</nuxt-link>
                     <ul class="sub-menu">
-                      <li><nuxt-link to="/apply">Apply Now</nuxt-link></li>
+                      <li><nuxt-link to="/apply" target="_blank">Apply Now</nuxt-link></li>
                       <li><nuxt-link to="/onSiteVisit">On-site Visit</nuxt-link></li>
                       <li><nuxt-link to="/contact">Contact Us</nuxt-link></li>
                     </ul>

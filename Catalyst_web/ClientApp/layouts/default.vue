@@ -12,7 +12,7 @@
     },
     head(){
       return {
-        title: "Kipso - Vue Nuxt Online Education Learning & LMS Template"
+        title: "Catalyst Academy"
       }
     },
     mounted () {

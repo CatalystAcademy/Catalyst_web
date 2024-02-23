@@ -26,10 +26,10 @@
                 <b-collapse id="accordion-1" accordion="my-accordion-1" role="tabpanel">
                   <b-card-body>
                     <b-card-text>
-                      <ul>
-                        <li>{{translations.AllianceOneTextOne}}</li>
-                        <li>{{translations.AllianceOneTextTwo}}</li>
-                      </ul>
+                      <p class="level-description">
+                          <span class="level-text">{{translations.AllianceOneTextOne}}</span>
+                        <span class="level-text">{{translations.AllianceOneTextTwo}}</span>
+                      </p>
                     </b-card-text>
                   </b-card-body>
                 </b-collapse>
@@ -45,10 +45,10 @@
                 <b-collapse id="accordion-2" accordion="my-accordion-2" role="tabpanel">
                   <b-card-body>
                     <b-card-text>
-                      <ul>
-                        <li>{{translations.AllianceTwoTextOne}}</li>
-                        <li>{{translations.AllianceTwoTextTwo}}</li>
-                      </ul>
+                      <p class="level-description">
+                          <span class="level-text">{{translations.AllianceTwoTextOne}}</span>
+                        <span class="level-text">{{translations.AllianceTwoTextTwo}}</span>
+                      </p>
                     </b-card-text>
                   </b-card-body>
                 </b-collapse>
@@ -59,34 +59,148 @@
             <div class="accordion" role="tablist">
               <b-card no-body class="mb-1">
                 <b-card-header header-tag="header" class="p-1" role="tab">
-                  <b-button block v-b-toggle.accordion-4 variant="info">{{translations.AllianceThreeLabel}}</b-button>
-                </b-card-header>
-                <b-collapse id="accordion-4" accordion="my-accordion-4" role="tabpanel">
-                  <b-card-body>
-                    <b-card-text>
-                      <ul>
-                        <li>{{translations.AllianceThreeTextOne}}</li>
-                        <li>{{translations.AllianceThreeTextTwo}}</li>
-                      </ul>
-                    </b-card-text>
-                  </b-card-body>
-                </b-collapse>
-              </b-card>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="accordion" role="tablist">
-              <b-card no-body class="mb-1">
-                <b-card-header header-tag="header" class="p-1" role="tab">
-                  <b-button block v-b-toggle.accordion-3 variant="info">{{translations.AllianceFourLabel}}</b-button>
+                  <b-button block v-b-toggle.accordion-3 variant="info">{{translations.AllianceThreeLabel}}</b-button>
                 </b-card-header>
                 <b-collapse id="accordion-3" accordion="my-accordion-3" role="tabpanel">
                   <b-card-body>
                     <b-card-text>
-                      <ul>
-                        <li>{{translations.AllianceFourTextOne}}</li>
-                        <li>{{translations.AllianceFourTextTwo}}</li>
-                      </ul>
+                      <p class="level-description">
+                          <span class="level-text">{{translations.AllianceThreeTextOne}}</span>
+                        <span class="level-text">{{translations.AllianceThreeTextTwo}}</span>
+                      </p>
+                    </b-card-text>
+                  </b-card-body>
+                </b-collapse>
+              </b-card>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="accordion" role="tablist">
+              <b-card no-body class="mb-1">
+                <b-card-header header-tag="header" class="p-1" role="tab">
+                  <b-button block v-b-toggle.accordion-4 variant="info">{{translations.AllianceFourLabel}}</b-button>
+                </b-card-header>
+                <b-collapse id="accordion-4" accordion="my-accordion-4" role="tabpanel">
+                  <b-card-body>
+                    <b-card-text>
+                      <p class="level-description">
+                          <span class="level-text">{{translations.AllianceFourTextOne}}</span>
+                        <span class="level-text">{{translations.AllianceFourTextTwo}}</span>
+                      </p>
+                    </b-card-text>
+                  </b-card-body>
+                </b-collapse>
+              </b-card>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="accordion" role="tablist">
+              <b-card no-body class="mb-1">
+                <b-card-header header-tag="header" class="p-1" role="tab">
+                  <b-button block v-b-toggle.accordion-5 variant="info">{{translations.AllianceFiveLabel}}</b-button>
+                </b-card-header>
+                <b-collapse id="accordion-5" accordion="my-accordion-5" role="tabpanel">
+                  <b-card-body>
+                    <b-card-text>
+                      <p class="level-description">
+                          <span class="level-text">{{translations.AllianceFiveTextOne}}</span>
+                        <span class="level-text">{{translations.AllianceFiveTextTwo}}</span>
+                      </p>
+                    </b-card-text>
+                  </b-card-body>
+                </b-collapse>
+              </b-card>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="accordion" role="tablist">
+              <b-card no-body class="mb-1">
+                <b-card-header header-tag="header" class="p-1" role="tab">
+                  <b-button block v-b-toggle.accordion-6 variant="info">{{translations.AllianceSixLabel}}</b-button>
+                </b-card-header>
+                <b-collapse id="accordion-6" accordion="my-accordion-6" role="tabpanel">
+                  <b-card-body>
+                    <b-card-text>
+                      <p class="level-description">
+                        <span class="level-text">{{translations.AllianceSixTextOne}}</span>
+                        <span class="level-text">>{{translations.AllianceSixTextTwo}}</span>
+                      </p>
+                    </b-card-text>
+                  </b-card-body>
+                </b-collapse>
+              </b-card>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="accordion" role="tablist">
+              <b-card no-body class="mb-1">
+                <b-card-header header-tag="header" class="p-1" role="tab">
+                  <b-button block v-b-toggle.accordion-7 variant="info">{{translations.AllianceSevenLabel}}</b-button>
+                </b-card-header>
+                <b-collapse id="accordion-7" accordion="my-accordion-7" role="tabpanel">
+                  <b-card-body>
+                    <b-card-text>
+                      <p class="level-description">
+                        <span class="level-text">{{translations.AllianceSevenTextOne}}</span>
+                        <span class="level-text">{{translations.AllianceSevenTextTwo}}</span>
+                      </p>
+                    </b-card-text>
+                  </b-card-body>
+                </b-collapse>
+              </b-card>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="accordion" role="tablist">
+              <b-card no-body class="mb-1">
+                <b-card-header header-tag="header" class="p-1" role="tab">
+                  <b-button block v-b-toggle.accordion-8 variant="info">{{translations.AllianceEightLabel}}</b-button>
+                </b-card-header>
+                <b-collapse id="accordion-8" accordion="my-accordion-8" role="tabpanel">
+                  <b-card-body>
+                    <b-card-text>
+                      <p class="level-description">
+                        <span class="level-text">{{translations.AllianceEightTextOne}}</span>
+                        <span class="level-text">{{translations.AllianceEightTextTwo}}</span>
+                      </p>
+                    </b-card-text>
+                  </b-card-body>
+                </b-collapse>
+              </b-card>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="accordion" role="tablist">
+              <b-card no-body class="mb-1">
+                <b-card-header header-tag="header" class="p-1" role="tab">
+                  <b-button block v-b-toggle.accordion-9 variant="info">{{translations.AllianceNineLabel}}</b-button>
+                </b-card-header>
+                <b-collapse id="accordion-9" accordion="my-accordion-9" role="tabpanel">
+                  <b-card-body>
+                    <b-card-text>
+                      <p class="level-description">
+                        <span class="level-text">{{translations.AllianceNineTextOne}}</span>
+                        <span class="level-text">{{translations.AllianceNineTextTwo}}</span>
+                      </p>
+                    </b-card-text>
+                  </b-card-body>
+                </b-collapse>
+              </b-card>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="accordion" role="tablist">
+              <b-card no-body class="mb-1">
+                <b-card-header header-tag="header" class="p-1" role="tab">
+                  <b-button block v-b-toggle.accordion-10 variant="info">{{translations.AllianceTenLabel}}</b-button>
+                </b-card-header>
+                <b-collapse id="accordion-10" accordion="my-accordion-10" role="tabpanel">
+                  <b-card-body>
+                    <b-card-text>
+                      <p class="level-description">
+                        <span class="level-text">{{translations.AllianceTenTextOne}}</span><br />
+                        <span class="level-text">{{translations.AllianceTenTextTwo}}</span><br />
+                      </p>
                     </b-card-text>
                   </b-card-body>
                 </b-collapse>
@@ -116,12 +230,9 @@
                     <div class="level-number">1</div>
                   </div>
                   <p class="level-description">
-                    <ul class="level-list">
-                      <li> {{ translations.CatalystsTextOne }}
-                      </li>
-                      <li>{{ translations.CatalystsTextTwo }}</li>
-                      <li>{{ translations.CatalystsTextThree }}</li>
-                    </ul>
+                    <span class="level-text">{{ translations.CatalystsTextOne }}</span><br>
+                    <span class="level-text">{{ translations.CatalystsTextTwo }}</span><br>
+                    <span class="level-text">{{ translations.CatalystsTextThree }}</span>
                   </p>
                 </div>
               </div>
@@ -129,16 +240,64 @@
                 <div class="hierarchy-level">
                   <div class="level-header">
                     <h2 class="level-title">{{ translations.FellowCatalysts }}</h2>
-                    <div class="level-number">1</div>
+                    <div class="level-number">2</div>
                   </div>
                   <p class="level-description">
-                    <ul class="level-list">
-                      <li>
-                        {{ translations.FellowCatalystsTextOne }}
-                        </li>
-                      <li>{{ translations.FellowCatalystsTextTwo }}</li>
-                      <li>{{ translations.FellowCatalystsTextThree }}</li>
-                     </ul>
+                      <span class="level-text">{{ translations.FellowCatalystsTextOne }}</span><br>
+                      <span class="level-text">{{ translations.FellowCatalystsTextTwo }}</span><br>
+                      <span class="level-text">{{ translations.FellowCatalystsTextThree }}</span><br>
+                  </p>
+                </div>
+              </div>
+                <div class="col-lg-6">
+                <div class="hierarchy-level">
+                  <div class="level-header">
+                    <h2 class="level-title">{{ translations.CaptainCatalysts }}</h2>
+                    <div class="level-number">3</div>
+                  </div>
+                  <p class="level-description">
+                    <span class="level-text">{{ translations.CaptainCatalystsTextOne }}</span><br>
+                    <span class="level-text">{{ translations.CaptainCatalystsTextTwo }}</span><br>
+                    <span class="level-text">{{ translations.CaptainCatalystsTextThree }}</span><br>
+                  </p>
+                </div>
+              </div>
+                <div class="col-lg-6">
+                <div class="hierarchy-level">
+                  <div class="level-header">
+                    <h2 class="level-title">{{ translations.LeadCatalysts }}</h2>
+                    <div class="level-number">4</div>
+                  </div>
+                  <p class="level-description">
+                    <span class="level-text">{{ translations.LeadCatalystsTextOne }}</span><br>
+                    <span class="level-text">{{ translations.LeadCatalystsTextTwo }}</span><br>
+                    <span class="level-text">{{ translations.LeadCatalystsTextThree }}</span><br>
+                  </p>
+                </div>
+              </div>
+                <div class="col-lg-6">
+                <div class="hierarchy-level">
+                  <div class="level-header">
+                    <h2 class="level-title">{{ translations.SeniorCatalysts }}</h2>
+                    <div class="level-number">5</div>
+                  </div>
+                  <p class="level-description">
+                    <span class="level-text">{{ translations.SeniorCatalystsTextOne }}</span><br>
+                    <span class="level-text">{{ translations.SeniorCatalystsTextTwo }}</span><br>
+                    <span class="level-text">{{ translations.SeniorCatalystsTextThree }}</span><br>
+                  </p>
+                </div>
+              </div>
+                <div class="col-lg-6">
+                <div class="hierarchy-level">
+                  <div class="level-header">
+                    <h2 class="level-title">{{ translations.ChiefVisionaryCatalyst }}</h2>
+                    <div class="level-number">6</div>
+                  </div>
+                  <p class="level-description">
+                    <span class="level-text">{{ translations.ChiefVisionaryCatalystTextOne }}</span><br>
+                    <span class="level-text">{{ translations.ChiefVisionaryCatalystTextTwo }}</span><br>
+                    <span class="level-text">{{ translations.ChiefVisionaryCatalystTextThree }}</span><br>
                   </p>
                 </div>
               </div>
@@ -274,23 +433,29 @@
     color: #333;
   }
 
+  .level-description {
+    text-align: left; /* Align the text to the right */
+    max-width: 100%; /* Adjust the maximum width as needed */
+  }
+
+  .level-text {
+    margin-bottom: 6px;
+    margin-top: 6px;
+    display: inline-block; /* Display the text as inline-block to allow wrapping */
+    max-width: 100%; /* Allow the text to wrap within its container */
+  }
+
   .level-number {
     font-size: 36px;
     font-weight: bold;
-    color: #007bff;
-  }
-
-  .level-description {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #666;
+    color: #9f172f;
   }
 
   ul {
     padding-left: 20px; /* Adjust as needed */
   }
 
-    .level-list li {
-      margin-bottom: 18px;
-    }
+  .level-list li {
+    margin-bottom: 18px;
+  }
 </style>

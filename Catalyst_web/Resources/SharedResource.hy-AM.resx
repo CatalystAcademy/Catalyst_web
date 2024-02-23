@@ -246,6 +246,18 @@
   <data name="CAMainDescription" xml:space="preserve">
     <value>Catalyst Academy is a personal development and business academy that provides a range of programs and services designed to help teenagers develop the skills, knowledge, and confidence they need to succeed in both their personal and professional lives.</value>
   </data>
+  <data name="CaptainCatalysts" xml:space="preserve">
+    <value>Captain Catalysts (CC)</value>
+  </data>
+  <data name="CaptainCatalystsTextOne" xml:space="preserve">
+    <value>Captains are responsible for specific activities related to entrepreneurship and business.</value>
+  </data>
+  <data name="CaptainCatalystsTextThree" xml:space="preserve">
+    <value>They are chosen for their leadership abilities to head specific teams of fellow catalysts.</value>
+  </data>
+  <data name="CaptainCatalystsTextTwo" xml:space="preserve">
+    <value>They lead and organize events, competitions, and projects within their respective areas.</value>
+  </data>
   <data name="CatalystAcademyText" xml:space="preserve">
     <value>Catalyst Academy</value>
   </data>
@@ -266,6 +278,18 @@
   </data>
   <data name="CatalystsTextTwo" xml:space="preserve">
     <value>As a Catalyst, you are an essential part of our community, contributing your skills, passion, and ideas to advance our mission and goals.</value>
+  </data>
+  <data name="ChiefVisionaryCatalyst" xml:space="preserve">
+    <value>Chief Visionary Catalyst (CVC)</value>
+  </data>
+  <data name="ChiefVisionaryCatalystTextOne" xml:space="preserve">
+    <value>The most senior catalyst leader, elected or selected based on leadership, academic excellence, and commitment to the academy's values.</value>
+  </data>
+  <data name="ChiefVisionaryCatalystTextThree" xml:space="preserve">
+    <value>Participates in external events and conferences as a representative of Catalyst Academy.</value>
+  </data>
+  <data name="ChiefVisionaryCatalystTextTwo" xml:space="preserve">
+    <value>Acts as a liaison between catalysts and the academy's management, representing the interests and needs of all catalysts.</value>
   </data>
   <data name="ClosedDay" xml:space="preserve">
     <value>Sunday: Closed</value>
@@ -296,6 +320,10 @@
   </data>
   <data name="EmailAddress" xml:space="preserve">
     <value>Email Address</value>
+  </data>
+  <data name="EnhanceSkillsText" xml:space="preserve">
+    <value>Enhance your skills
+with us now</value>
   </data>
   <data name="FaqAEight" xml:space="preserve">
     <value>Catalyst Academy encourages parental involvement through seminar events and workshops designed specifically for parents. These events cover a range of topics, including parenting skills, academic support strategies, and opportunities for parent-teacher collaboration.</value>
@@ -423,11 +451,29 @@
   <data name="HomePage" xml:space="preserve">
     <value>Գլխավոր</value>
   </data>
+  <data name="InEverySubject" xml:space="preserve">
+    <value>in every subject</value>
+  </data>
   <data name="InstaLink" xml:space="preserve">
     <value>new value</value>
   </data>
+  <data name="LeadCatalysts" xml:space="preserve">
+    <value>Lead Catalysts (LC)</value>
+  </data>
+  <data name="LeadCatalystsTextOne" xml:space="preserve">
+    <value>Lead Catalysts are chosen based on their expertise in specific business aspects, such as marketing, finance, technology, etc. and their ability to guide and mentor other catalysts.</value>
+  </data>
+  <data name="LeadCatalystsTextThree" xml:space="preserve">
+    <value>They assist instructors in workshops, help organize events, and support their peers in their entrepreneurial endeavors.</value>
+  </data>
+  <data name="LeadCatalystsTextTwo" xml:space="preserve">
+    <value>They organize alliance activities, workshops, and encourage active participation among alliance members.</value>
+  </data>
   <data name="LeadershipMainText" xml:space="preserve">
     <value>Meet Our Leadership Team</value>
+  </data>
+  <data name="LearnMore" xml:space="preserve">
+    <value>Learn More</value>
   </data>
   <data name="MakeAppointmentBtn" xml:space="preserve">
     <value>Schedule Your Visit</value>
@@ -510,6 +556,9 @@
   <data name="PhoneNumber" xml:space="preserve">
     <value>Phone Number</value>
   </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>Read More</value>
+  </data>
   <data name="registrationErrorMessage" xml:space="preserve">
     <value>An unexpected error occurred. Please contact support.</value>
   </data>
@@ -519,11 +568,30 @@
   <data name="SendMessage" xml:space="preserve">
     <value>Send Message</value>
   </data>
+  <data name="SeniorCatalysts" xml:space="preserve">
+    <value>Senior Catalysts (SC)</value>
+  </data>
+  <data name="SeniorCatalystsTextOne" xml:space="preserve">
+    <value>These are exceptional catalysts who have consistently demonstrated outstanding leadership, academic performance, and entrepreneurial spirit.</value>
+  </data>
+  <data name="SeniorCatalystsTextThree" xml:space="preserve">
+    <value>They assist the CVC in organizing events, mentoring catalysts, and supporting the academy's initiatives.</value>
+  </data>
+  <data name="SeniorCatalystsTextTwo" xml:space="preserve">
+    <value>They serve as role models for other catalysts, actively contributing to the academy's initiatives and programs.</value>
+  </data>
   <data name="StartLearningNowBtn" xml:space="preserve">
     <value>Start Learning Now</value>
   </data>
+  <data name="StartLearningText" xml:space="preserve">
+    <value>Start learning from
+our experts</value>
+  </data>
   <data name="StudentInfo" xml:space="preserve">
     <value>Student Information:</value>
+  </data>
+  <data name="TrustedByText" xml:space="preserve">
+    <value>Trusted by</value>
   </data>
   <data name="ValuesFive" xml:space="preserve">
     <value>Career-Focused Education: We are dedicated to preparing students for successful careers in many industries, offering internship opportunities, job placement assistance, and professional development resources.</value>
@@ -579,8 +647,11 @@
   <data name="VisitUsText" xml:space="preserve">
     <value>Interested in seeing Catalyst Academy in person? Schedule an on-site visit to tour our academy</value>
   </data>
+  <data name="WeHaveBestTeachers" xml:space="preserve">
+    <value>We’ve best teachers</value>
+  </data>
   <data name="WelcomeMessage" xml:space="preserve">
-    <value>Welcome to Catalyst Academy in armenian</value>
+    <value>Welcome to Catalyst Academy</value>
   </data>
   <data name="WithUs" xml:space="preserve">
     <value>with us</value>
