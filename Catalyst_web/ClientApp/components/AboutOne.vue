@@ -2,48 +2,19 @@
   <section class="about-one ">
       <img src="/assets/images/circle-stripe.png" class="about-one__circle" alt="">
       <div class="container text-center">
-        <!--<div class="block-title text-center">
-          <h2 class="block-title__title">
-            {{translations.BeChampionOfChange}}
-          </h2>--><!-- /.block-title__title -->
-        <!--</div>--><!-- /.block-title -->
-        <!--<div class="about-one__img">
-          <div class="row">
-            <div class="col-lg-6">
-              <img src="/assets/images/custom/guy_2.jpg" alt="">
-            </div>--><!-- /.col-lg-6 -->
-            <!--<div class="col-lg-6">
-              <img src="/assets/images/about-2-2.jpg" alt="">
-            </div>--><!-- /.col-lg-6 -->
-          <!--</div>--><!-- /.row -->
-          <!--<div class="about-one__review">
-            <p class="about-one__review-count counter">88750</p>--><!-- /.about-one__review-count -->
-            <!--<div class="about-one__review-stars">
-              <i class="fas fa-star"></i>--><!-- /.fa fa-star -->
-              <!--<i class="fas fa-star"></i>--><!-- /.fa fa-star -->
-              <!--<i class="fas fa-star"></i>--><!-- /.fa fa-star -->
-              <!--<i class="fas fa-star"></i>--><!-- /.fa fa-star -->
-              <!--<i class="fas fa-star"></i>--><!-- /.fa fa-star -->
-            <!--</div>--><!-- /.about-one__stars -->
-            <!--<p class="about-one__review-text">students loved us</p>--><!-- /.about-one__review-text -->
-          <!--</div>--><!-- /.about-one__review -->
-        <!--</div>--><!-- /.about-one__img -->
-
         <div class="row custom-about">
-          <div class="col-lg-12">
+          <div class="col-lg-6">
             <div class="about-one__single wow fadeInDown animated" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-name: fadeInDown;">
               <div class="contact-info-one__icon">
                 <i class="fas fa-handshake"></i><!-- /.kipso-icon-manager -->
               </div><!-- /.contact-info-one__icon -->
-              <h2 class="contact-info-one__title">{{translations.CatalystAcademyText}} </h2><!-- /.contact-info-one__title -->
+              <h2 class="contact-info-one__title"> </h2><!-- /.contact-info-one__title -->
               <p class="contact-info-one__text m-2">
                 {{translations.CAMainDescription}}
               </p><!-- /.contact-info-one__text -->
             </div><!-- /.contact-info-one__single -->
           </div><!-- /.col-lg-4 -->
-        </div>
 
-        <div class="row">
           <div class="col-lg-6">
             <div class="about-two__single-custom wow fadeInDown animated" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-name: fadeInDown;">
               <div class="contact-info-one__icon">
@@ -55,7 +26,7 @@
               </p><!-- /.contact-info-one__text -->
             </div><!-- /.contact-info-one__single -->
           </div>
-          <div class="col-lg-6">
+          <div class="col-lg-6 custom-margin">
             <div class="about-one__single wow fadeInDown animated" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-name: fadeInDown;">
               <div class="contact-info-one__icon">
                 <i class="fas fa-chalkboard-teacher"></i><!-- /.kipso-icon-manager -->

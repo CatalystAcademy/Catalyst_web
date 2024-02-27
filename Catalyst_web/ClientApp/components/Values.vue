@@ -3,10 +3,8 @@
     <div class="container">
       <div class="block-title text-center">
         <h2 class="block-title__title">
-          {{translations.OurValues}}
         </h2><!-- /.block-title__title -->
       <p class="about-one__text mt-5 mb-5">
-        {{translations.ValuesMainText}}
       </p><!-- /.about-one__text -->
       </div><!-- /.block-title -->
       <div class="row no-gutters">

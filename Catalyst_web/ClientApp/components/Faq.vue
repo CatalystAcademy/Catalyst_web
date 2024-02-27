@@ -63,17 +63,6 @@
                           <span>?</span>
                       </div><!-- /.faq-one__icon -->
                       <div class="faq-one__content">
-                        <h2 class="faq-one__title">{{translations.FaqQSix}}</h2><!-- /.faq-one__title -->
-                        <p class="faq-one__text">{{translations.FaqASix}}</p><!-- /.faq-one__text -->
-                      </div><!-- /.faq-one__content -->
-                  </div><!-- /.faq-one__single -->
-              </div><!-- /.col-lg-6 -->
-              <div class="col-lg-6" style="padding-bottom: 0px; border-bottom: 0px none;">
-                  <div class="faq-one__single">
-                      <div class="faq-one__icon">
-                          <span>?</span>
-                      </div><!-- /.faq-one__icon -->
-                      <div class="faq-one__content">
                         <h2 class="faq-one__title">{{translations.FaqQSeven}}</h2><!-- /.faq-one__title -->
                         <p class="faq-one__text">{{translations.FaqASeven}}</p><!-- /.faq-one__text -->
                       </div><!-- /.faq-one__content -->
@@ -96,66 +85,12 @@
                           <span>?</span>
                       </div><!-- /.faq-one__icon -->
                       <div class="faq-one__content">
-                        <h2 class="faq-one__title">{{translations.FaqQTen}}</h2><!-- /.faq-one__title -->
-                        <p class="faq-one__text">{{translations.FaqATen}}</p><!-- /.faq-one__text -->
-                      </div><!-- /.faq-one__content -->
-                  </div><!-- /.faq-one__single -->
-              </div><!-- /.col-lg-6 -->
-              <div class="col-lg-6" style="padding-bottom: 0px; border-bottom: 0px none;">
-                  <div class="faq-one__single">
-                      <div class="faq-one__icon">
-                          <span>?</span>
-                      </div><!-- /.faq-one__icon -->
-                      <div class="faq-one__content">
                         <h2 class="faq-one__title">{{translations.FaqQEleven}}</h2><!-- /.faq-one__title -->
                         <p class="faq-one__text">{{translations.FaqAEleven}}</p><!-- /.faq-one__text -->
                       </div><!-- /.faq-one__content -->
                   </div><!-- /.faq-one__single -->
               </div><!-- /.col-lg-6 -->
-              <div class="col-lg-6" style="padding-bottom: 0px; border-bottom: 0px none;">
-                  <div class="faq-one__single">
-                      <div class="faq-one__icon">
-                          <span>?</span>
-                      </div><!-- /.faq-one__icon -->
-                      <div class="faq-one__content">
-                        <h2 class="faq-one__title">{{translations.FaqQTwelve}}</h2><!-- /.faq-one__title -->
-                        <p class="faq-one__text">{{translations.FaqATwelve}}</p><!-- /.faq-one__text -->
-                      </div><!-- /.faq-one__content -->
-                  </div><!-- /.faq-one__single -->
-              </div><!-- /.col-lg-6 -->
-              <div class="col-lg-6" style="padding-bottom: 0px; border-bottom: 0px none;">
-                  <div class="faq-one__single">
-                      <div class="faq-one__icon">
-                          <span>?</span>
-                      </div><!-- /.faq-one__icon -->
-                      <div class="faq-one__content">
-                        <h2 class="faq-one__title">{{translations.FaqQThirteen}}</h2><!-- /.faq-one__title -->
-                        <p class="faq-one__text">{{translations.FaqAThirteen}}</p><!-- /.faq-one__text -->
-                      </div><!-- /.faq-one__content -->
-                  </div><!-- /.faq-one__single -->
-              </div><!-- /.col-lg-6 -->
-              <div class="col-lg-6" style="padding-bottom: 0px; border-bottom: 0px none;">
-                  <div class="faq-one__single">
-                      <div class="faq-one__icon">
-                          <span>?</span>
-                      </div><!-- /.faq-one__icon -->
-                      <div class="faq-one__content">
-                        <h2 class="faq-one__title">{{translations.FaqQFourteen}}</h2><!-- /.faq-one__title -->
-                        <p class="faq-one__text">{{translations.FaqAFourteen}}</p><!-- /.faq-one__text -->
-                      </div><!-- /.faq-one__content -->
-                  </div><!-- /.faq-one__single -->
-              </div><!-- /.col-lg-6 -->
-              <div class="col-lg-6" style="padding-bottom: 0px; border-bottom: 0px none;">
-                  <div class="faq-one__single">
-                      <div class="faq-one__icon">
-                          <span>?</span>
-                      </div><!-- /.faq-one__icon -->
-                      <div class="faq-one__content">
-                        <h2 class="faq-one__title">{{translations.FaqQFifeteen}}</h2><!-- /.faq-one__title -->
-                        <p class="faq-one__text">{{translations.FaqAFifeteen}}</p><!-- /.faq-one__text -->
-                      </div><!-- /.faq-one__content -->
-                  </div><!-- /.faq-one__single -->
-              </div><!-- /.col-lg-6 -->
+
           </div><!-- /.row -->
       </div><!-- /.container -->
   </section>

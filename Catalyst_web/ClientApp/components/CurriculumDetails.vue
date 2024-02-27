@@ -6,7 +6,7 @@
           <div class="course-details__content">
             <p class="course-details__author">
               <img src="/assets/images/team-1-1.jpg" alt="">
-              by <a href="#">Addie Walters</a>
+              by <a href="#">{{translations.CatalystAcademyText}}</a>
             </p><!-- /.course-details__author -->
 
             <div class="course-details__top">
@@ -21,8 +21,8 @@
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
                   </span><!-- /.course-one__stars-wrap -->
-                  <span class="course-one__count">4.8</span><!-- /.course-one__count -->
-                  <span class="course-one__stars-count">250</span><!-- /.course-one__stars-count -->
+                  <span class="course-one__count">5</span><!-- /.course-one__count -->
+                  <span class="course-one__stars-count">580</span><!-- /.course-one__stars-count -->
                 </div><!-- /.course-one__stars -->
               </div><!-- /.course-details__top-left -->
               <div class="course-details__top-right">
@@ -40,9 +40,6 @@
               </li>
               <li>
                 <a class="" role="tab" data-toggle="tab" href="#curriculum">Curriculum</a>
-              </li>
-              <li>
-                <a class="" role="tab" data-toggle="tab" href="#review">Reviews</a>
               </li>
             </ul><!-- /.course-details__tab-navs list-unstyled -->
             <div class="tab-content course-details__tab-content ">
@@ -176,157 +173,12 @@
                   </li>
                 </ul><!-- /.course-details__curriculum-list -->
               </div><!-- /.course-details__tab-content -->
-              <div class="tab-pane  animated fadeInUp" role="tabpanel" id="review">
-                <div class="row">
-                  <div class="col-xl-7 d-flex">
-                    <div class="course-details__progress my-auto">
-                      <div class="course-details__progress-item">
-                        <p class="course-details__progress-text">Excellent</p>
-                        <!-- /.course-details__progress-text -->
-                        <div class="course-details__progress-bar">
-                          <span style="width: 95%"></span>
-                        </div><!-- /.course-details__progress-bar -->
-                        <p class="course-details__progress-count">5</p>
-                        <!-- /.course-details__progress-count -->
-                      </div><!-- /.course-details__progress-item -->
-                      <div class="course-details__progress-item">
-                        <p class="course-details__progress-text">Very Good</p>
-                        <!-- /.course-details__progress-text -->
-                        <div class="course-details__progress-bar">
-                          <span style="width: 65%"></span>
-                        </div><!-- /.course-details__progress-bar -->
-                        <p class="course-details__progress-count">2</p>
-                        <!-- /.course-details__progress-count -->
-                      </div><!-- /.course-details__progress-item -->
-                      <div class="course-details__progress-item">
-                        <p class="course-details__progress-text">Average</p>
-                        <!-- /.course-details__progress-text -->
-                        <div class="course-details__progress-bar">
-                          <span style="width: 33%"></span>
-                        </div><!-- /.course-details__progress-bar -->
-                        <p class="course-details__progress-count">1</p>
-                        <!-- /.course-details__progress-count -->
-                      </div><!-- /.course-details__progress-item -->
-                      <div class="course-details__progress-item">
-                        <p class="course-details__progress-text">Poor</p>
-                        <!-- /.course-details__progress-text -->
-                        <div class="course-details__progress-bar">
-                          <span style="width: 0%" class="no-bubble"></span>
-                        </div><!-- /.course-details__progress-bar -->
-                        <p class="course-details__progress-count">0</p>
-                        <!-- /.course-details__progress-count -->
-                      </div><!-- /.course-details__progress-item -->
-                      <div class="course-details__progress-item">
-                        <p class="course-details__progress-text">Terrible</p>
-                        <!-- /.course-details__progress-text -->
-                        <div class="course-details__progress-bar">
-                          <span style="width: 0%" class="no-bubble"></span>
-                        </div><!-- /.course-details__progress-bar -->
-                        <p class="course-details__progress-count">0</p>
-                        <!-- /.course-details__progress-count -->
-                      </div><!-- /.course-details__progress-item -->
-                    </div><!-- /.course-details__progress -->
-                  </div><!-- /.col-lg-8 -->
-                  <div class="col-xl-5 justify-content-xl-end justify-content-sm-center d-flex">
-                    <div class="course-details__review-box">
-                      <p class="course-details__review-count">4.6</p>
-                      <!-- /.course-details__review-count -->
-                      <div class="course-details__review-stars">
-                        <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                        <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                        <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                        <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                        <i class="fas fa-star-half"></i><!-- /.fas fa-star -->
-                      </div><!-- /.course-details__review-stars -->
-                      <p class="course-details__review-text">30 reviews</p>
-                      <!-- /.course-details__review-text -->
-                    </div><!-- /.course-details__review-box -->
-                  </div><!-- /.col-lg-4 -->
-                </div><!-- /.row -->
-                <div class="course-details__comment">
-                  <div class="course-details__comment-single">
-                    <div class="course-details__comment-top">
-                      <div class="course-details__comment-img">
-                        <img src="/assets/images/team-1-1.jpg" alt="">
-                      </div><!-- /.course-details__comment-img -->
-                      <div class="course-details__comment-right">
-                        <h2 class="course-details__comment-name">Steven Meyer</h2>
-                        <!-- /.course-details__comment-name -->
-                        <div class="course-details__comment-meta">
-                          <p class="course-details__comment-date">26 July, 2019</p>
-                          <!-- /.course-details__comment-date -->
-                          <div class="course-details__comment-stars">
-                            <i class="fa fa-star"></i><!-- /.fa fa-star -->
-                            <i class="fa fa-star"></i><!-- /.fa fa-star -->
-                            <i class="fa fa-star"></i><!-- /.fa fa-star -->
-                            <i class="fa fa-star"></i><!-- /.fa fa-star -->
-                            <i class="fa fa-star star-disabled"></i><!-- /.fa fa-star -->
-                          </div><!-- /.course-details__comment-stars -->
-                        </div><!-- /.course-details__comment-meta -->
-                      </div><!-- /.course-details__comment-right -->
-                    </div><!-- /.course-details__comment-top -->
-                    <p class="course-details__comment-text">
-                      Lorem ipsum is simply free text used by
-                      copytyping refreshing. Neque porro est qui dolorem ipsum quia quaed inventore
-                      veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                    </p>
-                    <!-- /.course-details__comment-text -->
-                  </div><!-- /.course-details__comment-single -->
-                  <div class="course-details__comment-single">
-                    <div class="course-details__comment-top">
-                      <div class="course-details__comment-img">
-                        <img src="/assets/images/team-1-2.jpg" alt="">
-                      </div><!-- /.course-details__comment-img -->
-                      <div class="course-details__comment-right">
-                        <h2 class="course-details__comment-name">Lina Kelley</h2>
-                        <!-- /.course-details__comment-name -->
-                        <div class="course-details__comment-meta">
-                          <p class="course-details__comment-date">26 July, 2019</p>
-                          <!-- /.course-details__comment-date -->
-                          <div class="course-details__comment-stars">
-                            <i class="fa fa-star"></i><!-- /.fa fa-star -->
-                            <i class="fa fa-star"></i><!-- /.fa fa-star -->
-                            <i class="fa fa-star"></i><!-- /.fa fa-star -->
-                            <i class="fa fa-star star-disabled"></i><!-- /.fa fa-star -->
-                            <i class="fa fa-star star-disabled"></i><!-- /.fa fa-star -->
-                          </div><!-- /.course-details__comment-stars -->
-                        </div><!-- /.course-details__comment-meta -->
-                      </div><!-- /.course-details__comment-right -->
-                    </div><!-- /.course-details__comment-top -->
-                    <p class="course-details__comment-text">
-                      Lorem ipsum is simply free text used by
-                      copytyping refreshing. Neque porro est qui dolorem ipsum quia quaed inventore
-                      veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                    </p>
-                    <!-- /.course-details__comment-text -->
-                  </div><!-- /.course-details__comment-single -->
-                </div><!-- /.course-details__comment -->
-                <form action="#" class="course-details__comment-form">
-                  <h2 class="course-details__title">Add a review</h2><!-- /.course-details__title -->
-                  <p class="course-details__comment-form-text">Rate this Course? <a href="#" class="fas fa-star"></a><a href="#" class="fas fa-star"></a><a href="#" class="fas fa-star"></a><a href="#" class="fas fa-star"></a><a href="#" class="fas fa-star"></a></p><!-- /.course-details__coment-form-text -->
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <input type="text" placeholder="Your Name">
-                      <input type="text" placeholder="Email Address">
-                    </div><!-- /.col-lg-6 -->
-                    <div class="col-lg-12">
-                      <textarea placeholder="Write Message"></textarea>
-                      <button type="submit" class="thm-btn course-details__comment-form-btn">
-                        Leave a
-                        Review
-                      </button>
-                    </div><!-- /.col-lg-12 -->
-                  </div><!-- /.row -->
-                </form><!-- /.course-details__comment-form -->
-              </div><!-- /.course-details__tab-content -->
             </div><!-- /.tab-content -->
           </div><!-- /.course-details__content -->
         </div><!-- /.col-lg-8 -->
         <div class="col-lg-4">
           <div class="course-details__price">
-            <p class="course-details__price-text">Course price </p><!-- /.course-details__price-text -->
-            <p class="course-details__price-amount">$18.00</p><!-- /.course-details__price-amount -->
-            <a href="#register-section" @click.prevent="scrollToTarget" class="thm-btn course-details__price-btn">Buy This Course</a><!-- /.thm-btn -->
+            <nuxt-link to="/apply" class="thm-btn course-details__price-btn">{{translations.RegisterNow}}</nuxt-link><!-- /.thm-btn -->
           </div><!-- /.course-details__price -->
 
           <div class="course-details__meta">
@@ -334,47 +186,41 @@
               <span class="course-details__meta-icon">
                 <i class="far fa-clock"></i><!-- /.far fa-clock -->
               </span><!-- /.course-details__icon -->
-              Durations: <span>10 hours</span>
+              {{translations.Durations}}: <span>3 {{translations.Months}}</span>
             </a><!-- /.course-details__meta-link -->
             <a href="#" class="course-details__meta-link">
               <span class="course-details__meta-icon">
                 <i class="far fa-folder-open"></i><!-- /.far fa-folder-open -->
               </span><!-- /.course-details__icon -->
-              Lectures: <span>6</span>
+              {{translations.Lectures}}: <span>36 {{translations.Lectures}}</span>
             </a><!-- /.course-details__meta-link -->
             <a href="#" class="course-details__meta-link">
               <span class="course-details__meta-icon">
                 <i class="far fa-user-circle"></i><!-- /.far fa-user-circle -->
               </span><!-- /.course-details__icon -->
-              Students: <span>Max 4</span>
-            </a><!-- /.course-details__meta-link -->
-            <a href="#" class="course-details__meta-link">
-              <span class="course-details__meta-icon">
-                <i class="fas fa-play"></i><!-- /.fas fa-play -->
-              </span><!-- /.course-details__icon -->
-              Video: <span>8 hours</span>
+              {{translations.Students}}: <span>{{translations.Max}} 15</span>
             </a><!-- /.course-details__meta-link -->
             <a href="#" class="course-details__meta-link">
               <span class="course-details__meta-icon">
                 <i class="far fa-flag"></i><!-- /.far fa-flag -->
               </span><!-- /.course-details__icon -->
-              Skill Level: <span>Advanced</span>
+              {{translations.SkillLevel}}: <span>{{translations.Beginner}}</span>
             </a><!-- /.course-details__meta-link -->
             <a href="#" class="course-details__meta-link">
               <span class="course-details__meta-icon">
                 <i class="far fa-bell"></i><!-- /.far fa-bell -->
               </span><!-- /.course-details__icon -->
-              Language: <span>English</span>
+              {{translations.Language}}: <span>{{translations.Armenian}}</span>
             </a><!-- /.course-details__meta-link -->
           </div><!-- /.course-details__meta -->
           <div class="course-details__list">
-            <h2 class="course-details__list-title">New Courses</h2><!-- /.course-details__list-title -->
+            <h2 class="course-details__list-title">{{translations.OurCurriculums}}</h2><!-- /.course-details__list-title -->
             <div class="course-details__list-item">
               <div class="course-details__list-img">
                 <img src="/assets/images/lc-1-1.jpg" alt="">
               </div><!-- /.course-details__list-img -->
               <div class="course-details__list-content">
-                <a class="course-details__list-author" href="#">by <span>Lydia Byrd</span></a>
+                <a class="course-details__list-author" href="#">by <span>{{translations.CatalystAcademyText}}</span></a>
                 <h3><a href="#">Marketing strategies</a></h3>
                 <div class="course-details__list-stars">
                   <i class="fas fa-star"></i><!-- /.fas fa-star -->
@@ -423,48 +269,6 @@
           </div><!-- /.course-details__list -->
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
-
-      <div class="row" id="register-section">
-        <div class="col-lg-12 col-md-6">
-          <div class="become-teacher__form">
-            <div class="become-teacher__form-top">
-              <h2 class="become-teacher__form-title">
-                Register for the Curriculum
-              </h2><!-- /.become-teacher__form-title -->
-            </div><!-- /.become-teacher__top -->
-            <form @submit.prevent="register" action="/assets/inc/sendemail.php" class="become-teacher__form-content contact-form-validated">
-              <input v-model="registrationData.fullName" type="text" placeholder="Your full Name" name="fullName" required>
-              <input v-model="registrationData.email" type="email" placeholder="Email Address" name="email" required>
-              <input v-model="registrationData.phoneNumber" type="text" placeholder="Phone Number" name="phone" required>
-<!--              <client-only><date-picker placeholder="Your date of birth MM/DD/YYYY" format="MM/dd/yyyy" v-model="registrationData.DateOfBirth" /></client-only>
--->
-            <client-only>
-              <b-form-datepicker id="example-i18n-picker"
-                                 v-model="registrationData.DateOfBirth"
-                                 :show-decade-nav="showDecadeNav"
-                                 :hide-header="hideHeader"
-                                 class="mb-2 d-flex align-items-baseline"
-                                 placeholder="Your Date of birth"
-                                 menu-class="w-80"
-                                 calendar-width="100%"
-                                 required>
-              </b-form-datepicker>
-            </client-only>
-
-    <input v-model="registrationData.Address" type="text" placeholder="Address" name="Address" required>
-    <input v-model="registrationData.EducationalInstitution" type="text" placeholder="EducationalInstitution" name="EducationalInstitution" required>
-    <input v-model="registrationData.parentPhoneNumber" type="text" placeholder="Parent Phone Number" name="parentPhoneNumber" required>
-    <input v-model="registrationData.ParentEmail" type="text" placeholder="Parent Email" name="ParentEmail" required>
-    <input v-model="registrationData.ParentFullName" type="text" placeholder="Parent FullName" name="ParentFullName" required>
-    <input v-model="registrationData.ParentProfession" type="text" placeholder="Parent Profession" name="ParentProfession" required>
-    <input v-model="registrationData.message" type="text" placeholder="Comment" name="message" required>
-    <button type="submit" class="thm-btn become-teacher__form-btn">Apply For It</button>
-</form><!-- /.become-teacher__form-content -->
-            <div class="result text-center"></div><!-- /.result -->
-          </div><!-- /.become-teacher__form -->
-        </div>
-      </div>
-
     </div><!-- /.container -->
   </section>
 
@@ -472,6 +276,7 @@
 
 <script>
   import moment from 'moment';
+  import { mapState } from 'vuex';
 
   export default {
     name: "CurriculumDetails",
@@ -506,6 +311,12 @@
         }
       },
     },
+    computed: {
+      ...mapState(['language']),
+      translations() {
+        return this.$store.state.translations;
+      },
+    },
     async fetch() {
       try {
         const response = await this.$axios.get(`/api/CurriculumDetails/${this.curriculumId}`); // Fetch data based on ID
@@ -513,6 +324,9 @@
       } catch (error) {
         // Handle errors
       }
+    },
+    async created() {
+      await this.$store.dispatch('fetchTranslations');
     },
     data() {
       return {

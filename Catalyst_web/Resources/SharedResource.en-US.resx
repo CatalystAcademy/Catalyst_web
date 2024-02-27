@@ -225,8 +225,14 @@
   <data name="ApplySubText" xml:space="preserve">
     <value>Ready to join the Catalyst Academy community?</value>
   </data>
+  <data name="Armenian" xml:space="preserve">
+    <value>Armenian</value>
+  </data>
   <data name="BeChampionOfChange" xml:space="preserve">
     <value>Be a Champion of Chnage</value>
+  </data>
+  <data name="Beginner" xml:space="preserve">
+    <value>Beginner</value>
   </data>
   <data name="CAAddress" xml:space="preserve">
     <value>24/2, Azatutyan Avenue, Yerevan, Armenia</value>
@@ -314,6 +320,9 @@
   </data>
   <data name="DateOfBirth" xml:space="preserve">
     <value>Your Date of birth</value>
+  </data>
+  <data name="Durations" xml:space="preserve">
+    <value>Durations</value>
   </data>
   <data name="EducationalInstitution" xml:space="preserve">
     <value>Educational Institution</value>
@@ -457,6 +466,9 @@ with us now</value>
   <data name="InstaLink" xml:space="preserve">
     <value>new value</value>
   </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
   <data name="LeadCatalysts" xml:space="preserve">
     <value>Lead Catalysts (LC)</value>
   </data>
@@ -475,8 +487,14 @@ with us now</value>
   <data name="LearnMore" xml:space="preserve">
     <value>Learn More</value>
   </data>
+  <data name="Lectures" xml:space="preserve">
+    <value>Lectures</value>
+  </data>
   <data name="MakeAppointmentBtn" xml:space="preserve">
     <value>Schedule Your Visit</value>
+  </data>
+  <data name="Max" xml:space="preserve">
+    <value>Max</value>
   </data>
   <data name="Message" xml:space="preserve">
     <value>Write message</value>
@@ -486,6 +504,9 @@ with us now</value>
   </data>
   <data name="MissionTwo" xml:space="preserve">
     <value>We believe that by providing an engaging and supportive environment, we help students unleash their full potential and prepare them for success in the global marketplace.</value>
+  </data>
+  <data name="Months" xml:space="preserve">
+    <value>Months</value>
   </data>
   <data name="OfficeHoursText" xml:space="preserve">
     <value>Office Hours</value>
@@ -529,6 +550,9 @@ with us now</value>
   <data name="OurAddressText" xml:space="preserve">
     <value>Our Address</value>
   </data>
+  <data name="OurCurriculums" xml:space="preserve">
+    <value>Our Curriculums</value>
+  </data>
   <data name="OurMission" xml:space="preserve">
     <value>Our Mission</value>
   </data>
@@ -559,11 +583,17 @@ with us now</value>
   <data name="ReadMore" xml:space="preserve">
     <value>Read More</value>
   </data>
+  <data name="RegisterNow" xml:space="preserve">
+    <value>Register Now</value>
+  </data>
   <data name="registrationErrorMessage" xml:space="preserve">
     <value>An unexpected error occurred. Please contact support.</value>
   </data>
   <data name="registrationsuccessfulMessage" xml:space="preserve">
     <value>Registration successful!</value>
+  </data>
+  <data name="SeePreview" xml:space="preserve">
+    <value>See Preview</value>
   </data>
   <data name="SendMessage" xml:space="preserve">
     <value>Send Message</value>
@@ -580,6 +610,9 @@ with us now</value>
   <data name="SeniorCatalystsTextTwo" xml:space="preserve">
     <value>They serve as role models for other catalysts, actively contributing to the academy's initiatives and programs.</value>
   </data>
+  <data name="SkillLevel" xml:space="preserve">
+    <value>Skill Level</value>
+  </data>
   <data name="StartLearningNowBtn" xml:space="preserve">
     <value>Start Learning Now</value>
   </data>
@@ -589,6 +622,9 @@ our experts</value>
   </data>
   <data name="StudentInfo" xml:space="preserve">
     <value>Student Information:</value>
+  </data>
+  <data name="Students" xml:space="preserve">
+    <value>Students</value>
   </data>
   <data name="TrustedByText" xml:space="preserve">
     <value>Trusted by</value>

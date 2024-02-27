@@ -9,10 +9,10 @@
               <i class="far fa-heart"></i><!-- /.far fa-heart -->
             </div><!-- /.course-one__image -->
             <div class="course-one__content">
-              <a href="#" class="course-one__category">development</a><!-- /.course-one__category -->
+              <span class="course-one__category">development</span><!-- /.course-one__category -->
               <div class="course-one__admin">
                 <img src="/assets/images/team-1-1.jpg" alt="">
-                by <nuxt-link to="/teacher-details">Lou Guerrero</nuxt-link>
+                by <span> {{translations.CatalystAcademyText}}</span>
               </div><!-- /.course-one__admin -->
               <h2 class="course-one__title">
                 <nuxt-link :to="`curriculums/${curriculum.id}`">
@@ -28,30 +28,21 @@
                   <i class="fa fa-star"></i>
                   <i class="fa fa-star"></i>
                 </span><!-- /.course-one__stars-wrap -->
-                <span class="course-one__count">4.8</span><!-- /.course-one__count -->
-                <span class="course-one__stars-count">250</span><!-- /.course-one__stars-count -->
+                <span class="course-one__count">5</span><!-- /.course-one__count -->
+                <span class="course-one__stars-count">580</span><!-- /.course-one__stars-count -->
               </div><!-- /.course-one__stars -->
               <div class="course-one__meta">
-                <nuxt-link to="/course-details"><i class="far fa-clock"></i> 10 Hours</nuxt-link>
-                <nuxt-link to="/course-details"><i class="far fa-folder-open"></i> 6 Lectures</nuxt-link>
-                <nuxt-link to="/course-details">$18</nuxt-link>
+                <i class="far fa-clock"></i> 3 {{translations.Months}}
+                <i class="far fa-folder-open"></i> 36 {{translations.Lectures}}
               </div><!-- /.course-one__meta -->
               <nuxt-link :to="`curriculums/${curriculum.id}`" class="course-one__link">
-                See Preview
+                {{translations.SeePreview}}
               </nuxt-link>
             </div><!-- /.course-one__content -->
           </div><!-- /.course-one__single -->
         </div><!-- /.col-lg-4 -->
 
       </div><!-- /.row -->
-      <div class="post-pagination">
-        <a href="#"><i class="fa fa-angle-double-left"></i><!-- /.fa fa-angle-double-left --></a>
-        <a class="active" href="#">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">4</a>
-        <a href="#"><i class="fa fa-angle-double-right"></i><!-- /.fa fa-angle-double-left --></a>
-      </div><!-- /.post-pagination -->
 
     </div><!-- /.container -->
 
