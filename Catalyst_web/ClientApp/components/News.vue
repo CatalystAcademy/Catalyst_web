@@ -11,28 +11,18 @@
                       </div><!-- /.blog-one__image -->
                       <div class="blog-one__content text-center">
                           <div class="blog-one__meta">
-                              <a data-toggle="tooltip" data-placement="top" title="" href="#" data-original-title="Posted On Jan 19"><i class="fa fa-calendar-alt"></i></a>
-                              <a data-toggle="tooltip" data-placement="top" title="" href="#" data-original-title="No Comments"><i class="fa fa-comments"></i></a>
-                              <a data-toggle="tooltip" data-placement="top" title="" href="#" data-original-title="Posted By Admin"><i class="fa fa-user"></i></a>
-                          </div><!-- /.blog-one__meta -->
-                          <h2 class="blog-one__title"><nuxt-link :to="`news/${n.id}`">{{n.titleEng}}</nuxt-link>
+                              <span data-toggle="tooltip" data-placement="top" title="" v-bind:data-original-title="translations.PostedOn + ': ' + formatDateMonth(n.created)"><i class="fa fa-calendar-alt"></i></span>
+<!--                              <a data-toggle="tooltip" data-placement="top" title="" href="#" v-bind:data-original-title="translations.PostedBy + ': ' + n.authorEng"><i class="fa fa-user"></i></a>
+-->                          </div><!-- /.blog-one__meta -->
+                          <h2 class="blog-one__title"><nuxt-link :to="`news/${n.id}`">{{n.titleEng.slice(0, 30)}}</nuxt-link>
                           </h2><!-- /.blog-one__title -->
-                          <p class="blog-one__text">Aelltes port lacus quis enim var sed efficitur turpis gilla sed sit
-                              amet finibus eros.</p><!-- /.blog-one__text -->
-                          <nuxt-link :to="`news/${n.id}`" class="blog-one__link">Read More</nuxt-link><!-- /.blog-one__link -->
+                          <p class="blog-one__text">{{n.descriptionEng.slice(0, 80)}}</p><!-- /.blog-one__text -->
+                          <nuxt-link :to="`news/${n.id}`" class="blog-one__link">{{translations.ReadMore}}</nuxt-link><!-- /.blog-one__link -->
                       </div><!-- /.blog-one__content -->
                   </div><!-- /.blog-one__single -->
               </div><!-- /.col-lg-4 -->
 
           </div><!-- /.row -->
-          <div class="post-pagination">
-              <a href="#"><i class="fa fa-angle-double-left"></i><!-- /.fa fa-angle-double-left --></a>
-              <a class="active" href="#">1</a>
-              <a href="#">2</a>
-              <a href="#">3</a>
-              <a href="#">4</a>
-              <a href="#"><i class="fa fa-angle-double-right"></i><!-- /.fa fa-angle-double-left --></a>
-          </div><!-- /.post-pagination -->
       </div><!-- /.container -->
   </section>
 </template>
@@ -47,6 +37,12 @@
         news: [],
         error: false,
       };
+    },
+    methods: {
+      formatDateMonth(date) {
+        // Use this.$moment to format the date
+        return this.$moment(date).format('MMM D');
+      },
     },
     computed: {
       translations() {

@@ -22,6 +22,20 @@ namespace Catalyst_web.Controllers
         public async Task<IActionResult> GetAllBlogs()
         {
             return Ok(await _dbContext.Blogs.ToListAsync());
+        } 
+        [HttpGet("api/Blogs/Latest")]
+        public async Task<IActionResult> GetLatestBlogs([FromQuery] Guid? currentBlogId)
+        {
+            var latestBlogsQuery = _dbContext.Blogs.OrderByDescending(c => c.Created).Take(3);
+
+            if (currentBlogId.HasValue)
+            {
+                latestBlogsQuery = latestBlogsQuery.Where(c => c.Id != currentBlogId.Value);
+            }
+
+            var latestBlogs = await latestBlogsQuery.ToListAsync();
+
+            return Ok(latestBlogs);
         }
 
         [HttpPost("api/Blog/Create")]
@@ -39,6 +53,7 @@ namespace Catalyst_web.Controllers
                 DescriptionEng = request.DescriptionEng,
                 AuthorArm = request.AuthorArm,
                 AuthorEng = request.AuthorEng,
+                Tag = request.Tag,
             };
             _dbContext.Blogs.Add(createBlog);
             await _dbContext.SaveChangesAsync();
@@ -67,6 +82,7 @@ namespace Catalyst_web.Controllers
             existingBlog.DescriptionArm = editedBlog.DescriptionArm;
             existingBlog.AuthorArm = editedBlog.AuthorArm;
             existingBlog.AuthorEng = editedBlog.AuthorEng;
+            existingBlog.Tag = editedBlog.Tag;
 
             _dbContext.Blogs.Update(existingBlog);
             await _dbContext.SaveChangesAsync();

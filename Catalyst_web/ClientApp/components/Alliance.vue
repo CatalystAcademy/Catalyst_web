@@ -433,18 +433,6 @@
     color: #333;
   }
 
-  .level-description {
-    text-align: left; /* Align the text to the right */
-    max-width: 100%; /* Adjust the maximum width as needed */
-  }
-
-  .level-text {
-    margin-bottom: 6px;
-    margin-top: 6px;
-    display: inline-block; /* Display the text as inline-block to allow wrapping */
-    max-width: 100%; /* Allow the text to wrap within its container */
-  }
-
   .level-number {
     font-size: 36px;
     font-weight: bold;

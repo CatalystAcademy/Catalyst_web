@@ -24,6 +24,20 @@ namespace Catalyst_web.Controllers
         {
             return Ok(await _dbContext.Newses.ToListAsync());
         }
+        [HttpGet("api/News/Latest")]
+        public async Task<IActionResult> GetLatestNews([FromQuery] Guid? currentNewsId)
+        {
+            var latestNewsQuery = _dbContext.Newses.OrderByDescending(c => c.Created).Take(3);
+
+            if (currentNewsId.HasValue)
+            {
+                latestNewsQuery = latestNewsQuery.Where(c => c.Id != currentNewsId.Value);
+            }
+
+            var latestNews = await latestNewsQuery.ToListAsync();
+
+            return Ok(latestNews);
+        }
 
         [HttpPost("api/News/Create")]
         public async Task<IActionResult> CreateNews([FromBody] News request)
@@ -39,6 +53,7 @@ namespace Catalyst_web.Controllers
                 DescriptionArm = request.DescriptionArm,
                 DescriptionEng = request.DescriptionEng,
                 ImageData = request.ImageData,
+                Tag = request.Tag,
             };
             _dbContext.Newses.Add(createNews);
             await _dbContext.SaveChangesAsync();
@@ -65,6 +80,7 @@ namespace Catalyst_web.Controllers
             existingNews.TitleArm = editedNews.TitleArm;
             existingNews.DescriptionEng = editedNews.DescriptionEng;
             existingNews.DescriptionArm = editedNews.DescriptionArm;
+            existingNews.Tag = editedNews.Tag;
 
             _dbContext.Newses.Update(existingNews);
             await _dbContext.SaveChangesAsync();

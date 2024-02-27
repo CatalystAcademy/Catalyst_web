@@ -51,7 +51,7 @@
                     </ul>
                   </li>
                   <li>
-                    <nuxt-link to="/">Programs</nuxt-link>
+                    <nuxt-link to="/curriculums">Programs</nuxt-link>
                     <ul class="sub-menu">
                       <li><nuxt-link to="/curriculums">Curriculums</nuxt-link></li>
 <!--                      <li><nuxt-link to="/courses">Courses</nuxt-link></li>
@@ -68,10 +68,6 @@
                   </li>
                   <li>
                     <nuxt-link to="/news">News</nuxt-link>
-                    <ul class="sub-menu">
-                      <li><nuxt-link to="/news">News</nuxt-link></li>
-<!--                      <li><nuxt-link to="/">Events</nuxt-link></li>
--->                    </ul>
                   </li>
                   <li>
                     <nuxt-link to="/blogs">Blogs</nuxt-link>

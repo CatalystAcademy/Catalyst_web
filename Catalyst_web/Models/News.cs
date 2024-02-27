@@ -10,6 +10,8 @@ namespace Catalyst_web.Models
         [Required]
         public required string TitleArm { get; set; }
         [Required]
+        public required string Tag { get; set; }
+        [Required]
         public required string DescriptionEng { get; set; }
         [Required]
         public required string DescriptionArm { get; set; }

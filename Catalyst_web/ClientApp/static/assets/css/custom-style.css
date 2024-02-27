@@ -1,0 +1,104 @@
+.blog-one__meta span {
+  margin-left: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: #f1f1f1;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+  .blog-one__meta span:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid #f1f1f1;
+    left: -5px;
+    top: 0;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+    z-index: 9;
+  }
+
+  .blog-one__meta span:after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #f1f1f1;
+    left: 0px;
+    top: 0;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+    z-index: 10;
+  }
+
+  .blog-one__meta span + span {
+    margin-left: 15px;
+  }
+
+  .blog-one__meta span:hover {
+    background-color: #f16101;
+    color: #fff;
+  }
+
+    .blog-one__meta span:hover i {
+      color: #fff;
+    }
+
+    .blog-one__meta span:hover:before {
+      left: 0;
+      border-color: #f16101;
+    }
+
+    .blog-one__meta span:hover:after {
+      background-color: #f16101;
+    }
+
+  .blog-one__meta span i {
+    font-size: 16px;
+    color: #81868a;
+    position: relative;
+    z-index: 11;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+  }
+
+.blog-details .share-block .left-block p span {
+  color: #f16101;
+  font-size: 16px;
+  font-weight: 500;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+  margin-left: 5px;
+  letter-spacing: 0;
+}
+
+.blog-details .share-block .left-block p span:hover {
+  color: #012237;
+  cursor: pointer;
+}
+
+.level-description {
+  text-align: left; /* Align the text to the right */
+  max-width: 100%; /* Adjust the maximum width as needed */
+}
+
+.level-text {
+  margin-bottom: 6px;
+  margin-top: 6px;
+  display: inline-block; /* Display the text as inline-block to allow wrapping */
+  max-width: 100%; /* Allow the text to wrap within its container */
+}

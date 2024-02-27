@@ -31,7 +31,8 @@ export default {
       { rel: "stylesheet", href: "/assets/css/magnific-popup.css" },
       { rel: "stylesheet", href: "/assets/css/vegas.min.css" },
       { rel: "stylesheet", href: "/assets/css/style.css" },
-      { rel: "stylesheet", href: "/assets/css/responsive.css" }
+      { rel: "stylesheet", href: "/assets/css/responsive.css" },
+      { rel: "stylesheet", href: "/assets/css/custom-style.css" }
     ],
     script: [
       { src: "/assets/js/jquery.min.js", body: true },
