@@ -67,7 +67,9 @@ namespace Catalyst_web.Controllers
                 EndDate = request.EndDate,
                 RegistrationDate = new DateTime(),
                 CategoryArm = request.CategoryArm,
-                CategoryEng = request.CategoryEng
+                CategoryEng = request.CategoryEng,
+                CurriculumArm = request.CurriculumArm,
+                CurriculumEng = request.CurriculumEng,
                 };
                 _dbContext.Curriculums.Add(createCurriculum);
                 await _dbContext.SaveChangesAsync();
@@ -98,6 +100,8 @@ namespace Catalyst_web.Controllers
                     existingCurriculum.EndDate = editedcurriculum.EndDate;
                     existingCurriculum.CategoryArm = editedcurriculum.CategoryArm;
                     existingCurriculum.CategoryEng = editedcurriculum.CategoryEng;
+                    existingCurriculum.CurriculumEng = editedcurriculum.CurriculumEng;
+                    existingCurriculum.CurriculumArm = editedcurriculum.CurriculumArm;
 
                 _dbContext.Curriculums.Update(existingCurriculum);
                 await _dbContext.SaveChangesAsync();
@@ -143,7 +147,7 @@ namespace Catalyst_web.Controllers
             var curriculumRegistration = new RegisterForCurriculum
             {
                 Id = request.Id,
-                CurriculumId = request.CurriculumId,
+                CurriculumId = request?.CurriculumId,
                 Email = request.Email,
                 FullName = request.FullName,
                 Message = request.Message,

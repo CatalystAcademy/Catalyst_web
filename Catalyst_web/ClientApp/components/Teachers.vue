@@ -15,37 +15,29 @@
               <!-- /.team-one__text -->
             </div><!-- /.team-one__content -->
             <div class="team-one__social">
-              <a href="#"><i class="fab fa-facebook-square"></i></a>
               <a href="#"><i class="fab fa-linkedin"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
             </div><!-- /.team-one__social -->
           </div><!-- /.team-one__single -->
         </div><!-- /.col-lg-3 -->
       </div><!-- /.row -->
 
-      <CallToActionFive/>
 
       <div class="row custom-margin" id="teacher-register-section">
         <div class="col-lg-6">
           <div class="become-teacher__content">
-            <h2 class="become-teacher__title">Teaching benefits</h2><!-- /.become-teacher__title -->
+            <h2 class="become-teacher__title">{{translations.TeachingBenefits}}</h2><!-- /.become-teacher__title -->
             <p class="become-teacher__text">
-              Lorem Ipsum is simply dummy text of the printing and type industry.
-              Lorem Ipsum has been the standard dummy text ever since the when an unknown was popularised. It
-              has survived not only five centuries, but also the leap into electronic typesetting remaining
-              unchanged.
+              {{translations.BecomeInstructorDesc}}
             </p><!-- /.become-teacher__text -->
-            <h2 class="become-teacher__subtitle">Health and Pension</h2><!-- /.become-teacher__subtitle -->
+            <h2 class="become-teacher__subtitle">
+              {{translations.WhyTeachCAText}}
+              </h2><!-- /.become-teacher__subtitle -->
             <p class="become-teacher__text">
-              Lorem Ipsum has been the standard dummy text ever since the when an
-              unknown was popularised. It has survived not only five centuries. but also the leap into
-              electronic typesetting remaining unchanged.
+              {{translations.WhyTeachCADesc}}
             </p><!-- /.become-teacher__text -->
-            <h2 class="become-teacher__subtitle">Vacation Time</h2><!-- /.become-teacher__subtitle -->
+            <h2 class="become-teacher__subtitle">{{translations.QualificationsText}}</h2><!-- /.become-teacher__subtitle -->
             <p class="become-teacher__text">
-              Lorem Ipsum has been the standard dummy text ever since the when an
-              unknown was popularised. It has survived not only five centuries. but also the leap into
-              electronic typesetting remaining unchanged.
+              {{translations.QualificationsDesc}}
             </p><!-- /.become-teacher__text -->
           </div><!-- /.become-teacher__content -->
         </div><!-- /.col-lg-6 -->
@@ -53,14 +45,14 @@
           <div class="become-teacher__form">
             <div class="become-teacher__form-top">
               <h2 class="become-teacher__form-title">
-                Apply for teaching
-              </h2><!-- /.become-teacher__form-title -->
+                {{translations.BecomeInstructorText}}
+            </h2><!-- /.become-teacher__form-title -->
             </div><!-- /.become-teacher__top -->
             <form @submit.prevent="register" action="/assets/inc/sendemail.php" class="become-teacher__form-content contact-form-validated">
               <input v-model="registrationData.fullName" type="text" placeholder="Your full Name" name="fullName">
               <input v-model="registrationData.email" type="text" placeholder="Email Address" name="email">
               <client-only>
-                <b-form-select v-model="selectedCourse" :options="courseOptions" class="mb-3">
+                <b-form-select v-model="selectedCurriculum" :options="curriculumOptions" class="mb-3">
                   <b-form-select-option :value="null" disabled>-- Please select an option --</b-form-select-option>
                 </b-form-select>
               </client-only>
@@ -81,14 +73,14 @@
   import https from 'https';
 
   export default {
-    name: 'Instractors',
+    name: 'Instructors',
     data() {
       return {
         teachers: [],
         error: false,
-        registrationData: { fullName: '', email: '', courseId: '', phoneNumber: '', message: '' },
-        courseOptions: [],
-        selectedCourse: null,
+        registrationData: { fullName: '', email: '', curriculumId: null, phoneNumber: '', message: '' },
+        curriculumOptions: [],
+        selectedCurriculum: null,
       };
     },
     computed: {
@@ -107,22 +99,22 @@
       }
     },
     methods: {
-      async fetchCourses() {
+      async fetchCurriculums() {
         try {
-          const response = await this.$axios.get('/api/Courses');
-          this.courseOptions = response.data.map(course => ({
-            value: course.id,
-            text: course.titleEng,
+          const response = await this.$axios.get('/api/Curriculums');
+          this.curriculumOptions = response.data.map(curriculum => ({
+            value: curriculum.id,
+            text: curriculum.titleEng,
           }));
         } catch (error) {
-          console.error('Error fetching courses:', error);
+          console.error('Error fetching Curriculums:', error);
           this.error = true; // Consider displaying an error message to the user
         }
       },
       async register() {
-          this.registrationData.courseId = this.selectedCourse;
-
-          await this.$axios.post('/api/BecomeTeacher/Register', this.registrationData)
+        this.registrationData.curriculumId = this.selectedCurriculum;
+        
+        await this.$axios.post('/api/BecomeTeacher/Register', this.registrationData)
             .then(response => {
               console.log(response);
               // Show success or error toast based on response
@@ -142,7 +134,7 @@
         } 
     },
     async created() {
-      await this.fetchCourses();
+      await this.fetchCurriculums();
       await this.$store.dispatch('fetchTranslations');
       // Optional: Set up HTTPS agent for self-signed certificates (if needed)
       if (process.env.NODE_ENV === 'development') {

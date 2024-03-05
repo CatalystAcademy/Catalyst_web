@@ -40,7 +40,7 @@
             <div class="about-two__count">
               <div class="about-two__count-text">
                 {{translations.TrustedByText}}
-                <span class="counter">1000</span>
+                <span class="counter">2570</span>
               </div><!-- /.about-two__count-text -->
             </div><!-- /.about-two__count -->
           </div><!-- /.about-two__image -->

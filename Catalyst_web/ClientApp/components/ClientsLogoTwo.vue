@@ -2,14 +2,11 @@
   <section class="brand-two ">
       <div class="container">
           <div class="block-title">
-              <h2 class="block-title__title">Our company & partners</h2><!-- /.block-title__title -->
+            <h2 class="block-title__title">{{translations.OurPartners}}</h2><!-- /.block-title__title -->
           </div><!-- /.block-title -->
           <div class="brand-one__carousel owl-carousel owl-theme">
               <div class="item">
                   <img src="/assets/images/custom/aua.png" alt="">
-              </div><!-- /.item -->
-              <div class="item">
-                  <img src="/assets/images/custom/club_logo.png" alt="">
               </div><!-- /.item -->
               <div class="item">
                   <img src="/assets/images/custom/Eiu_logo.jpg" alt="">
@@ -18,7 +15,7 @@
                   <img src="/assets/images/custom/orion.jpg" alt="">
               </div><!-- /.item -->
               <div class="item">
-                  <img src="/assets/images/custom/evrasia.png" alt="">
+                  <img src="/assets/images/custom/evrasia_new.png" alt="">
               </div><!-- /.item -->
               <div class="item">
                   <img src="/assets/images/custom/gbridge.png" alt="">
@@ -41,9 +38,17 @@
 </template>
 
 <script>
-    export default {
-        name: "ClientsLogoTwo"
-    }
+  export default {
+    name: "ClientsLogoTwo",
+    computed: {
+      translations() {
+        return this.$store.state.translations;
+      },
+    },
+    async created() {
+      await this.$store.dispatch('fetchTranslations');
+    },
+  };
 </script>
 
 <style scoped>

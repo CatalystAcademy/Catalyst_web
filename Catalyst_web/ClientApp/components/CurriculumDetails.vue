@@ -26,7 +26,7 @@
                 </div><!-- /.course-one__stars -->
               </div><!-- /.course-details__top-left -->
               <div class="course-details__top-right">
-                <a href="#" class="course-one__category">marketing</a><!-- /.course-one__category -->
+                <a href="#" class="course-one__category">{{curriculum.categoryEng}}</a><!-- /.course-one__category -->
               </div><!-- /.course-details__top-right -->
             </div><!-- /.course-details__top -->
             <div class="course-one__image">
@@ -45,133 +45,17 @@
             <div class="tab-content course-details__tab-content ">
               <div class="tab-pane show active  animated fadeInUp" role="tabpanel" id="overview">
                 <p class="course-details__tab-text">
-                  Aelltes port lacus quis enim var sed efficitur turpis
-                  gilla
-                  sed sit Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                  Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type specimen book. It has
-                  survived
-                  not only five centuries, but also the leap into electronic typesetting, remaining
-                  essentially unchanged.
+                  {{curriculum.descriptionEng}}
                 </p><!-- /.course-details__tab-text -->
-                <br>
-                <p class="course-details__tab-text">
-                  It was popularised in the 1960s with the release of
-                  Letraset
-                  sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-                  software
-                  like Aldus PageMaker including versions of lorem ipsum amet finibus eros. Lorem Ipsum is
-                  simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                  industry’s standard dummy text ever since the 1500s, when an unknown printer took a
-                  galley
-                  of type and scrambled it to make a type specimen book. It has survived not only five
-                  centuries, but also the leap into electronic typesetting.
-                </p>
-                <!-- /.course-details__tab-text -->
-                <br>
-                <ul class="list-unstyled course-details__overview-list">
-                  <li>It has survived not only five centuries</li>
-                  <li>Lorem Ipsum is simply dummy text of the new design</li>
-                  <li>Printng and type setting ipsum</li>
-                  <li>Take a look at our round up of the best shows</li>
-                </ul><!-- /.list-unstyled course-details__overview-list -->
+
               </div><!-- /.course-details__tab-content -->
               <div class="tab-pane  animated fadeInUp" role="tabpanel" id="curriculum">
                 <h3 class="course-details__tab-title">Starting beginners level course</h3>
-                <!-- /.course-details__title -->
                 <br>
                 <p class="course-details__tab-text">
-                  Aelltes port lacus quis enim var sed efficitur turpis
-                  gilla
-                  sed sit Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                  Ipsum has been the industry’s standard dummy text ever since.
+                  {{curriculum.curriculumEng}}
                 </p>
-                <!-- /.course-details__tab-text -->
-                <br>
-                <ul class="course-details__curriculum-list list-unstyled">
-                  <li>
-                    <div class="course-details__curriculum-list-left">
-                      <div class="course-details__meta-icon video-icon">
-                        <i class="fas fa-play"></i><!-- /.fas fa-play -->
-                      </div><!-- /.course-details__icon -->
-                      <a href="#">Introduction to Editing</a> <span>Preview</span>
-                    </div><!-- /.course-details__curriculum-list-left -->
-                    <div class="course-details__curriculum-list-right">16 minutes</div>
-                    <!-- /.course-details__curriculum-list-right -->
-                  </li>
-                  <li>
-                    <div class="course-details__curriculum-list-left">
-                      <div class="course-details__meta-icon video-icon">
-                        <i class="fas fa-play"></i><!-- /.fas fa-play -->
-                      </div><!-- /.course-details__icon -->
-                      <a href="#">Overview of Editing</a> <span>Preview</span>
-                    </div><!-- /.course-details__curriculum-list-left -->
-                    <div class="course-details__curriculum-list-right">10 minutes</div>
-                    <!-- /.course-details__curriculum-list-right -->
-                  </li>
-                  <li>
-                    <div class="course-details__curriculum-list-left">
-                      <div class="course-details__meta-icon file-icon">
-                        <i class="fas fa-folder"></i><!-- /.far fa-folder -->
-                      </div><!-- /.course-details__icon -->
-                      <a href="#">Basic Editing Technology</a>
-                    </div><!-- /.course-details__curriculum-list-left -->
-                    <!-- /.course-details__curriculum-list-right -->
-                  </li>
-                  <li>
-                    <div class="course-details__curriculum-list-left">
-                      <div class="course-details__meta-icon quiz-icon">
-                        <i class="fas fa-comment"></i><!-- /.fas fa-play -->
-                      </div><!-- /.course-details__icon -->
-                      <a href="#">Quiz</a>
-                    </div><!-- /.course-details__curriculum-list-left -->
-                    <div class="course-details__curriculum-list-right">6 questions</div>
-                    <!-- /.course-details__curriculum-list-right -->
-                  </li>
-                </ul><!-- /.course-details__curriculum-list -->
-                <br><br>
-                <h3 class="course-details__tab-title">Intermediate Level</h3>
-                <!-- /.course-details__title -->
-                <br>
-                <p class="course-details__tab-text">
-                  Aelltes port lacus quis enim var sed efficitur turpis
-                  gilla
-                  sed sit Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                  Ipsum has been the industry’s standard dummy text ever since.
-                </p>
-                <!-- /.course-details__tab-text -->
-                <br>
-                <ul class="course-details__curriculum-list list-unstyled">
-                  <li>
-                    <div class="course-details__curriculum-list-left">
-                      <div class="course-details__meta-icon video-icon">
-                        <i class="fas fa-play"></i><!-- /.fas fa-play -->
-                      </div><!-- /.course-details__icon -->
-                      <a href="#">Introduction to Editing</a> <span>Preview</span>
-                    </div><!-- /.course-details__curriculum-list-left -->
-                    <div class="course-details__curriculum-list-right">16 minutes</div>
-                    <!-- /.course-details__curriculum-list-right -->
-                  </li>
-                  <li>
-                    <div class="course-details__curriculum-list-left">
-                      <div class="course-details__meta-icon file-icon">
-                        <i class="fas fa-folder"></i><!-- /.far fa-folder -->
-                      </div><!-- /.course-details__icon -->
-                      <a href="#">Basic Editing Technology</a>
-                    </div><!-- /.course-details__curriculum-list-left -->
-                    <!-- /.course-details__curriculum-list-right -->
-                  </li>
-                  <li>
-                    <div class="course-details__curriculum-list-left">
-                      <div class="course-details__meta-icon quiz-icon">
-                        <i class="fas fa-comment"></i><!-- /.fas fa-play -->
-                      </div><!-- /.course-details__icon -->
-                      <a href="#">Quiz</a>
-                    </div><!-- /.course-details__curriculum-list-left -->
-                    <div class="course-details__curriculum-list-right">6 questions</div>
-                    <!-- /.course-details__curriculum-list-right -->
-                  </li>
-                </ul><!-- /.course-details__curriculum-list -->
+
               </div><!-- /.course-details__tab-content -->
             </div><!-- /.tab-content -->
           </div><!-- /.course-details__content -->
@@ -192,7 +76,7 @@
               <span class="course-details__meta-icon">
                 <i class="far fa-folder-open"></i><!-- /.far fa-folder-open -->
               </span><!-- /.course-details__icon -->
-              {{translations.Lectures}}: <span>36 {{translations.Lectures}}</span>
+              {{translations.Lectures}}: <span>36</span>
             </a><!-- /.course-details__meta-link -->
             <a href="#" class="course-details__meta-link">
               <span class="course-details__meta-icon">
@@ -275,7 +159,6 @@
 </template>
 
 <script>
-  import moment from 'moment';
   import { mapState } from 'vuex';
 
   export default {

@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboutAcademyOne" xml:space="preserve">
+  <data name="a" xml:space="preserve">
     <value>With small group sizes, individualized attention, and a personalized approach to learning, Catalyst Academy students receive the support they need to achieve their goals.</value>
   </data>
   <data name="AboutAcademyThree" xml:space="preserve">
@@ -125,6 +125,9 @@
   </data>
   <data name="AboutAcademyTwo" xml:space="preserve">
     <value>Catalyst Academy's programs are led by experienced and qualified professionals who are committed to helping students reach their full potential.</value>
+  </data>
+  <data name="AcademicSupport" xml:space="preserve">
+    <value>Academic support strategies</value>
   </data>
   <data name="Address" xml:space="preserve">
     <value>Address</value>
@@ -231,6 +234,12 @@
   <data name="BeChampionOfChange" xml:space="preserve">
     <value>Be a Champion of Chnage</value>
   </data>
+  <data name="BecomeInstructorDesc" xml:space="preserve">
+    <value>Are you passionate about education and eager to share your expertise with the next generation of learners? Join our esteemed team of instructors at Catalyst Academy and play a pivotal role in shaping the future of education.</value>
+  </data>
+  <data name="BecomeInstructorText" xml:space="preserve">
+    <value>Become an Instructor</value>
+  </data>
   <data name="Beginner" xml:space="preserve">
     <value>Beginner</value>
   </data>
@@ -264,14 +273,44 @@
   <data name="CaptainCatalystsTextTwo" xml:space="preserve">
     <value>They lead and organize events, competitions, and projects within their respective areas.</value>
   </data>
+  <data name="CareerReadiness" xml:space="preserve">
+    <value>Career readiness</value>
+  </data>
   <data name="CatalystAcademyText" xml:space="preserve">
     <value>Catalyst Academy</value>
+  </data>
+  <data name="CatalystDescription" xml:space="preserve">
+    <value>At Catalyst Academy, we believe that a Catalyst is more than just a student or a member of our community. A Catalyst is someone who embodies the spirit of positive change, innovation, and leadership.</value>
+  </data>
+  <data name="CatalystDescriptionButtonText" xml:space="preserve">
+    <value>Here's what it means to be a Catalyst:</value>
+  </data>
+  <data name="CatalystDialogueOne" xml:space="preserve">
+    <value>Hey, I'm a Catalyst. Ever heard of it?</value>
+  </data>
+  <data name="CatalystDialogueTwo" xml:space="preserve">
+    <value>Sure, it's all about sparking change through innovation and teamwork.</value>
   </data>
   <data name="CatalystEmail" xml:space="preserve">
     <value>info@catalystsacademy.com</value>
   </data>
+  <data name="CatalystLabelFive" xml:space="preserve">
+    <value>Join the Catalyst Community</value>
+  </data>
+  <data name="CatalystLabelFour" xml:space="preserve">
+    <value>Making a Difference</value>
+  </data>
+  <data name="CatalystLabelOne" xml:space="preserve">
+    <value>Embracing Innovation</value>
+  </data>
+  <data name="CatalystLabelThree" xml:space="preserve">
+    <value>Leading with Integrity</value>
+  </data>
+  <data name="CatalystLabelTwo" xml:space="preserve">
+    <value>Fostering Collaboration</value>
+  </data>
   <data name="CatalystPhone" xml:space="preserve">
-    <value>+37441575714</value>
+    <value>+374 41 57 57 14</value>
   </data>
   <data name="Catalysts" xml:space="preserve">
     <value>Catalysts (C)</value>
@@ -284,6 +323,21 @@
   </data>
   <data name="CatalystsTextTwo" xml:space="preserve">
     <value>As a Catalyst, you are an essential part of our community, contributing your skills, passion, and ideas to advance our mission and goals.</value>
+  </data>
+  <data name="CatalystTextFive" xml:space="preserve">
+    <value>Are you ready to become a Catalyst for positive change? Join us at Catalyst Academy and unleash your potential to make a difference in the world. Together, we can catalyze change, inspire innovation, and create a brighter future for all.</value>
+  </data>
+  <data name="CatalystTextFour" xml:space="preserve">
+    <value>Above all, a Catalyst is someone who makes a difference in the world around them. Whether it's through academic achievements, civic engagement, social activism, or personal growth, a Catalyst leaves a positive and lasting impact on their community, their peers, and the world at large.</value>
+  </data>
+  <data name="CatalystTextOne" xml:space="preserve">
+    <value>A Catalyst is someone who embraces innovation and creativity, always seeking out new ideas and approaches to address challenges and create positive change. Whether it's through groundbreaking research, entrepreneurial ventures, or community initiatives, a Catalyst is at the forefront of innovation and progress.</value>
+  </data>
+  <data name="CatalystTextThree" xml:space="preserve">
+    <value>A Catalyst is someone who leads with integrity, honesty, and ethical conduct in all their interactions and endeavors. With a strong moral compass and a commitment to doing what's right, a Catalyst inspires trust, respect, and confidence in others, serving as a role model for ethical leadership.</value>
+  </data>
+  <data name="CatalystTextTwo" xml:space="preserve">
+    <value>A Catalyst is someone who fosters collaboration and teamwork, recognizing the power of collective effort and shared goals in achieving meaningful impact. By working together with peers, mentors, and community partners, a Catalyst amplifies their influence and creates opportunities for growth and success.</value>
   </data>
   <data name="ChiefVisionaryCatalyst" xml:space="preserve">
     <value>Chief Visionary Catalyst (CVC)</value>
@@ -333,6 +387,10 @@
   <data name="EnhanceSkillsText" xml:space="preserve">
     <value>Enhance your skills
 with us now</value>
+  </data>
+  <data name="ExploreOurProgramsText" xml:space="preserve">
+    <value>Explore our
+Programs</value>
   </data>
   <data name="FaqAEight" xml:space="preserve">
     <value>Catalyst Academy encourages parental involvement through seminar events and workshops designed specifically for parents. These events cover a range of topics, including parenting skills, academic support strategies, and opportunities for parent-teacher collaboration.</value>
@@ -419,7 +477,7 @@ with us now</value>
     <value>Who is a Catalyst?</value>
   </data>
   <data name="FBLink" xml:space="preserve">
-    <value>second value</value>
+    <value>https://www.facebook.com/catalystacademyarmenia?mibextid=ZbWKwL</value>
   </data>
   <data name="FellowCatalysts" xml:space="preserve">
     <value>Fellow Catalysts (FC)</value>
@@ -448,11 +506,18 @@ with us now</value>
   <data name="FullName" xml:space="preserve">
     <value>Your full Name</value>
   </data>
+  <data name="GetLatestUpdatesText" xml:space="preserve">
+    <value>Get latest courses
+                            updates by signing up</value>
+  </data>
   <data name="GetTouch" xml:space="preserve">
     <value>Get in touch</value>
   </data>
   <data name="GetTouchMainText" xml:space="preserve">
     <value>Feel free to send us a message using the contact form below.</value>
+  </data>
+  <data name="HealthWellness" xml:space="preserve">
+    <value>Health and wellness</value>
   </data>
   <data name="HereText" xml:space="preserve">
     <value>here</value>
@@ -464,7 +529,10 @@ with us now</value>
     <value>in every subject</value>
   </data>
   <data name="InstaLink" xml:space="preserve">
-    <value>new value</value>
+    <value>https://www.instagram.com/catalystsacademy?igsh=MTRwOWhuOHFtMzRpZg==</value>
+  </data>
+  <data name="JoinCommunityBtnText" xml:space="preserve">
+    <value>Join the Community</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Language</value>
@@ -496,8 +564,14 @@ with us now</value>
   <data name="LearnMore" xml:space="preserve">
     <value>Learn More</value>
   </data>
+  <data name="LearnMoreCatalystText" xml:space="preserve">
+    <value>Learn more about Catalyst</value>
+  </data>
   <data name="Lectures" xml:space="preserve">
     <value>Lectures</value>
+  </data>
+  <data name="LinkedinLink" xml:space="preserve">
+    <value>https://www.linkedin.com/company/catalystsacademy/</value>
   </data>
   <data name="MakeAppointmentBtn" xml:space="preserve">
     <value>Schedule Your Visit</value>
@@ -565,6 +639,9 @@ with us now</value>
   <data name="OurMission" xml:space="preserve">
     <value>Our Mission</value>
   </data>
+  <data name="OurPartners" xml:space="preserve">
+    <value>Our partners</value>
+  </data>
   <data name="OurValues" xml:space="preserve">
     <value>Our Values</value>
   </data>
@@ -580,11 +657,39 @@ with us now</value>
   <data name="ParentInfo" xml:space="preserve">
     <value>Parent/Guardian Information:</value>
   </data>
+  <data name="ParentingSkills" xml:space="preserve">
+    <value>Parenting skills and techniques</value>
+  </data>
+  <data name="ParentLabelFour" xml:space="preserve">
+    <value>Get Involved</value>
+  </data>
+  <data name="ParentLabelOne" xml:space="preserve">
+    <value>Parental Involvement</value>
+  </data>
+  <data name="ParentLabelTwo" xml:space="preserve">
+    <value>Seminar Events and Workshops</value>
+  </data>
   <data name="ParentPhoneNumber" xml:space="preserve">
     <value>Parent Phone Number</value>
   </data>
   <data name="ParentProfession" xml:space="preserve">
     <value>Parent Profession</value>
+  </data>
+  <data name="ParentTextFour" xml:space="preserve">
+    <value>We invite parents to get involved in their child's education by attending our seminar events, workshops, and other parent engagement activities. By working together, we can create a supportive and enriching learning environment that empowers every student to thrive and succeed.</value>
+  </data>
+  <data name="ParentTextFourTwo" xml:space="preserve">
+    <value>Stay tuned for upcoming events and workshops by checking our events calendar. We look forward to partnering with you on this exciting educational journey!</value>
+  </data>
+  <data name="ParentTextOne" xml:space="preserve">
+    <value>At Catalyst Academy, we believe that parents play a crucial role in their child's educational journey. We are committed to fostering strong partnerships between parents, students, and educators to support student success both inside and outside the academy.</value>
+  </data>
+  <data name="ParentTextThree" xml:space="preserve">
+    <value>Our seminar events and workshops offer parents the opportunity to connect with other caregivers, share experiences, and learn from experts in education, child development, and related fields.</value>
+  </data>
+  <data name="ParentTextTwo" xml:space="preserve">
+    <value>We regularly host seminar events and workshops specifically designed for parents to provide valuable insights, resources, and strategies to support their child's academic and personal development. These events cover a range of topics, including:
+</value>
   </data>
   <data name="PhoneNumber" xml:space="preserve">
     <value>Phone Number</value>
@@ -594,6 +699,12 @@ with us now</value>
   </data>
   <data name="PostedOn" xml:space="preserve">
     <value>Posted On</value>
+  </data>
+  <data name="QualificationsDesc" xml:space="preserve">
+    <value>We're looking for experienced educators committed to excellence in teaching and learning, with strong academic backgrounds, demonstrated teaching experience, and excellent communication skills. A growth mindset and openness to innovation are essential.</value>
+  </data>
+  <data name="QualificationsText" xml:space="preserve">
+    <value>Qualifications and Requirements</value>
   </data>
   <data name="ReadMore" xml:space="preserve">
     <value>Read More</value>
@@ -628,6 +739,9 @@ with us now</value>
   <data name="SkillLevel" xml:space="preserve">
     <value>Skill Level</value>
   </data>
+  <data name="SocialEmotional" xml:space="preserve">
+    <value>Social-emotional learning</value>
+  </data>
   <data name="StartLearningNowBtn" xml:space="preserve">
     <value>Start Learning Now</value>
   </data>
@@ -635,14 +749,26 @@ with us now</value>
     <value>Start learning from
 our experts</value>
   </data>
+  <data name="Student" xml:space="preserve">
+    <value>Student</value>
+  </data>
   <data name="StudentInfo" xml:space="preserve">
     <value>Student Information:</value>
   </data>
   <data name="Students" xml:space="preserve">
     <value>Students</value>
   </data>
+  <data name="Subscribe" xml:space="preserve">
+    <value>Subscribe</value>
+  </data>
   <data name="Tags" xml:space="preserve">
     <value>Tags</value>
+  </data>
+  <data name="TeachingBenefits" xml:space="preserve">
+    <value>Teaching benefits</value>
+  </data>
+  <data name="TechnologyOnline" xml:space="preserve">
+    <value>Technology and online safety</value>
   </data>
   <data name="TrustedByText" xml:space="preserve">
     <value>Trusted by</value>
@@ -702,10 +828,20 @@ our experts</value>
     <value>Interested in seeing Catalyst Academy in person? Schedule an on-site visit to tour our academy</value>
   </data>
   <data name="WeHaveBestTeachers" xml:space="preserve">
-    <value>We’ve best teachers</value>
+    <value>We have best teachers</value>
   </data>
   <data name="WelcomeMessage" xml:space="preserve">
     <value>Welcome to Catalyst Academy</value>
+  </data>
+  <data name="WhoIsCatalystText" xml:space="preserve">
+    <value>Who is a 
+Catalyst?</value>
+  </data>
+  <data name="WhyTeachCADesc" xml:space="preserve">
+    <value>Teaching at Catalyst Academy offers a unique opportunity to be part of a vibrant learning community dedicated to student success and innovation. As an educator, you'll inspire students, collaborate with passionate colleagues, access resources for professional growth, and contribute to shaping the future of education.</value>
+  </data>
+  <data name="WhyTeachCAText" xml:space="preserve">
+    <value>Why Teach at Catalyst Academy?</value>
   </data>
   <data name="WithUs" xml:space="preserve">
     <value>with us</value>

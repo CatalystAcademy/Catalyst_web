@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavOne />
-    <PageHeader title="Teachers" />
+    <PageHeader title="Instructors" />
     <Teachers />
     <Footer />
   </div>
@@ -15,7 +15,7 @@
     components: {Teachers, Footer, NavOne, PageHeader},
     head(){
       return {
-        title: "CA | Teachers"
+        title: "CA | Instructors"
       }
     }
   }

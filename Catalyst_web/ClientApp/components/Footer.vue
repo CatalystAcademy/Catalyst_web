@@ -66,10 +66,10 @@
                       <div class="container">
                           <p class="site-footer__copy">&copy; Copyright 2024 by <a href="#">Catalyst Academy</a></p>
                           <div class="site-footer__social">
-                              <a href="#" data-target="html" class="scroll-to-target site-footer__scroll-top"><i class="kipso-icon-top-arrow"></i></a>
-                              <a href="#"><i class="fab fa-facebook-square"></i></a>
-                              <a href="#"><i class="fab fa-linkedin"></i></a>
-                              <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#" data-target="html" class="scroll-to-target site-footer__scroll-top"><i class="kipso-icon-top-arrow"></i></a>
+                            <a href="https://www.facebook.com/catalystacademyarmenia?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                            <a href="https://www.instagram.com/catalystsacademy?igsh=MTRwOWhuOHFtMzRpZg==" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/company/catalystsacademy/" target="_blank"><i class="fab fa-linkedin"></i></a>
                           </div><!-- /.site-footer__social -->
                           <!-- /.site-footer__copy -->
                       </div><!-- /.container -->

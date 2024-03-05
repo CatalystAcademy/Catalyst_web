@@ -9,7 +9,7 @@
               <i class="far fa-heart"></i><!-- /.far fa-heart -->
             </div><!-- /.course-one__image -->
             <div class="course-one__content">
-              <span class="course-one__category">development</span><!-- /.course-one__category -->
+              <span class="course-one__category">{{curriculum.categoryEng}}</span><!-- /.course-one__category -->
               <div class="course-one__admin">
                 <img src="/assets/images/team-1-1.jpg" alt="">
                 by <span> {{translations.CatalystAcademyText}}</span>

@@ -43,13 +43,18 @@
             <label for="email">Email</label>
             <input v-model="createData.email" type="email" name="email">
           </div>
-
           <div class="col">
-            <label for="IsFromLeadership">Leadership</label>
-            <input v-model="createData.isFromLeadership" type="checkbox" id="IsFromLeadership" name="IsFromLeadership" checked>
+            <label for="link">Link</label>
+            <input v-model="createData.link" type="text" id="link" name="link">
           </div>
-        </div>
 
+        </div>
+        <div class="row">
+        <div class="col">
+          <label for="IsFromLeadership">Leadership</label>
+          <input v-model="createData.isFromLeadership" type="checkbox" id="IsFromLeadership" name="IsFromLeadership" checked>
+        </div>
+        </div>
         <button type="submit" class="thm-btn become-teacher__form-btn">Submit</button>
       </div>
     </form><!-- /.become-teacher__form-content -->
@@ -64,7 +69,7 @@
     data() {
       return {
         teacherId: null,
-        createData: { isFromLeadership: false, fullNameArm: '', fullNameEng: '', email: '', descriptionEng: '', descriptionArm: '', professionArm: '', professionEng: '' },
+        createData: { isFromLeadership: false, link: '', fullNameArm: '', fullNameEng: '', email: '', descriptionEng: '', descriptionArm: '', professionArm: '', professionEng: '' },
       };
     },
     async created() {

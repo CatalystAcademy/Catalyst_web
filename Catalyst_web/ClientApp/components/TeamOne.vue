@@ -2,7 +2,7 @@
   <section class="team-one team-one__become-teacher">
       <div class="container">
           <div class="block-title text-center">
-            <h2 class="block-title__title">{{translations.LeadershipMainText}}</h2><!-- /.block-title__title -->
+            <h2 class="block-title__title"></h2><!-- /.block-title__title -->
           </div><!-- /.block-title -->
           <div class="row" v-if="teachers.length">
               <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12" v-for="teacher in teachers" :key="teacher.id">
@@ -18,9 +18,9 @@
                         <!-- /.team-one__text -->
                       </div><!-- /.team-one__content -->
                       <div class="team-one__social">
-                          <a href="#"><i class="fab fa-linkedin"></i></a>
-                          <a href="#"><i class="fab fa-facebook-square"></i></a>
-                          <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a :href="teacher.link" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <!--                          <a href="#"><i class="fab fa-facebook-square"></i></a>
+                      <a href="#"><i class="fab fa-instagram"></i></a>-->
                       </div><!-- /.team-one__social -->
                   </div><!-- /.team-one__single -->
               </div><!-- /.col-lg-3 -->

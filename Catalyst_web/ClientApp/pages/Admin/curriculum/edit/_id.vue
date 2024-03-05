@@ -28,6 +28,30 @@
 
         <div class="row">
           <div class="col">
+            <label for="curriculumArm">Curriculum in Armenian</label>
+            <textarea rows="4" cols="50" v-model="createData.curriculumArm" id="curriculumArm" placeholder="Curriculum in Armenian" name="curriculumArm"></textarea>
+          </div>
+
+          <div class="col">
+            <label for="curriculumEng">Curriculum in English</label>
+            <textarea rows="4" cols="50" v-model="createData.curriculumEng" id="curriculumEng" placeholder="Curriculum in English" name="curriculumEng"></textarea>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label for="categoryEng">Category in Armenian</label>
+            <input v-model="createData.categoryEng" id="categoryEng" placeholder="Category in Armenian" name="categoryEng">
+          </div>
+
+          <div class="col">
+            <label for="categoryArm">Category in English</label>
+            <input v-model="createData.categoryArm" id="categoryArm" placeholder="Category in English" name="categoryArm">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
             <label for="startDate">Start Date</label>
             <input v-model="createData.startDate" type="date" id="startDate" name="startDate">
           </div>
@@ -52,7 +76,7 @@
     data() {
       return {
         curriculumId: null,
-        createData: { titleArm: '', titleEng: '', descriptionArm: '', descriptionEng: '', startDate: '', endDate: '' },
+        createData: { titleArm: '', titleEng: '', descriptionArm: '', descriptionEng: '', startDate: '', endDate: '', categoryEng: '', categoryArm: '', curriculumEng: '', curriculumArm: '' },
       };
     },
     async created() {

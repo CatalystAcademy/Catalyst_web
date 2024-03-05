@@ -3,9 +3,9 @@
     <NavOne />
     <BannerOne />
     <AboutTwo />
+    <Meeting />
     <CourseOne />
-<!--    <CourseTwo />
--->
+
     <VideoTwo />
     <!--    <CountdownOne />
       <CourseCategory />

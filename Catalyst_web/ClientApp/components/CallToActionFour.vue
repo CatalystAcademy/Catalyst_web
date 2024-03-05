@@ -27,7 +27,7 @@
     async created() {
       await this.$store.dispatch('fetchTranslations');
     }
-    }
+   }
 </script>
 
 <style scoped>

@@ -18,8 +18,8 @@
         <tr v-for="curriculum in curriculums" :key="curriculum.id">
           <td>{{ curriculum.titleArm }}</td>
           <td>{{ curriculum.titleEng }}</td>
-          <td>{{ curriculum.descriptionArm }}</td>
-          <td>{{ curriculum.descriptionEng }}</td>
+          <td>{{ curriculum.descriptionArm.slice(0, 100) }}</td>
+          <td>{{ curriculum.descriptionEng.slice(0, 100) }}</td>
           <td>{{ formatDate(curriculum.startDate) }}</td>
           <td>{{ formatDate(curriculum.endDate) }}</td>
           <td>

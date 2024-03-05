@@ -22,9 +22,9 @@
                   <img src="/assets/images/CA_Logo_4.png" class="main-logo" width="128" alt="Awesome Image" />
                 </a>
                 <div class="header__social">
-                  <a href="#"><i class="fab fa-facebook-square"></i></a>
-                  <a href="#"><i class="fab fa-instagram"></i></a>
-                  <a href="#"><i class="fab fa-linkedin"></i></a>
+                  <a href="https://www.facebook.com/catalystacademyarmenia?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                  <a href="https://www.instagram.com/catalystsacademy?igsh=MTRwOWhuOHFtMzRpZg==" target="_blank"><i class="fab fa-instagram"></i></a>
+                  <a href="https://www.linkedin.com/company/catalystsacademy/" target="_blank"><i class="fab fa-linkedin"></i></a>
                 </div><!-- /.header__social -->
                 <button class="menu-toggler" data-target=".main-navigation">
                   <span class="kipso-icon-menu"></span>
@@ -40,9 +40,10 @@
                       <nuxt-link to="/">{{translations.HomePage}}</nuxt-link>
                     </li>-->
                   <li>
-                    <nuxt-link to="/">About</nuxt-link>
+                    <nuxt-link to="/about">About</nuxt-link>
                     <ul class="sub-menu">
                       <li><nuxt-link to="/about">Academy</nuxt-link></li>
+                      <li><nuxt-link to="/WhoIsCatalyst">Catalyst</nuxt-link></li>
                       <li><nuxt-link to="/missionandvision">Mission & Vision</nuxt-link></li>
                       <li><nuxt-link to="/values">Values</nuxt-link></li>
                       <li><nuxt-link to="/leadership">Leadership</nuxt-link></li>
@@ -54,17 +55,18 @@
                     <nuxt-link to="/curriculums">Programs</nuxt-link>
                     <ul class="sub-menu">
                       <li><nuxt-link to="/curriculums">Curriculums</nuxt-link></li>
-<!--                      <li><nuxt-link to="/courses">Courses</nuxt-link></li>
+<!--                        <li><nuxt-link to="/courses">Courses</nuxt-link></li>
 -->                    </ul>
                   </li>
-<!--                  <li>
-                    <nuxt-link to="/teachers">Instractors</nuxt-link>
-                    <ul class="sub-menu">
-                      <li><nuxt-link to="/become-teacher">Become Instractor</nuxt-link></li>
-                    </ul>
-                  </li>-->
+                  <li>
+                    <nuxt-link to="/parent">Parents</nuxt-link>
+                  </li>
                   <li>
                     <nuxt-link to="/alliance">Alliance</nuxt-link>
+                    <ul class="sub-menu">
+                      <li><nuxt-link to="/alliance">About</nuxt-link></li>
+                      <li><nuxt-link to="/hierarchy">Hierarchy</nuxt-link></li>
+                    </ul>
                   </li>
                   <li>
                     <nuxt-link to="/news">News</nuxt-link>

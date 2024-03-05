@@ -7,15 +7,14 @@
                         <div class="mailchimp-one__icon">
                             <i class="kipso-icon-email"></i><!-- /.kipso-icon-email -->
                         </div><!-- /.mailchimp-one__icon -->
-                        <h2 class="mailchimp-one__title">Get latest courses <br>
-                            updates by signing up</h2><!-- /.mailchimp-one__title -->
+                        <h2 class="mailchimp-one__title">{{translations.GetLatestUpdatesText}}</h2><!-- /.mailchimp-one__title -->
                     </div><!-- /.mailchimp-one__content -->
                 </div><!-- /.col-lg-6 -->
                 <div class="col-lg-6 d-flex">
                     <div class="my-auto">
                         <form @submit.prevent="submitForm" class="mailchimp-one__form mc-form">
-                            <input v-model="createData.email" type="text" id="mc-email" placeholder="Enter your email " name="email">
-                            <button type="submit" class="thm-btn">Subscribe</button>
+                            <input v-model="createData.email" type="text" id="mc-email" :placeholder="translations.EmailAddress " name="email">
+                            <button type="submit" class="thm-btn">{{translations.Subscribe}}</button>
                         </form><!-- /.mailchimp-one__form -->
                         <div class="mc-form__response"></div><!-- /.mc-form__response -->
                     </div><!-- /.my-auto -->
@@ -58,7 +57,13 @@
         }
       },
     },
-    created() {
+    computed: {
+      translations() {
+        return this.$store.state.translations;
+      },
+    },
+    async created() {
+      await this.$store.dispatch('fetchTranslations');
       // Optional: Set up HTTPS agent for self-signed certificates (if needed)
       if (process.env.NODE_ENV === 'development') {
         this.$axios.defaults.httpsAgent = new https.Agent({ rejectUnauthorized: false });
