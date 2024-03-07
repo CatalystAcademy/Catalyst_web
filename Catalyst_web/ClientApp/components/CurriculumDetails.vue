@@ -21,8 +21,8 @@
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
                   </span><!-- /.course-one__stars-wrap -->
-                  <span class="course-one__count">5</span><!-- /.course-one__count -->
-                  <span class="course-one__stars-count">580</span><!-- /.course-one__stars-count -->
+                  <span class="course-one__count">{{curriculum.rating}}</span><!-- /.course-one__count -->
+                  <span class="course-one__stars-count">{{curriculum.studetns}}</span><!-- /.course-one__stars-count -->
                 </div><!-- /.course-one__stars -->
               </div><!-- /.course-details__top-left -->
               <div class="course-details__top-right">
@@ -50,10 +50,12 @@
 
               </div><!-- /.course-details__tab-content -->
               <div class="tab-pane  animated fadeInUp" role="tabpanel" id="curriculum">
-                <h3 class="course-details__tab-title">Starting beginners level course</h3>
+                <h3 class="course-details__tab-title">{{curriculum.curriculumDescriptionTitleEng}}</h3>
                 <br>
                 <p class="course-details__tab-text">
-                  {{curriculum.curriculumEng}}
+                  <div v-for="module in curriculumEng" :key="module.number">
+                    <p>{{ module.text }}</p>
+                  </div>
                 </p>
 
               </div><!-- /.course-details__tab-content -->
@@ -70,86 +72,53 @@
               <span class="course-details__meta-icon">
                 <i class="far fa-clock"></i><!-- /.far fa-clock -->
               </span><!-- /.course-details__icon -->
-              {{translations.Durations}}: <span>3 {{translations.Months}}</span>
+              {{translations.Durations}}: <span>{{curriculum.duration}} {{translations.Months}}</span>
             </a><!-- /.course-details__meta-link -->
             <a href="#" class="course-details__meta-link">
               <span class="course-details__meta-icon">
                 <i class="far fa-folder-open"></i><!-- /.far fa-folder-open -->
               </span><!-- /.course-details__icon -->
-              {{translations.Lectures}}: <span>36</span>
+              {{translations.Lectures}}: <span>{{curriculum.lectures}}</span>
             </a><!-- /.course-details__meta-link -->
             <a href="#" class="course-details__meta-link">
               <span class="course-details__meta-icon">
                 <i class="far fa-user-circle"></i><!-- /.far fa-user-circle -->
               </span><!-- /.course-details__icon -->
-              {{translations.Students}}: <span>{{translations.Max}} 15</span>
+              {{translations.Students}}: <span>{{translations.Max}} {{curriculum.students}}</span>
             </a><!-- /.course-details__meta-link -->
             <a href="#" class="course-details__meta-link">
               <span class="course-details__meta-icon">
                 <i class="far fa-flag"></i><!-- /.far fa-flag -->
               </span><!-- /.course-details__icon -->
-              {{translations.SkillLevel}}: <span>{{translations.Beginner}}</span>
+              {{translations.SkillLevel}}: <span>{{curriculum.skillLevel}}</span>
             </a><!-- /.course-details__meta-link -->
             <a href="#" class="course-details__meta-link">
               <span class="course-details__meta-icon">
                 <i class="far fa-bell"></i><!-- /.far fa-bell -->
               </span><!-- /.course-details__icon -->
-              {{translations.Language}}: <span>{{translations.Armenian}}</span>
+              {{translations.Language}}: <span>{{curriculum.language}}</span>
             </a><!-- /.course-details__meta-link -->
           </div><!-- /.course-details__meta -->
           <div class="course-details__list">
             <h2 class="course-details__list-title">{{translations.OurCurriculums}}</h2><!-- /.course-details__list-title -->
-            <div class="course-details__list-item">
+            <div class="course-details__list-item" v-for="singleC in latestCurriculums" :key="singleC.id">
               <div class="course-details__list-img">
                 <img src="/assets/images/lc-1-1.jpg" alt="">
               </div><!-- /.course-details__list-img -->
               <div class="course-details__list-content">
                 <a class="course-details__list-author" href="#">by <span>{{translations.CatalystAcademyText}}</span></a>
-                <h3><a href="#">Marketing strategies</a></h3>
+                <h3><nuxt-link :to="`/curriculums/${singleC.id}`">{{singleC.titleEng}}</nuxt-link></h3>
                 <div class="course-details__list-stars">
                   <i class="fas fa-star"></i><!-- /.fas fa-star -->
                   <i class="fas fa-star"></i><!-- /.fas fa-star -->
                   <i class="fas fa-star"></i><!-- /.fas fa-star -->
                   <i class="fas fa-star"></i><!-- /.fas fa-star -->
                   <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                  <span>4.8</span>
+                  <span>{{singleC.rating}}</span>
                 </div><!-- /.course-details__list-stars -->
               </div><!-- /.course-details__list-content -->
             </div><!-- /.course-details__list-item -->
-            <div class="course-details__list-item">
-              <div class="course-details__list-img">
-                <img src="/assets/images/lc-1-2.jpg" alt="">
-              </div><!-- /.course-details__list-img -->
-              <div class="course-details__list-content">
-                <a class="course-details__list-author" href="#">by <span>Lydia Byrd</span></a>
-                <h3><a href="#">Marketing strategies</a></h3>
-                <div class="course-details__list-stars">
-                  <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                  <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                  <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                  <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                  <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                  <span>4.8</span>
-                </div><!-- /.course-details__list-stars -->
-              </div><!-- /.course-details__list-content -->
-            </div><!-- /.course-details__list-item -->
-            <div class="course-details__list-item">
-              <div class="course-details__list-img">
-                <img src="/assets/images/lc-1-3.jpg" alt="">
-              </div><!-- /.course-details__list-img -->
-              <div class="course-details__list-content">
-                <a class="course-details__list-author" href="#">by <span>Lydia Byrd</span></a>
-                <h3><a href="#">Marketing strategies</a></h3>
-                <div class="course-details__list-stars">
-                  <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                  <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                  <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                  <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                  <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                  <span>4.8</span>
-                </div><!-- /.course-details__list-stars -->
-              </div><!-- /.course-details__list-content -->
-            </div><!-- /.course-details__list-item -->
+
           </div><!-- /.course-details__list -->
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
@@ -204,6 +173,14 @@
       try {
         const response = await this.$axios.get(`/api/CurriculumDetails/${this.curriculumId}`); // Fetch data based on ID
         this.curriculum = response.data;
+        const rawData = response.data.curriculumEng;
+        this.curriculumEng = rawData
+          .split('\n') // Split on newlines (assuming each point is on a separate line)
+          .map((point, index) => ({ number: `${index + 1}.`, text: point })); // Add numbering and spaces
+
+        const latestCurriculum = await this.$axios.get(`/api/Curriculums/Latest?currentCurriculumId=${this.curriculumId}`);
+        this.latestCurriculums = latestCurriculum.data;
+
       } catch (error) {
         // Handle errors
       }
@@ -219,6 +196,8 @@
         DateOfBirth: null,
         curriculum: {},
         curriculumId: this.$route.params.id,
+        curriculumEng: '',
+        latestCurriculums: [],
         registrationData: { fullName: '', email: '', curriculumId: null, phoneNumber: '', DateOfBirth: '', parentPhoneNumber: '', address: '', educationalInstitution: '', parentEmail: '', parentFullName: '', parentProfession: '', message: '' },
       };
     },

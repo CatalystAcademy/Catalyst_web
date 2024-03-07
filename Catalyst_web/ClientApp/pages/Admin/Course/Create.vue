@@ -40,7 +40,7 @@
         <client-only>
           <div class="row">
             <div class="col">
-              <label for="descriptionEng">Start Date</label>
+              <label for="startDate">Start Date</label>
               <b-form-datepicker id="datepicker-full-width"
                                  v-model="createData.startDate"
                                  :show-decade-nav="showDecadeNav"
@@ -52,7 +52,7 @@
               </b-form-datepicker>
               </div>
             <div class="col">
-              <label for="descriptionEng">End Date</label>
+              <label for="endDate">End Date</label>
               <b-form-datepicker id="example-i18n-picker2"
                                  v-model="createData.endDate"
                                  :show-decade-nav="showDecadeNav"

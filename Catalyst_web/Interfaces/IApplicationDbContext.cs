@@ -7,6 +7,7 @@ public interface IApplicationDbContext
 {
     DbSet<Course> Courses { get; set; }
     DbSet<Curriculum> Curriculums { get; set; }
+    DbSet<CurriculumSection> CurriculumSections { get; set; }
     DbSet<News> Newses { get; set; }
     DbSet<Blog> Blogs { get; set; }
     DbSet<Video> Videos { get; set; }

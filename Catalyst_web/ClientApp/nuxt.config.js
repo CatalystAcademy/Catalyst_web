@@ -163,6 +163,7 @@ export default {
     { src: '~/plugins/vue-datepicker', ssr: false },
     { src: '~/plugins/bootstrap-vue.js', ssr: false },
     { src: '~/plugins/vuelidate.js', mode: 'all' },
+    { src: '~/plugins/vue-repeater.js' },
     '~/plugins/moment.js',
   ],
 

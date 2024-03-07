@@ -68,7 +68,7 @@
 </template>
 
 <script>
-    export default {
+  export default {
     name: "WhoIsCatalyst",
     computed: {
       translations() {
@@ -78,7 +78,7 @@
     async created() {
       await this.$store.dispatch('fetchTranslations');
     }
-    }
+  };
 </script>
 
 <style scoped>

@@ -120,6 +120,9 @@
   <data name="a" xml:space="preserve">
     <value>With small group sizes, individualized attention, and a personalized approach to learning, Catalyst Academy students receive the support they need to achieve their goals.</value>
   </data>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
   <data name="AboutAcademyThree" xml:space="preserve">
     <value>Through its innovative approach to business and personal development, Catalyst Academy is shaping the future catalysts of our society.</value>
   </data>
@@ -363,6 +366,9 @@
   <data name="ConsentAndAgreementText" xml:space="preserve">
     <value>By submitting this application, I confirm that all information provided is accurate and complete. I understand that submission of this application does not guarantee acceptance into Catalyst Academy programs and that additional steps may be required for enrollment.</value>
   </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
   <data name="ContactInfoText" xml:space="preserve">
     <value>Contact Info</value>
   </data>
@@ -387,6 +393,9 @@
   <data name="EnhanceSkillsText" xml:space="preserve">
     <value>Enhance your skills
 with us now</value>
+  </data>
+  <data name="Explore" xml:space="preserve">
+    <value>Explore</value>
   </data>
   <data name="ExploreOurProgramsText" xml:space="preserve">
     <value>Explore our
@@ -531,8 +540,14 @@ Programs</value>
   <data name="InstaLink" xml:space="preserve">
     <value>https://www.instagram.com/catalystsacademy?igsh=MTRwOWhuOHFtMzRpZg==</value>
   </data>
+  <data name="Instructors" xml:space="preserve">
+    <value>Instructors</value>
+  </data>
   <data name="JoinCommunityBtnText" xml:space="preserve">
     <value>Join the Community</value>
+  </data>
+  <data name="JoinUsText" xml:space="preserve">
+    <value>Join Us</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Language</value>
@@ -636,8 +651,14 @@ Programs</value>
   <data name="OurCurriculums" xml:space="preserve">
     <value>Our Curriculums</value>
   </data>
+  <data name="OurLatestCurriculumsText" xml:space="preserve">
+    <value>Our Latest Curriculums</value>
+  </data>
   <data name="OurMission" xml:space="preserve">
     <value>Our Mission</value>
+  </data>
+  <data name="OurNewsText" xml:space="preserve">
+    <value>Our News</value>
   </data>
   <data name="OurPartners" xml:space="preserve">
     <value>Our partners</value>

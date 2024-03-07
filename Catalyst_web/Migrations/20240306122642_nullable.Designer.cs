@@ -3,6 +3,7 @@ using System;
 using Catalyst_web.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Catalyst_web.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240306122642_nullable")]
+    partial class nullable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -275,14 +278,6 @@ namespace Catalyst_web.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("CurriculumDescriptionTitleArm")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("CurriculumDescriptionTitleEng")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.Property<string>("CurriculumEng")
                         .IsRequired()
                         .HasColumnType("text");
@@ -295,28 +290,16 @@ namespace Catalyst_web.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Duration")
-                        .HasColumnType("text");
-
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("boolean");
 
-                    b.Property<string>("Language")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Lectures")
-                        .HasColumnType("text");
-
                     b.Property<DateTime>("Modified")
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("ModifiedBy")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Rating")
                         .HasColumnType("text");
 
                     b.Property<DateTime>("RegistrationDate")
@@ -327,17 +310,8 @@ namespace Catalyst_web.Migrations
                         .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("bytea");
 
-                    b.Property<string>("SkillLevel")
-                        .HasColumnType("text");
-
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("timestamp without time zone");
-
-                    b.Property<string>("Students")
-                        .HasColumnType("text");
-
-                    b.Property<string>("StudentsCountOnCurriculum")
-                        .HasColumnType("text");
 
                     b.Property<string>("TitleArm")
                         .IsRequired()
@@ -365,6 +339,9 @@ namespace Catalyst_web.Migrations
                     b.Property<string>("CreatedBy")
                         .HasColumnType("text");
 
+                    b.Property<Guid?>("CurriculumId")
+                        .HasColumnType("uuid");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("boolean");
 
@@ -384,6 +361,8 @@ namespace Catalyst_web.Migrations
                         .HasColumnType("text");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CurriculumId");
 
                     b.ToTable("CurriculumSections");
                 });
@@ -853,6 +832,18 @@ namespace Catalyst_web.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Visits");
+                });
+
+            modelBuilder.Entity("Catalyst_web.Models.CurriculumSection", b =>
+                {
+                    b.HasOne("Catalyst_web.Models.Curriculum", null)
+                        .WithMany("CurriculumSections")
+                        .HasForeignKey("CurriculumId");
+                });
+
+            modelBuilder.Entity("Catalyst_web.Models.Curriculum", b =>
+                {
+                    b.Navigation("CurriculumSections");
                 });
 #pragma warning restore 612, 618
         }
