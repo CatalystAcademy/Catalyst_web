@@ -5,13 +5,13 @@
         <div class="col-lg-4" v-for="curriculum in curriculums" :key="curriculum.id">
           <div class="course-one__single">
             <div class="course-one__image">
-              <img src="/assets/images/course-1-1.jpg" alt="">
+              <img :src="'/assets/images/custom/' + getFirstName(curriculum.titleEng) + '.png'" alt="">
               <i class="far fa-heart"></i><!-- /.far fa-heart -->
             </div><!-- /.course-one__image -->
             <div class="course-one__content">
               <span class="course-one__category">{{curriculum.categoryEng}}</span><!-- /.course-one__category -->
               <div class="course-one__admin">
-                <img src="/assets/images/team-1-1.jpg" alt="">
+                <img src="/assets/images/logo/ca_logo.png" alt="">
                 by <span> {{translations.CatalystAcademyText}}</span>
               </div><!-- /.course-one__admin -->
               <h2 class="course-one__title">
@@ -77,6 +77,12 @@
       } catch (error) {
         console.error('Error fetching curriculums:', error);
         this.error = true;
+      }
+    },
+    methods: {
+      getFirstName(fullName) {
+        if (!fullName) return '';
+        return fullName.split(' ')[0].toLowerCase();
       }
     },
     async created() {

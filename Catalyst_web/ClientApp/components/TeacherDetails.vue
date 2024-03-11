@@ -53,7 +53,7 @@
                   <div class="col-lg-6">
                       <div class="team-one__single">
                           <div class="team-one__image">
-                              <img src="/assets/images/team-d-1.jpg" alt="">
+                              <img :src="'/assets/images/team/' + getFirstName(teacher.fullNameEng) + '_570X505.png'" alt="">
                           </div><!-- /.team-one__image -->
                           <div class="team-one__content">
                               <h2 class="team-one__name"><a href="team-details.html">{{teacher.fullNameEng}}</a></h2>
@@ -130,6 +130,12 @@
 <script>
   export default {
     name: "TeacherDetails",
+    methods: {
+      getFirstName(fullName) {
+        if (!fullName) return '';
+        return fullName.split(' ')[0].toLowerCase();
+      }
+    },
     async fetch() {
       const teacherId = this.$route.params.id; // Get news ID from route parameters
       try {

@@ -13,16 +13,16 @@
         <div class="course-one__carousel owl-carousel owl-theme" v-if="curriculums.length">
             <div class="item" v-for="curriculum in curriculums" :key="curriculum.id">
                 <div class="course-one__single color-1">
-                    <div class="course-one__image">
-                        <img src="/assets/images/course-1-1.jpg" alt="">
-                        <i class="far fa-heart"></i><!-- /.far fa-heart -->
-                    </div><!-- /.course-one__image -->
+                  <div class="course-one__image">
+                    <img :src="'/assets/images/custom/' + getFirstName(curriculum.titleEng) + '.png'" alt="">
+                    <i class="far fa-heart"></i><!-- /.far fa-heart -->
+                  </div><!-- /.course-one__image -->
                     <div class="course-one__content">
                       <a href="#" class="course-one__category">{{curriculum.categoryEng}}</a><!-- /.course-one__category -->
-                        <div class="course-one__admin">
-                            <img src="/assets/images/team-1-1.jpg" alt="">
-                            by <span> {{translations.CatalystAcademyText}}</span>
-                        </div><!-- /.course-one__admin -->
+                      <div class="course-one__admin">
+                        <img src="/assets/images/logo/ca_logo.png" alt="">
+                        by <span> {{translations.CatalystAcademyText}}</span>
+                      </div><!-- /.course-one__admin -->
                         <h2 class="course-one__title">
                           <nuxt-link :to="`curriculums/${curriculum.id}`">
                             {{ curriculum.titleEng }}
@@ -69,6 +69,12 @@
         curriculums: [],
         error: false,
       };
+    },
+    methods: {
+      getFirstName(fullName) {
+        if (!fullName) return '';
+        return fullName.split(' ')[0].toLowerCase();
+      }
     },
     computed: {
       ...mapState(['language']),

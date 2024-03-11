@@ -5,7 +5,7 @@
         <div class="col-lg-8">
           <div class="course-details__content">
             <p class="course-details__author">
-              <img src="/assets/images/team-1-1.jpg" alt="">
+              <img src="/assets/images/logo/ca_logo.png" alt="">
               by <a href="#">{{translations.CatalystAcademyText}}</a>
             </p><!-- /.course-details__author -->
 
@@ -30,7 +30,7 @@
               </div><!-- /.course-details__top-right -->
             </div><!-- /.course-details__top -->
             <div class="course-one__image">
-              <img src="/assets/images/course-d-1.jpg" alt="">
+              <img :src="'/assets/images/custom/' + getFirstName(curriculum.titleEng) + '_770X447.png'" alt="">
               <i class="far fa-heart"></i><!-- /.far fa-heart -->
             </div><!-- /.course-one__image -->
 
@@ -103,7 +103,7 @@
             <h2 class="course-details__list-title">{{translations.OurCurriculums}}</h2><!-- /.course-details__list-title -->
             <div class="course-details__list-item" v-for="singleC in latestCurriculums" :key="singleC.id">
               <div class="course-details__list-img">
-                <img src="/assets/images/lc-1-1.jpg" alt="">
+                <img :src="'/assets/images/custom/' + getFirstName(singleC.titleEng) + '_66X66.png'" alt="">
               </div><!-- /.course-details__list-img -->
               <div class="course-details__list-content">
                 <a class="course-details__list-author" href="#">by <span>{{translations.CatalystAcademyText}}</span></a>
@@ -187,6 +187,12 @@
     },
     async created() {
       await this.$store.dispatch('fetchTranslations');
+    },
+    methods: {
+      getFirstName(fullName) {
+        if (!fullName) return '';
+        return fullName.split(' ')[0].toLowerCase();
+      }
     },
     data() {
       return {

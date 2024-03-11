@@ -29,10 +29,10 @@
             </div><!-- /.left-block -->
             <div class="social-block">
               <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-dribbble"></i></a>
-            </div><!-- /.social-block -->
+              <button @click="shareOnFacebook"><i class="fab fa-facebook-f"></i></button>
+              <!--<a href="#"><i class="fab fa-instagram"></i></a>-->
+              <button @click="shareOnLinkedIn"><i class="fab fa-linkedin-in"></i></button>
+<!---->            </div><!-- /.social-block -->
           </div><!-- /.share-block -->
          
         </div><!-- /.col-lg-8 -->
@@ -57,7 +57,7 @@
                     <!-- /.sidebar__post-title -->
                   </div><!-- /.sidebar__post-content -->
                 </div><!-- /.sidebar__post__single -->
-                
+
               </div><!-- /.sidebar__post-wrap -->
             </div><!-- /.sidebar__single -->
 
@@ -75,6 +75,9 @@
 </template>
 
 <script>
+  // import Share from 'share';
+
+
   export default {
     name: "BlogDetails",
     methods: {
@@ -82,6 +85,17 @@
         // Use this.$moment to format the date
         return this.$moment(date).format('MMM D');
       },
+      shareOnFacebook() {
+        const url = encodeURIComponent(window.location.href);
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+      },
+      // Method to share the blog post on LinkedIn
+      shareOnLinkedIn() {
+        const url = encodeURIComponent(window.location.href);
+        const title = encodeURIComponent(this.blog.titleEng);
+        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}&title=${title}`, '_blank');
+      },
+
     },
     computed: {
       translations() {
@@ -107,8 +121,14 @@
         blogs: [],
         blog: {},
         blogId: this.$route.params.id,
+        blogUrl: ''
       };
     },
+    mounted() {
+      if (process.client) {
+        this.blogUrl = window.location.href;
+      }
+    }
   };
 
   </script>
@@ -116,3 +136,10 @@
 <style scoped>
 
 </style>
+
+<head>
+  <meta property="og:title" content="{{ blog.titleEng }}" />
+  <meta property="og:description" content="{{ blog.descriptionEng }}" />
+  <meta property="og:url" content="{{ blogUrl }}" />
+  <meta property="og:image" content="URL of the image associated with the blog post, or a default image URL" />
+</head>

@@ -5,7 +5,7 @@
             <div class="col-lg-8">
                 <div class="blog-one__single">
                     <div class="blog-one__image">
-                        <img src="/assets/images/blog-d-1-1.jpg" alt="">
+                        <img src="/assets/images/custom/news_770.jpg" alt="">
 
                     </div><!-- /.blog-one__image -->
                     <div class="blog-one__content text-center">
@@ -47,7 +47,9 @@
                         <div class="sidebar__post-wrap" v-for="singleNews in latestNews" :key="singleNews.id">
                             <div class="sidebar__post__single mt-3">
                                 <div class="sidebar__post-image">
-                                    <div class="inner-block"><img src="/assets/images/lp-1-1.jpg" alt="Awesome Image"></div>
+                                    <div class="inner-block">
+                                  <img src="/assets/images/custom/news_66.jpg" alt="Awesome Image">
+                                    </div>
                                     <!-- /.inner-block -->
                                 </div><!-- /.sidebar__post-image -->
                                 <div class="sidebar__post-content">

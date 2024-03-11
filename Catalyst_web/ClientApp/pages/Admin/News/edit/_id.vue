@@ -22,7 +22,7 @@
 
           <div class="col">
             <label for="descriptionEng">Description in English</label>
-            <input v-model="editData.descriptionEng" type="text" placeholder="Description in english" name="descriptionEng">
+            <textarea rows="4" cols="50" v-model="editData.descriptionEng" type="text" placeholder="Description in english" name="descriptionEng"></textarea>
           </div>
         </div>
         <div class="row">

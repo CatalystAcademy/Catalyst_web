@@ -7,9 +7,9 @@
           <div class="row" v-if="teachers.length">
               <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12" v-for="teacher in teachers" :key="teacher.id">
                   <div class="team-one__single">
-                      <div class="team-one__image">
-                          <img src="/assets/images/team-1-1.jpg" alt="">
-                      </div><!-- /.team-one__image -->
+                    <div class="team-one__image">
+                      <img :src="'/assets/images/team/' + getFirstName(teacher.fullNameEng) + '_206.png'" alt="">
+                    </div><!-- /.team-one__image -->
                       <div class="team-one__content">
                         <h2 class="team-one__name"><nuxt-link :to="`teachers/${teacher.id}`">{{teacher.fullNameEng}}</nuxt-link></h2>
                         <!-- /.team-one__name -->
@@ -38,6 +38,12 @@
     data() {
       return {
         teachers: [],
+      }
+    },
+    methods: {
+      getFirstName(fullName) {
+        if (!fullName) return '';
+        return fullName.split(' ')[0].toLowerCase();
       }
     },
     async fetch() { // Use fetch for component-level data fetching

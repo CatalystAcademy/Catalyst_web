@@ -9,7 +9,7 @@
                                     <h2 class="footer-widget__title">{{translations.OurLatestCurriculumsText}}</h2><!-- /.footer-widget__title -->
                                       <ul class="list-unstyled footer-widget__course-list" v-for="curriculum in latestCurriculums" :key="curriculum.id">
                                           <li class="mb-4">
-                                              <h2><nuxt-link :to="`curriculums/${curriculum.id}`">{{curriculum.titleEng}}</nuxt-link></h2>
+                                              <h2><nuxt-link :to="`/curriculums/${curriculum.id}`">{{curriculum.titleEng}}</nuxt-link></h2>
                                               <p>{{curriculum.categoryEng}}</p>
                                           </li>
                                       </ul><!-- /.footer-widget__course-list -->

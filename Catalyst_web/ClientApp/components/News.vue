@@ -5,7 +5,7 @@
               <div class="col-lg-4" v-for="n in news" :key="n.id">
                   <div class="blog-one__single">
                       <div class="blog-one__image">
-                          <img src="/assets/images/blog-1-1.jpg" alt="">
+                          <img src="/assets/images/custom/news_370.jpg" alt="">
                           <nuxt-link class="blog-one__plus" :to="`news/${n.id}`"><i class="kipso-icon-plus-symbol"></i>
                               <!-- /.kipso-icon-plus-symbol --></nuxt-link>
                       </div><!-- /.blog-one__image -->

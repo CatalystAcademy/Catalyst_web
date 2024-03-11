@@ -4,7 +4,7 @@
           <div class="row">
               <div class="col-lg-6">
                   <div class="meeting-one__image">
-                      <img src="/assets/images/custom/new_edited.jpg" alt="Awesome Image" />
+                      <img src="/assets/images/custom/about_ca_1.jpg" alt="Awesome Image" />
                   </div><!-- /.meeting-one__image -->
               </div><!-- /.col-lg-6 -->
               <div class="col-lg-6">
@@ -14,20 +14,20 @@
                   </div><!-- /.block-title -->
                   <p class="meeting-one__block-text">
                     {{translations.CatalystDescription}}
-                    <a href="#">{{translations.CatalystDescriptionButtonText}}</a>
+                    <a href="/WhoIsCatalyst">{{translations.CatalystDescriptionButtonText}}</a>
                   </p>
                   <!-- /.meeting-one__block-text -->
                   <div class="meeting-one__box-wrap">
                     <div class="meeting-one__box">
                       <div class="meeting-one__bubble">{{translations.CatalystDialogueOne}}</div>
                       <!-- /.meeting-one__bubble -->
-                      <img src="/assets/images/chat-1-1.jpg" alt="Awesome Image" />
+                      <img src="/assets/images/custom/soline_cut.jpg" alt="Awesome Image" />
                       <h3 class="meeting-one__title">Rhonda Mcdermond</h3><!-- /.meeting-one__title -->
                       <p class="meeting-one__text">{{translations.Student}}</p><!-- /.meeting-one__text -->
                     </div><!-- /.meeting-one__box -->
                     <div class="meeting-one__box">
                       <div class="meeting-one__bubble">{{translations.CatalystDialogueTwo}}</div><!-- /.meeting-one__bubble -->
-                      <img src="/assets/images/chat-1-2.jpg" alt="Awesome Image" />
+                      <img src="/assets/images/custom/lyuda_cut.jpg" alt="Awesome Image" />
                       <h3 class="meeting-one__title">Karleen Pedigo</h3><!-- /.meeting-one__title -->
                       <p class="meeting-one__text">{{translations.Student}}</p><!-- /.meeting-one__text -->
                     </div><!-- /.meeting-one__box -->
