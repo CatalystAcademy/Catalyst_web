@@ -22,13 +22,15 @@
                       <div class="meeting-one__bubble">{{translations.CatalystDialogueOne}}</div>
                       <!-- /.meeting-one__bubble -->
                       <img src="/assets/images/custom/soline_cut.jpg" alt="Awesome Image" />
-                      <h3 class="meeting-one__title">Rhonda Mcdermond</h3><!-- /.meeting-one__title -->
+                      <h3 class="meeting-one__title">Soulline Tadevosyan</h3><!-- /.meeting-one__title -->
                       <p class="meeting-one__text">{{translations.Student}}</p><!-- /.meeting-one__text -->
                     </div><!-- /.meeting-one__box -->
                     <div class="meeting-one__box">
                       <div class="meeting-one__bubble">{{translations.CatalystDialogueTwo}}</div><!-- /.meeting-one__bubble -->
                       <img src="/assets/images/custom/lyuda_cut.jpg" alt="Awesome Image" />
-                      <h3 class="meeting-one__title">Karleen Pedigo</h3><!-- /.meeting-one__title -->
+                      <h3 class="meeting-one__title">
+                        Lyuda Zakaryan
+                      </h3><!-- /.meeting-one__title -->
                       <p class="meeting-one__text">{{translations.Student}}</p><!-- /.meeting-one__text -->
                     </div><!-- /.meeting-one__box -->
                   </div><!-- /.meeting-one__box-wrap -->

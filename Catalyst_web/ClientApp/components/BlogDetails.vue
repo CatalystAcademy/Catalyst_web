@@ -28,11 +28,14 @@
               <p>{{translations.Tags}}: <span>{{ blog.tag.split(' ').join(', ') }}</span></p>
             </div><!-- /.left-block -->
             <div class="social-block">
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <button @click="shareOnFacebook"><i class="fab fa-facebook-f"></i></button>
-              <!--<a href="#"><i class="fab fa-instagram"></i></a>-->
+<!--              <a href="#"><i class="fab fa-twitter"></i></a>-->
+<!--              <a href="https://www.facebook.com/sharer/sharer.php?u=${blogUrl}`, '_blank'"><i class="fab fa-facebook-f"></i></a>
               <button @click="shareOnLinkedIn"><i class="fab fa-linkedin-in"></i></button>
-<!---->            </div><!-- /.social-block -->
+              <a href="#"><i class="fab fa-instagram"></i></a>-->
+
+              <div class="sharethis-inline-share-buttons"></div>
+
+            </div><!-- /.social-block -->
           </div><!-- /.share-block -->
          
         </div><!-- /.col-lg-8 -->
@@ -134,7 +137,30 @@
   </script>
 
 <style scoped>
+  .blog-details .share-block .social-block button {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    color: #81868a;
+    font-size: 18px;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+  }
 
+    .blog-details .share-block .social-block button + button {
+      margin-left: 38px;
+    }
+
+    .blog-details .share-block .social-block button:hover {
+      color: #f16101;
+    }
+
+  .blog-details__author {
+    border: 2px solid #f1f1f1;
+    padding: 60px 60px;
+    margin-top: 50px;
+    margin-bottom: 60px;
+  }
 </style>
 
 <head>

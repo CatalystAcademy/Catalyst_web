@@ -47,8 +47,8 @@
                       <li><nuxt-link to="/missionandvision">Mission & Vision</nuxt-link></li>
                       <li><nuxt-link to="/values">Values</nuxt-link></li>
                       <li><nuxt-link to="/leadership">Leadership</nuxt-link></li>
-                      <li><nuxt-link to="/teachers">Instructors</nuxt-link></li>
-                      <li><nuxt-link to="/faq">FAQ's</nuxt-link></li>
+<!--                      <li><nuxt-link to="/teachers">Instructors</nuxt-link></li>
+-->                      <li><nuxt-link to="/faq">FAQ's</nuxt-link></li>
                     </ul>
                   </li>
                   <li>

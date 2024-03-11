@@ -30,7 +30,7 @@
                 </div><!-- /.about-two__single-content -->
               </div><!-- /.about-two__single -->
             </div><!-- /.about-two__single-wrap -->
-            <a href="#" class="thm-btn">{{translations.LearnMore}}</a><!-- /.thm-btn -->
+            <a href="/about" class="thm-btn">{{translations.LearnMore}}</a><!-- /.thm-btn -->
           </div><!-- /.about-two__content -->
         </div><!-- /.col-lg-6 -->
         <div class="col-xl-6 d-flex justify-content-xl-end justify-content-sm-center">
