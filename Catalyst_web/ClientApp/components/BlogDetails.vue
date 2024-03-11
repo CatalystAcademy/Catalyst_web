@@ -29,8 +29,7 @@
             </div><!-- /.left-block -->
             <div class="social-block">
 <!--              <a href="#"><i class="fab fa-twitter"></i></a>-->
-<!--              <a href="https://www.facebook.com/sharer/sharer.php?u=${blogUrl}`, '_blank'"><i class="fab fa-facebook-f"></i></a>
-              <button @click="shareOnLinkedIn"><i class="fab fa-linkedin-in"></i></button>
+<!--              <button @click="shareOnLinkedIn"><i class="fab fa-linkedin-in"></i></button>
               <a href="#"><i class="fab fa-instagram"></i></a>-->
 
               <div class="sharethis-inline-share-buttons"></div>
@@ -87,16 +86,6 @@
       formatDateMonth(date) {
         // Use this.$moment to format the date
         return this.$moment(date).format('MMM D');
-      },
-      shareOnFacebook() {
-        const url = encodeURIComponent(window.location.href);
-        window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
-      },
-      // Method to share the blog post on LinkedIn
-      shareOnLinkedIn() {
-        const url = encodeURIComponent(window.location.href);
-        const title = encodeURIComponent(this.blog.titleEng);
-        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}&title=${title}`, '_blank');
       },
 
     },
@@ -162,10 +151,3 @@
     margin-bottom: 60px;
   }
 </style>
-
-<head>
-  <meta property="og:title" content="{{ blog.titleEng }}" />
-  <meta property="og:description" content="{{ blog.descriptionEng }}" />
-  <meta property="og:url" content="{{ blogUrl }}" />
-  <meta property="og:image" content="URL of the image associated with the blog post, or a default image URL" />
-</head>
