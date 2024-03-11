@@ -15,10 +15,10 @@
       </thead>
       <tbody>
         <tr v-for="n in news" :key="n.id">
-          <td>{{ n.titleArm }}</td>
-          <td>{{ n.titleEng }}</td>
-          <td>{{ n.descriptionArm }}</td>
-          <td>{{ n.descriptionEng }}</td>
+          <td>{{ n.titleArm.slice(0, 50) }}</td>
+          <td>{{ n.titleEng.slice(0, 50) }}</td>
+          <td>{{ n.descriptionArm.slice(0, 100) }}</td>
+          <td>{{ n.descriptionEng.slice(0, 100) }}</td>
           <td>{{ formatDate(n.created) }}</td>
           <td>
             <router-link :to="`/admin/News/edit/${n.id}`" class="btn btn-edit">Edit</router-link>

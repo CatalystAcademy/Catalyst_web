@@ -30,17 +30,17 @@
                 </div><!-- /.about-two__single-content -->
               </div><!-- /.about-two__single -->
             </div><!-- /.about-two__single-wrap -->
-            <a href="#" class="thm-btn">{{translations.LearnMore}}</a><!-- /.thm-btn -->
+            <a href="/about" class="thm-btn">{{translations.LearnMore}}</a><!-- /.thm-btn -->
           </div><!-- /.about-two__content -->
         </div><!-- /.col-lg-6 -->
         <div class="col-xl-6 d-flex justify-content-xl-end justify-content-sm-center">
           <div class="about-two__image">
             <span class="about-two__image-dots"></span><!-- /.about-two__image-dots -->
-            <img src="/assets/images/custom/about_edited.jpg" alt="">
+            <img src="/assets/images/custom/about_us_3.jpg" alt="">
             <div class="about-two__count">
               <div class="about-two__count-text">
                 {{translations.TrustedByText}}
-                <span class="counter">1000</span>
+                <span class="counter">2570</span>
               </div><!-- /.about-two__count-text -->
             </div><!-- /.about-two__count -->
           </div><!-- /.about-two__image -->
@@ -70,5 +70,11 @@
   .about-two__image:after {
     height: 80% !important;
     left: -13px !important;
+  }
+
+  .about-two__image > img {
+    border-radius: 50%;
+    position: relative;
+    z-index: 11 !important;
   }
 </style>

@@ -31,7 +31,8 @@ export default {
       { rel: "stylesheet", href: "/assets/css/magnific-popup.css" },
       { rel: "stylesheet", href: "/assets/css/vegas.min.css" },
       { rel: "stylesheet", href: "/assets/css/style.css" },
-      { rel: "stylesheet", href: "/assets/css/responsive.css" }
+      { rel: "stylesheet", href: "/assets/css/responsive.css" },
+      { rel: "stylesheet", href: "/assets/css/custom-style.css" }
     ],
     script: [
       { src: "/assets/js/jquery.min.js", body: true },
@@ -46,6 +47,7 @@ export default {
       { src: "/assets/js/vegas.min.js", body: true },
       { src: "/assets/js/jquery.validate.min.js", body: true },
       { src: "/assets/js/jquery.ajaxchimp.min.js", body: true },
+      { src: "https://platform-api.sharethis.com/js/sharethis.js#property=65ef26015186020019b0d23e&product=inline-share-buttons&source=platform", body: true },
     ]
   },
   router: {
@@ -162,6 +164,8 @@ export default {
     { src: '~/plugins/vue-datepicker', ssr: false },
     { src: '~/plugins/bootstrap-vue.js', ssr: false },
     { src: '~/plugins/vuelidate.js', mode: 'all' },
+    { src: '~/plugins/vue-repeater.js' },
+    { src: '~/plugins/vue-social-sharing.js', mode: 'client' },
     '~/plugins/moment.js',
   ],
 

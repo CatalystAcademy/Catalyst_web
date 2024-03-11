@@ -7,6 +7,7 @@
         <tr>
           <th>Title in Armenian</th>
           <th>Title in English</th>
+          <th>Tags</th>
           <th>Description in Armenian</th>
           <th>Description in English</th>
           <th>Actions</th>
@@ -14,8 +15,9 @@
       </thead>
       <tbody>
         <tr v-for="blog in blogs" :key="blog.id">
-          <td>{{ blog.titleArm }}</td>
-          <td>{{ blog.titleEng }}</td>
+          <td>{{ blog.titleArm.slice(0, 50) }}</td>
+          <td>{{ blog.titleEng.slice(0, 50) }}</td>
+          <td>{{ blog.tag }}</td>
           <td>{{ blog.descriptionArm.slice(0, 100) }}</td>
           <td>{{ blog.descriptionEng.slice(0, 100) }}</td>
           <td>

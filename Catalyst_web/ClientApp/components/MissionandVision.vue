@@ -10,12 +10,14 @@
               <i class="fas fa-seedling"></i><!-- /.kipso-icon-manager -->
             </div><!-- /.contact-info-one__icon -->
             <h2 class="contact-info-one__title">{{translations.OurVision}} </h2><!-- /.contact-info-one__title -->
-            <p class="contact-info-one__text m-2">
-              {{translations.VisionOne}}
-            <br />
-            <br />
-            <br />
-               {{translations.VisionTwo}}
+            <p class="contact-info-one__text m-2 level-description">
+              <span class="level-text">
+                {{translations.VisionOne}}
+                <br />
+                <br />
+                <br />
+                {{translations.VisionTwo}}
+              </span>
             </p><!-- /.contact-info-one__text -->
           </div><!-- /.contact-info-one__single -->
         </div><!-- /.col-lg-4 -->
@@ -25,11 +27,13 @@
               <i class="fas fa-book-open"></i><!-- /.kipso-icon-manager -->
             </div><!-- /.contact-info-one__icon -->
             <h2 class="contact-info-one__title">{{translations.OurMission}} </h2><!-- /.contact-info-one__title -->
-            <p class="contact-info-one__text m-2">
-              {{translations.MissionOne}}
-            <br />
-            <br />
-              {{translations.MissionTwo}}
+            <p class="contact-info-one__text m-2 level-description">
+              <span class="level-text">
+                {{translations.MissionOne}}
+                <br />
+                <br />
+                {{translations.MissionTwo}}
+                </span>
             </p><!-- /.contact-info-one__text -->
           </div><!-- /.contact-info-one__single -->
         </div><!-- /.col-lg-4 -->

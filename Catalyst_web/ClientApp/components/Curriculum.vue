@@ -5,13 +5,13 @@
         <div class="col-lg-4" v-for="curriculum in curriculums" :key="curriculum.id">
           <div class="course-one__single">
             <div class="course-one__image">
-              <img src="/assets/images/course-1-1.jpg" alt="">
+              <img :src="'/assets/images/custom/' + getFirstName(curriculum.titleEng) + '.png'" alt="">
               <i class="far fa-heart"></i><!-- /.far fa-heart -->
             </div><!-- /.course-one__image -->
             <div class="course-one__content">
-              <span class="course-one__category">development</span><!-- /.course-one__category -->
+              <span class="course-one__category">{{curriculum.categoryEng}}</span><!-- /.course-one__category -->
               <div class="course-one__admin">
-                <img src="/assets/images/team-1-1.jpg" alt="">
+                <img src="/assets/images/logo/ca_logo.png" alt="">
                 by <span> {{translations.CatalystAcademyText}}</span>
               </div><!-- /.course-one__admin -->
               <h2 class="course-one__title">
@@ -28,12 +28,12 @@
                   <i class="fa fa-star"></i>
                   <i class="fa fa-star"></i>
                 </span><!-- /.course-one__stars-wrap -->
-                <span class="course-one__count">5</span><!-- /.course-one__count -->
-                <span class="course-one__stars-count">580</span><!-- /.course-one__stars-count -->
+                <span class="course-one__count">{{curriculum.rating}}</span><!-- /.course-one__count -->
+                <span class="course-one__stars-count">{{curriculum.studentsCountOnCurriculum}}</span><!-- /.course-one__stars-count -->
               </div><!-- /.course-one__stars -->
               <div class="course-one__meta">
-                <i class="far fa-clock"></i> 3 {{translations.Months}}
-                <i class="far fa-folder-open"></i> 36 {{translations.Lectures}}
+                <i class="far fa-clock"></i> {{curriculum.duration}} {{translations.Months}}
+                <i class="far fa-folder-open"></i> {{curriculum.lectures}} {{translations.Lectures}}
               </div><!-- /.course-one__meta -->
               <nuxt-link :to="`curriculums/${curriculum.id}`" class="course-one__link">
                 {{translations.SeePreview}}
@@ -72,10 +72,17 @@
       try {
         const response = await this.$axios.get('/api/Curriculums');
         this.curriculums = response.data;
+        console.log(this.curriculums);
 
       } catch (error) {
         console.error('Error fetching curriculums:', error);
         this.error = true;
+      }
+    },
+    methods: {
+      getFirstName(fullName) {
+        if (!fullName) return '';
+        return fullName.split(' ')[0].toLowerCase();
       }
     },
     async created() {

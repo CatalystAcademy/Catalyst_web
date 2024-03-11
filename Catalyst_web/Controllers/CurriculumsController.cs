@@ -27,6 +27,27 @@ namespace Catalyst_web.Controllers
         {
             return Ok(await _dbContext.Curriculums.ToListAsync());
         }
+        
+        [HttpGet("api/Curriculums/Other")]
+        public async Task<IActionResult> GetCurriculumsByCount()
+        {
+            return Ok(await _dbContext.Curriculums.OrderByDescending(c => c.Created).Take(2).ToListAsync());
+        }
+
+        [HttpGet("api/Curriculums/Latest")]
+        public async Task<IActionResult> GetLatestCurriculums([FromQuery] Guid? currentCurriculumId)
+        {
+            var latestCurriculumsQuery = _dbContext.Curriculums.OrderByDescending(c => c.Created).Take(3);
+
+            if (currentCurriculumId.HasValue)
+            {
+                latestCurriculumsQuery = latestCurriculumsQuery.Where(c => c.Id != currentCurriculumId.Value);
+            }
+
+            var latestCurriculums = await latestCurriculumsQuery.ToListAsync();
+
+            return Ok(latestCurriculums);
+        }
 
         [HttpGet("api/CurriculumDetails/{id}")]
         public async Task<IActionResult> GetCurriculumDetails(Guid id)
@@ -65,7 +86,19 @@ namespace Catalyst_web.Controllers
                 DescriptionArm = request.DescriptionArm,
                 StartDate = request.StartDate,
                 EndDate = request.EndDate,
-                RegistrationDate = new DateTime()
+                RegistrationDate = new DateTime(),
+                CategoryArm = request.CategoryArm,
+                CategoryEng = request.CategoryEng,
+                CurriculumArm = request.CurriculumArm,
+                CurriculumEng = request.CurriculumEng,
+                CurriculumDescriptionTitleArm = request.CurriculumDescriptionTitleArm,
+                CurriculumDescriptionTitleEng = request.CurriculumDescriptionTitleEng,
+                Language = request.Language,
+                Lectures = request.Lectures,
+                Rating = request.Rating,
+                SkillLevel = request.SkillLevel,
+                Students = request.Students,
+                StudentsCountOnCurriculum = request.StudentsCountOnCurriculum,
                 };
                 _dbContext.Curriculums.Add(createCurriculum);
                 await _dbContext.SaveChangesAsync();
@@ -94,6 +127,18 @@ namespace Catalyst_web.Controllers
                     existingCurriculum.DescriptionArm = editedcurriculum.DescriptionArm;
                     existingCurriculum.StartDate = editedcurriculum.StartDate;
                     existingCurriculum.EndDate = editedcurriculum.EndDate;
+                    existingCurriculum.CategoryArm = editedcurriculum.CategoryArm;
+                    existingCurriculum.CategoryEng = editedcurriculum.CategoryEng;
+                    existingCurriculum.CurriculumEng = editedcurriculum.CurriculumEng;
+                    existingCurriculum.CurriculumArm = editedcurriculum.CurriculumArm;
+                    existingCurriculum.CurriculumDescriptionTitleArm = editedcurriculum.CurriculumDescriptionTitleArm;
+                    existingCurriculum.CurriculumDescriptionTitleEng = editedcurriculum.CurriculumDescriptionTitleEng;
+                    existingCurriculum.Duration = editedcurriculum.Duration;
+                    existingCurriculum.Language = editedcurriculum.Language;
+                    existingCurriculum.Rating = editedcurriculum.Rating;
+                    existingCurriculum.Lectures = editedcurriculum.Lectures;
+                    existingCurriculum.SkillLevel = editedcurriculum.SkillLevel;
+                    existingCurriculum.StudentsCountOnCurriculum = editedcurriculum.StudentsCountOnCurriculum;
 
                 _dbContext.Curriculums.Update(existingCurriculum);
                 await _dbContext.SaveChangesAsync();
@@ -139,7 +184,7 @@ namespace Catalyst_web.Controllers
             var curriculumRegistration = new RegisterForCurriculum
             {
                 Id = request.Id,
-                CurriculumId = request.CurriculumId,
+                CurriculumId = request?.CurriculumId,
                 Email = request.Email,
                 FullName = request.FullName,
                 Message = request.Message,

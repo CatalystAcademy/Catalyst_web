@@ -5,7 +5,7 @@
         <div class="col-lg-8">
           <div class="course-details__content">
             <p class="course-details__author">
-              <img src="/assets/images/team-1-1.jpg" alt="">
+              <img src="/assets/images/logo/ca_logo.png" alt="">
               by <a href="#">{{translations.CatalystAcademyText}}</a>
             </p><!-- /.course-details__author -->
 
@@ -21,16 +21,16 @@
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
                   </span><!-- /.course-one__stars-wrap -->
-                  <span class="course-one__count">5</span><!-- /.course-one__count -->
-                  <span class="course-one__stars-count">580</span><!-- /.course-one__stars-count -->
+                  <span class="course-one__count">{{curriculum.rating}}</span><!-- /.course-one__count -->
+                  <span class="course-one__stars-count">{{curriculum.studetns}}</span><!-- /.course-one__stars-count -->
                 </div><!-- /.course-one__stars -->
               </div><!-- /.course-details__top-left -->
               <div class="course-details__top-right">
-                <a href="#" class="course-one__category">marketing</a><!-- /.course-one__category -->
+                <a href="#" class="course-one__category">{{curriculum.categoryEng}}</a><!-- /.course-one__category -->
               </div><!-- /.course-details__top-right -->
             </div><!-- /.course-details__top -->
             <div class="course-one__image">
-              <img src="/assets/images/course-d-1.jpg" alt="">
+              <img :src="'/assets/images/custom/' + getFirstName(curriculum.titleEng) + '_770X447.png'" alt="">
               <i class="far fa-heart"></i><!-- /.far fa-heart -->
             </div><!-- /.course-one__image -->
 
@@ -45,133 +45,19 @@
             <div class="tab-content course-details__tab-content ">
               <div class="tab-pane show active  animated fadeInUp" role="tabpanel" id="overview">
                 <p class="course-details__tab-text">
-                  Aelltes port lacus quis enim var sed efficitur turpis
-                  gilla
-                  sed sit Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                  Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type specimen book. It has
-                  survived
-                  not only five centuries, but also the leap into electronic typesetting, remaining
-                  essentially unchanged.
+                  {{curriculum.descriptionEng}}
                 </p><!-- /.course-details__tab-text -->
-                <br>
-                <p class="course-details__tab-text">
-                  It was popularised in the 1960s with the release of
-                  Letraset
-                  sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-                  software
-                  like Aldus PageMaker including versions of lorem ipsum amet finibus eros. Lorem Ipsum is
-                  simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                  industry’s standard dummy text ever since the 1500s, when an unknown printer took a
-                  galley
-                  of type and scrambled it to make a type specimen book. It has survived not only five
-                  centuries, but also the leap into electronic typesetting.
-                </p>
-                <!-- /.course-details__tab-text -->
-                <br>
-                <ul class="list-unstyled course-details__overview-list">
-                  <li>It has survived not only five centuries</li>
-                  <li>Lorem Ipsum is simply dummy text of the new design</li>
-                  <li>Printng and type setting ipsum</li>
-                  <li>Take a look at our round up of the best shows</li>
-                </ul><!-- /.list-unstyled course-details__overview-list -->
+
               </div><!-- /.course-details__tab-content -->
               <div class="tab-pane  animated fadeInUp" role="tabpanel" id="curriculum">
-                <h3 class="course-details__tab-title">Starting beginners level course</h3>
-                <!-- /.course-details__title -->
+                <h3 class="course-details__tab-title">{{curriculum.curriculumDescriptionTitleEng}}</h3>
                 <br>
                 <p class="course-details__tab-text">
-                  Aelltes port lacus quis enim var sed efficitur turpis
-                  gilla
-                  sed sit Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                  Ipsum has been the industry’s standard dummy text ever since.
+                  <div v-for="module in curriculumEng" :key="module.number">
+                    <p>{{ module.text }}</p>
+                  </div>
                 </p>
-                <!-- /.course-details__tab-text -->
-                <br>
-                <ul class="course-details__curriculum-list list-unstyled">
-                  <li>
-                    <div class="course-details__curriculum-list-left">
-                      <div class="course-details__meta-icon video-icon">
-                        <i class="fas fa-play"></i><!-- /.fas fa-play -->
-                      </div><!-- /.course-details__icon -->
-                      <a href="#">Introduction to Editing</a> <span>Preview</span>
-                    </div><!-- /.course-details__curriculum-list-left -->
-                    <div class="course-details__curriculum-list-right">16 minutes</div>
-                    <!-- /.course-details__curriculum-list-right -->
-                  </li>
-                  <li>
-                    <div class="course-details__curriculum-list-left">
-                      <div class="course-details__meta-icon video-icon">
-                        <i class="fas fa-play"></i><!-- /.fas fa-play -->
-                      </div><!-- /.course-details__icon -->
-                      <a href="#">Overview of Editing</a> <span>Preview</span>
-                    </div><!-- /.course-details__curriculum-list-left -->
-                    <div class="course-details__curriculum-list-right">10 minutes</div>
-                    <!-- /.course-details__curriculum-list-right -->
-                  </li>
-                  <li>
-                    <div class="course-details__curriculum-list-left">
-                      <div class="course-details__meta-icon file-icon">
-                        <i class="fas fa-folder"></i><!-- /.far fa-folder -->
-                      </div><!-- /.course-details__icon -->
-                      <a href="#">Basic Editing Technology</a>
-                    </div><!-- /.course-details__curriculum-list-left -->
-                    <!-- /.course-details__curriculum-list-right -->
-                  </li>
-                  <li>
-                    <div class="course-details__curriculum-list-left">
-                      <div class="course-details__meta-icon quiz-icon">
-                        <i class="fas fa-comment"></i><!-- /.fas fa-play -->
-                      </div><!-- /.course-details__icon -->
-                      <a href="#">Quiz</a>
-                    </div><!-- /.course-details__curriculum-list-left -->
-                    <div class="course-details__curriculum-list-right">6 questions</div>
-                    <!-- /.course-details__curriculum-list-right -->
-                  </li>
-                </ul><!-- /.course-details__curriculum-list -->
-                <br><br>
-                <h3 class="course-details__tab-title">Intermediate Level</h3>
-                <!-- /.course-details__title -->
-                <br>
-                <p class="course-details__tab-text">
-                  Aelltes port lacus quis enim var sed efficitur turpis
-                  gilla
-                  sed sit Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                  Ipsum has been the industry’s standard dummy text ever since.
-                </p>
-                <!-- /.course-details__tab-text -->
-                <br>
-                <ul class="course-details__curriculum-list list-unstyled">
-                  <li>
-                    <div class="course-details__curriculum-list-left">
-                      <div class="course-details__meta-icon video-icon">
-                        <i class="fas fa-play"></i><!-- /.fas fa-play -->
-                      </div><!-- /.course-details__icon -->
-                      <a href="#">Introduction to Editing</a> <span>Preview</span>
-                    </div><!-- /.course-details__curriculum-list-left -->
-                    <div class="course-details__curriculum-list-right">16 minutes</div>
-                    <!-- /.course-details__curriculum-list-right -->
-                  </li>
-                  <li>
-                    <div class="course-details__curriculum-list-left">
-                      <div class="course-details__meta-icon file-icon">
-                        <i class="fas fa-folder"></i><!-- /.far fa-folder -->
-                      </div><!-- /.course-details__icon -->
-                      <a href="#">Basic Editing Technology</a>
-                    </div><!-- /.course-details__curriculum-list-left -->
-                    <!-- /.course-details__curriculum-list-right -->
-                  </li>
-                  <li>
-                    <div class="course-details__curriculum-list-left">
-                      <div class="course-details__meta-icon quiz-icon">
-                        <i class="fas fa-comment"></i><!-- /.fas fa-play -->
-                      </div><!-- /.course-details__icon -->
-                      <a href="#">Quiz</a>
-                    </div><!-- /.course-details__curriculum-list-left -->
-                    <div class="course-details__curriculum-list-right">6 questions</div>
-                    <!-- /.course-details__curriculum-list-right -->
-                  </li>
-                </ul><!-- /.course-details__curriculum-list -->
+
               </div><!-- /.course-details__tab-content -->
             </div><!-- /.tab-content -->
           </div><!-- /.course-details__content -->
@@ -186,86 +72,53 @@
               <span class="course-details__meta-icon">
                 <i class="far fa-clock"></i><!-- /.far fa-clock -->
               </span><!-- /.course-details__icon -->
-              {{translations.Durations}}: <span>3 {{translations.Months}}</span>
+              {{translations.Durations}}: <span>{{curriculum.duration}} {{translations.Months}}</span>
             </a><!-- /.course-details__meta-link -->
             <a href="#" class="course-details__meta-link">
               <span class="course-details__meta-icon">
                 <i class="far fa-folder-open"></i><!-- /.far fa-folder-open -->
               </span><!-- /.course-details__icon -->
-              {{translations.Lectures}}: <span>36 {{translations.Lectures}}</span>
+              {{translations.Lectures}}: <span>{{curriculum.lectures}}</span>
             </a><!-- /.course-details__meta-link -->
             <a href="#" class="course-details__meta-link">
               <span class="course-details__meta-icon">
                 <i class="far fa-user-circle"></i><!-- /.far fa-user-circle -->
               </span><!-- /.course-details__icon -->
-              {{translations.Students}}: <span>{{translations.Max}} 15</span>
+              {{translations.Students}}: <span>{{translations.Max}} {{curriculum.students}}</span>
             </a><!-- /.course-details__meta-link -->
             <a href="#" class="course-details__meta-link">
               <span class="course-details__meta-icon">
                 <i class="far fa-flag"></i><!-- /.far fa-flag -->
               </span><!-- /.course-details__icon -->
-              {{translations.SkillLevel}}: <span>{{translations.Beginner}}</span>
+              {{translations.SkillLevel}}: <span>{{curriculum.skillLevel}}</span>
             </a><!-- /.course-details__meta-link -->
             <a href="#" class="course-details__meta-link">
               <span class="course-details__meta-icon">
                 <i class="far fa-bell"></i><!-- /.far fa-bell -->
               </span><!-- /.course-details__icon -->
-              {{translations.Language}}: <span>{{translations.Armenian}}</span>
+              {{translations.Language}}: <span>{{curriculum.language}}</span>
             </a><!-- /.course-details__meta-link -->
           </div><!-- /.course-details__meta -->
           <div class="course-details__list">
             <h2 class="course-details__list-title">{{translations.OurCurriculums}}</h2><!-- /.course-details__list-title -->
-            <div class="course-details__list-item">
+            <div class="course-details__list-item" v-for="singleC in latestCurriculums" :key="singleC.id">
               <div class="course-details__list-img">
-                <img src="/assets/images/lc-1-1.jpg" alt="">
+                <img :src="'/assets/images/custom/' + getFirstName(singleC.titleEng) + '_66X66.png'" alt="">
               </div><!-- /.course-details__list-img -->
               <div class="course-details__list-content">
                 <a class="course-details__list-author" href="#">by <span>{{translations.CatalystAcademyText}}</span></a>
-                <h3><a href="#">Marketing strategies</a></h3>
+                <h3><nuxt-link :to="`/curriculums/${singleC.id}`">{{singleC.titleEng}}</nuxt-link></h3>
                 <div class="course-details__list-stars">
                   <i class="fas fa-star"></i><!-- /.fas fa-star -->
                   <i class="fas fa-star"></i><!-- /.fas fa-star -->
                   <i class="fas fa-star"></i><!-- /.fas fa-star -->
                   <i class="fas fa-star"></i><!-- /.fas fa-star -->
                   <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                  <span>4.8</span>
+                  <span>{{singleC.rating}}</span>
                 </div><!-- /.course-details__list-stars -->
               </div><!-- /.course-details__list-content -->
             </div><!-- /.course-details__list-item -->
-            <div class="course-details__list-item">
-              <div class="course-details__list-img">
-                <img src="/assets/images/lc-1-2.jpg" alt="">
-              </div><!-- /.course-details__list-img -->
-              <div class="course-details__list-content">
-                <a class="course-details__list-author" href="#">by <span>Lydia Byrd</span></a>
-                <h3><a href="#">Marketing strategies</a></h3>
-                <div class="course-details__list-stars">
-                  <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                  <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                  <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                  <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                  <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                  <span>4.8</span>
-                </div><!-- /.course-details__list-stars -->
-              </div><!-- /.course-details__list-content -->
-            </div><!-- /.course-details__list-item -->
-            <div class="course-details__list-item">
-              <div class="course-details__list-img">
-                <img src="/assets/images/lc-1-3.jpg" alt="">
-              </div><!-- /.course-details__list-img -->
-              <div class="course-details__list-content">
-                <a class="course-details__list-author" href="#">by <span>Lydia Byrd</span></a>
-                <h3><a href="#">Marketing strategies</a></h3>
-                <div class="course-details__list-stars">
-                  <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                  <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                  <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                  <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                  <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                  <span>4.8</span>
-                </div><!-- /.course-details__list-stars -->
-              </div><!-- /.course-details__list-content -->
-            </div><!-- /.course-details__list-item -->
+
           </div><!-- /.course-details__list -->
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
@@ -275,7 +128,6 @@
 </template>
 
 <script>
-  import moment from 'moment';
   import { mapState } from 'vuex';
 
   export default {
@@ -321,12 +173,26 @@
       try {
         const response = await this.$axios.get(`/api/CurriculumDetails/${this.curriculumId}`); // Fetch data based on ID
         this.curriculum = response.data;
+        const rawData = response.data.curriculumEng;
+        this.curriculumEng = rawData
+          .split('\n') // Split on newlines (assuming each point is on a separate line)
+          .map((point, index) => ({ number: `${index + 1}.`, text: point })); // Add numbering and spaces
+
+        const latestCurriculum = await this.$axios.get(`/api/Curriculums/Latest?currentCurriculumId=${this.curriculumId}`);
+        this.latestCurriculums = latestCurriculum.data;
+
       } catch (error) {
         // Handle errors
       }
     },
     async created() {
       await this.$store.dispatch('fetchTranslations');
+    },
+    methods: {
+      getFirstName(fullName) {
+        if (!fullName) return '';
+        return fullName.split(' ')[0].toLowerCase();
+      }
     },
     data() {
       return {
@@ -336,6 +202,8 @@
         DateOfBirth: null,
         curriculum: {},
         curriculumId: this.$route.params.id,
+        curriculumEng: '',
+        latestCurriculums: [],
         registrationData: { fullName: '', email: '', curriculumId: null, phoneNumber: '', DateOfBirth: '', parentPhoneNumber: '', address: '', educationalInstitution: '', parentEmail: '', parentFullName: '', parentProfession: '', message: '' },
       };
     },

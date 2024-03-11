@@ -83,7 +83,7 @@ namespace Catalyst_web.Controllers
                 return BadRequest(ModelState);
             }
             // 2. Validate eligibility (check if user already registered)
-            if (!IsUserEligibleForCourse(request.Id, request.CourseId))
+            if (!IsUserEligibleForCourse(request.Id, request.CurriculumId))
             {
                 return BadRequest("User is not eligible to register for this course.");
             }
@@ -91,7 +91,7 @@ namespace Catalyst_web.Controllers
             var teacherRegistration = new BecomeTeacher
             {
                 Id = request.Id,
-                CourseId = request.CourseId,
+                CurriculumId = request.CurriculumId,
                 Email = request.Email,
                 FullName = request.FullName,
                 Message = request.Message,
@@ -103,11 +103,11 @@ namespace Catalyst_web.Controllers
             return Ok();
         }
 
-        private bool IsUserEligibleForCourse(Guid userId, Guid courseId)
+        private bool IsUserEligibleForCourse(Guid userId, Guid curriculumId)
         {
             // Check if user is already registered for the course
             var existingRegistration = _dbContext.BecomeTeachers
-                .SingleOrDefault(r => r.Id == userId && r.CourseId == courseId);
+                .SingleOrDefault(r => r.Id == userId && r.CurriculumId == curriculumId);
             if (existingRegistration != null)
             {
                 return false; // Already registered
@@ -116,73 +116,6 @@ namespace Catalyst_web.Controllers
             return true; // User is eligible
         }
 
-
-        [HttpGet("api/video/{videoId}")]
-        public IActionResult GetVideo(string videoId)
-        {
-            try
-            {
-                byte[] videoData = GetVideoDataFromDatabase(videoId);
-
-                if (videoData != null && videoData.Length > 0)
-                {
-                    // Return the binary data as a file
-                    return File(videoData, "video/mp4", "CA_video.mp4");
-                }
-                else
-                {
-                    // Video not found or empty data
-                    return NotFound();
-                }
-            }
-            catch (Exception ex)
-            {
-                // Handle exception
-                return StatusCode(500, $"Internal server error: {ex.Message}");
-            }
-        }
-
-        private byte[]? GetVideoDataFromDatabase(string videoId)
-        {
-            var connectionString = _configuration.GetValue<string>("ConnectionStrings:db");
-
-            using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
-            {
-                connection.Open();
-
-                string videoIdString = videoId;
-
-                string query = "SELECT \"Videos\".\"Data\" FROM public.\"Videos\" WHERE \"Videos\".\"Id\" = '7ac5539a-2a72-49b4-a7a8-bcaa63f5c727'";
-
-                using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@videoId", videoId);
-
-                    // Execute the query and read the binary data
-                    using (NpgsqlDataReader reader = command.ExecuteReader(CommandBehavior.SequentialAccess))
-                    {
-                        if (reader.Read())
-                        {
-                            if (!reader.IsDBNull(0))
-                            {
-                                using (MemoryStream stream = new MemoryStream())
-                                {
-                                    // Read binary data from the reader
-                                    long bytesRead = reader.GetBytes(0, 0, null, 0, int.MaxValue);
-                                    byte[] buffer = new byte[bytesRead];
-                                    reader.GetBytes(0, 0, buffer, 0, (int)bytesRead);
-
-                                    // Return the binary data
-                                    return buffer;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            return null;
-        }
     }
 
 }

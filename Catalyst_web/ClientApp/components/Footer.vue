@@ -5,30 +5,30 @@
                       <div class="container">
                           <div class="row">
                               <div class="col-xl-3 col-lg-6 col-sm-12">
-                                  <div class="footer-widget footer-widget__contact" v-if="latestCourses.length">
-                                      <h2 class="footer-widget__title">Our Latest Courses</h2><!-- /.footer-widget__title -->
-                                      <ul class="list-unstyled footer-widget__course-list" v-for="course in latestCourses" :key="course.id">
+                                  <div class="footer-widget footer-widget__contact" v-if="latestCurriculums.length">
+                                    <h2 class="footer-widget__title">{{translations.OurLatestCurriculumsText}}</h2><!-- /.footer-widget__title -->
+                                      <ul class="list-unstyled footer-widget__course-list" v-for="curriculum in latestCurriculums" :key="curriculum.id">
                                           <li class="mb-4">
-                                              <h2><nuxt-link :to="`courses/${course.id}`">{{course.titleEng}}</nuxt-link></h2>
-                                              <p>{{course.instractorEng}}</p>
+                                              <h2><nuxt-link :to="`/curriculums/${curriculum.id}`">{{curriculum.titleEng}}</nuxt-link></h2>
+                                              <p>{{curriculum.categoryEng}}</p>
                                           </li>
                                       </ul><!-- /.footer-widget__course-list -->
                                   </div><!-- /.footer-widget -->
                               </div><!-- /.col-lg-3 -->
                               <div class="col-xl-3 col-lg-6 col-sm-12">
                                   <div class="footer-widget footer-widget__link">
-                                      <h2 class="footer-widget__title">Explore</h2><!-- /.footer-widget__title -->
+                                    <h2 class="footer-widget__title">{{translations.Explore}}</h2><!-- /.footer-widget__title -->
                                       <div class="footer-widget__link-wrap">
                                           <ul class="list-unstyled footer-widget__link-list">
-                                              <li><a href="/about">About</a></li>
-                                              <li><a href="/teachers">Teachers</a></li>
-                                              <li><a href="#">Join Us</a></li>
-                                              <li><a href="/news">Our News</a></li>
+                                              <li><a href="/about">{{translations.About}}</a></li>
+                                              <li><a href="/teachers">{{translations.Instructors}}</a></li>
+                                              <li><a href="/news">{{translations.OurNewsText}}</a></li>
+                                              <li><a href="/apply">{{translations.JoinUsText}}</a></li>
+                                              <li><a href="/contact">{{translations.Contact}}</a></li>
                                           </ul><!-- /.footer-widget__link-list -->
-                                          <ul class="list-unstyled footer-widget__link-list">
-                                              <li><a href="/contact">Contact</a></li>
-                                              <li><a href="#">Register Now</a></li>
-                                          </ul><!-- /.footer-widget__link-list -->
+<!--                                          <ul class="list-unstyled footer-widget__link-list">
+                                          </ul>-->
+                                            <!-- /.footer-widget__link-list -->
                                       </div><!-- /.footer-widget__link-wrap -->
                                   </div><!-- /.footer-widget -->
                               </div><!-- /.col-lg-3 -->
@@ -66,10 +66,10 @@
                       <div class="container">
                           <p class="site-footer__copy">&copy; Copyright 2024 by <a href="#">Catalyst Academy</a></p>
                           <div class="site-footer__social">
-                              <a href="#" data-target="html" class="scroll-to-target site-footer__scroll-top"><i class="kipso-icon-top-arrow"></i></a>
-                              <a href="#"><i class="fab fa-facebook-square"></i></a>
-                              <a href="#"><i class="fab fa-linkedin"></i></a>
-                              <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#" data-target="html" class="scroll-to-target site-footer__scroll-top"><i class="kipso-icon-top-arrow"></i></a>
+                            <a href="https://www.facebook.com/catalystacademyarmenia?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                            <a href="https://www.instagram.com/catalystsacademy?igsh=MTRwOWhuOHFtMzRpZg==" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/company/catalystsacademy/" target="_blank"><i class="fab fa-linkedin"></i></a>
                           </div><!-- /.site-footer__social -->
                           <!-- /.site-footer__copy -->
                       </div><!-- /.container -->
@@ -99,6 +99,11 @@
     components: {
       RequestInfoModal,
     },
+    computed: {
+      translations() {
+        return this.$store.state.translations;
+      },
+    },
     methods: {
       openModal() {
         this.$store.commit('setRequestInfoModalState', true);
@@ -109,13 +114,13 @@
     },
     data() {
       return {
-        latestCourses: [],
+        latestCurriculums: [],
       }
     },
     async fetch() { // Use fetch for component-level data fetching
       try {
-        const response = await this.$axios.get('/api/Courses/Latest');
-        this.latestCourses = response.data;
+        const response = await this.$axios.get('/api/Curriculums/Other');
+        this.latestCurriculums = response.data;
 
       } catch (error) {
         console.error('Error fetching teachers or welcome message:', error);
@@ -123,6 +128,7 @@
       }
     },
     async created() {
+      await this.$store.dispatch('fetchTranslations');
       if (process.env.NODE_ENV === 'development') {
         this.$axios.defaults.httpsAgent = new https.Agent({ rejectUnauthorized: false });
       }
@@ -131,5 +137,13 @@
 </script>
 
 <style scoped>
-  
+  .footer-widget {
+    padding-top: 120px;
+    padding-bottom: 40px;
+  }
+  .footer-widget__link {
+    padding-right: 0px;
+    position: relative;
+    left: 25px;
+  }
 </style>

@@ -22,6 +22,7 @@ namespace Catalyst_web.Models
         public required string ProfessionEng { get; set; }
         public Guid? CourseId { get; set; }
         public Guid? CurriculumId { get; set; }
+        public string Link { get; set; }
         public bool IsFromLeadership { get; set; }
     }
 }

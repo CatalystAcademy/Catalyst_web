@@ -28,6 +28,13 @@
 
         <div class="row">
           <div class="col">
+            <label for="tag">Tags</label>
+            <input v-model="createData.tag" type="text" placeholder="tags" name="tag">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
             <label for="descriptionArm">Description in Armenian</label>
             <textarea rows="4" cols="50" v-model="createData.descriptionArm" type="text" placeholder="Description in Armenian" name="descriptionArm"> </textarea>
           </div>
@@ -51,7 +58,7 @@
     name: 'CreateBlog',
     setup() {
       return {
-        createData: { titleArm: '', titleEng: '', descriptionArm: '', descriptionEng: '', authorArm: '', authorEng: '' },
+        createData: { titleArm: '', titleEng: '', descriptionArm: '', descriptionEng: '', authorArm: '', authorEng: '', tag: '' },
       };
     },
     methods: {

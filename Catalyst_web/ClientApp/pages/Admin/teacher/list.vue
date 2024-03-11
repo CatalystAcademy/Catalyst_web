@@ -21,8 +21,8 @@
           <td>{{ teacher.fullNameEng }}</td>
           <td>{{ teacher.professionArm }}</td>
           <td>{{ teacher.professionEng }}</td>
-          <td>{{ teacher.descriptionArm }}</td>
-          <td>{{ teacher.descriptionEng }}</td>
+          <td>{{ teacher.descriptionArm.slice(0, 100) }}</td>
+          <td>{{ teacher.descriptionEng.slice(0, 100) }}</td>
           <td>{{ teacher.IsFromLeadership }}</td>
           <td>
             <router-link :to="`/admin/teacher/edit/${teacher.id}`" class="btn btn-edit">Edit</router-link>

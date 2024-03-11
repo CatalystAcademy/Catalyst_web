@@ -16,13 +16,13 @@
 
         <div class="row">
           <div class="col">
-            <label for="instractorArm">Instractor Full Name in Armenian</label>
-            <input v-model="createData.instractorArm" type="text" placeholder="Instractor Full Name in Armenian" name="instractorArm">
+            <label for="instractorArm">Instructor Full Name in Armenian</label>
+            <input v-model="createData.instractorArm" type="text" placeholder="Instructor Full Name in Armenian" name="instractorArm">
           </div>
 
           <div class="col">
-            <label for="instractorEng">Title in English</label>
-            <input v-model="createData.instractorEng" type="text" placeholder="Instractor Full Name in English" name="instractorEng">
+            <label for="instructorEng">Instructor Full Name in English</label>
+            <input v-model="createData.instractorEng" type="text" placeholder="Instructor Full Name in English" name="instractorEng">
           </div>
         </div>
 
@@ -40,7 +40,7 @@
         <client-only>
           <div class="row">
             <div class="col">
-              <label for="descriptionEng">Start Date</label>
+              <label for="startDate">Start Date</label>
               <b-form-datepicker id="datepicker-full-width"
                                  v-model="createData.startDate"
                                  :show-decade-nav="showDecadeNav"
@@ -52,7 +52,7 @@
               </b-form-datepicker>
               </div>
             <div class="col">
-              <label for="descriptionEng">End Date</label>
+              <label for="endDate">End Date</label>
               <b-form-datepicker id="example-i18n-picker2"
                                  v-model="createData.endDate"
                                  :show-decade-nav="showDecadeNav"

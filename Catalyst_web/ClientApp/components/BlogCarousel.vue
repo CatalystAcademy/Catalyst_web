@@ -18,7 +18,7 @@
 <!--                              <a href="#">3 Comments</a>
 -->                          </div><!-- /.blog-two__meta -->
                           <h3 class="blog-two__title">
-                            <a href="/news-details">{{blog.titleEng}}</a>
+                            <nuxt-link :to="`blogs/${blog.id}`">{{blog.titleEng.slice(0, 30)}}</nuxt-link>
                           </h3><!-- /.blog-two__title -->
                       </div><!-- /.blog-two__inner -->
                   </div><!-- /.blog-two__single -->

@@ -29,7 +29,7 @@ namespace Catalyst_web.Migrations
                         .HasColumnType("uuid")
                         .HasColumnOrder(0);
 
-                    b.Property<Guid>("CourseId")
+                    b.Property<Guid?>("CourseId")
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("Created")
@@ -37,6 +37,9 @@ namespace Catalyst_web.Migrations
 
                     b.Property<string>("CreatedBy")
                         .HasColumnType("text");
+
+                    b.Property<Guid>("CurriculumId")
+                        .HasColumnType("uuid");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -117,6 +120,10 @@ namespace Catalyst_web.Migrations
                         .IsConcurrencyToken()
                         .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("bytea");
+
+                    b.Property<string>("Tag")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("TitleArm")
                         .IsRequired()
@@ -250,10 +257,34 @@ namespace Catalyst_web.Migrations
                         .HasColumnType("uuid")
                         .HasColumnOrder(0);
 
+                    b.Property<string>("CategoryArm")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("CategoryEng")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("CreatedBy")
+                        .HasColumnType("text");
+
+                    b.Property<string>("CurriculumArm")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("CurriculumDescriptionTitleArm")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("CurriculumDescriptionTitleEng")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("CurriculumEng")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("DescriptionArm")
@@ -264,16 +295,28 @@ namespace Catalyst_web.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("Duration")
+                        .HasColumnType("text");
+
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("boolean");
 
+                    b.Property<string>("Language")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Lectures")
+                        .HasColumnType("text");
+
                     b.Property<DateTime>("Modified")
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("ModifiedBy")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Rating")
                         .HasColumnType("text");
 
                     b.Property<DateTime>("RegistrationDate")
@@ -284,8 +327,17 @@ namespace Catalyst_web.Migrations
                         .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("bytea");
 
+                    b.Property<string>("SkillLevel")
+                        .HasColumnType("text");
+
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Students")
+                        .HasColumnType("text");
+
+                    b.Property<string>("StudentsCountOnCurriculum")
+                        .HasColumnType("text");
 
                     b.Property<string>("TitleArm")
                         .IsRequired()
@@ -298,6 +350,42 @@ namespace Catalyst_web.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Curriculums");
+                });
+
+            modelBuilder.Entity("Catalyst_web.Models.CurriculumSection", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnOrder(0);
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime>("Modified")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("text");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("bytea");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CurriculumSections");
                 });
 
             modelBuilder.Entity("Catalyst_web.Models.FormData", b =>
@@ -379,6 +467,10 @@ namespace Catalyst_web.Migrations
                         .IsConcurrencyToken()
                         .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("bytea");
+
+                    b.Property<string>("Tag")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("TitleArm")
                         .IsRequired()
@@ -574,6 +666,10 @@ namespace Catalyst_web.Migrations
 
                     b.Property<bool>("IsFromLeadership")
                         .HasColumnType("boolean");
+
+                    b.Property<string>("Link")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<DateTime>("Modified")
                         .HasColumnType("timestamp without time zone");

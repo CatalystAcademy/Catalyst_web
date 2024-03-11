@@ -7,7 +7,7 @@
                   <div class="banner-one__bubble-2"></div><!-- /.banner-one__bubble- -->
                   <div class="banner-one__bubble-3"></div><!-- /.banner-one__bubble- -->
                   <img src="/assets/images/slider-1-scratch.png" alt="" class="banner-one__scratch">
-                  <img src="/assets/images/Paruyr.22.png" class="banner-one__person" alt="">
+                  <img src="/assets/images/team/anjela-no-bg.png" class="banner-one__person" alt="">
                   <div class="row no-gutters">
                       <div class="col-xl-12">
                           <h3 class="banner-one__title banner-one__light-color">We Can <br>
@@ -24,12 +24,33 @@
                   <div class="banner-one__bubble-2"></div><!-- /.banner-one__bubble- -->
                   <div class="banner-one__bubble-3"></div><!-- /.banner-one__bubble- -->
                   <img src="/assets/images/slider-1-scratch.png" alt="" class="banner-one__scratch">
-                  <img src="/assets/images/Paruyr.22.png" class="banner-one__person" alt="">
+                  <img src="/assets/images/team/rob-no-bg.png" class="banner-one__person" alt="">
                   <div class="row no-gutters">
                       <div class="col-xl-12">
-                          <h3 class="banner-one__title banner-one__light-color">We Can <br>
-                              Teach You</h3><!-- /.banner-one__title -->
-                          <p class="banner-one__tag-line">are you ready to learn?</p><!-- /.banner-one__tag-line -->
+                        <h3 class="banner-one__title banner-one__light-color">
+                          Discover
+                          <br>
+                        new skills. 
+                        </h3><!-- /.banner-one__title -->
+                        <p class="banner-one__tag-line">Start your learning journey today.</p><!-- /.banner-one__tag-line -->
+                          <nuxt-link to="/curriculums" class="thm-btn banner-one__btn">Learn More</nuxt-link>
+                      </div><!-- /.col-xl-12 -->
+                  </div><!-- /.row -->
+              </div><!-- /.container -->
+          </div><!-- /.banner-one__slide -->
+    <div class="banner-one__slide banner-one__slide-three">
+              <div class="container">
+                  <div class="banner-one__bubble-1"></div><!-- /.banner-one__bubble- -->
+                  <div class="banner-one__bubble-2"></div><!-- /.banner-one__bubble- -->
+                  <div class="banner-one__bubble-3"></div><!-- /.banner-one__bubble- -->
+                  <img src="/assets/images/slider-1-scratch.png" alt="" class="banner-one__scratch">
+                  <img src="/assets/images/team/erika-no-bg.png" class="banner-one__person" alt="">
+                  <div class="row no-gutters">
+                      <div class="col-xl-12">
+                        <h3 class="banner-one__title banner-one__light-color">
+                          Unlock your potential. <br>
+                        </h3><!-- /.banner-one__title -->
+                        <p class="banner-one__tag-line">Achieve your goals with us.</p><!-- /.banner-one__tag-line -->
                           <nuxt-link to="/curriculums" class="thm-btn banner-one__btn">Learn More</nuxt-link>
                       </div><!-- /.col-xl-12 -->
                   </div><!-- /.row -->

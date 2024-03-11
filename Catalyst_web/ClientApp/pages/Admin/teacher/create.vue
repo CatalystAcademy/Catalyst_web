@@ -45,14 +45,21 @@
           </div>
 
           <div class="col">
+            <label for="Link">Link</label>
+            <input v-model="createData.Link" type="text" id="Link" name="Link">
+          </div>
+
+
+        </div>
+        <div class="row">
+          <div class="col">
             <label for="IsFromLeadership">Leadership</label>
             <input v-model="createData.IsFromLeadership" type="checkbox" id="IsFromLeadership" name="IsFromLeadership">
           </div>
+         </div>
+          <button type="submit" class="thm-btn become-teacher__form-btn">Submit</button>
         </div>
-
-        <button type="submit" class="thm-btn become-teacher__form-btn">Submit</button>
-      </div>
-    </form><!-- /.become-teacher__form-content -->
+</form><!-- /.become-teacher__form-content -->
   </div>
 </template>
 
@@ -62,7 +69,7 @@
     name: 'CreateTeacher',
     setup() {
       return {
-        createData: { IsFromLeadership: false, FullNameArm: '', FullNameEng: '', Email: '', DescriptionEng: '', DescriptionArm: '', ProfessionArm: '', ProfessionEng: '' },
+        createData: { IsFromLeadership: false, Link: '', FullNameArm: '', FullNameEng: '', Email: '', DescriptionEng: '', DescriptionArm: '', ProfessionArm: '', ProfessionEng: '' },
       };
     },
     methods: {

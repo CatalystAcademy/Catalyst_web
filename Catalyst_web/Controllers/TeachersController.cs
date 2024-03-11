@@ -42,7 +42,8 @@ namespace Catalyst_web.Controllers
                 Email = request.Email,
                 ProfessionArm = request.ProfessionArm,
                 ProfessionEng = request.ProfessionEng,
-                IsFromLeadership = request.IsFromLeadership
+                IsFromLeadership = request.IsFromLeadership,
+                Link = request.Link,
             };
             _dbContext.Teachers.Add(createTeacher);
             await _dbContext.SaveChangesAsync();
@@ -73,6 +74,7 @@ namespace Catalyst_web.Controllers
             existingTeacher.ProfessionEng = editedTeacher.ProfessionEng;
             existingTeacher.Email = editedTeacher.Email;
             existingTeacher.IsFromLeadership = editedTeacher.IsFromLeadership;
+            existingTeacher.Link = editedTeacher.Link;
 
             _dbContext.Teachers.Update(existingTeacher);
             await _dbContext.SaveChangesAsync();

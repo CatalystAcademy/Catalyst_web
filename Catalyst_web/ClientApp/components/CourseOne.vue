@@ -3,8 +3,7 @@
   <section class="course-one__top-title home-one">
       <div class="container">
           <div class="block-title mb-0">
-              <h2 class="block-title__title">Explore our <br>
-                  Program</h2><!-- /.block-title__title -->
+            <h2 class="block-title__title">{{translations.ExploreOurProgramsText}}</h2><!-- /.block-title__title -->
           </div><!-- /.block-title -->
       </div><!-- /.container -->
       <div class="course-one__top-title__curve"></div><!-- /.course-one__top-title__curve -->
@@ -14,16 +13,16 @@
         <div class="course-one__carousel owl-carousel owl-theme" v-if="curriculums.length">
             <div class="item" v-for="curriculum in curriculums" :key="curriculum.id">
                 <div class="course-one__single color-1">
-                    <div class="course-one__image">
-                        <img src="/assets/images/course-1-1.jpg" alt="">
-                        <i class="far fa-heart"></i><!-- /.far fa-heart -->
-                    </div><!-- /.course-one__image -->
+                  <div class="course-one__image">
+                    <img :src="'/assets/images/custom/' + getFirstName(curriculum.titleEng) + '.png'" alt="">
+                    <i class="far fa-heart"></i><!-- /.far fa-heart -->
+                  </div><!-- /.course-one__image -->
                     <div class="course-one__content">
-                        <a href="#" class="course-one__category">development</a><!-- /.course-one__category -->
-                        <div class="course-one__admin">
-                            <img src="/assets/images/team-1-1.jpg" alt="">
-                            by <a href="/teacher-details">Lou Guerrero</a>
-                        </div><!-- /.course-one__admin -->
+                      <a href="#" class="course-one__category">{{curriculum.categoryEng}}</a><!-- /.course-one__category -->
+                      <div class="course-one__admin">
+                        <img src="/assets/images/logo/ca_logo.png" alt="">
+                        by <span> {{translations.CatalystAcademyText}}</span>
+                      </div><!-- /.course-one__admin -->
                         <h2 class="course-one__title">
                           <nuxt-link :to="`curriculums/${curriculum.id}`">
                             {{ curriculum.titleEng }}
@@ -38,16 +37,17 @@
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                             </span><!-- /.course-one__stars-wrap -->
-                            <span class="course-one__count">4.8</span><!-- /.course-one__count -->
-                            <span class="course-one__stars-count">250</span><!-- /.course-one__stars-count -->
+                            <span class="course-one__count">{{curriculum.rating}}</span><!-- /.course-one__count -->
+                            <span class="course-one__stars-count">{{curriculum.studentsCountOnCurriculum}}</span><!-- /.course-one__stars-count -->
                         </div><!-- /.course-one__stars -->
                         <div class="course-one__meta">
-                            <a href="/course-details"><i class="far fa-clock"></i> 10 Hours</a>
-                            <a href="/course-details"><i class="far fa-folder-open"></i> 6 Lectures</a>
-                            <a href="/course-details">$18</a>
+                          <i class="far fa-clock"></i> {{curriculum.duration}} {{translations.Months}}
+                          <i class="far fa-folder-open"></i> {{curriculum.lectures}} {{translations.Lectures}}
                         </div><!-- /.course-one__meta -->
-                        <a href="#" class="course-one__link">See Preview</a><!-- /.course-one__link -->
-                    </div><!-- /.course-one__content -->
+                        <nuxt-link :to="`curriculums/${curriculum.id}`" class="course-one__link">
+                          {{translations.SeePreview}}
+                        </nuxt-link>
+                      </div><!-- /.course-one__content -->
                 </div><!-- /.course-one__single -->
             </div><!-- /.item -->
 
@@ -69,6 +69,12 @@
         curriculums: [],
         error: false,
       };
+    },
+    methods: {
+      getFirstName(fullName) {
+        if (!fullName) return '';
+        return fullName.split(' ')[0].toLowerCase();
+      }
     },
     computed: {
       ...mapState(['language']),
