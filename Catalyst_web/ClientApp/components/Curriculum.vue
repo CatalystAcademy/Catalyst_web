@@ -72,7 +72,6 @@
       try {
         const response = await this.$axios.get('/api/Curriculums');
         this.curriculums = response.data;
-        console.log(this.curriculums);
 
       } catch (error) {
         console.error('Error fetching curriculums:', error);

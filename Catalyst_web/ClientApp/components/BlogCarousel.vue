@@ -7,7 +7,7 @@
           </div><!-- /.block-title -->
           <div class="blog-two__carousel owl-carousel owl-theme">
               <div class="item" v-for="blog in blogs" :key="blog.id">
-                  <div class="blog-two__single" :style="{backgroundImage: `url(assets/images/custom/leader.png)`}">
+                  <div class="blog-two__single" :style="{backgroundImage: `url(assets/images/custom/blog_370.jpg)`}">
                       <div class="blog-two__inner">
                         <a href="/news-details" class="blog-two__date">
                           <span>{{formatDateOnlyDay(blog.Created)}}</span>

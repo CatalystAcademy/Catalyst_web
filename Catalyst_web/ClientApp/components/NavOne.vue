@@ -3,9 +3,10 @@
       <div class="topbar-one">
           <div class="container">
               <div class="topbar-one__left">
-                <a href="#">{{translations.CatalystEmail}}</a>
-                <a href="#">{{translations.CatalystPhone}}</a>
-              </div><!-- /.topbar-one__left -->
+                <a :href="'mailto:' + translations.CatalystEmail">{{translations.CatalystEmail}}</a>
+                <a :href="'tel:' + translations.PhoneNumber">{{translations.CatalystPhone}}</a>
+              </div>
+  <!-- /.topbar-one__left -->
 <!--              <div class="topbar-one__right">
                   <a href="#">Login</a>
                   <a href="#">Register</a>

@@ -9,5 +9,6 @@ namespace Catalyst_web.Models
         [Required]
         [EmailAddress]
         public required string Email { get; set; }
+        public string? Message { get; set; }
     }
 }

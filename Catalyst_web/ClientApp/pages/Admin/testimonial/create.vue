@@ -4,43 +4,50 @@
       <div class="form-group container">
         <div class="row">
           <div class="col">
-            <label for="FullNameArm">Full Name in Armenian</label>
-            <input v-model="createData.FullNameArm" type="text" id="FullNameArm" placeholder="Full name in Armenian" name="FullNameArm">
+            <label for="fullNameArm">Full Name in Armenian</label>
+            <input v-model="createData.fullNameArm" type="text" id="fullNameArm" placeholder="Full name in Armenian" name="fullNameArm">
           </div>
 
           <div class="col">
-            <label for="FullNameEng">Full name in English</label>
-            <input v-model="createData.FullNameEng" type="text" id="FullNameEng" placeholder="Full name in English" name="FullNameEng">
+            <label for="fullNameEng">Full name in English</label>
+            <input v-model="createData.fullNameEng" type="text" id="fullNameEng" placeholder="Full name in English" name="fullNameEng">
           </div>
         </div>
 
         <div class="row">
           <div class="col">
-            <label for="PositionArm">Position in Armenian</label>
-            <input v-model="createData.PositionArm" type="text" id="PositionArm" placeholder="Position in Armenian" name="PositionArm">
+            <label for="positionArm">Position in Armenian</label>
+            <input v-model="createData.positionArm" type="text" id="positionArm" placeholder="Position in Armenian" name="positionArm">
           </div>
 
           <div class="col">
-            <label for="PositionEng">Position in English</label>
-            <input v-model="createData.PositionEng" type="text" id="PositionEng" placeholder="Position in English" name="PositionEng">
+            <label for="positionEng">Position in English</label>
+            <input v-model="createData.positionEng" type="text" id="positionEng" placeholder="Position in English" name="positionEng">
           </div>
         </div>
 
         <div class="row">
           <div class="col">
-            <label for="TextArm">Text in Armenian</label>
-            <textarea rows="4" cols="50" v-model="createData.TextArm" id="TextArm" placeholder="Text in Armenian" name="TextArm"></textarea>
+            <label for="textArm">Text in Armenian</label>
+            <textarea rows="4" cols="50" v-model="createData.textArm" id="textArm" placeholder="Text in Armenian" name="textArm"></textarea>
           </div>
 
           <div class="col">
-            <label for="TextEng">Text in English</label>
-            <textarea rows="4" cols="50" v-model="createData.TextEng" id="TextEng" placeholder="Text in English" name="TextEng"></textarea>
+            <label for="textEng">Text in English</label>
+            <textarea rows="4" cols="50" v-model="createData.textEng" id="textEng" placeholder="Text in English" name="textEng"></textarea>
           </div>
         </div>
 
-        <button type="submit" class="thm-btn become-teacher__form-btn">Submit</button>
-      </div>
-    </form><!-- /.become-teacher__form-content -->
+        <div class="row">
+          <div class="col">
+            <label for="order">Order</label>
+            <input v-model="createData.order" type="number" id="order" placeholder="Order" name="order">
+          </div>
+          </div>
+
+          <button type="submit" class="thm-btn become-teacher__form-btn">Submit</button>
+        </div>
+</form><!-- /.become-teacher__form-content -->
   </div>
 </template>
 
@@ -50,7 +57,7 @@
     name: 'CreateTestimonial',
     setup() {
       return {
-        createData: { FullNameArm: '', FullNameEng: '', PositionArm: '', PositionEng: '', TextArm: '', TextEng: '' },
+        createData: { fullNameArm: '', fullNameEng: '', positionArm: '', positionEng: '', textArm: '', textEng: '', order: '' },
       };
     },
     methods: {

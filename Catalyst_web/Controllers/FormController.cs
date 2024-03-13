@@ -1,5 +1,7 @@
 ﻿using Catalyst_web.Infrastructure.Persistence;
 using Catalyst_web.Models;
+using Catalyst_web.validator;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -15,12 +17,14 @@ namespace Catalyst_web.Controllers
     {
         private readonly ApplicationDbContext _dbContext;
         private readonly IConfiguration _configuration;
-
+/*        private readonly VisitValidator _validator;
+*/
         public FormController(ApplicationDbContext dbContext, IConfiguration configuration)
         {
             _dbContext = dbContext;
             _configuration = configuration;
-        }
+/*            _validator = validator;
+*/        }
         [HttpPost("api/Form/Submit")]
         public async Task<IActionResult> SubmitForm([FromBody] FormData request)
         {
@@ -28,7 +32,7 @@ namespace Catalyst_web.Controllers
             {
                 return BadRequest(ModelState);
             }
-            var formData = new FormData { Email = request.Email, PhoneNumber = request?.PhoneNumber };
+            var formData = new FormData { Email = request.Email, PhoneNumber = request?.PhoneNumber, Message = request?.Message };
 
             _dbContext.FormDatas.Add(formData);
             await _dbContext.SaveChangesAsync();
@@ -56,9 +60,12 @@ namespace Catalyst_web.Controllers
         [HttpPost("api/Visit/Submit")]
         public async Task<IActionResult> VisitForm([FromBody] Visit request)
         {
+/*            ValidationResult result = _validator.Validate(request);
+*/
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+/*                var errors = result.Errors.Select(error => error.ErrorMessage).ToArray();
+*/                return BadRequest(ModelState);
             }
             var visit = new Visit { 
                 Email = request.Email,  

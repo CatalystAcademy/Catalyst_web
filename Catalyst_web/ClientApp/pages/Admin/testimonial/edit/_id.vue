@@ -38,9 +38,16 @@
           </div>
         </div>
 
-        <button type="submit" class="thm-btn become-teacher__form-btn">Submit</button>
-      </div>
-    </form><!-- /.become-teacher__form-content -->
+        <div class="row">
+          <div class="col">
+            <label for="order">Order</label>
+            <input v-model="createData.order" type="number" id="order" placeholder="Order" name="order">
+          </div>
+          </div>
+
+          <button type="submit" class="thm-btn become-teacher__form-btn">Submit</button>
+        </div>
+</form><!-- /.become-teacher__form-content -->
   </div>
 </template>
 
@@ -52,7 +59,7 @@
     data() {
       return {
         testimonialId: null,
-        createData: { fullNameArm: '', fullNameEng: '', positionArm: '', positionEng: '', textArm: '', textEng: '' },
+        createData: { fullNameArm: '', fullNameEng: '', positionArm: '', positionEng: '', textArm: '', textEng: '', order: '' },
       };
     },
     async created() {

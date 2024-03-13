@@ -29,6 +29,7 @@ namespace Catalyst_web.Controllers
                 PositionEng = request.PositionEng,
                 TextArm = request.TextArm,
                 TextEng = request.TextEng,
+                Order = request.Order,
             };
             _dbContext.Testimonials.Add(createTestimonial);
             await _dbContext.SaveChangesAsync();
@@ -57,6 +58,7 @@ namespace Catalyst_web.Controllers
             existingTestimonial.PositionEng = editedTestimonial.PositionEng;
             existingTestimonial.TextArm = editedTestimonial.TextArm;
             existingTestimonial.TextEng = editedTestimonial.TextEng;
+            existingTestimonial.Order = editedTestimonial.Order;
 
             _dbContext.Testimonials.Update(existingTestimonial);
             await _dbContext.SaveChangesAsync();
@@ -67,7 +69,7 @@ namespace Catalyst_web.Controllers
         [HttpGet("api/Testimonials")]
         public async Task<IActionResult> GetAllTestimonials()
         {
-            return Ok(await _dbContext.Testimonials.ToListAsync());
+            return Ok(await _dbContext.Testimonials.OrderBy(x => x.Order).ToListAsync());
         }
 
         [HttpGet("api/TestimonialDetails/{id}")]

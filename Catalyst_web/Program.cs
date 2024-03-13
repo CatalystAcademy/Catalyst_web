@@ -3,6 +3,9 @@ using Catalyst_web.Configuration.Extensions;
 using Catalyst_web.Infrastructure.Persistence;
 using Catalyst_web.Infrastructure.Services;
 using Catalyst_web.Interfaces;
+using Catalyst_web.Models;
+using Catalyst_web.validator;
+using FluentValidation;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -14,6 +17,8 @@ var configuration = builder.Configuration;
 // Add services to the container.
 
 builder.Services.AddControllers();
+/*builder.Services.AddScoped<IValidator<Visit>, VisitValidator>();
+*/
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

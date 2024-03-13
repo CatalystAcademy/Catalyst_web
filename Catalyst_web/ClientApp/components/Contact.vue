@@ -34,8 +34,8 @@
               </div><!-- /.contact-info-one__icon -->
               <h2 class="contact-info-one__title">{{translations.ContactInfoText}}</h2><!-- /.contact-info-one__title -->
               <p class="contact-info-one__text">
-                {{translations.CatalystEmail}} <br>
-                {{translations.CatalystPhone}}
+                <a :href="'mailto:' + translations.CatalystEmail">{{translations.CatalystEmail}}</a> <br />
+                <a :href="'tel:' + translations.PhoneNumber">{{translations.CatalystPhone}}</a>
               </p><!-- /.contact-info-one__text -->
             </div><!-- /.contact-info-one__single -->
           </div><!-- /.col-lg-4 -->
@@ -49,7 +49,7 @@
               <p class="contact-info-one__text">
                 {{translations.GetTouchMainText}}
                 <br />
-                <nuxt-link to="#getInTouch">{{translations.FillFormText}}</nuxt-link> 
+                <nuxt-link to="#getInTouch">{{translations.FillFormText}}</nuxt-link>
               </p><!-- /.contact-info-one__text -->
             </div><!-- /.contact-info-one__single -->
           </div><!-- /.col-lg-4 -->
@@ -73,13 +73,14 @@
                 <!-- /.kipso-icon-manager -->
               </div><!-- /.contact-info-one__icon -->
               <h2 class="contact-info-one__title">
-                {{translations.FollowUsText}}</h2><!-- /.contact-info-one__title -->
+                {{translations.FollowUsText}}
+              </h2><!-- /.contact-info-one__title -->
               <p class="contact-info-one__text">
                 {{translations.FollowUsDesc}}
                 <div class="header__social-custom">
-                  <a href="#"><i class="fab fa-facebook-square"></i></a>
-                  <a href="#"><i class="fab fa-instagram"></i></a>
-                  <a href="#"><i class="fab fa-linkedin"></i></a>
+                  <a href="https://www.facebook.com/catalystacademyarmenia?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                  <a href="https://www.instagram.com/catalystsacademy?igsh=MTRwOWhuOHFtMzRpZg==" target="_blank"><i class="fab fa-instagram"></i></a>
+                  <a href="https://www.linkedin.com/company/catalystsacademy/" target="_blank"><i class="fab fa-linkedin"></i></a>
                 </div><!-- /.header__social -->
               </p><!-- /.contact-info-one__text -->
             </div><!-- /.contact-info-one__single -->
@@ -90,10 +91,11 @@
     <section class="contact-one" id="getInTouch">
       <div class="container">
         <h2 class="contact-one__title text-center">
-          {{translations.GetTouch
-                }} <br>
-                {{translations.WithUs}}
-              </h2><!-- /.contact-one__title -->
+          {{
+translations.GetTouch
+          }} <br>
+          {{translations.WithUs}}
+        </h2><!-- /.contact-one__title -->
         <p class="about-one__text mt-5 mb-5">
           {{translations.ContactUsText}}
         </p><!-- /.about-one__text -->
@@ -116,8 +118,7 @@
         <div class="result text-center"></div><!-- /.result -->
       </div><!-- /.container -->
     </section>
-
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2471.6057439723477!2d44.529861505451315!3d40.206816131151065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406aa2cdca80cb4b%3A0xcdc047df4f1efc70!2sEurasia%20International%20University!5e0!3m2!1sen!2sam!4v1706870442269!5m2!1sen!2sam" class="google-map__contact" allowfullscreen=""></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3047.040296275678!2d44.52893257469827!3d40.208166571473946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406aa346a5a15bc3%3A0xa2fb565adfce929f!2sCatalyst%20Academy!5e0!3m2!1sru!2sam!4v1710234580249!5m2!1sru!2sam" class="google-map__contact" allowfullscreen=""></iframe>
   </div>
 </template>
 

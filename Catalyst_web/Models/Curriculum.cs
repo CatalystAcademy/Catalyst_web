@@ -35,5 +35,6 @@ namespace Catalyst_web.Models
         public required DateTime StartDate { get; set; }
         public required DateTime EndDate { get; set; }
         public DateTime RegistrationDate { get; set; }
+        public int Order { get; set; }
     }
 }

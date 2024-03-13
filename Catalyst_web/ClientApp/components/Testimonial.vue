@@ -2,20 +2,23 @@
   <section class="testimonials-one testimonials-one__home-three">
       <div class="container" v-if="testimonials.length">
           <div class="block-title text-center">
-              <h2 class="block-title__title">What our Catalysts <br>
-                  have to say</h2><!-- /.block-title__title -->
+            <h2 class="block-title__title">
+              {{translations.TestemonialText}} <br />
+              {{translations.TestemonialTextTwo}}
+            </h2><!-- /.block-title__title -->
           </div><!-- /.block-title -->
           <div class="testimonials-one__carousel owl-carousel owl-theme">
               <div class="item" v-for="testimonial in testimonials" :key="testimonial.id">
-                  <div class="testimonials-one__single">
-                      <div class="testimonials-one__qoute">
-                          <img src="/assets/images/qoute-1-1.png" alt="">
-                      </div><!-- /.testimonials-one__qoute -->
-                      <p class="testimonials-one__text">{{testimonial.textEng}}</p><!-- /.testimonials-one__text -->
-                      <img src="/assets/images/team-1-1.jpg" alt="" class="testimonials-one__img">
-                      <h3 class="testimonials-one__name">{{testimonial.fullNameEng}}</h3><!-- /.testimonials-one__name -->
-                      <p class="testimonials-one__designation">{{testimonial.positionEng}}</p><!-- /.testimonials-one__designation -->
-                  </div><!-- /.testimonials-one__single -->
+                <div class="testimonials-one__single">
+                  <div class="testimonials-one__qoute">
+                    <img src="/assets/images/qoute-1-1.png" alt="">
+                  </div><!-- /.testimonials-one__qoute -->
+                  <p class="testimonials-one__text">{{testimonial.textEng}}</p><!-- /.testimonials-one__text -->
+
+                  <img :src="'/assets/images/custom/' + getFirstName(testimonial.fullNameEng) + '_206.jpg'" alt="" class="testimonials-one__img">
+                  <h3 class="testimonials-one__name">{{testimonial.fullNameEng}}</h3><!-- /.testimonials-one__name -->
+                  <p class="testimonials-one__designation">{{testimonial.positionEng}}</p><!-- /.testimonials-one__designation -->
+                </div><!-- /.testimonials-one__single -->
               </div><!-- /.item -->
           </div><!-- /.testimonials-one__carousel owl-carousel owl-theme -->
       </div><!-- /.container -->
@@ -37,6 +40,12 @@
       translations() {
         return this.$store.state.translations;
       },
+    },
+    methods: {
+      getFirstName(fullName) {
+        if (!fullName) return '';
+        return fullName.split(' ')[0].toLowerCase();
+      }
     },
     async fetch() { // Use fetch for component-level data fetching
       try {

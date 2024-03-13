@@ -34,26 +34,27 @@
                               </div><!-- /.col-lg-3 -->
                               <div class="col-xl-3 col-lg-6 col-sm-12">
                                   <div class="footer-widget footer-widget__gallery">
-                                      <h2 class="footer-widget__title">Gallery</h2><!-- /.footer-widget__title -->
+                                    <h2 class="footer-widget__title">{{translations.Gallery}}</h2><!-- /.footer-widget__title -->
                                       <ul class="list-unstyled footer-widget__gallery-list">
-                                          <li><a href="#"><img src="/assets/images/footer-1-1.png" alt=""></a></li>
-                                          <li><a href="#"><img src="/assets/images/footer-1-2.png" alt=""></a></li>
-                                          <li><a href="#"><img src="/assets/images/footer-1-3.png" alt=""></a></li>
-                                          <li><a href="#"><img src="/assets/images/footer-1-4.png" alt=""></a></li>
+                                          <li><img src="/assets/images/custom/about_ca_1_cut_66.jpg" alt=""></li>
+                                          <li><img src="/assets/images/custom/about_us_cut_66.jpg" alt=""></li>
+                                          <li><img src="/assets/images/custom/team_cut_66.jpg" alt=""></li>
+<!--                                          <li><a href="#"><img src="/assets/images/footer-1-4.png" alt=""></a></li>
                                           <li><a href="#"><img src="/assets/images/footer-1-5.png" alt=""></a></li>
-                                          <li><a href="#"><img src="/assets/images/footer-1-6.png" alt=""></a></li>
+                                          <li><a href="#"><img src="/assets/images/footer-1-6.png" alt=""></a></li>-->
                                       </ul><!-- /.footer-widget__gallery -->
                                   </div><!-- /.footer-widget -->
                               </div><!-- /.col-lg-3 -->
                               <div class="col-xl-3 col-lg-6 col-sm-12">
                                   <div class="footer-widget footer-widget__about">
-                                      <h2 class="footer-widget__title">About</h2><!-- /.footer-widget__title -->
-                                      <p class="footer-widget__text">Lorem ipsum dolor sit ametcon, sectetur adipiscing elit.
-                                          Phasellus vehic sagittis euismod.</p><!-- /.footer-widget__text -->
+                                    <h2 class="footer-widget__title">{{translations.RequestInfoModalHeaderText}}</h2><!-- /.footer-widget__title -->
+                                      <p class="footer-widget__text">
+                                        {{translations.FooterCAText}}
+                                      </p><!-- /.footer-widget__text -->
                                       <div class="footer-widget__btn-block">
                                         <!--<a href="#" class="thm-btn">Contact</a>--><!-- /.thm-btn -->
 
-                                        <button @click="openModal" class="thm-btn">Request Info</button>
+                                        <button @click="openModal" class="thm-btn">{{translations.RequestMoreInfoBtnText}}</button>
                                         <RequestInfoModal />
                                         <!-- /.thm-btn -->
                                       </div><!-- /.footer-widget__btn-block -->

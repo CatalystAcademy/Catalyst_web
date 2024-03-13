@@ -1,6 +1,7 @@
 <template>
   <client-only>
-    <b-modal v-model="isModalOpen" title="Request Info" @hidden="closeModal">
+    <b-modal v-model="isModalOpen" :title="translations.RequestInfoModalHeaderText" hide-footer>
+      <p class="my-4">{{translations.RequestInfoModalText}}</p>
       <form @submit.prevent="submitRequest" action="/assets/inc/sendemail.php">
         <b-form-group label="Phone Number"
                       label-for="phoneNumber-input"
@@ -18,6 +19,17 @@
                         required>
           </b-form-input>
         </b-form-group>
+        <b-form-group label="Message"
+                      label-for="message-input"
+                      invalid-feedback="Message is required">
+          <b-form-textarea id="message-input"
+                           v-model="createData.message"
+                           required>
+          </b-form-textarea>
+        </b-form-group>
+        <button type="submit" class="btn btn-primary">{{translations.RequestMoreInfoBtnText}}</button>
+        <button type="button" class="btn btn-secondary" @click="closeModal">{{translations.Cancel}}</button>
+
       </form>
     </b-modal>
   </client-only>
@@ -28,10 +40,13 @@
   export default {
     setup() {
       return {
-        createData: { phoneNumber: '', email: '' },
+        createData: { phoneNumber: '', email: '', message: '' },
       };
     },
     computed: {
+      translations() {
+        return this.$store.state.translations;
+      },
       isModalOpen: {
         get() {
           return this.$store.state.isRequestInfoModalOpen;
@@ -45,26 +60,30 @@
     methods: {
       async submitRequest() {
         try {
-          await this.$axios.post('/api/Form/Submit', this.createData).then(function (response) {
-            if (response) {
-              console.log(response);
-            }
-          })
-            .catch(function (error) {
-            })
-          this.$store.dispatch('closeRequestInfoModal');
+          await this.$axios.post('/api/Form/Submit', this.createData)
+            .then(response => {
+              // Reset the form fields after successful submission
+              this.createData.phoneNumber = '';
+              this.createData.email = '';
+              this.createData.message = '';
+
+              // Close the modal
+              this.$store.dispatch('closeRequestInfoModal');
+
+              // Show success message from backend response
+              this.$toasted.success(response.data.message);
+            });
         } catch (error) {
           console.error('Error submitting form:', error);
         }
       },
       closeModal() {
-        // Ensure the form is cleared when the modal is closed
-        this.phoneNumber = '';
-        this.email = '';
+        // Close the modal
+        this.isModalOpen = false;
       },
     },
-    created() {
-      // Optional: Set up HTTPS agent for self-signed certificates (if needed)
+    async created() {
+      await this.$store.dispatch('fetchTranslations');
       if (process.env.NODE_ENV === 'development') {
         this.$axios.defaults.httpsAgent = new https.Agent({ rejectUnauthorized: false });
       }
