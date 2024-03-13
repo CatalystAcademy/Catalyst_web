@@ -264,6 +264,9 @@
   <data name="CAMainDescription" xml:space="preserve">
     <value>Catalyst Academy is a personal development and business academy that provides a range of programs and services designed to help teenagers develop the skills, knowledge, and confidence they need to succeed in both their personal and professional lives.</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
   <data name="CaptainCatalysts" xml:space="preserve">
     <value>Captain Catalysts (CC)</value>
   </data>
@@ -509,11 +512,17 @@ Programs</value>
   <data name="FollowUsText" xml:space="preserve">
     <value>Follow Us</value>
   </data>
+  <data name="FooterCAText" xml:space="preserve">
+    <value>At Catalyst Academy, we empower students to explore passions, expand horizons, and reach their full potential.</value>
+  </data>
   <data name="FormSuccessfullSubmisionForm" xml:space="preserve">
     <value>The form has been successfully submited!</value>
   </data>
   <data name="FullName" xml:space="preserve">
     <value>Your full Name</value>
+  </data>
+  <data name="Gallery" xml:space="preserve">
+    <value>Gallery</value>
   </data>
   <data name="GetLatestUpdatesText" xml:space="preserve">
     <value>Get latest courses 
@@ -739,6 +748,15 @@ Programs</value>
   <data name="registrationsuccessfulMessage" xml:space="preserve">
     <value>Registration successful!</value>
   </data>
+  <data name="RequestInfoModalHeaderText" xml:space="preserve">
+    <value>About Catalyst Academy</value>
+  </data>
+  <data name="RequestInfoModalText" xml:space="preserve">
+    <value>Thank you for your interest in Catalyst Academy! Please fill out the form below, and we'll get back to you shortly with more information about our programs and offerings.</value>
+  </data>
+  <data name="RequestMoreInfoBtnText" xml:space="preserve">
+    <value>Request Info</value>
+  </data>
   <data name="SeePreview" xml:space="preserve">
     <value>See Preview</value>
   </data>
@@ -790,6 +808,12 @@ our experts</value>
   </data>
   <data name="TechnologyOnline" xml:space="preserve">
     <value>Technology and online safety</value>
+  </data>
+  <data name="TestemonialText" xml:space="preserve">
+    <value>What our Catalysts</value>
+  </data>
+  <data name="TestemonialTextTwo" xml:space="preserve">
+    <value>have to say</value>
   </data>
   <data name="TrustedByText" xml:space="preserve">
     <value>Trusted by</value>

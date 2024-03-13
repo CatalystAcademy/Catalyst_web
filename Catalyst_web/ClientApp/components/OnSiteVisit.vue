@@ -48,19 +48,24 @@
                                    v-model="registrationData.appointmentDate"
                                    :show-decade-nav="showDecadeNav"
                                    :hide-header="hideHeader"
-                                   class="mb-2 h-auto d-flex align-items-baseline"
+                                   class="mb-2 d-flex align-items-baseline"
                                    :placeholder="translations.VisitDate"
-                                   menu-class="w-80"
-                                   calendar-width="100%"
+                                   menu-class=""
+                                   calendar-width="350px"
                                    aria-required="true"
                                    :min="minDate">
                 </b-form-datepicker>
-                <b-form-timepicker v-model="registrationData.appointmentTime"
-                                   class="mb-2 h-auto d-flex align-items-baseline justify-content-end custom-timepicker"
-                                   menu-class="custom-menu-class"
-                                   dropup
-                                   :placeholder="translations.VisitTime">
-                </b-form-timepicker>
+                  <b-form-timepicker v-model="registrationData.appointmentTime"
+                                     :default-value="defaultTime"
+                                     class="mb-2 h-auto d-flex align-items-baseline justify-content-end"
+                                     menu-class=""
+                                     dropup
+                                     now-button
+                                     reset-button
+                                     no-flip
+                                     :required="true"
+                                     :placeholder="translations.VisitTime">
+                  </b-form-timepicker>
               </client-only>
               <button type="submit" class="thm-btn become-teacher__form-btn">{{translations.MakeAppointmentBtn}} </button>
             </form><!-- /.become-teacher__form-content -->
@@ -83,8 +88,9 @@
         email: '',
         phoneNumber: '',
         appointmentDate: null,
-        appointmentTime: null,
+        appointmentTime: '15:00:00',
       },
+      defaultTime: '15:00:00',
     };
     },
     computed: {
@@ -115,8 +121,15 @@
           }
         })
         .catch(error => {
-          // Handle generic errors
-          this.$toasted.error(this.translations.registrationErrorMessage);
+          if (error.response && error.response.status === 400 && error.response.data.errors) {
+            const errorMessages = Object.values(error.response.data.errors)[0];
+            console.log(errorMessages);
+            // Join all error messages into a single string
+            const errorMessage = errorMessages;
+            this.$toasted.error(errorMessage);
+          } else {
+            this.$toasted.error(this.translations.registrationErrorMessage);
+          }
         });
     },
     },
@@ -129,5 +142,15 @@
   .on-site-visit {
     margin-top: 6rem;
     margin-bottom: 2rem;
+  }
+  .d-inline-flex {
+    display: -ms-inline-flexbox !important;
+    display: inline-table !important;
+  }
+  .b-form-date-controls button {
+      margin-top: 10px;
+  }
+  .flex-grow-1 {
+    margin-left: 0.6rem;
   }
 </style>

@@ -17,5 +17,6 @@ namespace Catalyst_web.Models
         public required string TextArm { get; set; }
         [Required]
         public required string TextEng { get; set; }
+        public int Order { get; set; }
     }
 }

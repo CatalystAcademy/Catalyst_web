@@ -30,8 +30,8 @@
                                      :hide-header="hideHeader"
                                      class="mb-2 d-flex align-items-baseline"
                                      :placeholder="translations.DateOfBirth"
-                                     menu-class="w-80"
-                                     calendar-width="100%"
+                                     menu-class="" 
+                                     calendar-width="350px"
                                      required>
                   </b-form-datepicker>
                 </client-only>
@@ -69,8 +69,6 @@
 
 
 <script>
-  import moment from 'moment';
-
   export default {
     name: "CurriculumDetails",
     methods: {
@@ -150,4 +148,5 @@
     padding-left: 0;
     max-width: 14% !important;
   }
+
 </style>

@@ -20,8 +20,8 @@
           <td>{{ testimonial.fullNameEng }}</td>
           <td>{{ testimonial.positionArm }}</td>
           <td>{{ testimonial.positionEng }}</td>
-          <td>{{ testimonial.textArm }}</td>
-          <td>{{ testimonial.textEng }}</td>
+          <td>{{ testimonial.textArm.slice(0, 100) }}</td>
+          <td>{{ testimonial.textEng.slice(0, 100) }}</td>
           <td>
             <router-link :to="`/admin/testimonial/edit/${testimonial.id}`" class="btn btn-edit">Edit</router-link>
             <button class="btn btn-delete" @click="deleteTestimonial(testimonial.id)">Delete</button>

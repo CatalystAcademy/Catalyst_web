@@ -3,6 +3,9 @@ using System.Reflection;
 using Catalyst_web.Infrastructure.Persistence;
 using Catalyst_web.Infrastructure.Services;
 using Catalyst_web.Interfaces;
+using Catalyst_web.Models;
+using Catalyst_web.validator;
+using FluentValidation;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 
@@ -55,13 +58,13 @@ public static class ServiceCollection
             };
         });
         services.AddTransient<ILocService, LocService>();
-        
+
         // Configure MediatR
-/*        services.AddMediatR(serviceConfiguration =>
-        {
-            serviceConfiguration.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
-        });*/
-        
+        /*        services.AddMediatR(serviceConfiguration =>
+                {
+                    serviceConfiguration.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
+                });*/
+
         return services;
     }
 }

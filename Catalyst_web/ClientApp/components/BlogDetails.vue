@@ -5,7 +5,7 @@
         <div class="col-lg-8">
           <div class="blog-one__single">
             <div class="blog-one__image">
-              <img src="/assets/images/blog-d-1-1.jpg" alt="">
+              <img src="/assets/images/custom/blog_770.jpg" alt="">
 
             </div><!-- /.blog-one__image -->
             <div class="blog-one__content text-center">
@@ -28,11 +28,8 @@
               <p>{{translations.Tags}}: <span>{{ blog.tag.split(' ').join(', ') }}</span></p>
             </div><!-- /.left-block -->
             <div class="social-block">
-<!--              <a href="#"><i class="fab fa-twitter"></i></a>-->
-<!--              <button @click="shareOnLinkedIn"><i class="fab fa-linkedin-in"></i></button>
-              <a href="#"><i class="fab fa-instagram"></i></a>-->
-
-              <div class="sharethis-inline-share-buttons"></div>
+              <a :href="linkedinShareUrl" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              <a :href="facebookShareUrl" target="_blank"><i class="fab fa-facebook-f"></i></a>
 
             </div><!-- /.social-block -->
           </div><!-- /.share-block -->
@@ -51,7 +48,7 @@
               <div class="sidebar__post-wrap" v-for="singleBlog in blogs" :key="singleBlog.id">
                 <div class="sidebar__post__single mt-3">
                   <div class="sidebar__post-image">
-                    <div class="inner-block"><img src="/assets/images/lp-1-1.jpg" alt="Awesome Image"></div>
+                    <div class="inner-block"><img src="/assets/images/custom/blog_66.jpg" alt="Awesome Image"></div>
                     <!-- /.inner-block -->
                   </div><!-- /.sidebar__post-image -->
                   <div class="sidebar__post-content">
@@ -90,6 +87,14 @@
 
     },
     computed: {
+      facebookShareUrl() {
+        return `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`;
+      },
+      linkedinShareUrl() {
+        const url = encodeURIComponent(window.location.href);
+        const title = encodeURIComponent(this.blog.titleEng);
+        return `https://www.linkedin.com/sharing/share-offsite/?url=${url}&title=${title}`;
+      },
       translations() {
         return this.$store.state.translations;
       },

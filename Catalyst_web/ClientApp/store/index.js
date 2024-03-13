@@ -36,7 +36,7 @@ export const actions = {
   },
 
   closeRequestInfoModal({ commit }) {
-    commit('closeRequestInfoModal');
+    commit('setRequestInfoModalState', false);
   },
 };
 

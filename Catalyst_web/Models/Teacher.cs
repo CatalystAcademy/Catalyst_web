@@ -24,5 +24,6 @@ namespace Catalyst_web.Models
         public Guid? CurriculumId { get; set; }
         public string Link { get; set; }
         public bool IsFromLeadership { get; set; }
+        public int Order { get; set; }
     }
 }
