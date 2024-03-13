@@ -48,7 +48,7 @@
                                    v-model="registrationData.appointmentDate"
                                    :show-decade-nav="showDecadeNav"
                                    :hide-header="hideHeader"
-                                   class="mb-2 d-flex align-items-baseline"
+                                   class="mb-2 h-auto d-flex align-items-baseline"
                                    :placeholder="translations.VisitDate"
                                    menu-class=""
                                    calendar-width="350px"

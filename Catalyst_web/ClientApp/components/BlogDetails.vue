@@ -87,14 +87,6 @@
 
     },
     computed: {
-      facebookShareUrl() {
-        return `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`;
-      },
-      linkedinShareUrl() {
-        const url = encodeURIComponent(window.location.href);
-        const title = encodeURIComponent(this.blog.titleEng);
-        return `https://www.linkedin.com/sharing/share-offsite/?url=${url}&title=${title}`;
-      },
       translations() {
         return this.$store.state.translations;
       },
@@ -118,14 +110,18 @@
         blogs: [],
         blog: {},
         blogId: this.$route.params.id,
-        blogUrl: ''
+        blogUrl: '',
+        facebookShareUrl: '',
+        linkedinShareUrl: ''
       };
     },
     mounted() {
       if (process.client) {
         this.blogUrl = window.location.href;
       }
-    }
+      this.facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`;
+      this.linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}&title=${encodeURIComponent(this.blog.titleEng)}`;
+    },
   };
 
   </script>
