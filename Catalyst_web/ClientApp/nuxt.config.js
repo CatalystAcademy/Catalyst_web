@@ -1,7 +1,7 @@
 export default {
   layout: 'default',
   axios: {
-    baseURL: 'http://localhost:5000',
+    baseURL: 'https://catalystsacademy.com',
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -47,6 +47,7 @@ export default {
       { src: "/assets/js/vegas.min.js", body: true },
       { src: "/assets/js/jquery.validate.min.js", body: true },
       { src: "/assets/js/jquery.ajaxchimp.min.js", body: true },
+      { src: "https://platform-api.sharethis.com/js/sharethis.js#property=65ef26015186020019b0d23e&product=inline-share-buttons&source=platform", body: false },
     ]
   },
   router: {

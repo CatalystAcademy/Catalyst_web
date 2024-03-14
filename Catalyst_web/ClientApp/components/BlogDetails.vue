@@ -28,9 +28,9 @@
               <p>{{translations.Tags}}: <span>{{ blog.tag.split(' ').join(', ') }}</span></p>
             </div><!-- /.left-block -->
             <div class="social-block">
-              <a :href="linkedinShareUrl" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-              <a :href="facebookShareUrl" target="_blank"><i class="fab fa-facebook-f"></i></a>
-
+              <!-- <a :href="linkedinShareUrl" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              <a :href="facebookShareUrl" target="_blank"><i class="fab fa-facebook-f"></i></a> -->
+              <div class="sharethis-inline-share-buttons"></div>
             </div><!-- /.social-block -->
           </div><!-- /.share-block -->
          
@@ -87,14 +87,14 @@
 
     },
     computed: {
-      facebookShareUrl() {
-        return `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`;
-      },
-      linkedinShareUrl() {
-        const url = encodeURIComponent(window.location.href);
-        const title = encodeURIComponent(this.blog.titleEng);
-        return `https://www.linkedin.com/sharing/share-offsite/?url=${url}&title=${title}`;
-      },
+      // facebookShareUrl() {
+      //   return `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`;
+      // },
+      // linkedinShareUrl() {
+      //   const url = encodeURIComponent(window.location.href);
+      //   const title = encodeURIComponent(this.blog.titleEng);
+      //   return `https://www.linkedin.com/sharing/share-offsite/?url=${url}&title=${title}`;
+      // },
       translations() {
         return this.$store.state.translations;
       },
