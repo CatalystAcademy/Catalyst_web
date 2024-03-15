@@ -28,10 +28,10 @@
               <p>{{translations.Tags}}: <span>{{ blog.tag.split(' ').join(', ') }}</span></p>
             </div><!-- /.left-block -->
             <div class="social-block">
-              <!-- <a :href="linkedinShareUrl" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-              <a :href="facebookShareUrl" target="_blank"><i class="fab fa-facebook-f"></i></a> -->
+
               <div class="sharethis-inline-share-buttons"></div>
-            </div><!-- /.social-block -->
+
+              </div><!-- /.social-block -->
           </div><!-- /.share-block -->
          
         </div><!-- /.col-lg-8 -->
@@ -78,6 +78,13 @@
 
 
   export default {
+/*    head() {
+      return {
+        script: [
+          { src: "https://platform-api.sharethis.com/js/sharethis.js#property=65ef26015186020019b0d23e&product=inline-share-buttons&source=platform", async: true, defer: true },
+        ],
+      };
+    },*/
     name: "BlogDetails",
     methods: {
       formatDateMonth(date) {
@@ -110,14 +117,8 @@
         blogs: [],
         blog: {},
         blogId: this.$route.params.id,
-        blogUrl: ''
       };
     },
-    mounted() {
-      if (process.client) {
-        this.blogUrl = window.location.href;
-      }
-    }
   };
 
   </script>

@@ -3,8 +3,8 @@
       <div class="topbar-one">
           <div class="container">
               <div class="topbar-one__left">
-                <a :href="'mailto:' + translations.CatalystEmail">{{translations.CatalystEmail}}</a>
-                <a :href="'tel:' + translations.PhoneNumber">{{translations.CatalystPhone}}</a>
+                <a :href="'mailto:' + 'info@catalystsacademy.com'">{{translations.CatalystEmail}}</a>
+                <a :href="'tel:' + '+37441575714'">{{translations.CatalystPhone}}</a>
               </div>
   <!-- /.topbar-one__left -->
 <!--              <div class="topbar-one__right">
