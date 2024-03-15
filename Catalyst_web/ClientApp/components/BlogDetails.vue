@@ -28,9 +28,9 @@
               <p>{{translations.Tags}}: <span>{{ blog.tag.split(' ').join(', ') }}</span></p>
             </div><!-- /.left-block -->
             <div class="social-block">
-              <a :href="linkedinShareUrl" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-              <a :href="facebookShareUrl" target="_blank"><i class="fab fa-facebook-f"></i></a>
-
+              <!-- <a :href="linkedinShareUrl" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              <a :href="facebookShareUrl" target="_blank"><i class="fab fa-facebook-f"></i></a> -->
+              <div class="sharethis-inline-share-buttons"></div>
             </div><!-- /.social-block -->
           </div><!-- /.share-block -->
          
@@ -110,18 +110,14 @@
         blogs: [],
         blog: {},
         blogId: this.$route.params.id,
-        blogUrl: '',
-        facebookShareUrl: '',
-        linkedinShareUrl: ''
+        blogUrl: ''
       };
     },
     mounted() {
       if (process.client) {
         this.blogUrl = window.location.href;
       }
-      this.facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`;
-      this.linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}&title=${encodeURIComponent(this.blog.titleEng)}`;
-    },
+    }
   };
 
   </script>
