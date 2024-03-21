@@ -38,6 +38,7 @@
 
   export default {
     name: 'IndexPage',
+    middleware: 'auth',
     methods: {
       formatDate(date) {
         // Use this.$moment to format the date

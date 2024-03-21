@@ -5,6 +5,7 @@ export const state = () => ({
   language: 'en-US',
   translations: {},
   isRequestInfoModalOpen: false,
+  isLoginModalOpen: false,
 });
 
 export const mutations = {
@@ -16,6 +17,9 @@ export const mutations = {
   },
   setRequestInfoModalState(state, isOpen) {
     state.isRequestInfoModalOpen = isOpen;
+  },
+  setLoginModalState(state, isOpen) {
+    state.isLoginModalOpen = isOpen;
   },
 };
 
@@ -37,6 +41,13 @@ export const actions = {
 
   closeRequestInfoModal({ commit }) {
     commit('setRequestInfoModalState', false);
+  },
+  openLoginModal({ commit }) {
+    commit('openLoginModal');
+  },
+
+  closeLoginModal({ commit }) {
+    commit('closeLoginModal', false);
   },
 };
 

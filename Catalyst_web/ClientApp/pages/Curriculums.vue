@@ -11,7 +11,7 @@
   import NavOne from "../components/NavOne";
   import Footer from "../components/Footer";
   import Curriculum from "../components/Curriculum";
-  export default {
+  export default { 
     components: { Curriculum, Footer, NavOne, PageHeader},
     head(){
       return {

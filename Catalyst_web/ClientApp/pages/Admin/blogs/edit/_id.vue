@@ -55,6 +55,7 @@
 
   export default {
     name: 'EditBlog',
+    middleware: 'auth',
     data() {
       return {
         blogId: null,

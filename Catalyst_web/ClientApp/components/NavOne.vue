@@ -32,14 +32,12 @@
                 </button>
               </div><!-- /.logo-box -->
               <!-- Language Dropdown -->
-
-
               <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="main-navigation">
                 <ul class=" navigation-box">
                   <!--                  <li class="current">
-                      <nuxt-link to="/">{{translations.HomePage}}</nuxt-link>
-                    </li>-->
+        <nuxt-link to="/">{{translations.HomePage}}</nuxt-link>
+      </li>-->
                   <li>
                     <nuxt-link to="/about">About</nuxt-link>
                     <ul class="sub-menu">
@@ -48,16 +46,21 @@
                       <li><nuxt-link to="/missionandvision">Mission & Vision</nuxt-link></li>
                       <li><nuxt-link to="/values">Values</nuxt-link></li>
                       <li><nuxt-link to="/leadership">Leadership</nuxt-link></li>
-<!--                      <li><nuxt-link to="/teachers">Instructors</nuxt-link></li>
--->                      <li><nuxt-link to="/faq">FAQ's</nuxt-link></li>
+                      <!--                      <li><nuxt-link to="/teachers">Instructors</nuxt-link></li>
+          -->
+                      <li><nuxt-link to="/faq">FAQ's</nuxt-link></li>
+                      <li v-if="$auth.loggedIn && $auth.user.username === 'Admin'">
+                        <nuxt-link to="/admin/index">Admin</nuxt-link>
+                      </li>
                     </ul>
                   </li>
                   <li>
                     <nuxt-link to="/curriculums">Programs</nuxt-link>
                     <ul class="sub-menu">
                       <li><nuxt-link to="/curriculums">Curriculums</nuxt-link></li>
-<!--                        <li><nuxt-link to="/courses">Courses</nuxt-link></li>
--->                    </ul>
+                      <!--                        <li><nuxt-link to="/courses">Courses</nuxt-link></li>
+          -->
+                    </ul>
                   </li>
                   <li>
                     <nuxt-link to="/parent">Parents</nuxt-link>
@@ -76,39 +79,56 @@
                     <nuxt-link to="/blogs">Blogs</nuxt-link>
                   </li>
                   <li>
-                    <nuxt-link to="/">Apply</nuxt-link>
+                    <nuxt-link to="/apply" target="_blank">Apply</nuxt-link>
                     <ul class="sub-menu">
                       <li><nuxt-link to="/apply" target="_blank">Apply Now</nuxt-link></li>
                       <li><nuxt-link to="/onSiteVisit">On-site Visit</nuxt-link></li>
                       <li><nuxt-link to="/contact">Contact Us</nuxt-link></li>
                     </ul>
                   </li>
-                  <!--<li>-->
-                    <!-- Language Dropdown -->
-                    <!--<div class="dropdown">
-                      <button class="btn dropdown-toggle language-dropdown-button"
-                              type="button"
-                              id="languageDropdown"
-                              data-toggle="dropdown"
-                              aria-haspopup="true"
-                              aria-expanded="false">
-                        <i class="fas fa-globe language-icon"></i>
-                       
-                        <i class="language-dropdown-button"></i>
-                      </button>
-                      <div class="dropdown-menu" aria-labelledby="languageDropdown">
-                        <button @click="switchLanguage('en-US')" class="dropdown-item">
-                          English
-                        </button>
-                        <button @click="switchLanguage('hy-AM')" class="dropdown-item">
-                          Armenian
-                        </button>-->
-                        <!-- Add more language buttons and flags as needed -->
-                      <!--</div>
-                    </div>
-                  </li>-->
-                </ul>
-              </div><!-- /.navbar-collapse -->
+                  <li class="topbar-one__left">
+                    <nuxt-link to="/" class="login-icon"><i class="fas fa-user-circle"></i> </nuxt-link>
+                    <ul class="sub-menu login-user" v-if="$auth.loggedIn">
+                      <li>
+                        Welcome, {{ $auth.user.username }}!
+                      </li>
+                      <li>
+                        <button @click="$auth.logout()">Logout</button>
+                      </li>
+                    </ul>
+                    <ul class="sub-menu login-user" v-else>
+                      <li>
+                        <button @click="openModal" class="thm-btn">Login</button>
+                      </li>
+                    </ul>
+                    <LoginModal />
+                  </li>
+              <!--<li>-->
+              <!-- Language Dropdown -->
+              <!--<div class="dropdown">
+  <button class="btn dropdown-toggle language-dropdown-button"
+          type="button"
+          id="languageDropdown"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false">
+    <i class="fas fa-globe language-icon"></i>
+
+    <i class="language-dropdown-button"></i>
+  </button>
+  <div class="dropdown-menu" aria-labelledby="languageDropdown">
+    <button @click="switchLanguage('en-US')" class="dropdown-item">
+      English
+    </button>
+    <button @click="switchLanguage('hy-AM')" class="dropdown-item">
+      Armenian
+    </button>-->
+              <!-- Add more language buttons and flags as needed -->
+              <!--</div>
+    </div>
+  </li>-->
+              </ul>
+            </div><!-- /.navbar-collapse -->
               <!--<div class="right-side-box">
                 <a class="header__search-btn search-popup__toggler" href="#">
                   <i class="kipso-icon-magnifying-glass"></i>-->
@@ -137,11 +157,17 @@
 </template>
 
 <script>
+  import LoginModal from '~/components/LoginModal.vue';
+
     export default {
     name: "NavOne",
+    components: {
+      LoginModal,
+    },
     data() {
       return {
-        selectedLanguage: 'English', // Set the default language here
+        selectedLanguage: 'English',
+        //userData: null,
       };
     },
     computed: {
@@ -176,6 +202,20 @@
           }
     },
     methods: {
+/*      async fetchUserData() {
+        try {
+          const userId = localStorage.getItem('userId');
+          if (!userId) {
+            console.error('User ID not found');
+            return;
+          }
+          const response = await axios.get(`/api/auth/user?userId=${userId}`);
+          // Store user data in the userData variable
+          this.userData = response.data.user;
+        } catch (error) {
+          console.error('Error fetching user data:', error);
+        }
+      },*/
       switchLanguage(language) {
         this.selectedLanguage = language === 'en-US' ? 'English' : 'Armenian';
         this.$i18n.setLocaleCookie(language)
@@ -183,9 +223,16 @@
         this.$store.commit('setLanguage', language);
         this.$i18n.setLocale(language);
       },
+      openModal() {
+        this.$store.commit('setLoginModalState', true);
+      },
+      closeModal() {
+        this.$store.commit('setLoginModalState', false);
+      },
     },
     async created() {
       await this.$store.dispatch('fetchTranslations');
+      //this.fetchUserData();
     },
 }
 </script>
@@ -220,12 +267,36 @@
     width: 20px; /* Adjust the size as needed */
   }
 
-  .dropdown-item {
-    cursor: pointer;
+.dropdown-item {
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #fac975;
+  color: #fff;
+}
+
+  .topbar-one__left login-icon {
+    color: #81868a;
+    font-size: 20px;
+    font-weight: 600;
+    -webkit-transition: color .4s ease;
+    transition: color .4s ease;
   }
 
-    .dropdown-item:hover {
-      background-color: #fac975;
-      color: #fff;
+    .topbar-one__left login-icon:hover {
+      color: #f16101;
     }
+    .topbar-one__left login-icon + login-icon {
+      margin-left: 25px;
+    }
+  .header-navigation .main-navigation {
+    float: none;
+    text-align: right;
+    padding-right: 0px !important;
+  }
+
+  .header-navigation ul.navigation-box > li > .login-user {
+      left: -154px;
+  }
 </style>

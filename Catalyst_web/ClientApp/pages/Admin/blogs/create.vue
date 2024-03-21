@@ -56,6 +56,7 @@
 
   export default {
     name: 'CreateBlog',
+    middleware: 'auth',
     setup() {
       return {
         createData: { titleArm: '', titleEng: '', descriptionArm: '', descriptionEng: '', authorArm: '', authorEng: '', tag: '' },

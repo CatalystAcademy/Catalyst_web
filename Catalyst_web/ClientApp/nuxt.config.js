@@ -1,7 +1,7 @@
 export default {
   layout: 'default',
   axios: {
-    baseURL: 'https://catalystsacademy.com',
+    baseURL: 'http://localhost:5000' //'https://catalystsacademy.com',
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -50,7 +50,7 @@ export default {
       { src: "https://platform-api.sharethis.com/js/sharethis.js#property=65ef26015186020019b0d23e&product=inline-share-buttons&source=platform", async: true, defer: true },
     ]
   },
-  router: {
+/*  router: {
     routes: [
       {
         path: '/',
@@ -108,7 +108,8 @@ export default {
       },
       {
         path: '/admin/Index',
-        component: 'Index'
+        component: 'Index',
+        guard: 'auth',
       },
       {
         path: '/admin/Course/Create',
@@ -116,8 +117,8 @@ export default {
       },
       {
         path: '/admin/Course/edit/:id',
-/*        name: 'EditCourse',
-        component: 'Edit'*/
+*//*        name: 'EditCourse',
+        component: 'Edit'*//*
       },
       {
         path: '/news/:id',
@@ -147,7 +148,7 @@ export default {
         component: 'Create'
       }
     ]
-  },
+  },*/
   loading: {
     color: '#f16101',
     height: '4px'
@@ -177,9 +178,29 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/axios',
+    '@nuxtjs/auth-next',
     '@nuxtjs/i18n',
     'moment'
   ],
+  auth: {
+    strategies: {
+      admin: {
+        scheme: 'local', // Use 'local' for custom backend logic
+        endpoints: {
+          login: { url: '/api/login/admin', method: 'post' },
+        },
+      },
+    },
+    fetchData: {
+      url: '/api/auth/user', // Replace with your user information endpoint
+      method: 'get', // Adjust method as needed (likely GET)
+      enabled: true, // Ensure fetching is enabled
+    },
+    redirect: {
+      login: '/', // Redirect to login page on unauthorized access
+      home: '/', // Redirect to home page on successful authentication
+    },
+  },
   i18n: {
     locales: ['en-US', 'hy-AM'], // Add more locales as needed
     defaultLocale: 'en-US',

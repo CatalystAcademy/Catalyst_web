@@ -6,6 +6,7 @@ namespace Catalyst_web.Interfaces;
 public interface IApplicationDbContext
 {
     DbSet<Course> Courses { get; set; }
+    DbSet<User> Users { get; set; }
     DbSet<Curriculum> Curriculums { get; set; }
     DbSet<CurriculumSection> CurriculumSections { get; set; }
     DbSet<News> Newses { get; set; }
