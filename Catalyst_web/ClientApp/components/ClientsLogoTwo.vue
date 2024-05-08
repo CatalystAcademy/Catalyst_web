@@ -6,7 +6,7 @@
           </div><!-- /.block-title -->
           <div class="brand-one__carousel owl-carousel owl-theme">
               <div class="item">
-                  <img src="/assets/images/custom/aua.png" alt="">
+                  <img src="/assets/images/custom/davinchi.png" alt="">
               </div><!-- /.item -->
               <div class="item">
                   <img src="/assets/images/custom/Eiu_logo.jpg" alt="">
@@ -28,9 +28,6 @@
               </div><!-- /.item -->
               <div class="item">
                   <img src="/assets/images/custom/poqrikishkhan.png" alt="">
-              </div><!-- /.item -->
-              <div class="item">
-                  <img src="/assets/images/custom/startup.png" alt="">
               </div><!-- /.item -->
           </div><!-- /.brand-one__carousel owl-carousel owl-theme -->
       </div><!-- /.container -->

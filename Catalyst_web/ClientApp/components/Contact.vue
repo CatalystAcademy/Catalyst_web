@@ -34,8 +34,8 @@
               </div><!-- /.contact-info-one__icon -->
               <h2 class="contact-info-one__title">{{translations.ContactInfoText}}</h2><!-- /.contact-info-one__title -->
               <p class="contact-info-one__text">
-                <a :href="'mailto:' + translations.CatalystEmail">{{translations.CatalystEmail}}</a> <br />
-                <a :href="'tel:' + translations.PhoneNumber">{{translations.CatalystPhone}}</a>
+                <a :href="'mailto:' + 'info@catalystsacademy.com'">{{translations.CatalystEmail}}</a> <br />
+                <a :href="'tel:' + '+37441575714'">{{translations.CatalystPhone}}</a>
               </p><!-- /.contact-info-one__text -->
             </div><!-- /.contact-info-one__single -->
           </div><!-- /.col-lg-4 -->

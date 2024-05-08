@@ -69,61 +69,62 @@
               </div><!-- /.row -->
           </div><!-- /.container -->
       </section><!-- /.team-details -->
-      <section class="course-one__top-title thm-gray-bg" v-if="curriculums.length">
+      <!--<section class="course-one__top-title thm-gray-bg" v-if="curriculums.length">
           <div class="container">
               <div class="block-title mb-0">
                   <h2 class="block-title__title">Courses i am <br>
-                      offering</h2><!-- /.block-title__title -->
-              </div><!-- /.block-title -->
-          </div><!-- /.container -->
-      </section><!-- /.course-one__top-title -->
+                      offering</h2>--><!-- /.block-title__title -->
+              <!--</div>--><!-- /.block-title -->
+          <!--</div>--><!-- /.container -->
+      <!--</section>-->
+  <!-- /.course-one__top-title -->
 
-      <section class="course-one course-one__teacher-details">
+      <!--<section class="course-one course-one__teacher-details">
           <div class="container">
               <div class="row">
                   <div class="col-lg-4" v-for="curriculum in curriculums" :key="curriculum.id">
                       <div class="course-one__single">
                           <div class="course-one__image">
                               <img src="/assets/images/course-1-1.jpg" alt="">
-                              <i class="far fa-heart"></i><!-- /.far fa-heart -->
-                          </div><!-- /.course-one__image -->
-                          <div class="course-one__content">
-                            <a href="#" class="course-one__category">{{curriculum.categoryEng}}</a><!-- /.course-one__category -->
-                            <div class="course-one__admin">
+                              <i class="far fa-heart"></i>--><!-- /.far fa-heart -->
+                          <!--</div>--><!-- /.course-one__image -->
+                          <!--<div class="course-one__content">
+                            <a href="#" class="course-one__category">{{curriculum.categoryEng}}</a>--><!-- /.course-one__category -->
+                            <!--<div class="course-one__admin">
                               <img src="/assets/images/team-1-1.jpg" alt="">
                               by <a href="teacher-details.html">{{translations.CatalystAcademyText}}</a>
-                            </div><!-- /.course-one__admin -->
-                            <h2 class="course-one__title">
+                            </div>--><!-- /.course-one__admin -->
+                            <!--<h2 class="course-one__title">
                               <nuxt-link :to="`curriculums/${curriculum.id}`">
                                 {{ curriculum.titleEng }}
                               </nuxt-link>
-                            </h2>
+                            </h2>-->
                             <!-- /.course-one__title -->
-                            <div class="course-one__stars">
+                            <!--<div class="course-one__stars">
                               <span class="course-one__stars-wrap">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
-                              </span><!-- /.course-one__stars-wrap -->
-                              <span class="course-one__count">5</span><!-- /.course-one__count -->
-                              <span class="course-one__stars-count">580</span><!-- /.course-one__stars-count -->
-                            </div><!-- /.course-one__stars -->
-                            <div class="course-one__meta">
+                              </span>--><!-- /.course-one__stars-wrap -->
+                              <!--<span class="course-one__count">5</span>--><!-- /.course-one__count -->
+                              <!--<span class="course-one__stars-count">580</span>--><!-- /.course-one__stars-count -->
+                            <!--</div>--><!-- /.course-one__stars -->
+                            <!--<div class="course-one__meta">
                               <i class="far fa-clock"></i> 3 {{translations.Months}}
                               <i class="far fa-folder-open"></i> 36 {{translations.Lectures}}
-                            </div><!-- /.course-one__meta -->
-                            <nuxt-link :to="`/curriculums/${curriculum.id}`" class="course-one__link">
+                            </div>--><!-- /.course-one__meta -->
+                            <!--<nuxt-link :to="`/curriculums/${curriculum.id}`" class="course-one__link">
                               {{translations.SeePreview}}
                             </nuxt-link>
-                          </div><!-- /.course-one__content -->
-                      </div><!-- /.course-one__single -->
-                  </div><!-- /.col-lg-4 -->
+                          </div>--><!-- /.course-one__content -->
+                      <!--</div>--><!-- /.course-one__single -->
+                  <!--</div>--><!-- /.col-lg-4 -->
                  
-              </div><!-- /.course-one__carousel -->
-          </div><!-- /.container -->
-      </section>
+              <!--</div>--><!-- /.course-one__carousel -->
+          <!--</div>--><!-- /.container -->
+      <!--</section>-->
     </div>
 </template>
 

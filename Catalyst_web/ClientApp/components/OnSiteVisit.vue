@@ -48,7 +48,7 @@
                                    v-model="registrationData.appointmentDate"
                                    :show-decade-nav="showDecadeNav"
                                    :hide-header="hideHeader"
-                                   class="mb-2 d-flex align-items-baseline"
+                                   class="mb-2 h-auto d-flex align-items-baseline"
                                    :placeholder="translations.VisitDate"
                                    menu-class=""
                                    calendar-width="350px"
@@ -122,11 +122,7 @@
         })
         .catch(error => {
           if (error.response && error.response.status === 400 && error.response.data.errors) {
-            const errorMessages = Object.values(error.response.data.errors)[0];
-            console.log(errorMessages);
-            // Join all error messages into a single string
-            const errorMessage = errorMessages;
-            this.$toasted.error(errorMessage);
+            this.$toasted.error('Please fill out the form corrctly');
           } else {
             this.$toasted.error(this.translations.registrationErrorMessage);
           }
