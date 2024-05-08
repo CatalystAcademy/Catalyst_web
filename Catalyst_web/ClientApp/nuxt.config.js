@@ -184,21 +184,11 @@ export default {
   ],
   auth: {
     strategies: {
-      admin: {
-        scheme: 'local', // Use 'local' for custom backend logic
-        endpoints: {
-          login: { url: '/api/login/admin', method: 'post' },
-        },
-      },
-    },
-    fetchData: {
-      url: '/api/auth/user', // Replace with your user information endpoint
-      method: 'get', // Adjust method as needed (likely GET)
-      enabled: true, // Ensure fetching is enabled
-    },
-    redirect: {
-      login: '/', // Redirect to login page on unauthorized access
-      home: '/', // Redirect to home page on successful authentication
+      auth0: {
+        domain: 'dev-qlacipwr2qzedmrm.us.auth0.com',
+        clientId: 'lwBSsI8GiQzuthq5jRofL8XRtqZOIguK',
+        audience: 'https://dev-qlacipwr2qzedmrm.us.auth0.com/api/v2/'
+      }
     },
   },
   i18n: {

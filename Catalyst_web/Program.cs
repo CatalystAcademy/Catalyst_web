@@ -1,3 +1,4 @@
+using Auth0.AspNetCore.Authentication;
 using Catalyst_web.Configuration;
 using Catalyst_web.Configuration.Extensions;
 using Catalyst_web.Infrastructure.Persistence;
@@ -6,6 +7,7 @@ using Catalyst_web.Interfaces;
 using Catalyst_web.Models;
 using Catalyst_web.validator;
 using FluentValidation;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -32,6 +34,11 @@ builder.Services.AddCors(options =>
                            .AllowAnyHeader());
 });
 
+builder.Services.AddAuth0WebAppAuthentication(options =>
+{
+    options.Domain = "dev-qlacipwr2qzedmrm.us.auth0.com";
+    options.ClientId = "lwBSsI8GiQzuthq5jRofL8XRtqZOIguK";
+});
 
 builder.Services.RegisterServices(configuration);
 
@@ -54,6 +61,7 @@ if (locOptions != null) app.UseRequestLocalization(locOptions.Value);
 
 app.UseForwardedHeaders();
 app.UseCultureMiddleware();
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 

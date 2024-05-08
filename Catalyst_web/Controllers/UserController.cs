@@ -25,13 +25,12 @@ namespace Catalyst_web.Controllers
             user.Username = existingUser.Username;
             if (user.Email == existingUser.Email)
             {
-                var token = GenerateJwtToken(user.Email, existingUser.Id); // Implement JWT generation
+                var token = GenerateJwtToken(user.Email, existingUser.Id); 
                 return Ok(new { token });
             }
             if (existingUser == null || user.Email != existingUser.Email)
             {
-                // Username not found - Handle appropriately
-                return BadRequest("Invalid username or password"); // Or a more descriptive message
+                return BadRequest("Invalid username or password");
             }
             else
             {
@@ -49,12 +48,12 @@ namespace Catalyst_web.Controllers
 
             var claimsIdentity = AddClaimsToIdentity(userEmail, userId);
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtSecretKey)); // Replace with your secret key
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtSecretKey)); 
             var jwtTokenHandler = new JwtSecurityTokenHandler();
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claimsIdentity),
-                Expires = DateTime.UtcNow.AddHours(1), // Adjust expiration time as needed
+                Expires = DateTime.UtcNow.AddHours(1), 
                 SigningCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256Signature)
             };
             var token = jwtTokenHandler.CreateToken(tokenDescriptor);
@@ -67,7 +66,7 @@ namespace Catalyst_web.Controllers
         public string GenerateSecretKey()
         {
             using var randomNumberGenerator = RandomNumberGenerator.Create();
-            var keyBytes = new byte[32]; // Adjust size as needed
+            var keyBytes = new byte[32];
             randomNumberGenerator.GetBytes(keyBytes);
             return Convert.ToBase64String(keyBytes);
         }
@@ -78,31 +77,24 @@ namespace Catalyst_web.Controllers
                 new(ClaimTypes.NameIdentifier, userId.ToString()),
                 new(ClaimTypes.Email, userEmail)
             };
-            // Add other claims as needed, e.g., roles
 
             return new ClaimsIdentity(claims);
         }
-        [HttpGet("/api/auth/user")] // Add this endpoint
+        
+        [HttpGet("/api/auth/user")] 
         public async Task<IActionResult> GetUser()
-        { 
+        {
+            var cc = User.Claims;
 
-            var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Email == "admin@gmail.com"); 
+            var user = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value;
             if (user == null)
             {
-                return NotFound(); // Return 404 if user not found
+                return NotFound(); 
             }
 
-            var userData = new
-            {
-                user = new // Nest user data under "user" field
-                {
-                    username = user.Username,
-                    email = user.Email,
-                    userId = user.Id,
-                }
-            };
+            var userData = user;
 
-            return Ok(userData); // Return user data as JSON
+            return Ok(userData);
         }
 
     }

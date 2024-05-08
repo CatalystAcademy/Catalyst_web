@@ -78,7 +78,7 @@
                   <li>
                     <nuxt-link to="/blogs">Blogs</nuxt-link>
                   </li>
-                  <li>
+                  <li v-if="$auth.loggedIn && $auth.user.Admin">
                     <nuxt-link to="/apply" target="_blank">Apply</nuxt-link>
                     <ul class="sub-menu">
                       <li><nuxt-link to="/apply" target="_blank">Apply Now</nuxt-link></li>
@@ -90,7 +90,8 @@
                     <nuxt-link to="/" class="login-icon"><i class="fas fa-user-circle"></i> </nuxt-link>
                     <ul class="sub-menu login-user" v-if="$auth.loggedIn">
                       <li>
-                        Welcome, {{ $auth.user.username }}!
+                        Welcome, {{ $auth.user.name }}!
+                        <p v-if="$auth.user.Admin">Admin</p>
                       </li>
                       <li>
                         <button @click="$auth.logout()">Logout</button>
@@ -98,7 +99,7 @@
                     </ul>
                     <ul class="sub-menu login-user" v-else>
                       <li>
-                        <button @click="openModal" class="thm-btn">Login</button>
+                        <a href="#" @click="handleLogin" class="thm-btn">Login</a>
                       </li>
                     </ul>
                     <LoginModal />
@@ -171,6 +172,9 @@
       };
     },
     computed: {
+      user() {        
+        return this.$auth.user; // Access user data if logged in
+      },
       translations() {
         return this.$store.state.translations;
       },
@@ -202,20 +206,20 @@
           }
     },
     methods: {
-/*      async fetchUserData() {
+      handleLogin() {
+        this.$auth.loginWith('auth0')
+      },
+
+      async fetchUserData() {
         try {
-          const userId = localStorage.getItem('userId');
-          if (!userId) {
-            console.error('User ID not found');
-            return;
-          }
-          const response = await axios.get(`/api/auth/user?userId=${userId}`);
+          const response = await this.$axios.get(`/api/user`);
           // Store user data in the userData variable
-          this.userData = response.data.user;
+          //this.userData = response.data.user;
+          console.log(response);
         } catch (error) {
           console.error('Error fetching user data:', error);
         }
-      },*/
+      },
       switchLanguage(language) {
         this.selectedLanguage = language === 'en-US' ? 'English' : 'Armenian';
         this.$i18n.setLocaleCookie(language)
